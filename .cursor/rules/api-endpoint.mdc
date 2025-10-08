@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+When creating a new API endpoint, always create a dedicated E2E test for it.
