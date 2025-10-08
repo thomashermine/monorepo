@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-frontend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: monorepo-frontend
+    template:
+        metadata:
+            labels:
+                app: monorepo-frontend
+        spec:
+            imagePullSecrets:
+                - name: ghcr-secret-monorepo-template
+            containers:
+                - name: frontend
+                  image: ghcr.io/thomashermine/thomashermine-monorepo-template/frontend
+                  ports:
+                      - containerPort: 3000
+                  envFrom:
+                      - configMapRef:
+                            name: monorepo-config
+                      - secretRef:
+                            name: monorepo-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: monorepo-frontend
+spec:
+    selector:
+        app: monorepo-frontend
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 3000
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-ingress
+    annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+spec:
+    ingressClassName: nginx
+    tls:
+        - hosts:
+              - m.thomashermine.be
+          secretName: monorepo-frontend-tls
+    rules:
+        - host: m.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-frontend
+                            port:
+                                number: 80

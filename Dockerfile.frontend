@@ -1,0 +1,91 @@
+# Dockerfile.frontend
+#
+# This Dockerfile is used to build the frontend app in apps/
+# It automatically builds all packages in packages/* that have a build script.
+# Pass the name of the app as follows:
+# docker build -t my-frontend -f Dockerfile.frontend --build-arg APP_NAME=frontend .
+#
+# ======================================================================================================================
+# Builder
+# ======================================================================================================================
+FROM node:24-alpine AS builder
+
+# Define build argument for app name
+ARG APP_NAME=frontend
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
+
+WORKDIR /app
+
+# Copy workspace configuration files
+COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
+COPY tsconfig.base.json ./
+
+# Copy all package.json files for dependency installation
+# for selected app + all packages
+COPY apps/${APP_NAME}/package.json ./apps/${APP_NAME}/
+# Copy packages directory structure (wildcard doesn't preserve subdirs, so we copy all and clean up)
+COPY packages ./packages
+RUN find packages -mindepth 2 -type f ! -name 'package.json' -delete && \
+    find packages -mindepth 2 -type d -empty -delete
+
+# Install all dependencies (including dev dependencies for building)
+RUN pnpm install --frozen-lockfile
+
+# Copy source code for all workspace packages
+COPY packages ./packages
+COPY apps/${APP_NAME} ./apps/${APP_NAME}
+
+# Build all workspace packages that have a build script
+RUN for pkg in /app/packages/*; do \
+      if [ -d "$pkg" ] && [ -f "$pkg/package.json" ]; then \
+        cd "$pkg" && \
+        if grep -q '"build"' package.json; then \
+          echo "Building $(basename $pkg)..." && \
+          pnpm run build; \
+        fi; \
+      fi; \
+    done
+
+# Build the frontend application
+WORKDIR /app/apps/${APP_NAME}
+RUN pnpm run build
+
+# ======================================================================================================================
+# Server
+# ======================================================================================================================
+FROM node:24-alpine
+
+# Define build argument for app name
+ARG APP_NAME=frontend
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
+
+WORKDIR /app
+
+# Copy workspace configuration
+COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
+COPY tsconfig.base.json ./
+
+# Copy package.json files for selected app + all packages
+COPY apps/${APP_NAME}/package.json ./apps/${APP_NAME}/
+# Copy packages directory structure
+COPY packages ./packages
+RUN find packages -mindepth 2 -type f ! -name 'package.json' -delete && \
+    find packages -mindepth 2 -type d -empty -delete
+
+# Install dependencies (all deps needed for proper workspace resolution)
+RUN pnpm install --frozen-lockfile
+
+# Copy built files from builder stage
+COPY --from=builder /app/apps/${APP_NAME}/build ./apps/${APP_NAME}/build
+# Copy all packages (preserves directory structure)
+COPY --from=builder /app/packages ./packages
+
+# Set working directory to frontend app
+WORKDIR /app/apps/${APP_NAME}
+
+# Run the application
+CMD ["pnpm", "run", "start"]

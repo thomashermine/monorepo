@@ -1,0 +1,11 @@
+namespace: staging
+
+resources:
+    - ../../base
+
+patches:
+    - path: patch-env.yml
+    - path: patch-ingress.yml
+images:
+    - name: ghcr.io/thomashermine/thomashermine-monorepo-template/monorepo-frontend
+      newTag: 0.0.1

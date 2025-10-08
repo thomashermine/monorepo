@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-ingress
+spec:
+    tls:
+        - hosts:
+              - staging.monorepo-template.thomashermine.be
+          secretName: monorepo-frontend-tls
+    rules:
+        - host: staging.monorepo-template.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-frontend
+                            port:
+                                number: 80

@@ -1,0 +1,11 @@
+resources:
+    - namespace.yml
+    - backend.yml
+    - frontend.yml
+    - config.yml
+
+images:
+    - name: ghcr.io/thomashermine/thomashermine-monorepo-template/backend
+      newTag: latest
+    - name: ghcr.io/thomashermine/thomashermine-monorepo-template/frontend
+      newTag: latest

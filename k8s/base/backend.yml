@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-backend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: monorepo-backend
+    template:
+        metadata:
+            labels:
+                app: monorepo-backend
+        spec:
+            imagePullSecrets:
+                - name: ghcr-secret-monorepo-template
+            containers:
+                - name: backend
+                  image: ghcr.io/thomashermine/thomashermine-monorepo-template/backend
+                  ports:
+                      - containerPort: 3000
+                  envFrom:
+                      - configMapRef:
+                            name: monorepo-config
+                      - secretRef:
+                            name: monorepo-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: monorepo-backend
+spec:
+    selector:
+        app: monorepo-backend
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 3000

@@ -1,0 +1,43 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "scripts": {
+        "build": "tsc",
+        "type-check": "tsc -b tsconfig.json",
+        "dev": "tsx --watch src/main.ts",
+        "d": "pnpm run dev",
+        "start": "tsx src/main.ts",
+        "lint": "eslint src --ext .ts,.js",
+        "lint-fix": "pnpm lint --fix",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "format-fix": "prettier --write \"src/**/*.ts\" --fix",
+        "test-unit": "vitest run --config vitest.config.ts",
+        "test-e2e": "vitest run --config vitest.e2e.config.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "packageManager": "pnpm@10.18.0",
+    "devDependencies": {
+        "@eslint/js": "^9.37.0",
+        "eslint": "^9.37.0",
+        "eslint-plugin-simple-import-sort": "^12.1.1",
+        "eslint-plugin-sort-keys-fix": "^1.1.2",
+        "globals": "^16.4.0",
+        "jiti": "^2.6.1",
+        "prettier": "^3.6.2",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.45.0",
+        "vitest": "^3.2.4"
+    },
+    "dependencies": {
+        "@monorepo/helpers": "workspace:*",
+        "@monorepo/config": "workspace:*",
+        "@effect/platform": "^0.92.1",
+        "@effect/platform-node": "^0.98.3",
+        "dotenv": "^17.2.3",
+        "effect": "^3.18.2"
+    }
+}

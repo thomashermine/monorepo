@@ -1,0 +1,72 @@
+# Dockerfile.storybook
+#
+# This Dockerfile is used to build and serve Storybook for the frontend app
+# It automatically builds all packages in packages/* that have a build script.
+# docker build -t my-storybook -f Dockerfile.storybook .
+#
+# ======================================================================================================================
+# Builder
+# ======================================================================================================================
+FROM node:24-alpine AS builder
+
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
+
+WORKDIR /app
+
+# Copy workspace configuration files
+COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
+COPY tsconfig.base.json ./
+
+# Copy all package.json files for dependency installation
+COPY apps/frontend/package.json ./apps/frontend/
+# Copy packages directory structure (wildcard doesn't preserve subdirs, so we copy all and clean up)
+COPY packages ./packages
+RUN find packages -mindepth 2 -type f ! -name 'package.json' -delete && \
+    find packages -mindepth 2 -type d -empty -delete
+
+# Install all dependencies (including dev dependencies for building)
+RUN pnpm install --frozen-lockfile
+
+# Copy source code for all workspace packages
+COPY packages ./packages
+COPY apps/frontend ./apps/frontend
+
+# Build all workspace packages that have a build script
+RUN for pkg in /app/packages/*; do \
+      if [ -d "$pkg" ] && [ -f "$pkg/package.json" ]; then \
+        cd "$pkg" && \
+        if grep -q '"build"' package.json; then \
+          echo "Building $(basename $pkg)..." && \
+          pnpm run build; \
+        fi; \
+      fi; \
+    done
+
+# Build Storybook
+WORKDIR /app/apps/frontend
+RUN pnpm run build-storybook
+
+# ======================================================================================================================
+# Server - Serve Storybook static files
+# ======================================================================================================================
+FROM node:24-alpine
+
+# Define build argument for app name
+ARG APP_NAME=frontend
+
+WORKDIR /app
+
+# Install a simple static file server
+RUN npm install -g serve
+
+# Copy built Storybook files from builder stage
+COPY --from=builder /app/apps/frontend/storybook-static ./storybook-static
+
+# Expose port 3000 for consistency with other services
+EXPOSE 3000
+
+# Serve the Storybook static files
+CMD ["serve", "-s", "storybook-static", "-l", "3000"]
+

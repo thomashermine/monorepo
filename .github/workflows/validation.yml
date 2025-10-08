@@ -1,0 +1,239 @@
+name: validation
+
+on:
+    push:
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    type-check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⚙️ Checkout code
+              uses: actions/checkout@v4
+
+            - name: ⚙️ Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: ⚙️ Setup Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: ⚙️ Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔨 Build packages
+              run: pnpm -r --filter="@monorepo/helpers" build
+
+            - name: 🔍 Type check
+              run: pnpm type-check
+
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⚙️ Checkout code
+              uses: actions/checkout@v4
+
+            - name: ⚙️ Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: ⚙️ Setup Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: ⚙️ Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔧 Lint
+              run: pnpm lint
+
+    test-unit:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⚙️ Checkout code
+              uses: actions/checkout@v4
+
+            - name: ⚙️ Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: ⚙️ Setup Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: ⚙️ Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔨 Build packages
+              run: pnpm -r --filter="@monorepo/helpers" build
+
+            - name: 🧪 Run Vitest tests
+              run: pnpm test-unit
+
+            - name: 📤 Upload Vitest coverage
+              uses: actions/upload-artifact@v4
+              if: always()
+              with:
+                  name: vitest-coverage
+                  path: coverage/
+                  retention-days: 7
+
+    test-storybook:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⚙️ Checkout code
+              uses: actions/checkout@v4
+
+            - name: ⚙️ Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: ⚙️ Setup Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: ⚙️ Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔨 Build packages
+              run: pnpm -r --filter="./packages/**" build
+
+            - name: ⚙️ Get Playwright version
+              id: playwright-version
+              run: echo "version=$(cd apps/frontend && node -p "require('./package.json').devDependencies['@playwright/test']")" >> $GITHUB_OUTPUT
+
+            - name: ⚙️ Cache Playwright browsers
+              uses: actions/cache@v4
+              id: playwright-cache
+              with:
+                  path: ~/.cache/ms-playwright
+                  key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+
+            - name: ⚙️ Playwright - Install browsers
+              if: steps.playwright-cache.outputs.cache-hit != 'true'
+              run: cd apps/frontend && npx playwright install --with-deps
+
+            - name: ⚙️ Playwright - Install system dependencies only
+              if: steps.playwright-cache.outputs.cache-hit == 'true'
+              run: cd apps/frontend && npx playwright install-deps
+
+            - name: 🧪 Run Storybook tests
+              run: pnpm test-storybook
+
+    test-e2e-frontend:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⚙️ Checkout code
+              uses: actions/checkout@v4
+
+            - name: ⚙️ Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: ⚙️ Setup Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: ⚙️ Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔨 Build packages
+              run: pnpm -r --filter="./packages/**" build
+
+            - name: ⚙️ Get Playwright version
+              id: playwright-version
+              run: echo "version=$(cd apps/frontend && node -p "require('./package.json').devDependencies['@playwright/test']")" >> $GITHUB_OUTPUT
+
+            - name: ⚙️ Cache Playwright browsers
+              uses: actions/cache@v4
+              id: playwright-cache
+              with:
+                  path: ~/.cache/ms-playwright
+                  key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+
+            - name: ⚙️ Playwright - Install browsers
+              if: steps.playwright-cache.outputs.cache-hit != 'true'
+              run: cd apps/frontend && npx playwright install --with-deps
+
+            - name: ⚙️ Playwright - Install system dependencies only
+              if: steps.playwright-cache.outputs.cache-hit == 'true'
+              run: cd apps/frontend && npx playwright install-deps
+
+            - name: 🔨 Build frontend
+              run: pnpm --filter frontend build
+
+            - name: 🧪 Run E2E tests
+              run: pnpm --filter frontend test-e2e
+
+    test-e2e-backend:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⚙️ Checkout code
+              uses: actions/checkout@v4
+
+            - name: ⚙️ Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: ⚙️ Setup Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: ⚙️ Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔨 Build packages
+              run: pnpm -r --filter="./packages/**" build
+
+            - name: 🔨 Build backend
+              run: pnpm --filter backend build
+
+            - name: 🧪 Run E2E tests
+              run: |
+                  # Create .env file for backend
+                  touch apps/backend/.env
+
+                  # Start backend server in background
+                  pnpm --filter backend start &
+                  BACKEND_PID=$!
+
+                  # Wait for backend to be ready
+                  echo "Waiting for backend to be ready on port 3000..."
+                  timeout 30 bash -c 'until nc -z localhost 3000; do sleep 1; done' || {
+                      echo "Backend failed to start in time"
+                      kill $BACKEND_PID 2>/dev/null || true
+                      exit 1
+                  }
+                  echo "Backend is ready!"
+
+                  # Run E2E tests
+                  pnpm --filter backend test-e2e
+                  TEST_EXIT_CODE=$?
+
+                  # Cleanup: Stop backend server
+                  kill $BACKEND_PID 2>/dev/null || true
+
+                  # Exit with test result
+                  exit $TEST_EXIT_CODE

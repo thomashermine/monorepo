@@ -1,0 +1,626 @@
+name: build-and-deploy
+
+on:
+    push:
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+env:
+    REGISTRY: ghcr.io
+    IMAGE_PREFIX: ${{ github.repository }}
+
+jobs:
+    build-and-push:
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        strategy:
+            matrix:
+                app:
+                    - name: backend
+                      dockerfile: Dockerfile.backend
+                    - name: frontend
+                      dockerfile: Dockerfile.frontend
+                    - name: storybook
+                      dockerfile: Dockerfile.storybook
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Log in to GitHub Container Registry
+              uses: docker/login-action@v3
+              with:
+                  registry: ${{ env.REGISTRY }}
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Extract metadata for Docker
+              id: meta
+              uses: docker/metadata-action@v5
+              with:
+                  images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.app.name }}
+                  tags: |
+                      type=ref,event=branch
+                      type=sha,prefix={{branch}}-
+                      type=raw,value=latest,enable={{is_default_branch}}
+
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v6.5.0
+              with:
+                  context: .
+                  file: ./${{ matrix.app.dockerfile }}
+                  push: true
+                  platforms: linux/amd64,linux/arm64
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  build-args: |
+                      APP_NAME=${{ matrix.app.name }}
+                  cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.app.name }}:ci
+                  cache-to: type=inline,mode=min
+
+    deploy-to-flyio:
+        if: github.event_name == 'push'
+        needs: [build-and-push]
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                app:
+                    - name: backend
+                      dockerfile: Dockerfile.backend
+                      port: 3000
+                    - name: frontend
+                      dockerfile: Dockerfile.frontend
+                      port: 3000
+                    - name: storybook
+                      dockerfile: Dockerfile.storybook
+                      port: 3000
+        outputs:
+            backend-url: ${{ steps.deployment-url.outputs.backend-url }}
+            frontend-url: ${{ steps.deployment-url.outputs.frontend-url }}
+            storybook-url: ${{ steps.deployment-url.outputs.storybook-url }}
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Fly.io CLI
+              uses: superfly/flyctl-actions/setup-flyctl@master
+
+            - name: Generate app name from branch
+              id: app-name
+              run: |
+                  # Sanitize branch name for fly.io app naming (max 64 chars)
+                  REPO_NAME="${{ github.event.repository.name }}"
+                  BRANCH_NAME="${{ github.ref_name }}"
+                  APP_TYPE="${{ matrix.app.name }}"
+
+                  # Create a hash of the branch name for uniqueness
+                  BRANCH_HASH=$(echo -n "${BRANCH_NAME}" | sha256sum | cut -c1-8)
+
+                  # Sanitize and truncate repo name (max 20 chars)
+                  REPO_SHORT=$(echo "${REPO_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-20 | sed 's/-$//')
+
+                  # Sanitize branch name and truncate (max 25 chars)
+                  BRANCH_SHORT=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-25 | sed 's/-$//')
+
+                  # Combine: repo(20) + app(10) + branch(25) + hash(8) + hyphens(3) = max 66 chars
+                  # Adjust to fit 64: repo(18) + app(10) + branch(24) + hash(8) + hyphens(3) = 63 chars
+                  REPO_SHORT=$(echo "${REPO_SHORT}" | cut -c1-18 | sed 's/-$//')
+                  BRANCH_SHORT=$(echo "${BRANCH_SHORT}" | cut -c1-24 | sed 's/-$//')
+
+                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_SHORT}-${BRANCH_HASH}"
+                  # Final cleanup
+                  APP_NAME=$(echo "${APP_NAME}" | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
+
+                  echo "app_name=${APP_NAME}" >> $GITHUB_OUTPUT
+                  echo "Deploying to app: ${APP_NAME} (${#APP_NAME} chars)"
+
+            - name: Check if app exists
+              id: app-exists
+              run: |
+                  if flyctl apps list | grep -q "^${{ steps.app-name.outputs.app_name }}"; then
+                    echo "exists=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "exists=false" >> $GITHUB_OUTPUT
+                  fi
+              env:
+                  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+            - name: Create fly.toml for app
+              run: |
+                  cat > fly.toml << EOF
+                  app = '${{ steps.app-name.outputs.app_name }}'
+                  primary_region = 'iad'
+
+                  [build]
+                    dockerfile = '${{ matrix.app.dockerfile }}'
+                    [build.args]
+                      APP_NAME = '${{ matrix.app.name }}'
+
+                  [http_service]
+                    internal_port = ${{ matrix.app.port }}
+                    force_https = true
+                    auto_stop_machines = 'stop'
+                    auto_start_machines = true
+                    min_machines_running = 0
+                    processes = ['app']
+
+                  [[vm]]
+                    memory = '1gb'
+                    cpu_kind = 'shared'
+                    cpus = 1
+
+                  [[env]]
+                    PORT = '${{ matrix.app.port }}'
+                    SOME_ENV_VAR = 'hello from fly.toml'
+                  EOF
+
+            - name: Create new fly.io app (if needed)
+              if: steps.app-exists.outputs.exists == 'false'
+              run: |
+                  flyctl apps create ${{ steps.app-name.outputs.app_name }} --org personal
+              env:
+                  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+            - name: Deploy to Fly.io
+              run: |
+                  flyctl deploy --remote-only --ha=false
+              env:
+                  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+            - name: Get deployment URL
+              id: deployment-url
+              run: |
+                  URL="https://${{ steps.app-name.outputs.app_name }}.fly.dev"
+                  echo "${{ matrix.app.name }}-url=${URL}" >> $GITHUB_OUTPUT
+                  echo "🚀 ${{ matrix.app.name }} deployed to: ${URL}"
+
+    deploy-to-kubernetes:
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+        needs: [build-and-push]
+        runs-on: ubuntu-latest
+        environment:
+            name: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set environment name
+              id: env
+              run: |
+                  if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+                    echo "name=production" >> $GITHUB_OUTPUT
+                    echo "overlay=production" >> $GITHUB_OUTPUT
+                  else
+                    echo "name=staging" >> $GITHUB_OUTPUT
+                    echo "overlay=staging" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Setup kubectl
+              uses: azure/setup-kubectl@v4
+              with:
+                  version: 'latest'
+
+            - name: Setup kustomize
+              run: |
+                  curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+                  sudo mv kustomize /usr/local/bin/
+
+            - name: Configure kubectl
+              run: |
+                  mkdir -p ~/.kube
+                  echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
+                  chmod 600 ~/.kube/config
+
+            - name: Create image pull secret
+              run: |
+                  kubectl create secret docker-registry ghcr-secret-monorepo-template \
+                    --docker-server=${{ env.REGISTRY }} \
+                    --docker-username=${{ github.actor }} \
+                    --docker-password=${{ secrets.GHCR_TOKEN }} \
+                    --namespace=staging \
+                    --dry-run=client -o yaml | kubectl apply -f -
+                  kubectl create secret docker-registry ghcr-secret-monorepo-template \
+                    --docker-server=${{ env.REGISTRY }} \
+                    --docker-username=${{ github.actor }} \
+                    --docker-password=${{ secrets.GHCR_TOKEN }} \
+                    --namespace=production \
+                    --dry-run=client -o yaml | kubectl apply -f -
+
+            - name: Update image tags
+              run: |
+                  cd k8s/base
+                  kustomize edit set image \
+                    ghcr.io/${{ github.repository }}/backend=ghcr.io/${{ github.repository }}/backend:${{ github.ref_name }}
+                  kustomize edit set image \
+                    ghcr.io/${{ github.repository }}/frontend=ghcr.io/${{ github.repository }}/frontend:${{ github.ref_name }}
+
+            - name: Deploy to Kubernetes
+              run: |
+                  kustomize build k8s/overlays/${{ steps.env.outputs.overlay }} | kubectl apply -f -
+
+    backend-e2e-test:
+        if: github.event_name == 'push'
+        needs: [deploy-to-flyio]
+        runs-on: ubuntu-latest
+        outputs:
+            test-summary: ${{ steps.test-summary.outputs.summary }}
+        permissions:
+            contents: read
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10.18.0
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'pnpm'
+
+            - name: Install dependencies
+              run: |
+                  cd apps/backend
+                  pnpm install --frozen-lockfile
+
+            - name: Wait for backend deployment to be ready
+              run: |
+                  BACKEND_URL="${{ needs.deploy-to-flyio.outputs.backend-url }}"
+                  echo "Waiting for ${BACKEND_URL} to be ready..."
+                  for i in {1..30}; do
+                    if curl -sf -X POST "${BACKEND_URL}/echo" -H "Content-Type: text/plain" -d "health-check" > /dev/null 2>&1; then
+                      echo "✅ Backend is ready!"
+                      exit 0
+                    fi
+                    echo "Attempt $i/30: Backend not ready yet, waiting..."
+                    sleep 10
+                  done
+                  echo "❌ Backend did not become ready in time"
+                  exit 1
+
+            - name: Run E2E tests against deployed backend
+              run: |
+                  cd apps/backend
+                  pnpm run test-e2e
+              env:
+                  API_BASE_URL: ${{ needs.deploy-to-flyio.outputs.backend-url }}
+                  CI: true
+
+            - name: Upload test results
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: backend-e2e-test-results-${{ github.sha }}
+                  path: apps/backend/test-results/
+                  retention-days: 30
+
+            - name: Generate test summary
+              id: test-summary
+              if: always()
+              uses: actions/github-script@v7
+              with:
+                  script: |
+                      const fs = require('fs');
+                      const backendUrl = '${{ needs.deploy-to-flyio.outputs.backend-url }}';
+
+                      let testSection = '## 🧪 Backend E2E Test Results\n\n';
+                      testSection += `**Tested URL**: ${backendUrl}\n\n`;
+
+                      try {
+                        const resultsPath = 'apps/backend/test-results/e2e-results.json';
+                        if (fs.existsSync(resultsPath)) {
+                          const results = JSON.parse(fs.readFileSync(resultsPath, 'utf8'));
+                          
+                          const total = results.numTotalTests || 0;
+                          const passed = results.numPassedTests || 0;
+                          const failed = results.numFailedTests || 0;
+                          
+                          testSection += '| Status | Count |\n';
+                          testSection += '|--------|-------|\n';
+                          testSection += `| ✅ Passed | ${passed} |\n`;
+                          testSection += `| ❌ Failed | ${failed} |\n`;
+                          testSection += `| 📊 Total | ${total} |\n\n`;
+                          
+                          if (failed > 0) {
+                            testSection += '❌ Some tests failed. Check the [test artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details.\n';
+                          } else {
+                            testSection += '✅ All tests passed!\n';
+                          }
+                        } else {
+                          testSection += '⚠️ Test results not found\n';
+                        }
+                      } catch (error) {
+                        testSection += `⚠️ Error reading test results: ${error.message}\n`;
+                      }
+
+                      core.setOutput('summary', testSection);
+
+                      // Also write to step summary
+                      await core.summary.addRaw(testSection).write();
+
+    lighthouse-test:
+        if: github.event_name == 'push'
+        needs: [deploy-to-flyio]
+        runs-on: ubuntu-latest
+        outputs:
+            lighthouse-summary: ${{ steps.format-results.outputs.comment }}
+        permissions:
+            contents: read
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Wait for frontend deployment to be ready
+              run: |
+                  FRONTEND_URL="${{ needs.deploy-to-flyio.outputs.frontend-url }}"
+                  echo "Waiting for ${FRONTEND_URL} to be ready..."
+                  for i in {1..30}; do
+                    if curl -sf "${FRONTEND_URL}" > /dev/null 2>&1; then
+                      echo "✅ Frontend is ready!"
+                      exit 0
+                    fi
+                    echo "Attempt $i/30: Frontend not ready yet, waiting..."
+                    sleep 10
+                  done
+                  echo "❌ Frontend did not become ready in time"
+                  exit 1
+
+            - name: Run Lighthouse on current branch
+              id: lighthouse-current
+              uses: treosh/lighthouse-ci-action@v11
+              with:
+                  urls: |
+                      ${{ needs.deploy-to-flyio.outputs.frontend-url }}
+                  uploadArtifacts: true
+                  temporaryPublicStorage: true
+                  artifactName: lighthouse-current-branch-${{ github.sha }}
+
+            - name: Get main branch app name
+              if: github.ref_name != 'main'
+              id: main-app-name
+              run: |
+                  REPO_NAME="${{ github.event.repository.name }}"
+                  BRANCH_NAME="main"
+                  APP_TYPE="frontend"
+
+                  # Create a hash of the branch name for uniqueness
+                  BRANCH_HASH=$(echo -n "${BRANCH_NAME}" | sha256sum | cut -c1-8)
+
+                  # Sanitize and truncate repo name (max 18 chars)
+                  REPO_SHORT=$(echo "${REPO_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-18 | sed 's/-$//')
+
+                  # Sanitize branch name and truncate (max 24 chars)
+                  BRANCH_SHORT=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-24 | sed 's/-$//')
+
+                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_SHORT}-${BRANCH_HASH}"
+                  # Final cleanup
+                  APP_NAME=$(echo "${APP_NAME}" | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
+
+                  MAIN_URL="https://${APP_NAME}.fly.dev"
+                  echo "main_url=${MAIN_URL}" >> $GITHUB_OUTPUT
+                  echo "Main branch URL: ${MAIN_URL}"
+
+            - name: Check if main branch deployment exists
+              if: github.ref_name != 'main'
+              id: main-exists
+              run: |
+                  MAIN_URL="${{ steps.main-app-name.outputs.main_url }}"
+                  if curl -sf "${MAIN_URL}" > /dev/null 2>&1; then
+                    echo "exists=true" >> $GITHUB_OUTPUT
+                    echo "✅ Main branch deployment exists"
+                  else
+                    echo "exists=false" >> $GITHUB_OUTPUT
+                    echo "ℹ️  Main branch deployment not found"
+                  fi
+
+            - name: Run Lighthouse on main branch
+              if: github.ref_name != 'main' && steps.main-exists.outputs.exists == 'true'
+              id: lighthouse-main
+              uses: treosh/lighthouse-ci-action@v11
+              with:
+                  urls: |
+                      ${{ steps.main-app-name.outputs.main_url }}
+                  uploadArtifacts: true
+                  temporaryPublicStorage: true
+                  artifactName: lighthouse-main-branch-${{ github.sha }}
+
+            - name: Format Lighthouse results
+              id: format-results
+              uses: actions/github-script@v7
+              with:
+                  script: |
+                      const currentResults = ${{ steps.lighthouse-current.outputs.manifest }};
+                      const mainResults = ${{ steps.main-exists.outputs.exists == 'true' && steps.lighthouse-main.outputs.manifest || '[]' }};
+                      const isMainBranch = '${{ github.ref_name }}' === 'main';
+
+                      function formatScore(score) {
+                        const percentage = Math.round(score * 100);
+                        if (percentage >= 90) return `🟢 ${percentage}`;
+                        if (percentage >= 50) return `🟡 ${percentage}`;
+                        return `🔴 ${percentage}`;
+                      }
+
+                      function formatDiff(current, main) {
+                        if (!main) return '';
+                        const diff = Math.round((current - main) * 100);
+                        if (diff > 0) return ` (+${diff})`;
+                        if (diff < 0) return ` (${diff})`;
+                        return ' (±0)';
+                      }
+
+                      const current = currentResults[0];
+                      const main = mainResults.length > 0 ? mainResults[0] : null;
+
+                      const categories = ['performance', 'accessibility', 'best-practices', 'seo'];
+
+                      let comment = '## 🔍 Lighthouse Performance Report\n\n';
+
+                      if (isMainBranch) {
+                        // Simple table for main branch (no comparison)
+                        let table = '| Category | Score |\n';
+                        table += '|----------|-------|\n';
+                        for (const cat of categories) {
+                          const currentScore = current.summary[cat];
+                          const currentFormatted = formatScore(currentScore);
+                          const catName = cat.charAt(0).toUpperCase() + cat.slice(1).replace('-', ' ');
+                          table += `| ${catName} | ${currentFormatted} |\n`;
+                        }
+                        comment += table;
+                        comment += '\n_This is the main branch - no comparison available._\n';
+                      } else {
+                        // Comparison table for other branches
+                        let table = '| Category | Current Branch | Main Branch | Difference |\n';
+                        table += '|----------|---------------|-------------|------------|\n';
+                        
+                        for (const cat of categories) {
+                          const currentScore = current.summary[cat];
+                          const mainScore = main ? main.summary[cat] : null;
+                          const currentFormatted = formatScore(currentScore);
+                          const mainFormatted = mainScore !== null ? formatScore(mainScore) : 'N/A';
+                          const diff = mainScore !== null ? formatDiff(currentScore, mainScore) : '';
+                          const catName = cat.charAt(0).toUpperCase() + cat.slice(1).replace('-', ' ');
+                          table += `| ${catName} | ${currentFormatted} | ${mainFormatted} | ${diff} |\n`;
+                        }
+                        comment += table;
+                      }
+
+                      comment += '\n### 📊 Detailed Reports\n';
+                      comment += `- **Current Branch**: [View Report](${current.url})\n`;
+                      if (main) {
+                        comment += `- **Main Branch**: [View Report](${main.url})\n`;
+                      }
+                      comment += `\n**Tested URL**: ${{ needs.deploy-to-flyio.outputs.frontend-url }}`;
+
+                      core.setOutput('comment', comment);
+                      return comment;
+
+            - name: Create job summary
+              run: |
+                  echo "${{ steps.format-results.outputs.comment }}" >> $GITHUB_STEP_SUMMARY
+
+    update-pr:
+        if: github.event_name == 'push'
+        needs: [deploy-to-flyio, backend-e2e-test, lighthouse-test]
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: write
+
+        steps:
+            - name: Find associated PR
+              id: find-pr
+              uses: jwalton/gh-find-current-pr@v1
+              with:
+                  state: open
+
+            - name: PR number
+              run: echo "Your PR is ${PR}"
+              if: success() && steps.find-pr.outputs.number
+              env:
+                  PR: ${{ steps.findPr.outputs.pr }}
+
+            - name: Update PR description
+              if: steps.find-pr.outputs.pr
+              uses: actions/github-script@v7
+              with:
+                  script: |
+                      const prNumber = parseInt('${{ steps.find-pr.outputs.pr }}');
+
+                      // Collect all sections
+                      const backendUrl = '${{ needs.deploy-to-flyio.outputs.backend-url }}';
+                      const frontendUrl = '${{ needs.deploy-to-flyio.outputs.frontend-url }}';
+                      const storybookUrl = '${{ needs.deploy-to-flyio.outputs.storybook-url }}';
+
+                      const deploymentSection = `## 🚀 Deployments Ready!\n\n- **Backend**: ${backendUrl}\n- **Frontend**: ${frontendUrl}\n- **Storybook**: ${storybookUrl}`;
+
+                      const testSummary = `${{ needs.backend-e2e-test.outputs.test-summary }}` || '';
+                      const lighthouseSummary = `${{ needs.lighthouse-test.outputs.lighthouse-summary }}` || '';
+
+                      // Get current PR
+                      const { data: pr } = await github.rest.pulls.get({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        pull_number: prNumber
+                      });
+
+                      // Remove all existing automated sections
+                      let body = pr.body || '';
+                      body = body.replace(/## 🚀 Deployments Ready![\s\S]*?(?=\n## |$)/g, '');
+                      body = body.replace(/## 🧪 Backend E2E Test Results[\s\S]*?(?=\n## |$)/g, '');
+                      body = body.replace(/## 🔍 Lighthouse Performance Report[\s\S]*?(?=\n## |$)/g, '');
+
+                      // Build new content
+                      const sections = [deploymentSection];
+                      if (testSummary) sections.push(testSummary);
+                      if (lighthouseSummary) sections.push(lighthouseSummary);
+
+                      const newContent = sections.join('\n\n');
+                      body = body.trim() + '\n\n' + newContent;
+
+                      // Update PR description
+                      await github.rest.pulls.update({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        pull_number: prNumber,
+                        body: body.trim()
+                      });
+
+    cleanup-flyio:
+        if: github.event_name == 'delete'
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                app: [backend, frontend, storybook]
+
+        steps:
+            - name: Setup Fly.io CLI
+              uses: superfly/flyctl-actions/setup-flyctl@master
+
+            - name: Generate app name from deleted branch
+              id: app-name
+              run: |
+                  REPO_NAME="${{ github.event.repository.name }}"
+                  BRANCH_NAME="${{ github.event.ref }}"
+                  APP_TYPE="${{ matrix.app }}"
+
+                  # Create a hash of the branch name for uniqueness
+                  BRANCH_HASH=$(echo -n "${BRANCH_NAME}" | sha256sum | cut -c1-8)
+
+                  # Sanitize and truncate repo name (max 18 chars)
+                  REPO_SHORT=$(echo "${REPO_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-18 | sed 's/-$//')
+
+                  # Sanitize branch name and truncate (max 24 chars)
+                  BRANCH_SHORT=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-24 | sed 's/-$//')
+
+                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_SHORT}-${BRANCH_HASH}"
+                  # Final cleanup
+                  APP_NAME=$(echo "${APP_NAME}" | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
+
+                  echo "app_name=${APP_NAME}" >> $GITHUB_OUTPUT
+                  echo "Cleaning up app: ${APP_NAME} (${#APP_NAME} chars)"
+
+            - name: Delete app
+              run: |
+                  if flyctl apps list | grep -q "^${{ steps.app-name.outputs.app_name }}"; then
+                    flyctl apps destroy ${{ steps.app-name.outputs.app_name }} --yes
+                    echo "✅ Successfully deleted app: ${{ steps.app-name.outputs.app_name }}"
+                  else
+                    echo "ℹ️  App ${{ steps.app-name.outputs.app_name }} does not exist, skipping deletion"
+                  fi
+              env:
+                  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

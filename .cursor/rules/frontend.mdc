@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+
+This rule provides standards for frontend components:
+
+When working in components directory:
+
+-   Always use Tailwind for styling
+-   Separate components into : primitives, blocks, composites
+-   Each component in a dedicated subdirectory (primitives/MyComponent), with code in index.tsx and dedicated storybook stories in index.stories.tsx

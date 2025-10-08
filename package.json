@@ -1,0 +1,24 @@
+{
+    "name": "monorepo",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm run --parallel dev",
+        "d": "pnpm run dev",
+        "lint": "pnpm run --parallel lint",
+        "lint-fix": "pnpm run --parallel lint-fix",
+        "format": "pnpm run --parallel format",
+        "format-fix": "pnpm run --parallel format-fix",
+        "test": "pnpm run --parallel test",
+        "type-check": "pnpm run --parallel type-check",
+        "storybook": "pnpm run --parallel storybook",
+        "test-unit": "pnpm run --recursive test-unit",
+        "test-storybook": "pnpm run --recursive test-storybook",
+        "test-e2e": "pnpm run --recursive test-e2e",
+        "test-e2e:open": "pnpm run --recursive test-e2e:open",
+        "test-e2e:report": "pnpm run --recursive test-e2e:open",
+        "build": "pnpm run --parallel build"
+    },
+    "devDependencies": {},
+    "packageManager": "pnpm@10.18.0",
+    "version": "0.1.2"
+}

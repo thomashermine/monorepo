@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: monorepo-config
+data:
+    NODE_ENV: production
+    SOME_ENV_VAR: 'hello from monorepo-config'
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: monorepo-secrets
+type: Opaque
+stringData:
+    SOME_SECRET_KEY: 'some-secret-key'
