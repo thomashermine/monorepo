@@ -321,10 +321,12 @@ export interface Review {
     reviewerName: string
     channel?: string
     createdAt: string
-    reply?: {
-        content: string
-        repliedAt: string
-    }
+    reply?:
+        | {
+              content: string
+              repliedAt: string
+          }
+        | undefined
 }
 
 export interface ReviewsQueryParams {

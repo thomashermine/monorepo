@@ -301,7 +301,7 @@ export const example9_propertyManagement = () => {
             const reservations = yield* service.getReservations({
                 propertyId: property.id,
                 status: 'confirmed',
-                checkInFrom: new Date().toISOString().split('T')[0],
+                checkInFrom: new Date().toISOString().split('T')[0] as string,
             })
 
             propertyReservations.push({

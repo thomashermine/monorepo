@@ -28,9 +28,9 @@ describe('Date Helper Functions', () => {
         it('should parse date string', () => {
             const result = parseDate('2024-01-15')
             expect(result).toBeInstanceOf(Date)
-            expect(result.getFullYear()).toBe(2024)
-            expect(result.getMonth()).toBe(0)
-            expect(result.getDate()).toBe(15)
+            expect(result?.getFullYear()).toBe(2024)
+            expect(result?.getMonth()).toBe(0)
+            expect(result?.getDate()).toBe(15)
         })
 
         it('should return null for invalid date string', () => {

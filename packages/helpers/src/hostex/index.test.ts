@@ -1178,7 +1178,6 @@ describe('HostexService', () => {
 
             const params: ReservationsQueryParams = {
                 propertyId: 'prop-1',
-                status: undefined,
             }
 
             const program = Effect.gen(function* () {

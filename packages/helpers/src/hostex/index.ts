@@ -1,4 +1,4 @@
-import { Context, Effect, Layer } from 'effect'
+import { Config, Context, Effect, Layer } from 'effect'
 
 import {
     type AvailabilitiesQueryParams,
@@ -11,6 +11,7 @@ import {
     type CreateReviewResponse,
     type CreateWebhookInput,
     type CreateWebhookResponse,
+    HostexAuthError,
     type HostexConfig,
     HostexError,
     HostexNetworkError,
@@ -222,6 +223,7 @@ const makeRequest = <T>(
                     signal: controller.signal,
                 })
 
+                console.log('response', response)
                 clearTimeout(timeoutId)
 
                 const data = await response.json()
@@ -261,22 +263,15 @@ const makeRequest = <T>(
 export const HostexServiceLive = Layer.effect(
     HostexService,
     Effect.gen(function* () {
-        const config = yield* Effect.config({
-            accessToken: Effect.config.string('HOSTEX_ACCESS_TOKEN'),
-            baseUrl: Effect.config.string('HOSTEX_BASE_URL').pipe(
-                Effect.option,
-                Effect.map((opt) =>
-                    opt.pipe(
-                        Effect.getOrElse(() => 'https://open-api.hostex.com/v3')
-                    )
-                )
+        const config = yield* Config.all({
+            accessToken: Config.string('HOSTEX_ACCESS_TOKEN'),
+            baseUrl: Config.string('HOSTEX_BASE_URL').pipe(
+                Config.withDefault('https://api.hostex.io/v3/')
             ),
-            timeout: Effect.config.number('HOSTEX_TIMEOUT').pipe(
-                Effect.option,
-                Effect.map((opt) => opt.pipe(Effect.getOrElse(() => 30000)))
+            timeout: Config.number('HOSTEX_TIMEOUT').pipe(
+                Config.withDefault(30000)
             ),
         }).pipe(
-            Effect.flatten,
             Effect.catchAll(() =>
                 Effect.die(
                     new HostexAuthError({
