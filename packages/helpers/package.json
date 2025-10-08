@@ -17,6 +17,7 @@
     "packageManager": "pnpm@10.18.0",
     "devDependencies": {
         "@eslint/js": "^9.37.0",
+        "@faker-js/faker": "^9.3.0",
         "eslint": "^9.37.0",
         "eslint-plugin-simple-import-sort": "^12.1.1",
         "eslint-plugin-sort-keys-fix": "^1.1.2",
@@ -32,6 +33,10 @@
         "jiti": "^2.6.1"
     },
     "exports": {
-        "./joke": "./src/joke/index.ts"
+        "./hostex": "./src/hostex/index.ts",
+        "./hostex/types": "./src/hostex/types.ts",
+        "./hostex/mocks": "./src/hostex/mocks.ts",
+        "./joke": "./src/joke/index.ts",
+        "./date": "./src/date/index.ts"
     }
 }
