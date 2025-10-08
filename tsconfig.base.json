@@ -1,17 +1,14 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "declaration": true,
-        "declarationMap": true,
-        "exactOptionalPropertyTypes": true,
-        "isolatedModules": true,
         "module": "esnext",
         "moduleDetection": "force",
         "moduleResolution": "bundler",
         "noUncheckedIndexedAccess": true,
         "noUncheckedSideEffectImports": true,
         "paths": {
-            "@monorepo/helpers/*": ["packages/helpers/src/*"]
+            "@monorepo/helpers/*": ["packages/helpers/src/*"],
+            "@monorepo/config/*": ["packages/config/src/*"]
         },
         "skipLibCheck": true,
         "sourceMap": true,
