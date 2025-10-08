@@ -332,10 +332,10 @@ export const HostexServiceLive = Layer.effect(
             updateLockCode: (input) =>
                 makeRequest<UpdateLockCodeResponse>(
                     config,
-                    `/reservations/${input.code}/lock-code`,
+                    `/reservations/${input.reservation_code}/lock-code`,
                     {
                         method: 'PATCH',
-                        body: JSON.stringify({ lockCode: input.lockCode }),
+                        body: JSON.stringify({ lock_code: input.lock_code }),
                     }
                 ),
 
@@ -542,10 +542,10 @@ export const makeHostexServiceLayer = (
         updateLockCode: (input) =>
             makeRequest<UpdateLockCodeResponse>(
                 config,
-                `/reservations/${input.code}/lock-code`,
+                `/reservations/${input.reservation_code}/lock-code`,
                 {
                     method: 'PATCH',
-                    body: JSON.stringify({ lockCode: input.lockCode }),
+                    body: JSON.stringify({ lock_code: input.lock_code }),
                 }
             ),
 

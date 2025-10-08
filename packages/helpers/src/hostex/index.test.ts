@@ -199,29 +199,61 @@ describe('HostexService', () => {
         describe('getReservations', () => {
             it('should fetch reservations without query params', async () => {
                 const mockData = {
-                    data: [
-                        {
-                            code: 'RES-001',
-                            propertyId: 'prop-1',
-                            checkIn: '2024-12-01',
-                            checkOut: '2024-12-05',
-                            status: 'confirmed',
-                            guest: {
-                                name: 'John Doe',
-                                email: 'john@example.com',
+                    bookings: {
+                        reservations: [
+                            {
+                                reservation_code: 'RES-001',
+                                stay_code: 'RES-001',
+                                channel_id: 'CH-001',
+                                property_id: 12345,
+                                channel_type: 'direct' as const,
+                                listing_id: 'listing-1',
+                                check_in_date: '2024-12-01',
+                                check_out_date: '2024-12-05',
+                                number_of_guests: 2,
+                                number_of_adults: 2,
+                                number_of_children: 0,
+                                number_of_infants: 0,
+                                number_of_pets: 0,
+                                status: 'accepted' as const,
+                                guest_name: 'John Doe',
+                                guest_email: 'john@example.com',
+                                guest_phone: '+1234567890',
+                                cancelled_at: null,
+                                booked_at: '2024-11-15T10:00:00Z',
+                                created_at: '2024-11-15T10:00:00Z',
+                                creator: 'System',
+                                rates: {
+                                    total_rate: {
+                                        currency: 'USD',
+                                        amount: 800,
+                                    },
+                                    total_commission: {
+                                        currency: 'USD',
+                                        amount: 50,
+                                    },
+                                    rate: { currency: 'USD', amount: 800 },
+                                    commission: { currency: 'USD', amount: 50 },
+                                    details: [],
+                                },
+                                check_in_details: {
+                                    arrival_at: null,
+                                    departure_at: null,
+                                    lock_code: null,
+                                    lock_code_visible_after: '12:00',
+                                    deposit: null,
+                                },
+                                remarks: '',
+                                channel_remarks: '',
+                                conversation_id: null,
+                                tags: [],
+                                custom_channel: { id: 1, name: 'Direct' },
+                                guests: [],
+                                custom_fields: null,
+                                in_reservation_box: false,
                             },
-                            adults: 2,
-                            nights: 4,
-                            price: 800,
-                            currency: 'USD',
-                            createdAt: '2024-11-15T10:00:00Z',
-                            updatedAt: '2024-11-15T10:00:00Z',
-                        },
-                    ],
-                    total: 1,
-                    page: 1,
-                    pageSize: 20,
-                    requestId: 'req-789',
+                        ],
+                    },
                 }
 
                 mockSuccessResponse(mockData)
@@ -240,22 +272,20 @@ describe('HostexService', () => {
 
             it('should fetch reservations with query params', async () => {
                 const mockData = {
-                    data: [],
-                    total: 0,
-                    page: 2,
-                    pageSize: 10,
-                    requestId: 'req-790',
+                    bookings: {
+                        reservations: [],
+                    },
                 }
 
                 mockSuccessResponse(mockData)
 
                 const queryParams: ReservationsQueryParams = {
-                    propertyId: 'prop-1',
-                    status: 'confirmed',
-                    checkInFrom: '2024-12-01',
-                    checkInTo: '2024-12-31',
+                    property_id: 12345,
+                    status: 'accepted',
+                    check_in_from: '2024-12-01',
+                    check_in_to: '2024-12-31',
                     page: 2,
-                    pageSize: 10,
+                    page_size: 10,
                 }
 
                 const program = Effect.gen(function* () {
@@ -278,46 +308,63 @@ describe('HostexService', () => {
         describe('createReservation', () => {
             it('should create a reservation successfully', async () => {
                 const input: CreateReservationInput = {
-                    propertyId: 'prop-1',
-                    checkIn: '2024-12-15',
-                    checkOut: '2024-12-20',
-                    guest: {
-                        name: 'Jane Smith',
-                        email: 'jane@example.com',
-                        phone: '+1234567890',
-                    },
-                    adults: 2,
-                    children: 1,
-                    price: 1000,
-                    currency: 'USD',
-                    channel: 'direct',
+                    property_id: 12345,
+                    check_in_date: '2024-12-15',
+                    check_out_date: '2024-12-20',
+                    guest_name: 'Jane Smith',
+                    guest_email: 'jane@example.com',
+                    guest_phone: '+1234567890',
+                    number_of_adults: 2,
+                    number_of_children: 1,
+                    channel_type: 'direct',
                 }
 
                 const mockData = {
-                    data: {
-                        code: 'RES-002',
-                        reservation: {
-                            code: 'RES-002',
-                            propertyId: 'prop-1',
-                            checkIn: '2024-12-15',
-                            checkOut: '2024-12-20',
-                            status: 'confirmed' as const,
-                            guest: {
-                                name: 'Jane Smith',
-                                email: 'jane@example.com',
-                                phone: '+1234567890',
-                            },
-                            adults: 2,
-                            children: 1,
-                            nights: 5,
-                            price: 1000,
-                            currency: 'USD',
-                            channel: 'direct',
-                            createdAt: '2024-11-20T10:00:00Z',
-                            updatedAt: '2024-11-20T10:00:00Z',
+                    reservation: {
+                        reservation_code: 'RES-002',
+                        stay_code: 'RES-002',
+                        channel_id: 'CH-002',
+                        property_id: 12345,
+                        channel_type: 'direct' as const,
+                        listing_id: 'listing-1',
+                        check_in_date: '2024-12-15',
+                        check_out_date: '2024-12-20',
+                        number_of_guests: 3,
+                        number_of_adults: 2,
+                        number_of_children: 1,
+                        number_of_infants: 0,
+                        number_of_pets: 0,
+                        status: 'accepted' as const,
+                        guest_name: 'Jane Smith',
+                        guest_email: 'jane@example.com',
+                        guest_phone: '+1234567890',
+                        cancelled_at: null,
+                        booked_at: '2024-11-20T10:00:00Z',
+                        created_at: '2024-11-20T10:00:00Z',
+                        creator: 'System',
+                        rates: {
+                            total_rate: { currency: 'USD', amount: 1000 },
+                            total_commission: { currency: 'USD', amount: 100 },
+                            rate: { currency: 'USD', amount: 1000 },
+                            commission: { currency: 'USD', amount: 100 },
+                            details: [],
                         },
+                        check_in_details: {
+                            arrival_at: null,
+                            departure_at: null,
+                            lock_code: null,
+                            lock_code_visible_after: '12:00',
+                            deposit: null,
+                        },
+                        remarks: '',
+                        channel_remarks: '',
+                        conversation_id: null,
+                        tags: [],
+                        custom_channel: { id: 1, name: 'Direct' },
+                        guests: [],
+                        custom_fields: null,
+                        in_reservation_box: false,
                     },
-                    requestId: 'req-800',
                 }
 
                 mockSuccessResponse(mockData)
@@ -345,13 +392,11 @@ describe('HostexService', () => {
                 mockErrorResponse(400, 'Invalid date range', 'VALIDATION_ERROR')
 
                 const input: CreateReservationInput = {
-                    propertyId: 'prop-1',
-                    checkIn: '2024-12-20',
-                    checkOut: '2024-12-15',
-                    guest: { name: 'Test' },
-                    adults: 2,
-                    price: 100,
-                    currency: 'USD',
+                    property_id: 12345,
+                    check_in_date: '2024-12-20',
+                    check_out_date: '2024-12-15',
+                    guest_name: 'Test',
+                    number_of_adults: 2,
                 }
 
                 const program = Effect.gen(function* () {
@@ -400,15 +445,12 @@ describe('HostexService', () => {
         describe('updateLockCode', () => {
             it('should update lock code successfully', async () => {
                 const input: UpdateLockCodeInput = {
-                    code: 'RES-001',
-                    lockCode: '1234',
+                    reservation_code: 'RES-001',
+                    lock_code: '1234',
                 }
 
                 const mockData = {
-                    data: {
-                        success: true,
-                    },
-                    requestId: 'req-820',
+                    success: true,
                 }
 
                 mockSuccessResponse(mockData)
@@ -427,7 +469,7 @@ describe('HostexService', () => {
                     'https://test-api.hostex.com/v3/reservations/RES-001/lock-code',
                     expect.objectContaining({
                         method: 'PATCH',
-                        body: JSON.stringify({ lockCode: '1234' }),
+                        body: JSON.stringify({ lock_code: '1234' }),
                     })
                 )
             })
@@ -1145,9 +1187,9 @@ describe('HostexService', () => {
             mockSuccessResponse(mockData)
 
             const params: ReservationsQueryParams = {
-                checkInFrom: '2024-12-01',
-                checkInTo: '2024-12-31',
-                status: 'confirmed',
+                check_in_from: '2024-12-01',
+                check_in_to: '2024-12-31',
+                status: 'accepted',
             }
 
             const program = Effect.gen(function* () {
@@ -1160,24 +1202,22 @@ describe('HostexService', () => {
             )
 
             expect(mockFetch).toHaveBeenCalledWith(
-                expect.stringContaining('checkInFrom=2024-12-01'),
+                expect.stringContaining('check_in_from=2024-12-01'),
                 expect.any(Object)
             )
         })
 
         it('should skip undefined query parameters', async () => {
             const mockData = {
-                data: [],
-                total: 0,
-                page: 1,
-                pageSize: 20,
-                requestId: 'req-query-test-2',
+                bookings: {
+                    reservations: [],
+                },
             }
 
             mockSuccessResponse(mockData)
 
             const params: ReservationsQueryParams = {
-                propertyId: 'prop-1',
+                property_id: 12345,
             }
 
             const program = Effect.gen(function* () {
@@ -1190,7 +1230,7 @@ describe('HostexService', () => {
             )
 
             const callUrl = mockFetch.mock.calls[0]?.[0] as string
-            expect(callUrl).toContain('propertyId=prop-1')
+            expect(callUrl).toContain('property_id=12345')
             expect(callUrl).not.toContain('status')
         })
     })

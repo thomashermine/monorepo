@@ -228,22 +228,10 @@ describe('Backend API E2E Tests', () => {
 
             // Verify response structure
             expect(body).toHaveProperty('bookings')
-            expect(body).toHaveProperty('page')
-            expect(body).toHaveProperty('pageSize')
-            expect(body).toHaveProperty('requestId')
-            expect(body).toHaveProperty('total')
+            expect(body.bookings).toHaveProperty('reservations')
 
             // Verify types
-            expect(Array.isArray(body.bookings)).toBe(true)
-            expect(typeof body.page).toBe('number')
-            expect(typeof body.pageSize).toBe('number')
-            expect(typeof body.requestId).toBe('string')
-            expect(typeof body.total).toBe('number')
-
-            // Verify pagination values are valid
-            expect(body.page).toBeGreaterThanOrEqual(0)
-            expect(body.pageSize).toBeGreaterThan(0)
-            expect(body.total).toBeGreaterThanOrEqual(0)
+            expect(Array.isArray(body.bookings.reservations)).toBe(true)
         })
 
         it('should return array of bookings with expected properties', async () => {
@@ -256,32 +244,61 @@ describe('Backend API E2E Tests', () => {
             const body = await response.json()
 
             // If there are bookings, verify their structure
-            if (body.bookings.length > 0) {
-                const booking = body.bookings[0]
+            if (body.bookings.reservations.length > 0) {
+                const booking = body.bookings.reservations[0]
 
-                // Verify booking has expected properties
-                expect(booking).toHaveProperty('code')
-                expect(booking).toHaveProperty('propertyId')
-                expect(booking).toHaveProperty('checkIn')
-                expect(booking).toHaveProperty('checkOut')
+                // Verify booking has expected properties (snake_case)
+                expect(booking).toHaveProperty('reservation_code')
+                expect(booking).toHaveProperty('property_id')
+                expect(booking).toHaveProperty('check_in_date')
+                expect(booking).toHaveProperty('check_out_date')
                 expect(booking).toHaveProperty('status')
-                expect(booking).toHaveProperty('guest')
-                expect(booking).toHaveProperty('adults')
-                expect(booking).toHaveProperty('nights')
-                expect(booking).toHaveProperty('price')
-                expect(booking).toHaveProperty('currency')
-                expect(booking).toHaveProperty('createdAt')
-                expect(booking).toHaveProperty('updatedAt')
+                expect(booking).toHaveProperty('guest_name')
+                expect(booking).toHaveProperty('number_of_adults')
+                expect(booking).toHaveProperty('created_at')
+                expect(booking).toHaveProperty('booked_at')
 
-                // Verify guest structure
-                expect(booking.guest).toHaveProperty('name')
-                expect(typeof booking.guest.name).toBe('string')
+                // Verify guest_name is a string
+                expect(typeof booking.guest_name).toBe('string')
 
                 // Verify dates are valid ISO strings
-                expect(() => new Date(booking.checkIn)).not.toThrow()
-                expect(() => new Date(booking.checkOut)).not.toThrow()
-                expect(() => new Date(booking.createdAt)).not.toThrow()
-                expect(() => new Date(booking.updatedAt)).not.toThrow()
+                expect(() => new Date(booking.check_in_date)).not.toThrow()
+                expect(() => new Date(booking.check_out_date)).not.toThrow()
+                expect(() => new Date(booking.created_at)).not.toThrow()
+                expect(() => new Date(booking.booked_at)).not.toThrow()
+
+                // Verify rates structure
+                expect(booking).toHaveProperty('rates')
+                expect(booking.rates).toHaveProperty('total_rate')
+                expect(booking.rates).toHaveProperty('total_commission')
+                expect(booking.rates).toHaveProperty('rate')
+                expect(booking.rates).toHaveProperty('commission')
+                expect(booking.rates).toHaveProperty('details')
+
+                // Verify money amount structure
+                expect(booking.rates.total_rate).toHaveProperty('currency')
+                expect(booking.rates.total_rate).toHaveProperty('amount')
+                expect(typeof booking.rates.total_rate.amount).toBe('number')
+                expect(typeof booking.rates.total_rate.currency).toBe('string')
+
+                // Verify details array
+                expect(Array.isArray(booking.rates.details)).toBe(true)
+                if (booking.rates.details.length > 0) {
+                    const detail = booking.rates.details[0]
+                    expect(detail).toHaveProperty('type')
+                    expect(detail).toHaveProperty('description')
+                    expect(detail).toHaveProperty('currency')
+                    expect(detail).toHaveProperty('amount')
+                    expect(typeof detail.amount).toBe('number')
+                }
+
+                // Verify additional fields
+                expect(booking).toHaveProperty('check_in_details')
+                expect(booking).toHaveProperty('guests')
+                expect(Array.isArray(booking.guests)).toBe(true)
+                expect(booking).toHaveProperty('custom_channel')
+                expect(booking.custom_channel).toHaveProperty('id')
+                expect(booking.custom_channel).toHaveProperty('name')
             }
         })
 

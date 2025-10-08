@@ -76,90 +76,153 @@ export interface RoomTypesResponse {
 // ============================================================================
 
 export type ReservationStatus =
-    | 'confirmed'
+    | 'accepted'
     | 'pending'
     | 'cancelled'
     | 'completed'
 
-export interface Guest {
+export type ChannelType =
+    | 'airbnb'
+    | 'booking.com'
+    | 'booking_site'
+    | 'hostex_direct'
+    | 'vrbo'
+    | 'direct'
+
+export interface MoneyAmount {
+    currency: string
+    amount: number
+}
+
+export type RateDetailType =
+    | 'ACCOMMODATION'
+    | 'HOST_SERVICE_FEE'
+    | 'CLEANING_FEE'
+    | 'EXTRA_GUEST_FEE'
+    | 'PET_FEE'
+    | 'TAX'
+    | 'OTHER'
+
+export interface RateDetail {
+    type: RateDetailType
+    description: string
+    currency: string
+    amount: number
+}
+
+export interface Rates {
+    total_rate: MoneyAmount
+    total_commission: MoneyAmount | null
+    rate: MoneyAmount
+    commission: MoneyAmount | null
+    details: RateDetail[]
+}
+
+export interface CheckInDetails {
+    arrival_at: string | null
+    departure_at: string | null
+    lock_code: string | null
+    lock_code_visible_after: string
+    deposit: number | null
+}
+
+export interface CustomChannel {
+    id: number
     name: string
-    email?: string
-    phone?: string
+}
+
+export interface ReservationGuest {
+    id: number
+    name: string
+    phone: string
+    email: string
+    id_type: string | null
+    id_number: string | null
+    gender: string | null
+    country: string | null
+    is_booker: boolean
 }
 
 export interface Reservation {
-    code: string
-    propertyId: string
-    roomTypeId?: string
-    checkIn: string
-    checkOut: string
+    reservation_code: string
+    stay_code: string
+    channel_id: string
+    property_id: number
+    channel_type: ChannelType
+    listing_id: string
+    check_in_date: string
+    check_out_date: string
+    number_of_guests: number
+    number_of_adults: number
+    number_of_children: number
+    number_of_infants: number
+    number_of_pets: number
     status: ReservationStatus
-    guest: Guest
-    adults: number
-    children?: number
-    nights: number
-    price: number
-    currency: string
-    channel?: string
-    lockCode?: string
-    customFields?: Record<string, unknown>
-    createdAt: string
-    updatedAt: string
+    guest_name: string
+    guest_phone: string
+    guest_email: string
+    cancelled_at: string | null
+    booked_at: string
+    created_at: string
+    creator: string
+    rates: Rates
+    check_in_details: CheckInDetails
+    remarks: string
+    channel_remarks: string
+    conversation_id: string | null
+    tags: string[]
+    custom_channel: CustomChannel
+    guests: ReservationGuest[]
+    custom_fields: Record<string, unknown> | null
+    in_reservation_box: boolean
 }
 
 export interface ReservationsQueryParams {
-    propertyId?: string
+    property_id?: number
     status?: ReservationStatus
-    checkInFrom?: string
-    checkInTo?: string
-    checkOutFrom?: string
-    checkOutTo?: string
-    updatedFrom?: string
-    updatedTo?: string
+    check_in_from?: string
+    check_in_to?: string
+    check_out_from?: string
+    check_out_to?: string
+    updated_from?: string
+    updated_to?: string
     page?: number
-    pageSize?: number
+    page_size?: number
 }
 
 export interface ReservationsResponse {
-    data: Reservation[]
-    total: number
-    page: number
-    pageSize: number
-    requestId: string
+    bookings: {
+        reservations: Reservation[]
+    }
 }
 
 export interface CreateReservationInput {
-    propertyId: string
-    roomTypeId?: string
-    checkIn: string
-    checkOut: string
-    guest: Guest
-    adults: number
-    children?: number
-    price: number
-    currency: string
-    channel?: string
-    customFields?: Record<string, unknown>
+    property_id: number
+    listing_id?: string
+    check_in_date: string
+    check_out_date: string
+    guest_name: string
+    guest_phone?: string
+    guest_email?: string
+    number_of_adults: number
+    number_of_children?: number
+    number_of_infants?: number
+    number_of_pets?: number
+    channel_type?: ChannelType
+    custom_fields?: Record<string, unknown>
 }
 
 export interface CreateReservationResponse {
-    data: {
-        code: string
-        reservation: Reservation
-    }
-    requestId: string
+    reservation: Reservation
 }
 
 export interface UpdateLockCodeInput {
-    code: string
-    lockCode: string
+    reservation_code: string
+    lock_code: string
 }
 
 export interface UpdateLockCodeResponse {
-    data: {
-        success: boolean
-    }
-    requestId: string
+    success: boolean
 }
 
 // ============================================================================

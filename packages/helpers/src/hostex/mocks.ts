@@ -3,20 +3,28 @@ import { faker } from '@faker-js/faker'
 import { futureDate, isoDate } from '../date'
 import type {
     AvailabilitiesResponse,
+    ChannelType,
+    CheckInDetails,
     Conversation,
     ConversationDetailsResponse,
     ConversationsResponse,
     CreateReservationResponse,
     CreateReviewResponse,
     CreateWebhookResponse,
+    CustomChannel,
     ListingCalendarDay,
     ListingCalendarResponse,
     ListingUpdateResponse,
     Message,
+    MoneyAmount,
     PropertiesResponse,
     Property,
     PropertyAvailability,
+    RateDetail,
+    RateDetailType,
+    Rates,
     Reservation,
+    ReservationGuest,
     ReservationsResponse,
     ReservationStatus,
     Review,
@@ -131,49 +139,259 @@ export const mockRoomTypesResponse = (
 // ============================================================================
 
 /**
+ * Generate a mock MoneyAmount
+ */
+export const mockMoneyAmount = (
+    overrides?: Partial<MoneyAmount>
+): MoneyAmount => {
+    return {
+        currency: faker.finance.currencyCode(),
+        amount: faker.number.float({ min: 50, max: 5000, fractionDigits: 2 }),
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock RateDetail
+ */
+export const mockRateDetail = (overrides?: Partial<RateDetail>): RateDetail => {
+    const type = faker.helpers.arrayElement<RateDetailType>([
+        'ACCOMMODATION',
+        'HOST_SERVICE_FEE',
+        'CLEANING_FEE',
+        'EXTRA_GUEST_FEE',
+        'PET_FEE',
+        'TAX',
+        'OTHER',
+    ])
+
+    const descriptions: Record<RateDetailType, string> = {
+        ACCOMMODATION: 'Payout',
+        HOST_SERVICE_FEE: 'Commission',
+        CLEANING_FEE: 'Cleaning fee',
+        EXTRA_GUEST_FEE: 'Extra guest fee',
+        PET_FEE: 'Pet fee',
+        TAX: 'Tax',
+        OTHER: 'Other fee',
+    }
+
+    return {
+        type,
+        description: descriptions[type],
+        currency: faker.finance.currencyCode(),
+        amount: faker.number.float({ min: 10, max: 500, fractionDigits: 2 }),
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock Rates object with mathematically correct values
+ */
+export const mockRates = (currency: string = 'EUR'): Rates => {
+    const hasCommission = faker.datatype.boolean({ probability: 0.7 })
+
+    // Generate base amounts
+    const accommodationAmount = faker.number.float({
+        min: 200,
+        max: 1000,
+        fractionDigits: 2,
+    })
+
+    const details: RateDetail[] = [
+        {
+            type: 'ACCOMMODATION',
+            description: 'Payout',
+            currency,
+            amount: accommodationAmount,
+        },
+    ]
+
+    let totalRate = accommodationAmount
+    let commissionAmount = 0
+
+    // Optionally add commission
+    if (hasCommission) {
+        commissionAmount = faker.number.float({
+            min: 50,
+            max: 200,
+            fractionDigits: 2,
+        })
+        details.push({
+            type: 'HOST_SERVICE_FEE',
+            description: 'Commission',
+            currency,
+            amount: commissionAmount,
+        })
+    }
+
+    // Optionally add cleaning fee
+    if (faker.datatype.boolean({ probability: 0.5 })) {
+        const cleaningFee = faker.number.float({
+            min: 50,
+            max: 150,
+            fractionDigits: 2,
+        })
+        totalRate += cleaningFee
+        details.push({
+            type: 'CLEANING_FEE',
+            description: 'Cleaning fee',
+            currency,
+            amount: cleaningFee,
+        })
+    }
+
+    return {
+        total_rate: {
+            currency,
+            amount: totalRate,
+        },
+        total_commission: hasCommission
+            ? {
+                  currency,
+                  amount: commissionAmount,
+              }
+            : null,
+        rate: {
+            currency,
+            amount: totalRate,
+        },
+        commission: hasCommission
+            ? {
+                  currency,
+                  amount: commissionAmount,
+              }
+            : null,
+        details,
+    }
+}
+
+/**
+ * Generate a mock CheckInDetails
+ */
+export const mockCheckInDetails = (
+    overrides?: Partial<CheckInDetails>
+): CheckInDetails => {
+    return {
+        arrival_at: null,
+        departure_at: null,
+        lock_code: null,
+        lock_code_visible_after: '12:00',
+        deposit: null,
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock CustomChannel
+ */
+export const mockCustomChannel = (
+    overrides?: Partial<CustomChannel>
+): CustomChannel => {
+    return {
+        id: faker.number.int({ min: 1, max: 50 }),
+        name: faker.helpers.arrayElement([
+            'Airbnb',
+            'Booking.com',
+            'BookingSite',
+            'VRBO',
+            'Direct',
+        ]),
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock ReservationGuest
+ */
+export const mockReservationGuest = (
+    overrides?: Partial<ReservationGuest>
+): ReservationGuest => {
+    return {
+        id: faker.number.int({ min: 10000000, max: 99999999 }),
+        name: faker.person.fullName(),
+        phone: faker.phone.number(),
+        email: faker.internet.email(),
+        id_type: null,
+        id_number: null,
+        gender: null,
+        country: faker.helpers.arrayElement([
+            'US',
+            'GB',
+            'NL',
+            'BE',
+            'DE',
+            'FR',
+            null,
+        ]),
+        is_booker: true,
+        ...overrides,
+    }
+}
+
+/**
  * Generate a mock Reservation
  */
 export const mockReservation = (
     overrides?: Partial<Reservation>
 ): Reservation => {
-    const checkIn = futureDate(30)
+    const check_in_date = futureDate(30)
     const nights = faker.number.int({ min: 1, max: 14 })
-    const checkOutDate = new Date(checkIn)
+    const checkOutDate = new Date(check_in_date)
     checkOutDate.setDate(checkOutDate.getDate() + nights)
-    const checkOut = checkOutDate.toISOString().split('T')[0]!
+    const check_out_date = checkOutDate.toISOString().split('T')[0]!
+    const currency = 'EUR'
+    const rates = mockRates(currency)
+    const channel_type = faker.helpers.arrayElement<ChannelType>([
+        'airbnb',
+        'booking.com',
+        'booking_site',
+        'hostex_direct',
+        'vrbo',
+    ])
+    const guest_name = faker.person.fullName()
+    const status = faker.helpers.arrayElement<ReservationStatus>([
+        'accepted',
+        'pending',
+        'cancelled',
+        'completed',
+    ])
 
     return {
-        code: `RES-${faker.string.alphanumeric(8).toUpperCase()}`,
-        propertyId: faker.string.uuid(),
-        roomTypeId: faker.string.uuid(),
-        checkIn,
-        checkOut,
-        status: faker.helpers.arrayElement<ReservationStatus>([
-            'confirmed',
-            'pending',
-            'cancelled',
-            'completed',
-        ]),
-        guest: {
-            name: faker.person.fullName(),
-            email: faker.internet.email(),
-            phone: faker.phone.number(),
-        },
-        adults: faker.number.int({ min: 1, max: 4 }),
-        children: faker.number.int({ min: 0, max: 3 }),
-        nights,
-        price: faker.number.float({ min: 100, max: 5000, fractionDigits: 2 }),
-        currency: faker.finance.currencyCode(),
-        channel: faker.helpers.arrayElement([
-            'airbnb',
-            'booking.com',
-            'direct',
-            'vrbo',
-        ]),
-        lockCode: faker.string.numeric(4),
-        customFields: {},
-        createdAt: isoDate(),
-        updatedAt: isoDate(),
+        reservation_code: `${faker.number.int({ min: 0, max: 9 })}-${faker.string.alphanumeric(10).toUpperCase()}-${faker.string.alphanumeric(10)}`,
+        stay_code: `${faker.number.int({ min: 0, max: 9 })}-${faker.string.alphanumeric(10).toUpperCase()}-${faker.string.alphanumeric(10)}`,
+        channel_id: faker.string.alphanumeric(10).toUpperCase(),
+        property_id: faker.number.int({ min: 10000000, max: 99999999 }),
+        channel_type,
+        listing_id: faker.string.numeric(19),
+        check_in_date,
+        check_out_date,
+        number_of_guests: faker.number.int({ min: 1, max: 6 }),
+        number_of_adults: faker.number.int({ min: 1, max: 4 }),
+        number_of_children: faker.number.int({ min: 0, max: 2 }),
+        number_of_infants: faker.number.int({ min: 0, max: 1 }),
+        number_of_pets: faker.number.int({ min: 0, max: 1 }),
+        status,
+        guest_name,
+        guest_phone: faker.phone.number(),
+        guest_email: faker.internet.email(),
+        cancelled_at: status === 'cancelled' ? isoDate() : null,
+        booked_at: isoDate(),
+        created_at: isoDate(),
+        creator: faker.helpers.arrayElement(['System', faker.internet.email()]),
+        rates,
+        check_in_details: mockCheckInDetails(),
+        remarks: '',
+        channel_remarks: faker.datatype.boolean({ probability: 0.3 })
+            ? faker.lorem.paragraph()
+            : '',
+        conversation_id: faker.datatype.boolean({ probability: 0.8 })
+            ? `${faker.number.int({ min: 0, max: 9 })}-${faker.string.numeric(10)}`
+            : null,
+        tags: [],
+        custom_channel: mockCustomChannel(),
+        guests: [mockReservationGuest({ name: guest_name, is_booker: true })],
+        custom_fields: null,
+        in_reservation_box: false,
         ...overrides,
     }
 }
@@ -183,18 +401,14 @@ export const mockReservation = (
  */
 export const mockReservationsResponse = (
     count: number = 5,
-    page: number = 1,
-    pageSize: number = 20,
     overrides?: Partial<ReservationsResponse>
 ): ReservationsResponse => {
     const reservations = Array.from({ length: count }, () => mockReservation())
 
     return {
-        data: reservations,
-        total: count,
-        page,
-        pageSize,
-        requestId: mockRequestId(),
+        bookings: {
+            reservations,
+        },
         ...overrides,
     }
 }
@@ -208,11 +422,7 @@ export const mockCreateReservationResponse = (
     const reservation = mockReservation()
 
     return {
-        data: {
-            code: reservation.code,
-            reservation,
-        },
-        requestId: mockRequestId(),
+        reservation,
         ...overrides,
     }
 }
@@ -224,10 +434,7 @@ export const mockUpdateLockCodeResponse = (
     overrides?: Partial<UpdateLockCodeResponse>
 ): UpdateLockCodeResponse => {
     return {
-        data: {
-            success: true,
-        },
-        requestId: mockRequestId(),
+        success: true,
         ...overrides,
     }
 }
@@ -584,13 +791,13 @@ export const mockCompleteDataset = () => {
 export const mockRelatedDataset = () => {
     const property = mockProperty()
     const reservations = Array.from({ length: 5 }, () =>
-        mockReservation({ propertyId: property.id })
+        mockReservation({ property_id: parseInt(property.id) })
     )
     const conversations = reservations.map((reservation) =>
         mockConversation({
-            reservationCode: reservation.code,
+            reservationCode: reservation.reservation_code,
             propertyId: property.id,
-            guestName: reservation.guest.name,
+            guestName: reservation.guest_name,
         })
     )
 

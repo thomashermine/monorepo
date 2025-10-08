@@ -24,13 +24,7 @@ const router = HttpRouter.empty.pipe(
 
             // Fetch upcoming reservations
             const reservations = yield* hostexService.getReservations({})
-            return yield* HttpServerResponse.json({
-                bookings: reservations.data,
-                page: reservations.page,
-                pageSize: reservations.pageSize,
-                requestId: reservations.requestId,
-                total: reservations.total,
-            })
+            return yield* HttpServerResponse.json(reservations)
         })
     )
 )

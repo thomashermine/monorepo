@@ -106,65 +106,81 @@ describe('Hostex Mocks', () => {
             const reservation = mockReservation()
 
             expect(reservation).toBeDefined()
-            expect(reservation.code).toMatch(/^RES-/)
-            expect(reservation.propertyId).toBeTypeOf('string')
-            expect(reservation.checkIn).toBeTypeOf('string')
-            expect(reservation.checkOut).toBeTypeOf('string')
-            expect(reservation.guest.name).toBeTypeOf('string')
-            expect(reservation.adults).toBeTypeOf('number')
-            expect(reservation.nights).toBeTypeOf('number')
-            expect(reservation.price).toBeTypeOf('number')
-            expect([
-                'confirmed',
-                'pending',
-                'cancelled',
-                'completed',
-            ]).toContain(reservation.status)
+            expect(reservation.reservation_code).toBeTypeOf('string')
+            expect(reservation.property_id).toBeTypeOf('number')
+            expect(reservation.check_in_date).toBeTypeOf('string')
+            expect(reservation.check_out_date).toBeTypeOf('string')
+            expect(reservation.guest_name).toBeTypeOf('string')
+            expect(reservation.number_of_adults).toBeTypeOf('number')
+            expect(reservation.number_of_guests).toBeTypeOf('number')
+            expect(['accepted', 'pending', 'cancelled', 'completed']).toContain(
+                reservation.status
+            )
+            expect(reservation.rates).toBeDefined()
+            expect(reservation.check_in_details).toBeDefined()
+            expect(reservation.custom_channel).toBeDefined()
+            expect(Array.isArray(reservation.guests)).toBe(true)
         })
 
         it('should generate checkOut date after checkIn', () => {
             const reservation = mockReservation()
-            const checkIn = new Date(reservation.checkIn)
-            const checkOut = new Date(reservation.checkOut)
+            const checkIn = new Date(reservation.check_in_date)
+            const checkOut = new Date(reservation.check_out_date)
 
             expect(checkOut.getTime()).toBeGreaterThan(checkIn.getTime())
         })
 
         it('should apply overrides to Reservation', () => {
             const reservation = mockReservation({
-                code: 'RES-123',
-                status: 'confirmed',
-                adults: 4,
+                reservation_code: 'TEST-123',
+                status: 'accepted',
+                number_of_adults: 4,
             })
 
-            expect(reservation.code).toBe('RES-123')
-            expect(reservation.status).toBe('confirmed')
-            expect(reservation.adults).toBe(4)
+            expect(reservation.reservation_code).toBe('TEST-123')
+            expect(reservation.status).toBe('accepted')
+            expect(reservation.number_of_adults).toBe(4)
         })
 
         it('should generate a valid ReservationsResponse', () => {
-            const response = mockReservationsResponse(10, 1, 20)
+            const response = mockReservationsResponse(10)
 
-            expect(response.data).toHaveLength(10)
-            expect(response.total).toBe(10)
-            expect(response.page).toBe(1)
-            expect(response.pageSize).toBe(20)
-            expect(response.requestId).toBeTypeOf('string')
+            expect(response.bookings.reservations).toHaveLength(10)
         })
 
         it('should generate a valid CreateReservationResponse', () => {
             const response = mockCreateReservationResponse()
 
-            expect(response.data.code).toMatch(/^RES-/)
-            expect(response.data.reservation).toBeDefined()
-            expect(response.data.reservation.code).toBe(response.data.code)
+            expect(response.reservation).toBeDefined()
+            expect(response.reservation.reservation_code).toBeTypeOf('string')
         })
 
         it('should generate a valid UpdateLockCodeResponse', () => {
             const response = mockUpdateLockCodeResponse()
 
-            expect(response.data.success).toBe(true)
-            expect(response.requestId).toBeTypeOf('string')
+            expect(response.success).toBe(true)
+        })
+
+        it('should generate rates with correct structure', () => {
+            const reservation = mockReservation()
+
+            expect(reservation.rates.total_rate).toBeDefined()
+            expect(reservation.rates.total_rate.currency).toBeTypeOf('string')
+            expect(reservation.rates.total_rate.amount).toBeTypeOf('number')
+            expect(reservation.rates.rate).toBeDefined()
+            expect(Array.isArray(reservation.rates.details)).toBe(true)
+            expect(reservation.rates.details.length).toBeGreaterThan(0)
+        })
+
+        it('should generate guests array with at least one guest', () => {
+            const reservation = mockReservation()
+
+            expect(reservation.guests.length).toBeGreaterThanOrEqual(1)
+            const guest = reservation.guests[0]
+            expect(guest).toBeDefined()
+            expect(guest!.id).toBeTypeOf('number')
+            expect(guest!.name).toBe(reservation.guest_name)
+            expect(guest!.is_booker).toBe(true)
         })
     })
 
@@ -438,7 +454,7 @@ describe('Hostex Mocks', () => {
             expect(dataset.properties).toBeDefined()
             expect(dataset.properties.data).toHaveLength(5)
             expect(dataset.roomTypes.data).toHaveLength(8)
-            expect(dataset.reservations.data).toHaveLength(20)
+            expect(dataset.reservations.bookings.reservations).toHaveLength(20)
             expect(dataset.availabilities.data).toHaveLength(30)
             expect(dataset.conversations.data).toHaveLength(15)
             expect(dataset.reviews.data).toHaveLength(25)
@@ -452,17 +468,21 @@ describe('Hostex Mocks', () => {
             expect(dataset.reservations).toHaveLength(5)
             expect(dataset.conversations).toHaveLength(5)
 
-            // All reservations should have the same propertyId
+            // All reservations should have the same property_id
             dataset.reservations.forEach((reservation) => {
-                expect(reservation.propertyId).toBe(dataset.property.id)
+                expect(reservation.property_id).toBe(
+                    parseInt(dataset.property.id)
+                )
             })
 
             // All conversations should match their reservation codes
             dataset.conversations.forEach((conversation, index) => {
                 const reservation = dataset.reservations[index]
-                expect(conversation.reservationCode).toBe(reservation?.code)
+                expect(conversation.reservationCode).toBe(
+                    reservation?.reservation_code
+                )
                 expect(conversation.propertyId).toBe(dataset.property.id)
-                expect(conversation.guestName).toBe(reservation?.guest.name)
+                expect(conversation.guestName).toBe(reservation?.guest_name)
             })
         })
     })
@@ -472,8 +492,8 @@ describe('Hostex Mocks', () => {
             const reservation = mockReservation()
 
             // Dates should be in YYYY-MM-DD format
-            expect(reservation.checkIn).toMatch(/^\d{4}-\d{2}-\d{2}$/)
-            expect(reservation.checkOut).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+            expect(reservation.check_in_date).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+            expect(reservation.check_out_date).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         })
 
         it('should generate valid ISO datetime strings', () => {
@@ -494,14 +514,15 @@ describe('Hostex Mocks', () => {
         it('should generate valid reservation codes', () => {
             const reservation = mockReservation()
 
-            expect(reservation.code).toMatch(/^RES-[A-Z0-9]{8}$/)
+            expect(reservation.reservation_code).toBeTypeOf('string')
+            expect(reservation.stay_code).toBeTypeOf('string')
         })
 
         it('should generate valid currency codes', () => {
             const reservation = mockReservation()
 
-            expect(reservation.currency).toBeTypeOf('string')
-            expect(reservation.currency.length).toBe(3)
+            expect(reservation.rates.total_rate.currency).toBeTypeOf('string')
+            expect(reservation.rates.total_rate.currency.length).toBe(3)
         })
 
         it('should generate realistic numeric values', () => {
@@ -518,9 +539,30 @@ describe('Hostex Mocks', () => {
         it('should generate valid email addresses', () => {
             const reservation = mockReservation()
 
-            if (reservation.guest.email) {
-                expect(reservation.guest.email).toMatch(/@/)
+            if (reservation.guest_email) {
+                expect(reservation.guest_email).toMatch(/@/)
             }
+        })
+
+        it('should generate valid channel types', () => {
+            const reservation = mockReservation()
+
+            expect([
+                'airbnb',
+                'booking.com',
+                'booking_site',
+                'hostex_direct',
+                'vrbo',
+            ]).toContain(reservation.channel_type)
+        })
+
+        it('should generate check_in_details with correct structure', () => {
+            const reservation = mockReservation()
+
+            expect(reservation.check_in_details).toBeDefined()
+            expect(reservation.check_in_details.lock_code_visible_after).toBe(
+                '12:00'
+            )
         })
     })
 
