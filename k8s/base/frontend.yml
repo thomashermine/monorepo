@@ -13,10 +13,10 @@ spec:
                 app: monorepo-frontend
         spec:
             imagePullSecrets:
-                - name: ghcr-secret-monorepo-template
+                - name: ghcr-secret-monorepo
             containers:
                 - name: frontend
-                  image: ghcr.io/thomashermine/thomashermine-monorepo-template/frontend
+                  image: ghcr.io/thomashermine/thomashermine-monorepo/frontend
                   ports:
                       - containerPort: 3000
                   envFrom:
@@ -48,10 +48,10 @@ spec:
     ingressClassName: nginx
     tls:
         - hosts:
-              - m.thomashermine.be
+              - monorepo.thomashermine.be
           secretName: monorepo-frontend-tls
     rules:
-        - host: m.thomashermine.be
+        - host: monorepo.thomashermine.be
           http:
               paths:
                   - path: /

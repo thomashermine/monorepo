@@ -6,10 +6,10 @@ metadata:
 spec:
     tls:
         - hosts:
-              - staging.monorepo-template.thomashermine.be
+              - staging.monorepo.thomashermine.be
           secretName: monorepo-frontend-tls
     rules:
-        - host: staging.monorepo-template.thomashermine.be
+        - host: staging.monorepo.thomashermine.be
           http:
               paths:
                   - path: /
