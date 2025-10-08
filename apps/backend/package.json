@@ -33,11 +33,12 @@
         "vitest": "^3.2.4"
     },
     "dependencies": {
-        "@monorepo/helpers": "workspace:*",
-        "@monorepo/config": "workspace:*",
         "@effect/platform": "^0.92.1",
         "@effect/platform-node": "^0.98.3",
+        "@monorepo/config": "workspace:*",
+        "@monorepo/helpers": "workspace:*",
         "dotenv": "^17.2.3",
-        "effect": "^3.18.2"
+        "effect": "^3.18.2",
+        "ics": "^3.8.1"
     }
 }

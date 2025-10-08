@@ -19,6 +19,7 @@ import {
     type ListingCalendarResponse,
     type ListingUpdateResponse,
     type PropertiesResponse,
+    type Reservation,
     type ReservationsQueryParams,
     type ReservationsResponse,
     type ReviewsQueryParams,
@@ -64,10 +65,7 @@ export class HostexService extends Context.Tag('HostexService')<
         // Reservations
         readonly getReservations: (
             params?: ReservationsQueryParams
-        ) => Effect.Effect<
-            ReservationsResponse,
-            HostexError | HostexNetworkError
-        >
+        ) => Effect.Effect<Reservation[], HostexError | HostexNetworkError>
 
         readonly createReservation: (
             input: CreateReservationInput
@@ -309,7 +307,7 @@ export const HostexServiceLive = Layer.effect(
                 return makeRequest<ReservationsResponse>(
                     config,
                     `/reservations${query}`
-                )
+                ).pipe(Effect.map((response) => response.data.reservations))
             },
 
             createReservation: (input) =>
@@ -523,7 +521,7 @@ export const makeHostexServiceLayer = (
             return makeRequest<ReservationsResponse>(
                 config,
                 `/reservations${query}`
-            )
+            ).pipe(Effect.map((response) => response.data.reservations))
         },
 
         createReservation: (input) =>
@@ -690,3 +688,17 @@ export const makeHostexServiceLayer = (
                 { method: 'DELETE' }
             ),
     })
+
+// ============================================================================
+// Helper Functions - Re-export from helpers module
+// ============================================================================
+
+export {
+    generateCheckInOutEvents,
+    generateDescriptionForReservation,
+    generateFullDayEvents,
+    generateGuestEmojis,
+    generateTitleForReservation,
+    type PropertyTimeConfig,
+    ReservationProcessingError,
+} from './helpers'

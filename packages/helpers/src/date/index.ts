@@ -88,3 +88,32 @@ export const formatDate = (
         .replace('MM', (date.getMonth() + 1).toString().padStart(2, '0'))
         .replace('DD', date.getDate().toString().padStart(2, '0'))
 }
+
+/**
+ * Calculate the number of nights between check-in and check-out dates
+ */
+export const calculateNights = (checkIn: string, checkOut: string): number => {
+    const checkInDate = new Date(checkIn)
+    const checkOutDate = new Date(checkOut)
+    const diffTime = checkOutDate.getTime() - checkInDate.getTime()
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+}
+
+/**
+ * Convert date string with time to ICS datetime array format
+ * @returns [year, month, day, hour, minute]
+ */
+export const parseICSDateTime = (
+    dateString: string,
+    hour: number,
+    minute: number
+): [number, number, number, number, number] => {
+    const date = new Date(dateString)
+    return [
+        date.getFullYear(),
+        date.getMonth() + 1,
+        date.getDate(),
+        hour,
+        minute,
+    ]
+}

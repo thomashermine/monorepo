@@ -191,7 +191,7 @@ export interface ReservationsQueryParams {
 }
 
 export interface ReservationsResponse {
-    bookings: {
+    data: {
         reservations: Reservation[]
     }
 }

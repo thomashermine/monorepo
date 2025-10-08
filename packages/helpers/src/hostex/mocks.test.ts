@@ -145,7 +145,7 @@ describe('Hostex Mocks', () => {
         it('should generate a valid ReservationsResponse', () => {
             const response = mockReservationsResponse(10)
 
-            expect(response.bookings.reservations).toHaveLength(10)
+            expect(response.data.reservations).toHaveLength(10)
         })
 
         it('should generate a valid CreateReservationResponse', () => {
@@ -454,7 +454,7 @@ describe('Hostex Mocks', () => {
             expect(dataset.properties).toBeDefined()
             expect(dataset.properties.data).toHaveLength(5)
             expect(dataset.roomTypes.data).toHaveLength(8)
-            expect(dataset.reservations.bookings.reservations).toHaveLength(20)
+            expect(dataset.reservations.data.reservations).toHaveLength(20)
             expect(dataset.availabilities.data).toHaveLength(30)
             expect(dataset.conversations.data).toHaveLength(15)
             expect(dataset.reviews.data).toHaveLength(25)

@@ -187,7 +187,7 @@ export const mockRateDetail = (overrides?: Partial<RateDetail>): RateDetail => {
 /**
  * Generate a mock Rates object with mathematically correct values
  */
-export const mockRates = (currency: string = 'EUR'): Rates => {
+export const mockRates = (currency: string = '€'): Rates => {
     const hasCommission = faker.datatype.boolean({ probability: 0.7 })
 
     // Generate base amounts
@@ -339,7 +339,7 @@ export const mockReservation = (
     const checkOutDate = new Date(check_in_date)
     checkOutDate.setDate(checkOutDate.getDate() + nights)
     const check_out_date = checkOutDate.toISOString().split('T')[0]!
-    const currency = 'EUR'
+    const currency = '€'
     const rates = mockRates(currency)
     const channel_type = faker.helpers.arrayElement<ChannelType>([
         'airbnb',
@@ -406,7 +406,7 @@ export const mockReservationsResponse = (
     const reservations = Array.from({ length: count }, () => mockReservation())
 
     return {
-        bookings: {
+        data: {
             reservations,
         },
         ...overrides,

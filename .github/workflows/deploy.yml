@@ -299,12 +299,12 @@ jobs:
               run: |
                   BACKEND_URL="${{ needs.deploy-to-flyio.outputs.backend-url }}"
                   echo "Waiting for ${BACKEND_URL} to be ready..."
-                  for i in {1..30}; do
+                  for i in {1..10}; do
                     if curl -sf -X POST "${BACKEND_URL}/echo" -H "Content-Type: text/plain" -d "health-check" > /dev/null 2>&1; then
                       echo "✅ Backend is ready!"
                       exit 0
                     fi
-                    echo "Attempt $i/30: Backend not ready yet, waiting..."
+                    echo "Attempt $i/18: Backend not ready yet, waiting..."
                     sleep 10
                   done
                   echo "❌ Backend did not become ready in time"
