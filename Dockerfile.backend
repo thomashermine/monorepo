@@ -36,18 +36,8 @@ RUN pnpm install --frozen-lockfile
 
 # Copy source code for all workspace packages
 COPY packages ./packages
+# Copy source code for selected app
 COPY apps/${APP_NAME} ./apps/${APP_NAME}
-
-# Build all workspace packages that have a build script
-RUN for pkg in /app/packages/*; do \
-      if [ -d "$pkg" ] && [ -f "$pkg/package.json" ]; then \
-        cd "$pkg" && \
-        if grep -q '"build"' package.json; then \
-          echo "Building $(basename $pkg)..." && \
-          pnpm run build; \
-        fi; \
-      fi; \
-    done
 
 # Build the backend application
 WORKDIR /app/apps/${APP_NAME}
@@ -70,23 +60,24 @@ WORKDIR /app
 COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
 COPY tsconfig.base.json ./
 
-# Copy package.json files for selected app + all packages
+# Copy package.json files for production dependencies
 COPY apps/${APP_NAME}/package.json ./apps/${APP_NAME}/
-# Copy packages directory structure
 COPY packages ./packages
 RUN find packages -mindepth 2 -type f ! -name 'package.json' -delete && \
     find packages -mindepth 2 -type d -empty -delete
 
-# Install only production dependencies
+# Install production dependencies only
 RUN pnpm install --frozen-lockfile --prod
 
-# Copy built files from builder stage
+# Copy built application from builder
 COPY --from=builder /app/apps/${APP_NAME}/dist ./apps/${APP_NAME}/dist
-# Copy all packages (preserves directory structure)
 COPY --from=builder /app/packages ./packages
 
-# Set working directory to backend app
+# Set working directory to the app
 WORKDIR /app/apps/${APP_NAME}
 
-# Run the application
+# Run as non-root user for security
+USER node
+
+# Start the application
 CMD ["node", "dist/main.js"]

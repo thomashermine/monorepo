@@ -6,7 +6,7 @@ dotenv.config()
 // Get the base URL from environment variable (for testing deployed instances)
 // or fallback to localhost for local development
 const port = process.env.PORT ?? 3000
-const baseUrl = process.env.API_base ?? 'http://localhost:' + port
+const baseUrl = process.env.API_BASE_URL ?? 'http://localhost:' + port
 console.log('baseUrl', baseUrl)
 
 // ============================================================================

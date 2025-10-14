@@ -1,22 +1,22 @@
 {
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
-        "module": "esnext",
+        "lib": ["ES2023"],
+        "module": "ESNext",
         "moduleDetection": "force",
-        "moduleResolution": "bundler",
+        "moduleResolution": "Bundler",
         "noUncheckedIndexedAccess": true,
         "noUncheckedSideEffectImports": true,
-        "paths": {
-            "@monorepo/helpers/*": ["packages/helpers/src/*"],
-            "@monorepo/config/*": ["packages/config/src/*"]
-        },
+        "outDir": "dist",
+        "resolveJsonModule": true,
         "skipLibCheck": true,
         "sourceMap": true,
         "strict": true,
-        "target": "esnext",
+        "target": "ESNext",
         "types": [],
         "verbatimModuleSyntax": true
     },
     "exclude": ["node_modules", "dist", "build"],
-    "include": ["apps/**/*", "packages/**/*"]
+    "include": ["src/**/*", "e2e/**/*", "vite.config.ts"]
 }

@@ -29,7 +29,7 @@ jobs:
               run: pnpm install --frozen-lockfile
 
             - name: 🔨 Build packages
-              run: pnpm -r --filter="@monorepo/helpers" build
+              run: pnpm build
 
             - name: 🔍 Type check
               run: pnpm type-check
@@ -53,6 +53,9 @@ jobs:
 
             - name: ⚙️ Install dependencies
               run: pnpm install --frozen-lockfile
+
+            - name: 🔨 Build packages
+              run: pnpm build
 
             - name: 🔧 Lint
               run: pnpm lint
@@ -87,7 +90,7 @@ jobs:
               run: pnpm install --frozen-lockfile
 
             - name: 🔨 Build packages
-              run: pnpm -r --filter="@monorepo/helpers" build
+              run: pnpm build
 
             - name: 🧪 Run Vitest tests
               run: pnpm test-unit

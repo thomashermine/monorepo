@@ -50,89 +50,71 @@ export * from './types'
 export class HostexService extends Context.Tag('HostexService')<
     HostexService,
     {
-        // Properties
         readonly getProperties: () => Effect.Effect<
             PropertiesResponse,
             HostexError | HostexNetworkError
         >
-
-        // Room Types
         readonly getRoomTypes: () => Effect.Effect<
             RoomTypesResponse,
             HostexError | HostexNetworkError
         >
-
-        // Reservations
         readonly getReservations: (
             params?: ReservationsQueryParams
         ) => Effect.Effect<Reservation[], HostexError | HostexNetworkError>
-
         readonly createReservation: (
             input: CreateReservationInput
         ) => Effect.Effect<
             CreateReservationResponse,
             HostexError | HostexNetworkError
         >
-
         readonly cancelReservation: (
             code: string
         ) => Effect.Effect<
             { success: boolean; requestId: string },
             HostexError | HostexNetworkError
         >
-
         readonly updateLockCode: (
             input: UpdateLockCodeInput
         ) => Effect.Effect<
             UpdateLockCodeResponse,
             HostexError | HostexNetworkError
         >
-
-        // Availability
         readonly getAvailabilities: (
             params: AvailabilitiesQueryParams
         ) => Effect.Effect<
             AvailabilitiesResponse,
             HostexError | HostexNetworkError
         >
-
         readonly updateAvailabilities: (
             input: UpdateAvailabilityInput
         ) => Effect.Effect<
             UpdateAvailabilitiesResponse,
             HostexError | HostexNetworkError
         >
-
-        // Listing Calendar
         readonly getListingCalendar: (
             input: ListingCalendarQueryInput
         ) => Effect.Effect<
             ListingCalendarResponse,
             HostexError | HostexNetworkError
         >
-
         readonly updateListingInventories: (
             inputs: UpdateListingInventoryInput[]
         ) => Effect.Effect<
             ListingUpdateResponse,
             HostexError | HostexNetworkError
         >
-
         readonly updateListingPrices: (
             inputs: UpdateListingPriceInput[]
         ) => Effect.Effect<
             ListingUpdateResponse,
             HostexError | HostexNetworkError
         >
-
         readonly updateListingRestrictions: (
             inputs: UpdateListingRestrictionInput[]
         ) => Effect.Effect<
             ListingUpdateResponse,
             HostexError | HostexNetworkError
         >
-
-        // Messages
         readonly getConversations: (
             page?: number,
             pageSize?: number
@@ -140,46 +122,37 @@ export class HostexService extends Context.Tag('HostexService')<
             ConversationsResponse,
             HostexError | HostexNetworkError
         >
-
         readonly getConversationDetails: (
             conversationId: string
         ) => Effect.Effect<
             ConversationDetailsResponse,
             HostexError | HostexNetworkError
         >
-
         readonly sendMessage: (
             input: SendMessageInput
         ) => Effect.Effect<
             SendMessageResponse,
             HostexError | HostexNetworkError
         >
-
-        // Reviews
         readonly getReviews: (
             params?: ReviewsQueryParams
         ) => Effect.Effect<ReviewsResponse, HostexError | HostexNetworkError>
-
         readonly createReview: (
             input: CreateReviewInput
         ) => Effect.Effect<
             CreateReviewResponse,
             HostexError | HostexNetworkError
         >
-
-        // Webhooks
         readonly getWebhooks: () => Effect.Effect<
             WebhooksResponse,
             HostexError | HostexNetworkError
         >
-
         readonly createWebhook: (
             input: CreateWebhookInput
         ) => Effect.Effect<
             CreateWebhookResponse,
             HostexError | HostexNetworkError
         >
-
         readonly deleteWebhook: (
             webhookId: string
         ) => Effect.Effect<
@@ -188,10 +161,6 @@ export class HostexService extends Context.Tag('HostexService')<
         >
     }
 >() {}
-
-// ============================================================================
-// Service Implementation
-// ============================================================================
 
 const makeRequest = <T>(
     config: HostexConfig,
@@ -211,7 +180,6 @@ const makeRequest = <T>(
         try: async () => {
             const controller = new AbortController()
             const timeout = config.timeout ?? 30000
-
             const timeoutId = setTimeout(() => controller.abort(), timeout)
 
             try {
@@ -224,15 +192,19 @@ const makeRequest = <T>(
                 console.log('response', response)
                 clearTimeout(timeoutId)
 
-                const data = await response.json()
+                const data = (await response.json()) as {
+                    error_msg?: string
+                    request_id?: string
+                    error_code?: string
+                } & T
 
                 if (!response.ok) {
                     throw new HostexError({
                         message:
-                            data.error_msg ||
+                            data.error_msg ??
                             `HTTP ${response.status}: ${response.statusText}`,
-                        requestId: data.request_id,
-                        errorCode: data.error_code,
+                        requestId: data.request_id ?? 'Unknown requestId',
+                        errorCode: data.error_code ?? 'Unknown errorCode',
                     })
                 }
 
@@ -246,7 +218,6 @@ const makeRequest = <T>(
             if (error instanceof HostexError) {
                 return error
             }
-
             return new HostexNetworkError({
                 message:
                     error instanceof Error
@@ -280,15 +251,10 @@ export const HostexServiceLive = Layer.effect(
         )
 
         return {
-            // Properties
             getProperties: () =>
                 makeRequest<PropertiesResponse>(config, '/properties'),
-
-            // Room Types
             getRoomTypes: () =>
                 makeRequest<RoomTypesResponse>(config, '/room_types'),
-
-            // Reservations
             getReservations: (params) => {
                 const query = params
                     ? `?${new URLSearchParams(
@@ -309,7 +275,6 @@ export const HostexServiceLive = Layer.effect(
                     `/reservations${query}`
                 ).pipe(Effect.map((response) => response.data.reservations))
             },
-
             createReservation: (input) =>
                 makeRequest<CreateReservationResponse>(
                     config,
@@ -319,14 +284,12 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify(input),
                     }
                 ),
-
             cancelReservation: (code) =>
                 makeRequest<{ success: boolean; requestId: string }>(
                     config,
                     `/reservations/${code}`,
                     { method: 'DELETE' }
                 ),
-
             updateLockCode: (input) =>
                 makeRequest<UpdateLockCodeResponse>(
                     config,
@@ -336,8 +299,6 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify({ lock_code: input.lock_code }),
                     }
                 ),
-
-            // Availability
             getAvailabilities: (params) => {
                 const query = new URLSearchParams(
                     Object.entries(params).reduce(
@@ -356,7 +317,6 @@ export const HostexServiceLive = Layer.effect(
                     `/availabilities?${query}`
                 )
             },
-
             updateAvailabilities: (input) =>
                 makeRequest<UpdateAvailabilitiesResponse>(
                     config,
@@ -366,8 +326,6 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify(input),
                     }
                 ),
-
-            // Listing Calendar
             getListingCalendar: (input) =>
                 makeRequest<ListingCalendarResponse>(
                     config,
@@ -377,7 +335,6 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify(input),
                     }
                 ),
-
             updateListingInventories: (inputs) =>
                 makeRequest<ListingUpdateResponse>(
                     config,
@@ -387,13 +344,11 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify({ updates: inputs }),
                     }
                 ),
-
             updateListingPrices: (inputs) =>
                 makeRequest<ListingUpdateResponse>(config, '/listings/prices', {
                     method: 'POST',
                     body: JSON.stringify({ updates: inputs }),
                 }),
-
             updateListingRestrictions: (inputs) =>
                 makeRequest<ListingUpdateResponse>(
                     config,
@@ -403,8 +358,6 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify({ updates: inputs }),
                     }
                 ),
-
-            // Messages
             getConversations: (page = 1, pageSize = 20) => {
                 const query = new URLSearchParams({
                     page: String(page),
@@ -416,13 +369,11 @@ export const HostexServiceLive = Layer.effect(
                     `/conversations?${query}`
                 )
             },
-
             getConversationDetails: (conversationId) =>
                 makeRequest<ConversationDetailsResponse>(
                     config,
                     `/conversations/${conversationId}`
                 ),
-
             sendMessage: (input) =>
                 makeRequest<SendMessageResponse>(
                     config,
@@ -436,8 +387,6 @@ export const HostexServiceLive = Layer.effect(
                         }),
                     }
                 ),
-
-            // Reviews
             getReviews: (params) => {
                 const query = params
                     ? `?${new URLSearchParams(
@@ -455,7 +404,6 @@ export const HostexServiceLive = Layer.effect(
 
                 return makeRequest<ReviewsResponse>(config, `/reviews${query}`)
             },
-
             createReview: (input) =>
                 makeRequest<CreateReviewResponse>(
                     config,
@@ -465,17 +413,13 @@ export const HostexServiceLive = Layer.effect(
                         body: JSON.stringify(input),
                     }
                 ),
-
-            // Webhooks
             getWebhooks: () =>
                 makeRequest<WebhooksResponse>(config, '/webhooks'),
-
             createWebhook: (input) =>
                 makeRequest<CreateWebhookResponse>(config, '/webhooks', {
                     method: 'POST',
                     body: JSON.stringify(input),
                 }),
-
             deleteWebhook: (webhookId) =>
                 makeRequest<{ success: boolean; requestId: string }>(
                     config,
@@ -486,23 +430,14 @@ export const HostexServiceLive = Layer.effect(
     })
 )
 
-// ============================================================================
-// Convenience Layer with Direct Config
-// ============================================================================
-
 export const makeHostexServiceLayer = (
     config: HostexConfig
 ): Layer.Layer<HostexService> =>
     Layer.succeed(HostexService, {
-        // Properties
         getProperties: () =>
             makeRequest<PropertiesResponse>(config, '/properties'),
-
-        // Room Types
         getRoomTypes: () =>
             makeRequest<RoomTypesResponse>(config, '/room_types'),
-
-        // Reservations
         getReservations: (params) => {
             const query = params
                 ? `?${new URLSearchParams(
@@ -523,20 +458,17 @@ export const makeHostexServiceLayer = (
                 `/reservations${query}`
             ).pipe(Effect.map((response) => response.data.reservations))
         },
-
         createReservation: (input) =>
             makeRequest<CreateReservationResponse>(config, '/reservations', {
                 method: 'POST',
                 body: JSON.stringify(input),
             }),
-
         cancelReservation: (code) =>
             makeRequest<{ success: boolean; requestId: string }>(
                 config,
                 `/reservations/${code}`,
                 { method: 'DELETE' }
             ),
-
         updateLockCode: (input) =>
             makeRequest<UpdateLockCodeResponse>(
                 config,
@@ -546,8 +478,6 @@ export const makeHostexServiceLayer = (
                     body: JSON.stringify({ lock_code: input.lock_code }),
                 }
             ),
-
-        // Availability
         getAvailabilities: (params) => {
             const query = new URLSearchParams(
                 Object.entries(params).reduce(
@@ -566,7 +496,6 @@ export const makeHostexServiceLayer = (
                 `/availabilities?${query}`
             )
         },
-
         updateAvailabilities: (input) =>
             makeRequest<UpdateAvailabilitiesResponse>(
                 config,
@@ -576,14 +505,11 @@ export const makeHostexServiceLayer = (
                     body: JSON.stringify(input),
                 }
             ),
-
-        // Listing Calendar
         getListingCalendar: (input) =>
             makeRequest<ListingCalendarResponse>(config, '/listings/calendar', {
                 method: 'POST',
                 body: JSON.stringify(input),
             }),
-
         updateListingInventories: (inputs) =>
             makeRequest<ListingUpdateResponse>(
                 config,
@@ -593,13 +519,11 @@ export const makeHostexServiceLayer = (
                     body: JSON.stringify({ updates: inputs }),
                 }
             ),
-
         updateListingPrices: (inputs) =>
             makeRequest<ListingUpdateResponse>(config, '/listings/prices', {
                 method: 'POST',
                 body: JSON.stringify({ updates: inputs }),
             }),
-
         updateListingRestrictions: (inputs) =>
             makeRequest<ListingUpdateResponse>(
                 config,
@@ -609,8 +533,6 @@ export const makeHostexServiceLayer = (
                     body: JSON.stringify({ updates: inputs }),
                 }
             ),
-
-        // Messages
         getConversations: (page = 1, pageSize = 20) => {
             const query = new URLSearchParams({
                 page: String(page),
@@ -622,13 +544,11 @@ export const makeHostexServiceLayer = (
                 `/conversations?${query}`
             )
         },
-
         getConversationDetails: (conversationId) =>
             makeRequest<ConversationDetailsResponse>(
                 config,
                 `/conversations/${conversationId}`
             ),
-
         sendMessage: (input) =>
             makeRequest<SendMessageResponse>(
                 config,
@@ -642,8 +562,6 @@ export const makeHostexServiceLayer = (
                     }),
                 }
             ),
-
-        // Reviews
         getReviews: (params) => {
             const query = params
                 ? `?${new URLSearchParams(
@@ -661,7 +579,6 @@ export const makeHostexServiceLayer = (
 
             return makeRequest<ReviewsResponse>(config, `/reviews${query}`)
         },
-
         createReview: (input) =>
             makeRequest<CreateReviewResponse>(
                 config,
@@ -671,16 +588,12 @@ export const makeHostexServiceLayer = (
                     body: JSON.stringify(input),
                 }
             ),
-
-        // Webhooks
         getWebhooks: () => makeRequest<WebhooksResponse>(config, '/webhooks'),
-
         createWebhook: (input) =>
             makeRequest<CreateWebhookResponse>(config, '/webhooks', {
                 method: 'POST',
                 body: JSON.stringify(input),
             }),
-
         deleteWebhook: (webhookId) =>
             makeRequest<{ success: boolean; requestId: string }>(
                 config,
@@ -688,10 +601,6 @@ export const makeHostexServiceLayer = (
                 { method: 'DELETE' }
             ),
     })
-
-// ============================================================================
-// Helper Functions - Re-export from helpers module
-// ============================================================================
 
 export {
     generateCheckInOutEvents,
