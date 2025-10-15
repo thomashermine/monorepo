@@ -5,7 +5,7 @@ resources:
     - config.yml
 
 images:
-    - name: ghcr.io/thomashermine/thomashermine-monorepo-template/backend
+    - name: ghcr.io/thomashermine/thomashermine-monorepo/backend
       newTag: latest
-    - name: ghcr.io/thomashermine/thomashermine-monorepo-template/frontend
+    - name: ghcr.io/thomashermine/thomashermine-monorepo/frontend
       newTag: latest

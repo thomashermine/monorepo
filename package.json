@@ -16,7 +16,8 @@
         "test-e2e": "pnpm run --recursive test-e2e",
         "test-e2e:open": "pnpm run --recursive test-e2e:open",
         "test-e2e:report": "pnpm run --recursive test-e2e:open",
-        "build": "pnpm run --parallel build"
+        "build": "pnpm run --filter @monorepo/helpers build && pnpm run --filter @monorepo/config build && pnpm run --filter './apps/**' build",
+        "validate": "pnpm run --parallel type-check && pnpm run --parallel lint"
     },
     "devDependencies": {},
     "packageManager": "pnpm@10.18.0",

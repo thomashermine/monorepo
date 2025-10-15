@@ -97,6 +97,17 @@ Manual deploy:
 kustomize build k8s/overlays/{staging|production} | kubectl apply -f -
 ```
 
+## API Endpoints
+
+### Backend API
+
+-   `GET /` - Hello World
+-   `GET /bookings/next` - Fetch upcoming reservations (JSON)
+-   `GET /bookings/calendar/full-day.ics` - Full-day booking events (ICS format)
+-   `GET /bookings/calendar/checkinout.ics` - Check-in/check-out events (ICS format)
+-   `GET /bookings/calendar/full-day.json` - Full-day events (JSON, debug)
+-   `GET /bookings/calendar/checkinout.json` - Check-in/check-out events (JSON, debug)
+
 ## CI/CD
 
 **validation.yml**: Type-check, lint, test (unit/E2E/Storybook) - runs on every push

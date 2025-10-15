@@ -170,6 +170,24 @@ jobs:
               env:
                   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
+            - name: 🔐 Load and set environment variables from ENV_FILE secret
+              run: |
+                  # Create .env file from secret
+                  echo "${{ secrets.ENV_FILE }}" > .env
+
+                  # Import secrets to Fly.io app
+                  if [ -s .env ]; then
+                    echo "📤 Importing secrets to Fly.io app..."
+                    flyctl secrets import --app ${{ steps.app-name.outputs.app_name }} < .env
+                  else
+                    echo "⚠️  ENV_FILE secret is empty or not set, skipping secrets import"
+                  fi
+
+                  # Clean up .env file
+                  rm -f .env
+              env:
+                  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
             - name: Deploy to Fly.io
               run: |
                   flyctl deploy --remote-only --ha=false
@@ -281,12 +299,12 @@ jobs:
               run: |
                   BACKEND_URL="${{ needs.deploy-to-flyio.outputs.backend-url }}"
                   echo "Waiting for ${BACKEND_URL} to be ready..."
-                  for i in {1..30}; do
-                    if curl -sf -X POST "${BACKEND_URL}/echo" -H "Content-Type: text/plain" -d "health-check" > /dev/null 2>&1; then
+                  for i in {1..10}; do
+                    if curl -sf "${BACKEND_URL}" > /dev/null 2>&1; then
                       echo "✅ Backend is ready!"
                       exit 0
                     fi
-                    echo "Attempt $i/30: Backend not ready yet, waiting..."
+                    echo "Attempt $i/10: Backend not ready yet, waiting..."
                     sleep 10
                   done
                   echo "❌ Backend did not become ready in time"
