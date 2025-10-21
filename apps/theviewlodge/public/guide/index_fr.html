@@ -1,0 +1,3026 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guide des Invités - The View</title>
+        <meta
+            name="description"
+            content="Guide complet pour les invités de The View - votre cabane de bien-être en forêt dans les Ardennes belges"
+        />
+
+        <!-- Polices -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Kalam:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            sage: '#9CAF88',
+                            cream: '#EDE4DA',
+                            stone: '#A8A8A8',
+                            charcoal: '#2C2C2C',
+                        },
+                        fontFamily: {
+                            baskerville: ['Libre Baskerville', 'serif'],
+                            kalam: ['Kalam', 'cursive'],
+                        },
+                    },
+                },
+            }
+        </script>
+
+        <style>
+            .sidebar-open {
+                transform: translateX(0) !important;
+            }
+
+            .content-shifted {
+                margin-left: 16rem;
+            }
+
+            @media (max-width: 1024px) {
+                .content-shifted {
+                    margin-left: 0;
+                }
+            }
+
+            .smooth-scroll {
+                scroll-behavior: smooth;
+            }
+
+            .section-content {
+                scroll-margin-top: 2rem;
+            }
+        </style>
+    </head>
+    <body class="bg-cream text-charcoal smooth-scroll">
+        <!-- Bouton de Menu Mobile -->
+        <button
+            id="mobile-menu-btn"
+            class="lg:hidden fixed top-4 left-4 z-50 bg-sage text-white p-3 rounded-lg shadow-lg"
+        >
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+            </svg>
+        </button>
+
+        <!-- Menu Déroulant de Langue -->
+        <div class="fixed top-4 right-4 z-50">
+            <div class="relative">
+                <button
+                    id="language-dropdown-btn"
+                    class="bg-white text-charcoal p-3 rounded-lg shadow-lg hover:bg-sage/10 transition-colors border border-sage/20 flex items-center gap-2"
+                >
+                    <span class="text-lg">🇬🇧</span>
+                    <span class="hidden sm:inline text-sm font-medium">EN</span>
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"
+                        ></path>
+                    </svg>
+                </button>
+                <div
+                    id="language-dropdown"
+                    class="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-sage/20 py-2 hidden"
+                >
+                    <a
+                        href="index.html"
+                        class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-sage/10 transition-colors bg-sage/20 font-medium"
+                    >
+                        <span>🇬🇧</span> English
+                    </a>
+                    <a
+                        href="index_fr.html"
+                        class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-sage/10 transition-colors"
+                    >
+                        <span>🇫🇷</span> Français
+                    </a>
+                    <a
+                        href="index_nl.html"
+                        class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-sage/10 transition-colors"
+                    >
+                        <span>🇳🇱</span> Nederlands
+                    </a>
+                    <a
+                        href="index_de.html"
+                        class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-sage/10 transition-colors"
+                    >
+                        <span>🇩🇪</span> Deutsch
+                    </a>
+                    <a
+                        href="index_es.html"
+                        class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-sage/10 transition-colors"
+                    >
+                        <span>🇪🇸</span> Español
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barre Latérale -->
+        <aside
+            id="sidebar"
+            class="fixed left-0 top-0 h-full w-64 bg-white shadow-xl z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto"
+        >
+            <div class="p-6">
+                <!-- Logo et Titre -->
+                <div class="mb-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-12 h-12 bg-sage rounded-full flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-6 h-6 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"
+                                ></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8 21l4-4 4 4"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h1
+                                class="text-xl font-bold font-baskerville text-charcoal"
+                            >
+                                The View
+                            </h1>
+                            <p class="text-sm text-stone">Guide des Invités</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-stone italic">
+                        Votre sanctuaire forestier de bien-être
+                    </p>
+                </div>
+
+                <!-- Menu de Navigation -->
+                <nav class="space-y-2">
+                    <a
+                        href="#welcome"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                            ></path>
+                        </svg>
+                        Bienvenue
+                    </a>
+
+                    <a
+                        href="#parking"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"
+                            ></path>
+                        </svg>
+                        Parking
+                    </a>
+
+                    <a
+                        href="#checkin"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
+                            ></path>
+                        </svg>
+                        Enregistrement & Accès
+                    </a>
+
+                    <a
+                        href="#wellness"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            ></path>
+                        </svg>
+                        Bien-être & Spa
+                    </a>
+
+                    <a
+                        href="#kitchen"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"
+                            ></path>
+                        </svg>
+                        Cuisine & Salle à Manger
+                    </a>
+
+                    <a
+                        href="#sofabed"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M6 10V6a2 2 0 012-2h8a2 2 0 012 2v4m4 4v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4a2 2 0 012-2h16a2 2 0 012 2z"
+                            ></path>
+                        </svg>
+                        Canapé-lit
+                    </a>
+
+                    <a
+                        href="#smarthome"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
+                            ></path>
+                        </svg>
+                        WiFi & Maison Intelligente
+                    </a>
+
+                    <a
+                        href="#trashes"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                            ></path>
+                        </svg>
+                        Déchets & Recyclage
+                    </a>
+
+                    <a
+                        href="#activities"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                        </svg>
+                        Activités
+                    </a>
+
+                    <a
+                        href="#restaurants"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6.28"
+                            ></path>
+                        </svg>
+                        Restaurants
+                    </a>
+
+                    <a
+                        href="#checkout"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                            ></path>
+                        </svg>
+                        Départ
+                    </a>
+
+                    <a
+                        href="#emergency"
+                        class="nav-link flex items-center gap-3 p-3 rounded-lg text-charcoal hover:bg-sage/10 transition-colors"
+                    >
+                        <svg
+                            class="w-5 h-5 text-sage"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                            ></path>
+                        </svg>
+                        Urgence
+                    </a>
+                </nav>
+
+                <!-- Infos de Contact -->
+                <div class="mt-8 p-4 bg-sage/10 rounded-lg">
+                    <h3 class="font-medium font-baskerville text-charcoal mb-3">
+                        Besoin d'Aide ?
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center gap-2">
+                            <svg
+                                class="w-4 h-4 text-sage"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                ></path>
+                            </svg>
+                            <span class="text-charcoal"
+                                >Thomas : +32 495 64 99 99</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg
+                                class="w-4 h-4 text-sage"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                ></path>
+                            </svg>
+                            <span class="text-charcoal"
+                                >Caroline : +32 474 06 30 40</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Superposition pour mobile -->
+        <div
+            id="overlay"
+            class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none transition-opacity duration-300"
+        ></div>
+
+        <!-- Contenu Principal -->
+        <main id="main-content" class="transition-all duration-300 ease-in-out">
+            <div class="max-w-4xl mx-auto p-6 lg:p-8">
+                <!-- Section de Bienvenue -->
+                <section id="welcome" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                        <div class="text-center mb-8">
+                            <h1
+                                class="text-4xl md:text-5xl font-light font-baskerville text-charcoal mb-4"
+                            >
+                                Bienvenue à
+                                <span class="text-sage">The View</span>
+                            </h1>
+                            <p
+                                class="text-xl text-stone italic font-baskerville"
+                            >
+                                Cabane de Bien-être en Forêt
+                            </p>
+                        </div>
+
+                        <div class="prose prose-lg max-w-none">
+                            <p
+                                class="text-lg text-charcoal leading-relaxed mb-6"
+                            >
+                                Chers invités,
+                            </p>
+                            <p
+                                class="text-lg text-charcoal leading-relaxed mb-6"
+                            >
+                                Bienvenue dans votre sanctuaire forestier. Niché
+                                au bord du <em>Parc des Sources</em>,
+                                <strong>The View</strong> est une maison que
+                                nous avons créée avec soin et amour — un lieu de
+                                calme, de beauté et de reconnexion.
+                            </p>
+                            <p
+                                class="text-lg text-charcoal leading-relaxed mb-6"
+                            >
+                                Nous espérons que vous apprécierez chaque
+                                seconde. Voici tout ce que vous devez savoir
+                                pour rendre votre séjour fluide et serein.
+                            </p>
+                            <div class="text-center mt-8">
+                                <div
+                                    class="inline-block p-4 bg-sage/10 rounded-lg"
+                                >
+                                    <p class="text-sage font-medium italic">
+                                        "The View n'est pas juste une
+                                        destination. C'est une expérience — et
+                                        croyez-nous, vous voudrez rester un peu
+                                        plus longtemps."
+                                    </p>
+                                    <p class="text-stone mt-2">
+                                        — Caroline & Thomas
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section de Parking -->
+                <section id="parking" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Arrivée & Stationnement
+                            </h2>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 bg-sage rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                    >
+                                        <svg
+                                            class="w-4 h-4 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-xl font-medium font-baskerville text-charcoal mb-3"
+                                        >
+                                            Instructions de Stationnement
+                                        </h3>
+                                        <p
+                                            class="text-lg text-charcoal leading-relaxed"
+                                        >
+                                            Veuillez vous garer le long de la
+                                            propriété, en permettant aux
+                                            voitures de passer dans l'un des
+                                            deux chemins.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image de Stationnement -->
+                            <div
+                                class="aspect-square rounded-xl overflow-hidden"
+                            >
+                                <img
+                                    src="/guide/images/parking.png"
+                                    alt="Zone de stationnement à The View"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section d'Enregistrement -->
+                <section id="checkin" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Enregistrement, Entrée & Sortie
+                            </h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Entrée -->
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-5 h-5 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                                        ></path>
+                                    </svg>
+                                    <span>Entrée</span>
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >1</span
+                                        >
+                                        <span class="text-charcoal"
+                                            >Trouvez le
+                                            <strong
+                                                >clavier numérique à côté de la
+                                                porte</strong
+                                            ></span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >2</span
+                                        >
+                                        <span class="text-charcoal"
+                                            >Tapez le code que vous avez reçu en
+                                            privé</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >3</span
+                                        >
+                                        <span class="text-charcoal"
+                                            >La porte se déverrouillera
+                                            automatiquement (cela peut prendre
+                                            quelques secondes)</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >4</span
+                                        >
+                                        <span class="text-charcoal"
+                                            ><strong>Verrouillage :</strong>
+                                            pour verrouiller de l'intérieur,
+                                            levez la poignée de la porte vers le
+                                            haut et tournez le bouton rond vers
+                                            la droite</span
+                                        >
+                                    </li>
+                                </ul>
+
+                                <!-- Image d'Entrée -->
+                                <div
+                                    class="mt-4 aspect-square rounded-xl overflow-hidden"
+                                >
+                                    <img
+                                        src="/guide/images/entering.png"
+                                        alt="Entrée à The View - clavier numérique et porte"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Sortie -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-5 h-5 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                        ></path>
+                                    </svg>
+                                    <span>Sortie</span>
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-charcoal text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >1</span
+                                        >
+                                        <span class="text-charcoal"
+                                            ><strong
+                                                >Levez la poignée de la porte
+                                                vers le haut</strong
+                                            >
+                                            jusqu'à entendre un clic</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-charcoal text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >2</span
+                                        >
+                                        <span class="text-charcoal"
+                                            >Appuyez sur
+                                            <strong>"&lt;"</strong> sur le
+                                            clavier numérique pour verrouiller
+                                            la porte</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-charcoal text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >3</span
+                                        >
+                                        <span class="text-charcoal"
+                                            >C'est tout ! Profitez de votre
+                                            journée</span
+                                        >
+                                    </li>
+                                </ul>
+
+                                <!-- Image de Sortie -->
+                                <div
+                                    class="mt-4 aspect-square rounded-xl overflow-hidden"
+                                >
+                                    <img
+                                        src="/guide/images/exiting.png"
+                                        alt="Sortie de The View - instructions pour la poignée de porte et le verrou"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Bien-être -->
+                <section id="wellness" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Bien-être : Sauna, Bain à Remous & Bain à Bulles
+                            </h2>
+                        </div>
+
+                        <div class="space-y-8">
+                            <!-- Sauna -->
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-2xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+                                        ></path>
+                                    </svg>
+                                    <span>Sauna Privé</span>
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            Pour Commencer :
+                                        </h4>
+                                        <ul class="space-y-2 text-charcoal">
+                                            <li class="flex items-center gap-2">
+                                                <svg
+                                                    class="w-4 h-4 text-sage"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                    ></path>
+                                                </svg>
+                                                <span
+                                                    >Commencez le préchauffage
+                                                    <strong
+                                                        >environ 1 heure</strong
+                                                    >
+                                                    avant votre session</span
+                                                >
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <svg
+                                                    class="w-4 h-4 text-sage"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                                    ></path>
+                                                </svg>
+                                                <div>
+                                                    Utilisez la
+                                                    <strong
+                                                        >tablette dans le
+                                                        salon</strong
+                                                    >
+                                                    ou le
+                                                    <strong
+                                                        >petit écran sur le côté
+                                                        gauche</strong
+                                                    >
+                                                    du sauna pour l'allumer ou
+                                                    l'éteindre
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            Comment Savoir qu'il est Prêt :
+                                        </h4>
+                                        <ul class="space-y-2 text-charcoal">
+                                            <li>
+                                                • Prêt lorsqu'il atteint environ
+                                                <strong>90°C</strong>
+                                            </li>
+                                            <li>
+                                                • Surveillez la température sur
+                                                la tablette, le petit écran et
+                                                le thermomètre à l'intérieur
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-cream/30 rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            Conseils de Sécurité pour une
+                                            Utilisation Heureuse :
+                                        </h4>
+                                        <ul class="space-y-2 text-charcoal">
+                                            <li>
+                                                • Limitez les sessions à
+                                                <strong>15–20 minutes</strong>
+                                                à la fois
+                                            </li>
+                                            <li>
+                                                • Restez hydraté avant et après
+                                            </li>
+                                            <li>
+                                                •
+                                                <strong
+                                                    >Éteignez le sauna</strong
+                                                >
+                                                lorsque vous avez terminé de
+                                                l'utiliser
+                                            </li>
+                                            <li>
+                                                • Évitez l'alcool ou les repas
+                                                lourds avant d'entrer
+                                            </li>
+                                            <li>
+                                                • Refroidissez-vous
+                                                progressivement après votre
+                                                session
+                                            </li>
+                                            <li>
+                                                • Écoutez votre corps et sortez
+                                                si vous vous sentez
+                                                inconfortable
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Image du Sauna -->
+                                <div
+                                    class="mt-6 aspect-square rounded-xl overflow-hidden"
+                                >
+                                    <img
+                                        src="/guide/images/sauna.png"
+                                        alt="Intérieur du sauna privé à The View"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Bain à Remous Intérieur -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-2xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle
+                                            cx="5"
+                                            cy="15"
+                                            r="2"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="12"
+                                            cy="6"
+                                            r="2.5"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="18"
+                                            cy="14"
+                                            r="1.8"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="8"
+                                            cy="10"
+                                            r="1.2"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="16"
+                                            cy="8"
+                                            r="1.5"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="10"
+                                            cy="18"
+                                            r="1"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                        />
+                                    </svg>
+                                    Bain à Remous Intérieur
+                                </h3>
+
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-charcoal mb-4">
+                                        Dans la salle de bain, vous trouverez un
+                                        bain à remous :
+                                    </p>
+                                    <ul class="space-y-2 text-charcoal">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >1</span
+                                            >
+                                            <span
+                                                >Remplissez la baignoire
+                                                <strong
+                                                    >jusqu'à ce que l'eau soit
+                                                    au-dessus des jets</strong
+                                                ></span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >2</span
+                                            >
+                                            <span
+                                                >Appuyez sur le
+                                                <strong
+                                                    >bouton d'alimentation
+                                                    pendant 5 secondes</strong
+                                                >
+                                                pour activer les bulles</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >3</span
+                                            >
+                                            <span>Profitez du moment !</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Image du Bain à Remous -->
+                                <div
+                                    class="mt-4 aspect-square rounded-xl overflow-hidden"
+                                >
+                                    <img
+                                        src="/guide/images/bathtub.png"
+                                        alt="Bain à remous intérieur à The View"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Bain à Remous Extérieur -->
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-2xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                        ></path>
+                                    </svg>
+                                    Bain à Remous Scandinave Extérieur
+                                </h3>
+
+                                <div class="bg-white rounded-lg p-4">
+                                    <div
+                                        class="bg-blue-50 border-l-4 border-blue-400 p-3 mb-4"
+                                    >
+                                        <p
+                                            class="text-blue-800 font-medium text-sm"
+                                        >
+                                            💡
+                                            <strong
+                                                >Accès au Couvercle :</strong
+                                            >
+                                            Des deux côtés du bain à remous
+                                            nordique, il y a des clips qui
+                                            maintiennent le couvercle fermé. Le
+                                            code pour les déverrouiller est
+                                            <strong>0000</strong>.
+                                        </p>
+                                    </div>
+                                    <p class="text-charcoal mb-4">
+                                        Pour profiter du bain à remous extérieur
+                                        :
+                                    </p>
+                                    <ul class="space-y-2 text-charcoal">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >1</span
+                                            >
+                                            <span
+                                                ><strong
+                                                    >Retirez le flotteur de
+                                                    chlore</strong
+                                                >
+                                                avant d'utiliser le bain à
+                                                remous</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >2</span
+                                            >
+                                            <span
+                                                ><strong
+                                                    >Prenez une douche
+                                                    rapide</strong
+                                                >
+                                                avant d'entrer</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >3</span
+                                            >
+                                            <span
+                                                >Utilisez les
+                                                <strong
+                                                    >boutons sur le côté</strong
+                                                >
+                                                pour contrôler les jets et les
+                                                lumières</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >4</span
+                                            >
+                                            <span
+                                                >L'eau est maintenue à la
+                                                température parfaite — pas
+                                                besoin de régler quoi que ce
+                                                soit</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >5</span
+                                            >
+                                            <span
+                                                ><strong
+                                                    >Une fois terminé</strong
+                                                >, remettez le couvercle et le
+                                                flotteur de chlore</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-charcoal text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >💕</span
+                                            >
+                                            <span
+                                                >Veuillez garder les moments
+                                                romantiques pour la chambre —
+                                                gardons le bain à remous
+                                                confortable pour tout le
+                                                monde</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Cuisine -->
+                <section id="kitchen" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Cuisine & Salle à Manger
+                            </h2>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    Cuisine Entièrement Équipée
+                                </h3>
+                                <p
+                                    class="text-lg text-charcoal leading-relaxed mb-4"
+                                >
+                                    La cuisine est entièrement équipée avec tous
+                                    les essentiels pour cuisiner, y compris :
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Four à micro-ondes</span
+                                            >
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Four traditionnel</span
+                                            >
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Plaque à induction</span
+                                            >
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Lave-vaisselle</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Grand réfrigérateur &
+                                                congélateur</span
+                                            >
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Machine à café</span
+                                            >
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Batterie de cuisine complète &
+                                                ustensiles</span
+                                            >
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <svg
+                                                class="w-4 h-4 text-sage"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 13l4 4L19 7"
+                                                ></path>
+                                            </svg>
+                                            <span class="text-charcoal"
+                                                >Essentiels de salle à
+                                                manger</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Informations sur le Double Tiroir -->
+                                <div
+                                    class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg"
+                                >
+                                    <div class="flex items-start gap-2">
+                                        <svg
+                                            class="w-5 h-5 text-amber-600 mt-0.5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            ></path>
+                                        </svg>
+                                        <div>
+                                            <p
+                                                class="text-amber-800 font-medium"
+                                            >
+                                                Double tiroir dans la cuisine
+                                            </p>
+                                            <p
+                                                class="text-amber-700 text-sm mt-1"
+                                            >
+                                                À l'intérieur du premier tiroir,
+                                                il y a un deuxième, plus petit
+                                                tiroir. Il contient des épices,
+                                                entre autres choses.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Options de Petit Déjeuner -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    Service de Petit Déjeuner (sur commande)
+                                </h3>
+                                <div class="bg-white rounded-lg p-4 mb-4">
+                                    <p class="text-charcoal font-medium mb-2">
+                                        📞 Veuillez commander au moins 24 heures
+                                        à l'avance (minimum deux personnes)
+                                    </p>
+                                    <p class="text-charcoal">
+                                        Livré frais et local à votre porte
+                                    </p>
+                                </div>
+
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            Petit — 25€/pp
+                                        </h4>
+                                        <ul
+                                            class="text-sm text-charcoal space-y-1"
+                                        >
+                                            <li>
+                                                🥐 Pistolet, croissant, pain au
+                                                chocolat
+                                            </li>
+                                            <li>
+                                                🍞 Pain multigrains, beurre,
+                                                confiture
+                                            </li>
+                                            <li>
+                                                🥓 Jambon cuit, fromage type
+                                                gouda
+                                            </li>
+                                            <li>
+                                                🍊 250ml de jus d'orange, 1
+                                                fruit
+                                            </li>
+                                            <li>🥣 Yaourt nature bio</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            Moyen — 30€/pp
+                                        </h4>
+                                        <p class="text-sm text-charcoal mb-2">
+                                            Tout dans le petit, plus :
+                                        </p>
+                                        <ul
+                                            class="text-sm text-charcoal space-y-1"
+                                        >
+                                            <li>
+                                                🧀 Charcuterie & fromage en plus
+                                            </li>
+                                            <li>🍯 Granola maison + lait</li>
+                                            <li>🥧 Quiche aux légumes</li>
+                                            <li>🍇 Salade de fruits frais</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            Brunch — 40€/pp
+                                        </h4>
+                                        <p class="text-sm text-charcoal mb-2">
+                                            Tout dans le moyen, plus :
+                                        </p>
+                                        <ul
+                                            class="text-sm text-charcoal space-y-1"
+                                        >
+                                            <li>🥣 Soupe de légumes</li>
+                                            <li>🐟 Saumon fumé maison</li>
+                                            <li>🍳 Œufs brouillés & bacon</li>
+                                            <li>🍰 Assortiment de desserts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Canapé-lit -->
+                <section id="sofabed" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M6 10V6a2 2 0 012-2h8a2 2 0 012 2v4m4 4v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4a2 2 0 012-2h16a2 2 0 012 2z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Canapé-lit
+                            </h2>
+                        </div>
+
+                        <div class="bg-sage/10 rounded-xl p-6">
+                            <div class="bg-white rounded-lg p-4">
+                                <p class="text-charcoal mb-4">
+                                    Si vous dépliez le canapé :
+                                </p>
+                                <ul class="space-y-2 text-charcoal">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >1</span
+                                        >
+                                        <span
+                                            >Retirez les grands coussins de
+                                            dossier</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >2</span
+                                        >
+                                        <span
+                                            >Localisez la poignée sous le
+                                            siège</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                            >3</span
+                                        >
+                                        <span
+                                            >Soulevez-la doucement — le lit se
+                                            dépliera facilement</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Maison Intelligente -->
+                <section id="smarthome" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                WiFi, Maison Intelligente & Médias
+                            </h2>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- WiFi -->
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-5 h-5 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
+                                        ></path>
+                                    </svg>
+                                    Connexion WiFi
+                                </h3>
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-charcoal mb-4">
+                                        Pour se connecter au WiFi :
+                                    </p>
+                                    <div class="flex items-center gap-4 mb-3">
+                                        <div
+                                            class="w-24 h-24 rounded-lg overflow-hidden"
+                                        >
+                                            <img
+                                                src="/guide/images/wifi.png"
+                                                alt="QR code WiFi pour The View"
+                                                class="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-charcoal font-medium"
+                                            >
+                                                Scannez ce QR code, ou utilisez
+                                                :
+                                            </p>
+                                            <div
+                                                class="bg-charcoal text-white p-2 rounded font-mono text-sm mt-2"
+                                            >
+                                                theview<br />maxed-ignited-tailed-matthews
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Commandes de Maison Intelligente -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-5 h-5 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                        ></path>
+                                    </svg>
+                                    Commandes de Maison Intelligente
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            🔥 Chauffage
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Nous préchauffons la cabane pour
+                                            vous. Détendez-vous simplement, tout
+                                            est pris en charge 😌
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            💡 Lumières & Ambiance
+                                        </h4>
+                                        <p class="text-charcoal mb-3">
+                                            Utilisez la
+                                            <strong>tablette murale</strong>
+                                            dans le salon pour :
+                                        </p>
+                                        <ul class="space-y-1 text-charcoal">
+                                            <li>
+                                                • Ajuster la couleur et la
+                                                luminosité des lumières
+                                            </li>
+                                            <li>
+                                                • Créer différentes ambiances
+                                                (romantique, cosy, etc.)
+                                            </li>
+                                            <li>
+                                                • Il y a aussi un
+                                                <strong>Mode Romance</strong> —
+                                                essayez-le 😉
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            🎵 Musique
+                                        </h4>
+                                        <ul class="space-y-2 text-charcoal">
+                                            <li>
+                                                • Utilisez la
+                                                <strong
+                                                    >tablette du salon</strong
+                                                >
+                                                pour écouter de la musique dans
+                                                chaque pièce
+                                            </li>
+                                            <li>
+                                                • Ou ouvrez Spotify/YouTube
+                                                Music sur votre téléphone et
+                                                choisissez le haut-parleur dans
+                                                la liste des appareils
+                                                <strong>Google Cast</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Déchets -->
+                <section id="trashes" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Déchets & Recyclage
+                            </h2>
+                        </div>
+
+                        <div class="bg-sage/10 rounded-xl p-6">
+                            <p
+                                class="text-lg text-charcoal leading-relaxed mb-4"
+                            >
+                                Aidez-nous à garder notre bel environnement
+                                intact en triant correctement vos déchets.
+                            </p>
+
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-4 gap-4"
+                            >
+                                <div
+                                    class="bg-white rounded-lg p-4 text-center"
+                                >
+                                    <div
+                                        class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                                    >
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-medium text-charcoal mb-2">
+                                        Verre
+                                    </h4>
+                                    <p class="text-sm text-stone">
+                                        Bouteilles, bocaux
+                                    </p>
+                                </div>
+
+                                <div
+                                    class="bg-white rounded-lg p-4 text-center"
+                                >
+                                    <div
+                                        class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                                    >
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-medium text-charcoal mb-2">
+                                        PMC
+                                    </h4>
+                                    <p class="text-sm text-stone">
+                                        Emballages plastiques, métal, Tetrapack
+                                    </p>
+                                </div>
+
+                                <div
+                                    class="bg-white rounded-lg p-4 text-center"
+                                >
+                                    <div
+                                        class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                                    >
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-medium text-charcoal mb-2">
+                                        Carton
+                                    </h4>
+                                    <p class="text-sm text-stone">
+                                        Boîtes en carton, papier
+                                    </p>
+
+                                <div
+                                    class="bg-white rounded-lg p-4 text-center"
+                                >
+                                    <div
+                                        class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                                    >
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-medium text-charcoal mb-2">
+                                        Déchets Résiduels
+                                    </h4>
+                                    <p class="text-sm text-stone">
+                                        Tout le reste
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 bg-white rounded-lg p-4">
+                                <p class="text-charcoal font-medium mb-2">
+                                    📍 Si les petites poubelles à l'intérieur
+                                    sont pleines, vous pouvez les vider dans la
+                                    <strong>zone de stockage</strong> près des
+                                    escaliers d'entrée,
+                                    <strong>sous la terrasse</strong>.
+                                </p>
+                                <p class="text-charcoal mt-2">
+                                    Merci de nous aider à maintenir notre lodge
+                                    éco-responsable !
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section des Activités -->
+                <section id="activities" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    ></path>
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Activités
+                            </h2>
+                        </div>
+
+                        <div class="space-y-8">
+                            <!-- Promenade depuis le Lodge -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    🚶‍♀️ Promenade depuis le Lodge
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            🌄 Promenade Panorama Rapide (5 minutes)
+                                        </h4>
+                                        <p class="text-charcoal mb-2">
+                                            Prenez le chemin derrière le parking
+                                            derrière la cabane pour une
+                                            magnifique vue panoramique en seulement 5
+                                            minutes.
+                                        </p>
+                                        <p class="text-charcoal text-sm">
+                                            Parfait pour le café du matin ou pour admirer le coucher de soleil !
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            📱 Application AllTrails - Découvrez Plus de Sentiers
+                                            <div class="flex gap-2">
+                                                <a
+                                                    href="https://apps.apple.com/app/alltrails/id405075943"
+                                                    target="_blank"
+                                                    class="text-sm bg-gray-900 hover:bg-gray-800 text-white px-2 py-1 rounded-md transition-colors"
+                                                    >📱 iOS</a
+                                                >
+                                                <a
+                                                    href="https://play.google.com/store/apps/details?id=com.alltrails.alltrails"
+                                                    target="_blank"
+                                                    class="text-sm bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-md transition-colors"
+                                                    >🤖 Android</a
+                                                >
+                                            </div>
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Téléchargez AllTrails pour découvrir
+                                            des centaines de sentiers de randonnée dans les
+                                            Ardennes avec des cartes, des avis et des
+                                            évaluations de difficulté.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Activités à Proximité -->
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    À proximité (en voiture)
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            🥾 Balade de Ninglinspo
+                                            <a
+                                                href="https://www.google.com/maps/search/Balade+de+Ninglinspo"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            L'une des plus belles promenades dans
+                                            les Ardennes, le long d'un ruisseau sauvage.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            🌲 Promenade de la Vecquée
+                                            <a
+                                                href="https://www.google.com/maps/search/Promenade+de+la+Vecqu%C3%A9e"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Idéal pour une immersion totale en forêt.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            🏔️ Tour du Lac de Coo
+                                            <a
+                                                href="https://www.google.com/maps/search/Tour+du+Lac+de+Coo"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Agréable et accessible, avec une
+                                            cascade en bonus.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- À 20 Minutes -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    À environ 20 minutes
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            🏛️ Abbaye de Stavelot
+                                            <a
+                                                href="https://www.google.com/maps/search/Abbaye+de+Stavelot"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Plusieurs musées (dont un sur le
+                                            circuit de Spa-Francorchamps) et
+                                            des expositions temporaires intéressantes.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2"
+                                        >
+                                            ♨️
+                                            <a
+                                                href="https://www.google.com/maps/search/Spa+Belgium+thermal+baths"
+                                                target="_blank"
+                                                class="text-sage hover:text-charcoal transition-colors"
+                                                >Spa</a
+                                            >
+                                        </h4>
+                                        <div class="space-y-2">
+                                            <p class="text-charcoal">
+                                                • Les célèbres thermes pour un
+                                                moment de détente
+                                            </p>
+                                            <p class="text-charcoal">
+                                                • Petits commerces locaux et bons
+                                                restaurants pour flâner et bien manger
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Expériences Saisonnières -->
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    🗓️ Expériences Saisonnières
+                                </h3>
+
+                                <div class="space-y-4" id="seasonal-activities">
+                                    <!-- Activité de Printemps -->
+                                    <div
+                                        class="bg-white rounded-lg p-4 seasonal-item"
+                                        data-season="spring"
+                                    >
+                                        <div
+                                            class="flex items-start justify-between"
+                                        >
+                                            <div class="flex-1">
+                                                <h4
+                                                    class="font-medium text-charcoal mb-2 flex items-center gap-2"
+                                                >
+                                                    🌸 Fleurs Sauvages de Printemps &
+                                                    Réveil de la Forêt
+                                                    <span
+                                                        class="season-tag hidden bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                                                        >En ce moment</span
+                                                    >
+                                                </h4>
+                                                <p class="text-charcoal mb-2">
+                                                    <strong
+                                                        >Mars - Mai :</strong
+                                                    >
+                                                    Moment idéal pour les
+                                                    promenades en forêt alors que la nature se réveille avec
+                                                    des fleurs sauvages en fleurs et un feuillage vert frais.
+                                                </p>
+                                                <p
+                                                    class="text-charcoal text-sm"
+                                                >
+                                                    Meilleurs endroits : sentier de Ninglinspo
+                                                    et chemins forestiers de Vecquée.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Activité d'Été -->
+                                    <div
+                                        class="bg-white rounded-lg p-4 seasonal-item"
+                                        data-season="summer"
+                                    >
+                                        <div
+                                            class="flex items-start justify-between"
+                                        >
+                                            <div class="flex-1">
+                                                <h4
+                                                    class="font-medium text-charcoal mb-2 flex items-center gap-2"
+                                                >
+                                                    ☀️ Activités de Plein Air &
+                                                    Aventures Fluviales
+                                                    <span
+                                                        class="season-tag hidden bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                                                        >En ce moment</span
+                                                    >
+                                                </h4>
+                                                <p class="text-charcoal mb-2">
+                                                    <strong
+                                                        >Juin - Août :</strong
+                                                    >
+                                                    Idéal pour les activités aquatiques,
+                                                    la randonnée, et profiter du
+                                                    bain à remous extérieur sous les
+                                                    étoiles.
+                                                </p>
+                                                <p
+                                                    class="text-charcoal text-sm"
+                                                >
+                                                    Les longues heures de jour
+                                                    sont parfaites pour la détente en soirée dans la nature.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Activité d'Automne -->
+                                    <div
+                                        class="bg-white rounded-lg p-4 seasonal-item"
+                                        data-season="autumn"
+                                    >
+                                        <div
+                                            class="flex items-start justify-between"
+                                        >
+                                            <div class="flex-1">
+                                                <h4
+                                                    class="font-medium text-charcoal mb-2 flex items-center gap-2"
+                                                >
+                                                    🦌 Saison du Brame du Cerf
+                                                    <span
+                                                        class="season-tag hidden bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                                                        >En ce moment</span
+                                                    >
+                                                </h4>
+                                                <p class="text-charcoal mb-2">
+                                                    <strong
+                                                        >Septembre -
+                                                        Octobre :</strong
+                                                    >
+                                                    Vivez les sons uniques
+                                                    de la saison du brame du cerf dans
+                                                    les forêts des Ardennes.
+                                                </p>
+                                                <p
+                                                    class="text-charcoal text-sm"
+                                                >
+                                                    Nous pouvons très souvent entendre les
+                                                    cerfs depuis la terrasse. Vous
+                                                    pouvez également vous rendre à La Gleize,
+                                                    près du centre de recyclage,
+                                                    à l'intersection de la rue
+                                                    La Vaulx-Renard et
+                                                    Froidcour. Garez-vous le long de la
+                                                    route et entrez dans les bois
+                                                    tôt le matin ou le soir.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Activité d'Hiver -->
+                                    <div
+                                        class="bg-white rounded-lg p-4 seasonal-item"
+                                        data-season="winter"
+                                    >
+                                        <div
+                                            class="flex items-start justify-between"
+                                        >
+                                            <div class="flex-1">
+                                                <h4
+                                                    class="font-medium text-charcoal mb-2 flex items-center gap-2"
+                                                >
+                                                    ❄️ Bien-être d'Hiver & Retraites Confortables
+                                                    <span
+                                                        class="season-tag hidden bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                                                        >En ce moment</span
+                                                    >
+                                                </h4>
+                                                <p class="text-charcoal mb-2">
+                                                    <strong
+                                                        >Décembre -
+                                                        Février :</strong
+                                                    >
+                                                    Temps idéal pour le sauna et le bain à remous !
+                                                    Profitez du contraste entre la relaxation
+                                                    vapeur et l'air frais et vif.
+                                                </p>
+                                                <p
+                                                    class="text-charcoal text-sm"
+                                                >
+                                                    Promenades hivernales magiques dans
+                                                    les forêts enneigées,
+                                                    suivies d'un réchauffement dans
+                                                    le sauna.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Restaurants -->
+                            <div
+                                id="restaurants"
+                                class="bg-cream/30 rounded-xl p-6"
+                            >
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    🍽️ Restaurants Recommandés
+                                </h3>
+
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            Linea
+                                            <a
+                                                href="https://www.google.com/maps/search/Linea+restaurant+Stoumont+Belgium"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">Italien +++</p>
+                                        <p class="text-sm text-stone">
+                                            Excellente cuisine italienne
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            Les Doux Ragots
+                                            <a
+                                                href="https://www.google.com/maps/search/Les+Doux+Ragots+restaurant+Belgium"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Brasserie bien exécutée, bel
+                                            emplacement
+                                        </p>
+                                        <p class="text-sm text-stone">
+                                            Brasserie locale avec une excellente
+                                            ambiance
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            BPost Stoumont - Distributeur de Repas
+                                            <a
+                                                href="https://www.google.com/maps/place/Route+de+l%27Ambl%C3%A8ve+50,+4987+Stoumont,+Belgium"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors"
+                                                >📍 Maps</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Distributeur automatique de repas à côté
+                                            du bureau de poste
+                                        </p>
+                                        <p class="text-sm text-stone">
+                                            Options de repas rapides et pratiques
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <h4
+                                            class="font-medium text-charcoal mb-2 flex items-center justify-between"
+                                        >
+                                            Arte Gusto
+                                            <a
+                                                href="https://www.facebook.com/artegusto.be"
+                                                target="_blank"
+                                                class="text-sm bg-blue-50 hover:bg-blue-100 text-blue-600 px-2 py-1 rounded-md transition-colors"
+                                                >📘 Facebook</a
+                                            >
+                                        </h4>
+                                        <p class="text-charcoal">
+                                            Pizza à emporter (commande 2x par semaine)
+                                        </p>
+                                        <p class="text-sm text-stone">
+                                            Délicieuses pizzas à emporter sur commande
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section de Départ -->
+                <section id="checkout" class="section-content mb-16">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-sage"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Départ
+                            </h2>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-sage/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4 flex items-center gap-2"
+                                >
+                                    <svg
+                                        class="w-5 h-5 text-sage"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                        ></path>
+                                    </svg>
+                                    Quitter & Verrouiller la Porte
+                                </h3>
+
+                                <div class="bg-white rounded-lg p-4 mb-4">
+                                    <ul class="space-y-3 text-charcoal">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >1</span
+                                            >
+                                            <span
+                                                ><strong
+                                                    >Soulevez la poignée de la porte
+                                                    vers le haut</strong
+                                                >
+                                                jusqu'à entendre un clic</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >2</span
+                                            >
+                                            <span
+                                                >Appuyez sur
+                                                <strong>"&lt;"</strong> sur le
+                                                clavier numérique pour verrouiller la porte</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                                                >3</span
+                                            >
+                                            <span
+                                                >Envoyez-nous un message sur
+                                                <strong>Airbnb</strong> ou
+                                                <strong>chat en direct</strong> pour
+                                                nous informer que vous êtes parti</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-cream/30 rounded-lg p-4">
+                                    <h4 class="font-medium text-charcoal mb-2">
+                                        ✨ C'est tout !
+                                    </h4>
+                                    <p class="text-charcoal mb-4">
+                                        Rien d'autre n'est nécessaire — nous nous occupons de
+                                        tout, y compris les déchets, le nettoyage,
+                                        et la préparation pour les prochains invités. Merci
+                                        d'avoir séjourné chez nous !
+                                    </p>
+                                    <p class="text-charcoal">
+                                        Si vous avez des suggestions d'amélioration,
+                                        n'hésitez pas à nous contacter. Sinon, un
+                                        excellent avis sur
+                                        <a
+                                            href="https://www.google.com/maps/place/The+View+Lodge/"
+                                            target="_blank"
+                                            class="text-sage hover:text-charcoal transition-colors font-medium"
+                                            ><strong>Google Maps</strong></a
+                                        >
+                                        et/ou <strong>Airbnb</strong> nous aide toujours énormément ! 🙏
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section d'Urgence -->
+                <section id="emergency" class="section-content mb-16">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-red-500"
+                    >
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-red-500"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h2
+                                class="text-3xl font-light font-baskerville text-charcoal"
+                            >
+                                Informations d'Urgence
+                            </h2>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Contact Principal -->
+                            <div class="bg-red-50 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    📞 Besoin d'Aide ?
+                                </h3>
+                                <p class="text-charcoal mb-4">
+                                    Contactez-nous à tout moment via
+                                    <strong>WhatsApp ou téléphone</strong> :
+                                </p>
+
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-10 h-10 bg-sage rounded-full flex items-center justify-center"
+                                            >
+                                                <svg
+                                                    class="w-5 h-5 text-white"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p
+                                                    class="font-medium text-charcoal"
+                                                >
+                                                    Thomas
+                                                </p>
+                                                <p
+                                                    class="text-charcoal font-mono"
+                                                >
+                                                    +32 495 64 99 99
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg p-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-10 h-10 bg-sage rounded-full flex items-center justify-center"
+                                            >
+                                                <svg
+                                                    class="w-5 h-5 text-white"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p
+                                                    class="font-medium text-charcoal"
+                                                >
+                                                    Caroline
+                                                </p>
+                                                <p
+                                                    class="text-charcoal font-mono"
+                                                >
+                                                    +32 474 06 30 40
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-charcoal font-medium">
+                                        🔔 Urgence ?
+                                    </p>
+                                    <p class="text-charcoal">
+                                        Appelez deux fois de suite pour nous alerter
+                                        en urgence.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Services d'Urgence -->
+                            <div class="bg-red-500/10 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    🚨 Services d'Urgence
+                                </h3>
+                                <div
+                                    class="bg-red-500 text-white rounded-lg p-6 text-center"
+                                >
+                                    <div
+                                        class="flex items-center justify-center gap-3 mb-2"
+                                    >
+                                        <svg
+                                            class="w-8 h-8"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-3xl font-bold"
+                                            >112</span
+                                        >
+                                    </div>
+                                    <p class="text-xl font-medium">
+                                        Pour les urgences médicales/incendies
+                                    </p>
+                                    <p class="text-lg opacity-90">
+                                        Numéro d'Urgence Européen
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Informations d'Urgence Supplémentaires -->
+                            <div class="bg-cream/30 rounded-xl p-6">
+                                <h3
+                                    class="text-xl font-medium font-baskerville text-charcoal mb-4"
+                                >
+                                    📍 Informations sur la Propriété
+                                </h3>
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-charcoal">
+                                        <strong>Adresse :</strong> Targnon 29,
+                                        4987 Stoumont, Belgique
+                                    </p>
+                                    <p class="text-charcoal">
+                                        <strong>Hôpitaux les plus proches :</strong>
+                                    </p>
+                                    <ul class="text-charcoal ml-4 space-y-1">
+                                        <li>
+                                            • Centre Hospitalier de Malmedy -
+                                            ~25 minutes
+                                            <a
+                                                href="https://www.google.com/maps/place/Centre+Hospitalier+de+Malmedy,+Rue+Devant+les+Religieuses+2,+4960+Malmedy,+Belgium"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors ml-2"
+                                                >📍 Maps</a
+                                            >
+                                        </li>
+                                        <li>
+                                            • CHR Citadelle (Liège) - ~45
+                                            minutes
+                                            <a
+                                                href="https://www.google.com/maps/place/CHR+Citadelle+Liege"
+                                                target="_blank"
+                                                class="text-sm bg-sage/10 hover:bg-sage/20 text-sage px-2 py-1 rounded-md transition-colors ml-2"
+                                                >📍 Maps</a
+                                            >
+                                        </li>
+                                    </ul>
+                                    <p class="text-charcoal">
+                                        <strong>Pharmacie la plus proche :</strong>
+                                        Pharmacie de Stoumont - ~10 minutes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script>
+            // URL parameter parsing for guest name
+            function getUrlParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search)
+                return urlParams.get(name)
+            }
+
+            // Update welcome message with guest name if provided
+            function personalizeWelcome() {
+                const guestName =
+                    getUrlParameter('guest') || getUrlParameter('name')
+                if (guestName) {
+                    // Update the main title
+                    const titleElement = document.querySelector('#welcome h1')
+                    if (titleElement) {
+                        titleElement.innerHTML = `
+                            Welcome to
+                            <span class="text-sage">The View</span>, ${guestName}
+                        `
+                    }
+
+                    // Update the greeting in the prose section
+                    const welcomeElement =
+                        document.querySelector('#welcome .prose p')
+                    if (
+                        welcomeElement &&
+                        welcomeElement.textContent.trim() === 'Dear guests,'
+                    ) {
+                        welcomeElement.textContent = `Dear ${guestName},`
+                    }
+                }
+            }
+
+            // Initialize personalization when DOM is loaded
+            document.addEventListener('DOMContentLoaded', () => {
+                personalizeWelcome()
+            })
+
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn')
+            const sidebar = document.getElementById('sidebar')
+            const overlay = document.getElementById('overlay')
+            const mainContent = document.getElementById('main-content')
+
+            function toggleMobile() {
+                const isOpen = sidebar.classList.contains('sidebar-open')
+
+                if (isOpen) {
+                    // Close menu
+                    sidebar.classList.remove('sidebar-open')
+                    overlay.classList.add('opacity-0', 'pointer-events-none')
+                    mobileMenuBtn.innerHTML = `
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    `
+                } else {
+                    // Open menu
+                    sidebar.classList.add('sidebar-open')
+                    overlay.classList.remove('opacity-0', 'pointer-events-none')
+                    mobileMenuBtn.innerHTML = `
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    `
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMobile)
+            overlay.addEventListener('click', toggleMobile)
+
+            // Close mobile menu when clicking nav links
+            document.querySelectorAll('.nav-link').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (
+                        window.innerWidth < 1024 &&
+                        sidebar.classList.contains('sidebar-open')
+                    ) {
+                        // Close menu
+                        sidebar.classList.remove('sidebar-open')
+                        overlay.classList.add(
+                            'opacity-0',
+                            'pointer-events-none'
+                        )
+                        mobileMenuBtn.innerHTML = `
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        `
+                    }
+                })
+            })
+
+            // Desktop sidebar behavior
+            function updateLayout() {
+                if (window.innerWidth >= 1024) {
+                    mainContent.classList.add('content-shifted')
+                    sidebar.classList.add('sidebar-open')
+                    overlay.classList.add('opacity-0', 'pointer-events-none')
+                } else {
+                    mainContent.classList.remove('content-shifted')
+                    // On mobile, ensure sidebar is closed by default unless explicitly opened
+                    if (!sidebar.classList.contains('sidebar-open')) {
+                        sidebar.classList.remove('sidebar-open')
+                        overlay.classList.add(
+                            'opacity-0',
+                            'pointer-events-none'
+                        )
+                    }
+                }
+            }
+
+            window.addEventListener('resize', updateLayout)
+            updateLayout() // Initial call
+
+            // Seasonal activity highlighting
+            function updateSeasonalActivities() {
+                const now = new Date()
+                const month = now.getMonth() + 1 // getMonth() returns 0-11
+
+                let currentSeason = ''
+                if (month >= 3 && month <= 5) {
+                    currentSeason = 'spring'
+                } else if (month >= 6 && month <= 8) {
+                    currentSeason = 'summer'
+                } else if (month >= 9 && month <= 10) {
+                    currentSeason = 'autumn'
+                } else {
+                    currentSeason = 'winter'
+                }
+
+                // Hide all season tags first
+                document.querySelectorAll('.season-tag').forEach((tag) => {
+                    tag.classList.add('hidden')
+                })
+
+                // Show the current season tag
+                const currentSeasonItem = document.querySelector(
+                    `.seasonal-item[data-season="${currentSeason}"]`
+                )
+                if (currentSeasonItem) {
+                    const seasonTag =
+                        currentSeasonItem.querySelector('.season-tag')
+                    if (seasonTag) {
+                        seasonTag.classList.remove('hidden')
+                    }
+
+                    // Optionally highlight the current season item
+                    currentSeasonItem.classList.add('ring-2', 'ring-sage/20')
+                }
+            }
+
+            // Call on page load
+            updateSeasonalActivities()
+
+            // Smooth scrolling and active nav highlighting
+            const navLinks = document.querySelectorAll('.nav-link')
+            const sections = document.querySelectorAll('.section-content')
+
+            // Smooth scroll to sections
+            navLinks.forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    const targetId = link.getAttribute('href').substring(1)
+                    const targetSection = document.getElementById(targetId)
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 32 // Account for scroll margin
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth',
+                        })
+                    }
+                })
+            })
+
+            // Highlight active section in navigation
+            function highlightActiveSection() {
+                let currentSection = ''
+
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop
+                    const sectionHeight = section.offsetHeight
+
+                    if (window.scrollY >= sectionTop - 100) {
+                        currentSection = section.getAttribute('id')
+                    }
+                })
+
+                navLinks.forEach((link) => {
+                    link.classList.remove('bg-sage/20', 'text-sage')
+                    link.classList.add('text-charcoal')
+
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('bg-sage/20', 'text-sage')
+                        link.classList.remove('text-charcoal')
+                    }
+                })
+            }
+
+            window.addEventListener('scroll', highlightActiveSection)
+            highlightActiveSection() // Initial call
+
+            // Language dropdown functionality
+            const languageDropdownBtn = document.getElementById(
+                'language-dropdown-btn'
+            )
+            const languageDropdown =
+                document.getElementById('language-dropdown')
+
+            languageDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation()
+                languageDropdown.classList.toggle('hidden')
+            })
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (
+                    !languageDropdownBtn.contains(e.target) &&
+                    !languageDropdown.contains(e.target)
+                ) {
+                    languageDropdown.classList.add('hidden')
+                }
+            })
+
+            // Close dropdown when pressing escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    languageDropdown.classList.add('hidden')
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Kalam:wght@300;400;700&display=swap');
+@import 'tailwindcss';
+
+@layer theme {
+    /* Custom theme configuration */
+    @theme {
+        --color-sage: #9caf88;
+        --color-cream: #ede4da;
+        --color-stone: #a8a8a8;
+        --color-charcoal: #2c2c2c;
+
+        --font-family-baskerville:
+            'Libre Baskerville', ui-serif, Georgia, Cambria, 'Times New Roman',
+            Times, serif;
+    }
+}
+
+@layer base {
+    /* Global styles */
+    body {
+        @apply bg-cream text-charcoal;
+    }
+
+    /* Custom scrollbar hide */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}

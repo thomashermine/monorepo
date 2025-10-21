@@ -1,0 +1,333 @@
+{
+    "meta": {
+        "home": {
+            "title": "The View - Vues époustouflantes, Relaxation infinie. Lodge bien-être à Stoumont, Belgique",
+            "description": "Retraite bien-être premium dans les Ardennes belges. Sauna privé, bain à remous, vues magnifiques. Escapade romantique parfaite à Stoumont, Belgique.",
+            "ogTitle": "The View - Retraite Bien-être Premium dans les Ardennes Belges"
+        },
+        "vouchers": {
+            "title": "Chèques Cadeaux - The View - Cadeau Parfait pour une Retraite Bien-être",
+            "description": "Offrez le cadeau du luxe et de la détente avec les chèques cadeaux The View. Parfait pour les escapades romantiques dans les Ardennes belges."
+        },
+        "terms": {
+            "title": "Conditions Générales - The View",
+            "description": "Conditions générales de réservation et de séjour à The View, Belgique. Politique d'annulation, conditions de réservation et informations légales."
+        }
+    },
+    "navigation": {
+        "home": "Accueil",
+        "bookNow": "Réserver",
+        "giftVouchers": "Chèques Cadeaux",
+        "contact": "Contact",
+        "terms": "Conditions",
+        "termsAndConditions": "Conditions Générales"
+    },
+    "languages": {
+        "english": "English",
+        "french": "Français",
+        "dutch": "Nederlands",
+        "german": "Deutsch",
+        "spanish": "Español"
+    },
+    "hero": {
+        "title": {
+            "main": "Vues époustouflantes,",
+            "sub": "Relaxation infinie"
+        },
+        "subtitle": "Lodge Bien-être Forestier au Cœur des Ardennes Belges.",
+        "cta": "Réservez votre séjour"
+    },
+    "intro": {
+        "heading": "Évadez-vous à The View, votre sanctuaire personnel niché à Stoumont — au cœur du Parc Naturel des Ardennes Belges",
+        "cta": "Réserver maintenant"
+    },
+    "cabin": {
+        "heading": "Notre lodge unique offre sérénité avec un sauna, un bain nordique extérieur, un bain à remous intérieur et des équipements luxueux",
+        "cta": "Réserver maintenant"
+    },
+    "amenities": {
+        "heading": "Équipements Bien-être",
+        "subheading": "Tout ce dont vous avez besoin pour une escapade parfaite",
+        "features": {
+            "sauna": {
+                "title": "Sauna Privé",
+                "subtitle": "Détendez-vous avec une vue imprenable sur la forêt"
+            },
+            "hotTub": {
+                "title": "Bain Nordique",
+                "subtitle": "Relaxation en plein air avec vue sur la vallée"
+            },
+            "whirlpool": {
+                "title": "Bain à Remous",
+                "subtitle": "Relaxation luxueuse"
+            }
+        },
+        "cta": "Découvrez le confort",
+        "items": {
+            "wifi": {
+                "title": "WiFi Gratuit",
+                "description": "Internet haut débit dans tout le lodge"
+            },
+            "stargazing": {
+                "title": "Observation des Étoiles",
+                "description": "Ciel nocturne dégagé loin des lumières de la ville"
+            },
+            "parking": {
+                "title": "Parking Privé",
+                "description": "Place de parking dédiée"
+            },
+            "smartHome": {
+                "title": "Maison Intelligente",
+                "description": "Audio multi-pièces, accueil personnalisé, mode romance"
+            },
+            "peaceful": {
+                "title": "Retraite Paisible",
+                "description": "Échappez-vous de l'agitation"
+            }
+        }
+    },
+    "gallery": {
+        "heading": "Galerie",
+        "subheading": "Découvrez la beauté et la tranquillité de The View",
+        "cta": "Commencez votre retraite",
+        "images": {
+            "aerialView": "Vue aérienne du lodge",
+            "forestCanopy": "Canopée forestière",
+            "frontFacade": "Façade avant",
+            "valleyView": "Vue sur la vallée",
+            "bathroomJacuzzi": "Jacuzzi de la salle de bain",
+            "saunaView": "Vue du sauna",
+            "hotTub": "Bain nordique",
+            "kitchen": "Cuisine",
+            "diningArea": "Coin repas",
+            "theView": "The View"
+        }
+    },
+    "testimonials": {
+        "badge": "Favori des voyageurs sur Airbnb",
+        "heading": "Avis des Voyageurs",
+        "subheading": "Découvrez les témoignages de nos voyageurs sur leurs expériences inoubliables",
+        "reviews": {
+            "eline": {
+                "author": "Eline",
+                "quote": "Belle maison avec des vues fantastiques ! Le contact avec Thomas et Caroline était très amical. Si vous cherchez un endroit pour vous détendre, ne cherchez plus !"
+            },
+            "tim": {
+                "author": "Tim",
+                "quote": "Un superbe cottage avec tout ce que vous voulez. Et les vues... vraiment époustouflantes !"
+            },
+            "conny": {
+                "author": "Conny",
+                "quote": "Excellent cottage bien-être avec des vues incroyables et beaucoup d'intimité, nous avons adoré !"
+            },
+            "thimo": {
+                "author": "Thimo",
+                "quote": "Quelle merveilleuse expérience ! Nous avons vraiment passé un super séjour. L'emplacement est parfait pour se détendre complètement."
+            },
+            "heidi": {
+                "author": "Heidi",
+                "quote": "Une oasis de paix avec une vue magnifique. Nous reviendrons !"
+            },
+            "julie": {
+                "author": "Julie",
+                "quote": "Un vrai petit cocon au cœur de la nature."
+            }
+        }
+    },
+    "faq": {
+        "heading": "Questions Fréquentes",
+        "subheading": "Tout ce que vous devez savoir sur votre séjour",
+        "cta": "Réservez votre escapade",
+        "items": {
+            "amenities": {
+                "question": "Quels équipements propose The View ?",
+                "answer": "The View dispose d'un sauna privé, d'une baignoire à bulles, de vues magnifiques et d'une expérience domotique complète, incluant un mode romance avec éclairage et musique personnalisés."
+            },
+            "capacity": {
+                "question": "Combien de personnes peuvent séjourner à The View ?",
+                "answer": "Le lodge est conçu pour un maximum de deux personnes, offrant le cadre parfait pour une retraite intime et romantique."
+            },
+            "pets": {
+                "question": "Puis-je amener mon animal de compagnie ou mon enfant ?",
+                "answer": "Les animaux de compagnie ne sont pas autorisés. Les bébés sont les bienvenus, mais The View est principalement conçu comme une escapade romantique pour adultes."
+            }
+        }
+    },
+    "vouchers": {
+        "hero": {
+            "title": {
+                "main": "Chèques",
+                "sub": "Cadeaux"
+            },
+            "subtitle": "Offrez le Cadeau Parfait de Luxe et de Détente",
+            "cta": "Parcourir les Chèques"
+        },
+        "intro": {
+            "heading": "Vous cherchez le cadeau parfait pour quelqu'un de spécial ?",
+            "text": "Offrez-leur une escapade inoubliable au cœur des Ardennes belges avec un chèque cadeau pour The View."
+        },
+        "selection": {
+            "heading": "Choisissez Votre Chèque Cadeau",
+            "subheading": "Sélectionnez le montant parfait pour votre personne spéciale",
+            "mostPopular": "Le Plus Populaire",
+            "amounts": {
+                "49": {
+                    "description": "Parfait pour un petit geste",
+                    "details": "Un cadeau attentionné pour contribuer à une expérience bien-être inoubliable."
+                },
+                "99": {
+                    "description": "Contribution généreuse",
+                    "details": "Un cadeau généreux qui les rapproche de leur retraite bien-être parfaite."
+                },
+                "199": {
+                    "description": "Nuit typique en semaine",
+                    "details": "Parfait pour une escapade en milieu de semaine, couvrant la majeure partie d'une nuit paisible."
+                },
+                "299": {
+                    "description": "Nuit typique du week-end",
+                    "details": "Le cadeau parfait pour une escapade romantique de week-end."
+                },
+                "499": {
+                    "description": "Week-end typique de 2 nuits",
+                    "details": "Le cadeau de luxe ultime – une retraite complète de week-end."
+                }
+            },
+            "purchaseButton": "Acheter le Chèque de {{amount}}"
+        },
+        "custom": {
+            "heading": "Besoin d'un Montant Personnalisé ?",
+            "text": "Pour un montant personnalisé ou une nuit spécifique, contactez-nous directement.",
+            "emailUs": "Nous Écrire",
+            "phoneText": "Téléphone/SMS",
+            "cta": "Contactez-nous pour un Chèque Personnalisé"
+        },
+        "testimonials": {
+            "heading": "Ce Que Disent Nos Voyageurs",
+            "cta": "Découvrir The View"
+        },
+        "howItWorks": {
+            "heading": "Comment ça marche",
+            "features": {
+                "instantDelivery": {
+                    "title": "Livraison instantanée",
+                    "description": "Vous recevrez un code de chèque unique par email"
+                },
+                "transferable": {
+                    "title": "Transférable",
+                    "description": "Le code n'est pas nominatif"
+                },
+                "flexibleValue": {
+                    "title": "Valeur flexible",
+                    "description": "Agit comme une réduction sur le prix total"
+                },
+                "remainderKept": {
+                    "title": "Solde conservé",
+                    "description": "Solde restant pour les réservations futures"
+                },
+                "valid12Months": {
+                    "title": "Valable 12 mois",
+                    "description": "Beaucoup de temps pour planifier une retraite"
+                },
+                "nonRefundable": {
+                    "title": "Non remboursable",
+                    "description": "Ne peut pas être échangé contre de l'argent"
+                }
+            }
+        },
+        "cta": {
+            "heading": "Prêt à Offrir le Cadeau Parfait ?",
+            "text": "Choisissez parmi notre sélection de chèques cadeaux et offrez à quelqu'un de spécial le cadeau du luxe et de la détente.",
+            "button": "Parcourir Tous les Chèques"
+        }
+    },
+    "terms": {
+        "heading": "Conditions Générales",
+        "subheading": "Veuillez lire attentivement ces conditions générales avant de réserver votre séjour à The View.",
+        "operator": {
+            "heading": "Informations sur l'Exploitant",
+            "intro": "The View est exploité par :",
+            "name": "Crafted Signals SRL",
+            "address": "Rue d'Andenne 81/001",
+            "city": "1060 Saint-Gilles, Belgique",
+            "vat": "TVA : BE 0798 582 489"
+        },
+        "booking": {
+            "heading": "Conditions de Réservation",
+            "intro": "En effectuant une réservation à The View, vous acceptez ces conditions générales. Toutes les réservations sont soumises à disponibilité et confirmation.",
+            "reservationProcess": {
+                "heading": "Processus de Réservation",
+                "item1": "Les réservations peuvent être effectuées via notre plateforme de réservation officielle ou par contact direct",
+                "item2": "La confirmation de réservation sera envoyée par email dans les 24 heures",
+                "item3": "Le paiement intégral est requis 14 jours avant l'arrivée"
+            },
+            "guestCapacity": {
+                "heading": "Capacité d'Accueil",
+                "text": "The View accueille un maximum de 2 personnes. Les bébés sont les bienvenus mais doivent être déclarés au moment de la réservation. La propriété est conçue comme une retraite romantique pour adultes."
+            }
+        },
+        "cancellation": {
+            "heading": "Politique d'Annulation",
+            "refundPolicy": {
+                "heading": "Politique de Remboursement",
+                "moreThan14Days": {
+                    "label": "Plus de 14 jours avant l'arrivée :",
+                    "text": "Remboursement intégral de tous les paiements"
+                },
+                "lessThan14Days": {
+                    "label": "14 jours ou moins avant l'arrivée :",
+                    "text": "Aucun remboursement disponible"
+                }
+            },
+            "notice": "Les annulations doivent être effectuées par écrit par email ou via notre plateforme de réservation. La date d'annulation est déterminée par la réception de votre avis d'annulation écrit."
+        },
+        "checkInOut": {
+            "heading": "Arrivée et Départ",
+            "checkIn": {
+                "heading": "Arrivée",
+                "time": "À partir de 16h00",
+                "note": "Enregistrement autonome avec code d'accès fourni"
+            },
+            "checkOut": {
+                "heading": "Départ",
+                "time": "Avant 12h00",
+                "note": "Un départ tardif peut être disponible sur demande"
+            }
+        },
+        "houseRules": {
+            "heading": "Règlement Intérieur",
+            "permitted": {
+                "heading": "Autorisé",
+                "item1": "Maximum 2 adultes (bébés bienvenus)",
+                "item2": "Jouissance paisible de la propriété",
+                "item3": "Utilisation de tous les équipements fournis",
+                "item4": "Fumer sur les terrasses extérieures uniquement"
+            },
+            "notPermitted": {
+                "heading": "Non Autorisé",
+                "item1": "Animaux de compagnie de toute sorte",
+                "item2": "Fêtes ou événements",
+                "item3": "Fumer à l'intérieur du lodge",
+                "item4": "Bruit excessif"
+            }
+        },
+        "contact": {
+            "heading": "Informations de Contact",
+            "operated": "Exploité par Crafted Signals SRL",
+            "email": "Email :",
+            "website": "Site web :"
+        },
+        "effectiveDate": {
+            "lastUpdated": "Dernière mise à jour :",
+            "date": "Septembre 2025",
+            "notice": "Ces conditions générales sont effectives immédiatement et s'appliquent à toutes les réservations effectuées après cette date."
+        }
+    },
+    "footer": {
+        "instagram": "Instagram"
+    },
+    "contact": {
+        "email": "hello@theviewlodge.be",
+        "phone": "+32 495 64 99 99",
+        "website": "theviewlodge.be"
+    }
+}
