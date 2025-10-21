@@ -103,6 +103,7 @@ kustomize build k8s/overlays/{staging|production} | kubectl apply -f -
 
 -   `GET /` - Hello World
 -   `GET /bookings/next` - Fetch upcoming reservations (JSON)
+-   `GET /bookings/summary` - Aggregated statistics about bookings (total, confirmed, cancelled, revenue, by property)
 -   `GET /bookings/calendar/full-day.ics` - Full-day booking events (ICS format)
 -   `GET /bookings/calendar/checkinout.ics` - Check-in/check-out events (ICS format)
 -   `GET /bookings/calendar/full-day.json` - Full-day events (JSON, debug)

@@ -32,6 +32,20 @@ interface BookingsResponse {
     requestId: string
 }
 
+interface BookingsSummaryResponse {
+    summary: {
+        totalBookings: number
+        acceptedBookings: number
+        completedBookings: number
+        cancelledBookings: number
+        totalRevenue: number
+        currency: string
+        bookingsByProperty: Record<string, number>
+    }
+    timestamp: string
+    requestId: string
+}
+
 describe('Backend API E2E Tests', () => {
     describe('GET /bookings/calendar/full-day.ics endpoint', () => {
         it('should return ICS calendar with full-day booking events', async () => {
@@ -437,6 +451,166 @@ describe('Backend API E2E Tests', () => {
                 expect(body).toHaveProperty('requestId')
                 expect(body).toHaveProperty('total')
             })
+        })
+    })
+
+    // ============================================================================================================ Summary Endpoint
+    describe('GET /bookings/summary endpoint', () => {
+        it('should return bookings summary with correct structure', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain(
+                'application/json'
+            )
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Verify response structure
+            expect(body).toHaveProperty('summary')
+            expect(body).toHaveProperty('timestamp')
+            expect(body).toHaveProperty('requestId')
+
+            // Verify summary properties
+            expect(body.summary).toHaveProperty('totalBookings')
+            expect(body.summary).toHaveProperty('acceptedBookings')
+            expect(body.summary).toHaveProperty('completedBookings')
+            expect(body.summary).toHaveProperty('cancelledBookings')
+            expect(body.summary).toHaveProperty('totalRevenue')
+            expect(body.summary).toHaveProperty('currency')
+            expect(body.summary).toHaveProperty('bookingsByProperty')
+
+            // Verify types
+            expect(typeof body.summary.totalBookings).toBe('number')
+            expect(typeof body.summary.acceptedBookings).toBe('number')
+            expect(typeof body.summary.completedBookings).toBe('number')
+            expect(typeof body.summary.cancelledBookings).toBe('number')
+            expect(typeof body.summary.totalRevenue).toBe('number')
+            expect(typeof body.summary.currency).toBe('string')
+            expect(typeof body.summary.bookingsByProperty).toBe('object')
+        })
+
+        it('should have valid timestamp in ISO format', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Verify timestamp is a valid ISO string
+            expect(() => new Date(body.timestamp)).not.toThrow()
+            const timestamp = new Date(body.timestamp)
+            expect(timestamp.toISOString()).toBe(body.timestamp)
+        })
+
+        it('should return valid requestId for tracking', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Verify requestId is a non-empty string (UUID format)
+            expect(typeof body.requestId).toBe('string')
+            expect(body.requestId.length).toBeGreaterThan(0)
+            // UUID v4 format check
+            expect(body.requestId).toMatch(
+                /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+            )
+        })
+
+        it('should have totalBookings equal to sum of all status types', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Verify the math adds up
+            expect(body.summary.totalBookings).toBeGreaterThanOrEqual(
+                body.summary.acceptedBookings +
+                    body.summary.completedBookings +
+                    body.summary.cancelledBookings
+            )
+        })
+
+        it('should have non-negative revenue', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Revenue should be non-negative
+            expect(body.summary.totalRevenue).toBeGreaterThanOrEqual(0)
+        })
+
+        it('should have valid currency code', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Currency should be a 3-letter code (ISO 4217)
+            expect(body.summary.currency).toMatch(/^[A-Z]{3}$/)
+        })
+
+        it('should count bookings by property correctly', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsSummaryResponse
+
+            // Sum of bookings by property should equal total bookings
+            const sumByProperty = Object.values(
+                body.summary.bookingsByProperty
+            ).reduce((sum, count) => sum + count, 0)
+
+            expect(sumByProperty).toBe(body.summary.totalBookings)
+        })
+
+        it('should reject POST requests', async () => {
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                body: JSON.stringify({}),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                method: 'POST',
+            })
+
+            // Should return 404 or 405 Method Not Allowed
+            expect([404, 405]).toContain(response.status)
+        })
+
+        it('should respond within acceptable time', async () => {
+            const startTime = Date.now()
+
+            const response = await fetch(`${baseUrl}/bookings/summary`, {
+                method: 'GET',
+            })
+
+            const endTime = Date.now()
+            const responseTime = endTime - startTime
+
+            expect(response.status).toBe(200)
+            // Response should be within 30 seconds (Hostex API can be slow)
+            expect(responseTime).toBeLessThan(30000)
         })
     })
 })

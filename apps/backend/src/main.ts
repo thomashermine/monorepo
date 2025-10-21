@@ -134,6 +134,60 @@ const router = HttpRouter.empty.pipe(
             return yield* HttpServerResponse.json(events)
         })
     ),
+    // ====================================================================================================== Bookings Summary
+    HttpRouter.get(
+        '/bookings/summary',
+        Effect.gen(function* () {
+            const hostexService = yield* HostexService
+
+            // Fetch all reservations
+            const reservations = yield* hostexService.getReservations({})
+
+            // Calculate summary statistics
+            const totalBookings = reservations.length
+            const acceptedBookings = reservations.filter(
+                (r) => r.status === 'accepted'
+            ).length
+            const cancelledBookings = reservations.filter(
+                (r) => r.status === 'cancelled'
+            ).length
+            const completedBookings = reservations.filter(
+                (r) => r.status === 'completed'
+            ).length
+
+            // Calculate total revenue from accepted bookings
+            const totalRevenue = reservations
+                .filter((r) => r.status === 'accepted')
+                .reduce((sum, r) => sum + (r.rates.total_rate.amount ?? 0), 0)
+
+            // Group bookings by property
+            const bookingsByProperty = reservations.reduce(
+                (acc, r) => {
+                    const propertyId = r.property_id
+                    acc[propertyId] = (acc[propertyId] ?? 0) + 1
+                    return acc
+                },
+                {} as Record<string, number>
+            )
+
+            return yield* HttpServerResponse.json({
+                summary: {
+                    totalBookings,
+                    acceptedBookings,
+                    completedBookings,
+                    cancelledBookings,
+                    totalRevenue,
+                    currency:
+                        reservations.length > 0
+                            ? reservations[0]?.rates.total_rate.currency
+                            : 'EUR',
+                    bookingsByProperty,
+                },
+                timestamp: new Date().toISOString(),
+                requestId: crypto.randomUUID(),
+            })
+        })
+    ),
     // Generic 404 handler for unsupported URLs
     HttpRouter.all(
         '*',
