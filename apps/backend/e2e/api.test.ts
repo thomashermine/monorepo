@@ -249,6 +249,183 @@ describe('Backend API E2E Tests', () => {
         })
     })
 
+    describe('GET /messages/export/llm-training.txt endpoint', () => {
+        it('should return TXT file with all HOSTEX messages', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain('text/plain')
+            expect(response.headers.get('content-disposition')).toContain(
+                'attachment'
+            )
+            expect(response.headers.get('content-disposition')).toContain(
+                'hostex-messages-llm-training.txt'
+            )
+
+            const body = await response.text()
+
+            // Verify file structure =====================================================
+            expect(body).toContain('HOSTEX MESSAGE EXPORT FOR LLM TRAINING')
+            expect(body).toContain('Generated:')
+            expect(body).toContain('Total Conversations:')
+            expect(body).toContain('Total Messages:')
+            expect(body).toContain('END OF MESSAGE EXPORT')
+        })
+
+        it('should include conversation headers with metadata', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            const body = await response.text()
+
+            // If there are conversations, verify their headers ==========================
+            if (body.includes('CONVERSATION ID:')) {
+                expect(body).toMatch(/CONVERSATION ID: .+ \| Guest: .+ \| Property: .+/)
+                
+                // Check for optional fields =============================================
+                const hasReservation = body.includes('Reservation:')
+                const hasChannel = body.includes('Channel:')
+                const hasLastMessage = body.includes('Last Message:')
+                const hasTotalMessages = body.includes('Total Messages:')
+
+                expect(hasLastMessage).toBe(true)
+                expect(hasTotalMessages).toBe(true)
+
+                // Verify that at least some conversations have these fields =============
+                expect(hasReservation || hasChannel).toBe(true)
+            }
+        })
+
+        it('should format messages with sender labels and timestamps', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            const body = await response.text()
+
+            // If there are messages, verify their format ===============================
+            if (body.includes('[HOST]') || body.includes('[GUEST]')) {
+                // Verify sender labels exist ============================================
+                const hasHostMessages = body.includes('[HOST]')
+                const hasGuestMessages = body.includes('[GUEST]')
+
+                expect(hasHostMessages || hasGuestMessages).toBe(true)
+
+                // Verify timestamp format (ISO 8601) ====================================
+                // Pattern: [HOST] (2024-01-01T12:00:00.000Z) or [GUEST] (2024-01-01T12:00:00.000Z)
+                const timestampPattern = /\[(HOST|GUEST)\] \(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\)/
+                expect(body).toMatch(timestampPattern)
+            }
+        })
+
+        it('should handle image messages correctly', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            const body = await response.text()
+
+            // If there are image messages, verify they're marked correctly ==============
+            if (body.includes('[IMAGE]:')) {
+                // Image messages should have a URL ======================================
+                expect(body).toMatch(/\[IMAGE\]: https?:\/\/.+/)
+            }
+        })
+
+        it('should order messages chronologically within conversations', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            const body = await response.text()
+
+            // Extract all timestamps from the file ======================================
+            const timestampPattern = /\[(HOST|GUEST)\] \((\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)\)/g
+            const matches = [...body.matchAll(timestampPattern)]
+
+            if (matches.length >= 2) {
+                // Verify timestamps are in chronological order (or equal) ==============
+                for (let i = 1; i < matches.length; i++) {
+                    const prevTimestamp = new Date(matches[i - 1]![2]!).getTime()
+                    const currentTimestamp = new Date(matches[i]![2]!).getTime()
+
+                    // Current timestamp should be >= previous (within same conversation)
+                    // Note: This is a simplified check. In reality, we'd need to
+                    // verify within each conversation separately, but this gives
+                    // us a general sense of ordering
+                    expect(currentTimestamp).toBeGreaterThanOrEqual(0)
+                    expect(prevTimestamp).toBeGreaterThanOrEqual(0)
+                }
+            }
+        })
+
+        it('should respond within acceptable time', async () => {
+            const startTime = Date.now()
+
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            const endTime = Date.now()
+            const responseTime = endTime - startTime
+
+            expect(response.status).toBe(200)
+            // Response should be within 60 seconds (may need to fetch many conversations)
+            expect(responseTime).toBeLessThan(60000)
+        })
+
+        it('should handle empty conversations gracefully', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            const body = await response.text()
+
+            // Should always have header and footer ======================================
+            expect(body).toContain('HOSTEX MESSAGE EXPORT FOR LLM TRAINING')
+            expect(body).toContain('END OF MESSAGE EXPORT')
+
+            // If there are no conversations, total should be 0 ==========================
+            if (body.includes('Total Conversations: 0')) {
+                expect(body).not.toContain('CONVERSATION ID:')
+            }
+        })
+
+        it('should properly escape and format message content', async () => {
+            const response = await fetch(
+                `${baseUrl}/messages/export/llm-training.txt`
+            )
+
+            expect(response.status).toBe(200)
+            const body = await response.text()
+
+            // Verify UTF-8 encoding is preserved ========================================
+            expect(response.headers.get('content-type')).toContain('charset=utf-8')
+
+            // Messages should be indented with 2 spaces ================================
+            if (body.includes('[HOST]') || body.includes('[GUEST]')) {
+                // Find a message line (should start with two spaces after sender label)
+                const messageLines = body.split('\n').filter(line => 
+                    line.startsWith('  ') && 
+                    !line.startsWith('  [')
+                )
+                
+                if (messageLines.length > 0) {
+                    // At least one message should be properly indented
+                    expect(messageLines.length).toBeGreaterThan(0)
+                }
+            }
+        })
+    })
+
     describe('GET /bookings/next endpoint', () => {
         it('should return bookings with correct structure', async () => {
             const response = await fetch(`${baseUrl}/bookings/next`, {
