@@ -16,7 +16,7 @@ spec:
                 - name: ghcr-secret-monorepo
             containers:
                 - name: frontend
-                  image: ghcr.io/thomashermine/thomashermine-monorepo/frontend
+                  image: ghcr.io/thomashermine/monorepo/frontend
                   ports:
                       - containerPort: 3000
                   envFrom:
