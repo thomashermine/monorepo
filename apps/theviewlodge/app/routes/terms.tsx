@@ -1,21 +1,39 @@
-import type { Route } from './+types/terms'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { NavigationBar } from '~/components/components/NavigationBar'
-import { MobileMenu } from '~/components/components/MobileMenu'
+
+import { Card } from '~/components/blocks/Card'
 import { Section } from '~/components/blocks/Section'
+import { Footer } from '~/components/components/Footer'
+import { MobileMenu } from '~/components/components/MobileMenu'
+import { NavigationBar } from '~/components/components/NavigationBar'
 import { Heading } from '~/components/primitives/Heading'
 import { Text } from '~/components/primitives/Text'
-import { Card } from '~/components/blocks/Card'
-import { Footer } from '~/components/components/Footer'
-import i18nextServer from '~/i18next.server'
 
-export async function loader({ request }: Route.LoaderArgs) {
-    const t = await i18nextServer.getFixedT(request)
+import type { Route } from './+types/terms'
+
+export async function loader({ request, params }: Route.LoaderArgs) {
+    // Get language from URL path (e.g., /fr/terms or /terms)
+    const url = new URL(request.url)
+    const pathname = url.pathname
+    const pathSegments = pathname.split('/').filter(Boolean)
+    const firstSegment = pathSegments[0]
+    const supportedLngs = ['en', 'fr', 'es', 'nl', 'de']
+    const locale =
+        params.lang ||
+        (firstSegment && supportedLngs.includes(firstSegment)
+            ? firstSegment
+            : 'en')
+
+    // Import server module only in loader
+    const i18nextServer = await import('~/i18next.server').then(
+        (m) => m.default
+    )
+    const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })
     return {
+        locale,
         meta: {
-            title: t('meta.terms.title'),
             description: t('meta.terms.description'),
+            title: t('meta.terms.title'),
         },
     }
 }
@@ -24,21 +42,30 @@ export function meta({ data }: Route.MetaArgs) {
     return [
         { title: data?.meta.title },
         {
-            name: 'description',
             content: data?.meta.description,
+            name: 'description',
         },
     ]
 }
 
-export default function Terms() {
+export default function Terms({ loaderData }: Route.ComponentProps) {
     const { t, i18n } = useTranslation()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+    // Get locale from loader data or fallback to i18n.language
+    const currentLocale = loaderData?.locale || i18n.language
+
+    // Build navigation items with language-aware paths
+    const getLocalizedPath = (path: string) => {
+        if (currentLocale === 'en') return path
+        return `/${currentLocale}${path}`
+    }
+
     const navigationItems = [
-        { label: t('navigation.home'), href: '/' },
-        { label: t('navigation.bookNow'), href: '/#book' },
-        { label: t('navigation.contact'), href: '/#contact' },
-        { label: t('navigation.terms'), href: '/terms' },
+        { href: getLocalizedPath('/'), label: t('navigation.home') },
+        { href: getLocalizedPath('/#book'), label: t('navigation.bookNow') },
+        { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
+        { href: getLocalizedPath('/terms'), label: t('navigation.terms') },
     ]
 
     return (
@@ -364,12 +391,21 @@ export default function Terms() {
 
             <Footer
                 quickLinks={[
-                    { label: t('navigation.home'), href: '/' },
-                    { label: t('navigation.bookNow'), href: '/#book' },
-                    { label: t('navigation.contact'), href: '/#contact' },
                     {
+                        href: getLocalizedPath('/'),
+                        label: t('navigation.home'),
+                    },
+                    {
+                        href: getLocalizedPath('/#book'),
+                        label: t('navigation.bookNow'),
+                    },
+                    {
+                        href: getLocalizedPath('/#contact'),
+                        label: t('navigation.contact'),
+                    },
+                    {
+                        href: getLocalizedPath('/terms'),
                         label: t('navigation.termsAndConditions'),
-                        href: '/terms',
                     },
                 ]}
             />

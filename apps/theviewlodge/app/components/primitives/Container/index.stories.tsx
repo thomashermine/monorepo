@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Container } from './index'
 
 const meta: Meta<typeof Container> = {
-    title: 'Primitives/Container',
     component: Container,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
+    title: 'Primitives/Container',
 }
 
 export default meta
@@ -28,7 +29,6 @@ export const Default: Story = {
 
 export const Small: Story = {
     args: {
-        maxWidth: 'sm',
         children: (
             <div className="bg-cream p-8 rounded">
                 <p className="text-charcoal">
@@ -36,12 +36,12 @@ export const Small: Story = {
                 </p>
             </div>
         ),
+        maxWidth: 'sm',
     },
 }
 
 export const Large: Story = {
     args: {
-        maxWidth: '4xl',
         children: (
             <div className="bg-stone/20 p-8 rounded">
                 <p className="text-charcoal">
@@ -49,5 +49,6 @@ export const Large: Story = {
                 </p>
             </div>
         ),
+        maxWidth: '4xl',
     },
 }

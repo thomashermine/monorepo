@@ -1,15 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './index'
+
 import { Heading } from '../../primitives/Heading'
 import { Text } from '../../primitives/Text'
+import { Card } from './index'
 
 const meta: Meta<typeof Card> = {
-    title: 'Blocks/Card',
     component: Card,
     parameters: {
         layout: 'padded',
     },
     tags: ['autodocs'],
+    title: 'Blocks/Card',
 }
 
 export default meta
@@ -32,7 +33,6 @@ export const Default: Story = {
 
 export const WithHover: Story = {
     args: {
-        hover: true,
         children: (
             <div>
                 <Heading level="h3" size="md">
@@ -41,6 +41,7 @@ export const WithHover: Story = {
                 <Text className="mt-4">This card has hover effects.</Text>
             </div>
         ),
+        hover: true,
     },
 }
 

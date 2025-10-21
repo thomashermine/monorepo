@@ -22,22 +22,22 @@ export interface HeadingProps {
 }
 
 const sizeStyles: Record<HeadingSize, string> = {
-    xs: 'text-lg md:text-xl',
-    sm: 'text-xl md:text-2xl',
-    md: 'text-2xl md:text-3xl',
-    lg: 'text-3xl md:text-4xl lg:text-5xl',
-    xl: 'text-4xl md:text-5xl lg:text-6xl',
     '2xl': 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl',
     '3xl': 'text-5xl md:text-6xl lg:text-7xl xl:text-8xl',
     '4xl': 'text-5xl md:text-7xl lg:text-8xl xl:text-9xl',
     hero: 'text-5xl md:text-7xl lg:text-8xl xl:text-[8rem]',
+    lg: 'text-3xl md:text-4xl lg:text-5xl',
+    md: 'text-2xl md:text-3xl',
+    sm: 'text-xl md:text-2xl',
+    xl: 'text-4xl md:text-5xl lg:text-6xl',
+    xs: 'text-lg md:text-xl',
 }
 
 const weightStyles: Record<string, string> = {
-    light: 'font-light',
-    normal: 'font-normal',
-    medium: 'font-medium',
     bold: 'font-bold',
+    light: 'font-light',
+    medium: 'font-medium',
+    normal: 'font-normal',
 }
 
 export const Heading: React.FC<HeadingProps> = ({

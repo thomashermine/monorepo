@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { NavigationBar } from './index'
 
 const meta: Meta<typeof NavigationBar> = {
-    title: 'Components/NavigationBar',
     component: NavigationBar,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
+    title: 'Components/NavigationBar',
 }
 
 export default meta
@@ -15,31 +16,31 @@ type Story = StoryObj<typeof NavigationBar>
 
 export const Default: Story = {
     args: {
-        items: [
-            { label: 'Home', href: '#' },
-            { label: 'Book Now', href: '#book' },
-            { label: 'Gift Vouchers', href: '/vouchers' },
-            { label: 'Contact', href: '#contact' },
-        ],
         currentLanguage: 'EN',
+        items: [
+            { href: '#', label: 'Home' },
+            { href: '#book', label: 'Book Now' },
+            { href: '/vouchers', label: 'Gift Vouchers' },
+            { href: '#contact', label: 'Contact' },
+        ],
         languages: [
-            { code: 'EN', label: 'English', href: '/en' },
-            { code: 'FR', label: 'Français', href: '/fr' },
-            { code: 'NL', label: 'Nederlands', href: '/nl' },
-            { code: 'DE', label: 'Deutsch', href: '/de' },
-            { code: 'ES', label: 'Español', href: '/es' },
+            { code: 'EN', href: '/en', label: 'English' },
+            { code: 'FR', href: '/fr', label: 'Français' },
+            { code: 'NL', href: '/nl', label: 'Nederlands' },
+            { code: 'DE', href: '/de', label: 'Deutsch' },
+            { code: 'ES', href: '/es', label: 'Español' },
         ],
     },
 }
 
 export const WithoutLanguages: Story = {
     args: {
-        items: [
-            { label: 'Home', href: '#' },
-            { label: 'Book Now', href: '#book' },
-            { label: 'Contact', href: '#contact' },
-        ],
         currentLanguage: 'EN',
+        items: [
+            { href: '#', label: 'Home' },
+            { href: '#book', label: 'Book Now' },
+            { href: '#contact', label: 'Contact' },
+        ],
         languages: [],
     },
 }

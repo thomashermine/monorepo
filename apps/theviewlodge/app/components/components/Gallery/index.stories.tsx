@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Gallery } from './index'
 
 const meta: Meta<typeof Gallery> = {
-    title: 'Components/Gallery',
     component: Gallery,
     parameters: {
         layout: 'padded',
     },
     tags: ['autodocs'],
+    title: 'Components/Gallery',
 }
 
 export default meta
@@ -15,47 +16,47 @@ type Story = StoryObj<typeof Gallery>
 
 const sampleImages = [
     {
-        src: '/images/theviewlodge-aerial-field-house.jpg',
         alt: 'Aerial view',
         aspectRatio: '3/4',
+        src: '/images/theviewlodge-aerial-field-house.jpg',
     },
     {
-        src: '/images/theviewlodge-aerial-forest-canopy.jpg',
         alt: 'Forest canopy',
         aspectRatio: 'square',
+        src: '/images/theviewlodge-aerial-forest-canopy.jpg',
     },
     {
-        src: '/images/theviewlodge-aerial-front-facade.jpg',
         alt: 'Front facade',
         aspectRatio: '4/3',
+        src: '/images/theviewlodge-aerial-front-facade.jpg',
     },
     {
-        src: '/images/theviewlodge-bathroom-jacuzzi-jets.jpg',
         alt: 'Jacuzzi',
         aspectRatio: 'square',
+        src: '/images/theviewlodge-bathroom-jacuzzi-jets.jpg',
     },
     {
-        src: '/images/theviewlodge-sauna-mountain-view.jpg',
         alt: 'Sauna',
         aspectRatio: 'square',
+        src: '/images/theviewlodge-sauna-mountain-view.jpg',
     },
     {
-        src: '/images/theviewlodge-hottub.jpg',
         alt: 'Hot tub',
         aspectRatio: 'square',
+        src: '/images/theviewlodge-hottub.jpg',
     },
 ]
 
 export const Foldable: Story = {
     args: {
-        images: sampleImages,
         foldable: true,
+        images: sampleImages,
     },
 }
 
 export const AlwaysExpanded: Story = {
     args: {
-        images: sampleImages.slice(0, 3),
         foldable: false,
+        images: sampleImages.slice(0, 3),
     },
 }

@@ -10,11 +10,25 @@ import {
     useLoaderData,
 } from 'react-router'
 
-import i18nextServer from './i18next.server'
 import type { Route } from './+types/root'
 
-export async function loader({ request }: Route.LoaderArgs) {
-    const locale = await i18nextServer.getLocale(request)
+export async function loader({ request, params }: Route.LoaderArgs) {
+    // Get language from URL path (e.g., /fr or /)
+    const url = new URL(request.url)
+    const pathname = url.pathname
+    const pathSegments = pathname.split('/').filter(Boolean)
+    const firstSegment = pathSegments[0]
+
+    // Supported languages
+    const supportedLngs = ['en', 'fr', 'es', 'nl', 'de']
+
+    // Check if first segment is a supported language
+    const locale =
+        params.lang ||
+        (firstSegment && supportedLngs.includes(firstSegment)
+            ? firstSegment
+            : 'en')
+
     return { locale }
 }
 

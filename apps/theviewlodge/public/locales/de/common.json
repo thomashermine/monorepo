@@ -1,0 +1,333 @@
+{
+    "meta": {
+        "home": {
+            "title": "The View - Stunning views, Endless Relaxation. Wellness lodge in Stoumont, Belgium",
+            "description": "Premium wellness retreat in the Belgian Ardennes. Private sauna, whirlpool bath, stunning views. Perfect romantic getaway in Stoumont, Belgium.",
+            "ogTitle": "The View - Premium Wellness Retreat in Belgian Ardennes"
+        },
+        "vouchers": {
+            "title": "Gift Vouchers - The View - Perfect Gift for Wellness Retreat",
+            "description": "Give the gift of luxury and relaxation with The View gift vouchers. Perfect for romantic getaways in the Belgian Ardennes."
+        },
+        "terms": {
+            "title": "Terms and Conditions - The View",
+            "description": "Terms and conditions for booking and staying at The View, Belgium. Cancellation policy, booking terms, and legal information."
+        }
+    },
+    "navigation": {
+        "home": "Home",
+        "bookNow": "Book Now",
+        "giftVouchers": "Gift Vouchers",
+        "contact": "Contact",
+        "terms": "Terms",
+        "termsAndConditions": "Terms & Conditions"
+    },
+    "languages": {
+        "english": "English",
+        "french": "Français",
+        "dutch": "Nederlands",
+        "german": "Deutsch",
+        "spanish": "Español"
+    },
+    "hero": {
+        "title": {
+            "main": "Stunning views,",
+            "sub": "Endless Relaxation"
+        },
+        "subtitle": "Wellness Forest Lodge in the Heart of the Belgian Ardennes.",
+        "cta": "Book your stay"
+    },
+    "intro": {
+        "heading": "Escape to The View, your personal sanctuary nestled in Stoumont — the heart of the Belgian Ardennes Natural Park",
+        "cta": "Reserve now"
+    },
+    "cabin": {
+        "heading": "Our unique lodge offers serenity with a sauna, outdoor nordic hot tub, indoor whirlpool bath and luxurious amenities",
+        "cta": "Book now"
+    },
+    "amenities": {
+        "heading": "Wellness Amenities",
+        "subheading": "Everything you need for the perfect getaway",
+        "features": {
+            "sauna": {
+                "title": "Private Sauna",
+                "subtitle": "Unwind with stunning forest views"
+            },
+            "hotTub": {
+                "title": "Nordic Hot Tub",
+                "subtitle": "Outdoor relaxation with valley views"
+            },
+            "whirlpool": {
+                "title": "Whirlpool Bath",
+                "subtitle": "Luxurious relaxation"
+            }
+        },
+        "cta": "Experience comfort",
+        "items": {
+            "wifi": {
+                "title": "Free WiFi",
+                "description": "High-speed internet throughout the lodge"
+            },
+            "stargazing": {
+                "title": "Stargazing",
+                "description": "Clear night skies away from city lights"
+            },
+            "parking": {
+                "title": "Private Parking",
+                "description": "Dedicated parking space"
+            },
+            "smartHome": {
+                "title": "Smart Home",
+                "description": "Multiroom audio, personal greeting, romance mode"
+            },
+            "peaceful": {
+                "title": "Peaceful Retreat",
+                "description": "Escape the hustle and bustle"
+            }
+        }
+    },
+    "gallery": {
+        "heading": "Gallery",
+        "subheading": "Discover the beauty and tranquility of The View",
+        "cta": "Start your retreat",
+        "images": {
+            "aerialView": "Aerial view of lodge",
+            "forestCanopy": "Forest canopy",
+            "frontFacade": "Front facade",
+            "valleyView": "Valley view",
+            "bathroomJacuzzi": "Bathroom jacuzzi",
+            "saunaView": "Sauna view",
+            "hotTub": "Hot tub",
+            "kitchen": "Kitchen",
+            "diningArea": "Dining area",
+            "theView": "The View"
+        }
+    },
+    "testimonials": {
+        "badge": "Guest Favorite on Airbnb",
+        "heading": "Guest Reviews",
+        "subheading": "Hear from our guests about their unforgettable experiences",
+        "reviews": {
+            "eline": {
+                "author": "Eline",
+                "quote": "Beautiful home with fantastic views! The contact with Thomas and Caroline was very friendly. If you're looking for a place to unwind, look no further!"
+            },
+            "tim": {
+                "author": "Tim",
+                "quote": "A great cottage with everything you want. And the views… really stunning!"
+            },
+            "conny": {
+                "author": "Conny",
+                "quote": "Great wellness cottage with amazing views and lots of privacy, we have enjoyed!"
+            },
+            "thimo": {
+                "author": "Thimo",
+                "quote": "What a wonderful experience! We really had a super nice stay. The location is perfect to unwind completely."
+            },
+            "heidi": {
+                "author": "Heidi",
+                "quote": "An oasis of peace with a stunning view. We will be back!"
+            },
+            "julie": {
+                "author": "Julie",
+                "quote": "A real little cocoon in the heart of nature."
+            }
+        }
+    },
+    "faq": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about your stay",
+        "cta": "Book your getaway",
+        "items": {
+            "amenities": {
+                "question": "What amenities does The View offer?",
+                "answer": "The View features a private sauna, a bubble bathtub, stunning views, and a full smart home experience, including a romance mode with customized lighting and music."
+            },
+            "capacity": {
+                "question": "How many people can stay at The View?",
+                "answer": "The lodge is designed for a maximum of two guests, providing the perfect setting for an intimate and romantic retreat."
+            },
+            "pets": {
+                "question": "Can I bring my pet or child?",
+                "answer": "Pets are not allowed. Infants are welcome, but The View is primarily designed as a romantic getaway for adults."
+            }
+        }
+    },
+    "vouchers": {
+        "hero": {
+            "title": {
+                "main": "Gift",
+                "sub": "Vouchers"
+            },
+            "subtitle": "Give the Perfect Gift of Luxury and Relaxation",
+            "cta": "Browse Vouchers"
+        },
+        "intro": {
+            "heading": "Looking for the perfect gift for someone special?",
+            "text": "Treat them to an unforgettable escape in the heart of the Belgian Ardennes with a gift voucher for The View."
+        },
+        "selection": {
+            "heading": "Choose Your Gift Voucher",
+            "subheading": "Select the perfect amount for your special someone",
+            "mostPopular": "Most Popular",
+            "amounts": {
+                "49": {
+                    "description": "Perfect for a small gesture",
+                    "details": "A thoughtful gift to contribute towards an unforgettable wellness experience."
+                },
+                "99": {
+                    "description": "Generous contribution",
+                    "details": "A generous gift that brings them closer to their perfect wellness retreat."
+                },
+                "199": {
+                    "description": "Typical weekday night",
+                    "details": "Perfect for a mid-week escape, covering most of a peaceful weekday night."
+                },
+                "299": {
+                    "description": "Typical weekend night",
+                    "details": "The perfect gift for a romantic weekend getaway."
+                },
+                "499": {
+                    "description": "Typical 2-night weekend",
+                    "details": "The ultimate luxury gift – a full weekend retreat."
+                }
+            },
+            "purchaseButton": "Purchase {{amount}} Voucher"
+        },
+        "custom": {
+            "heading": "Need a Custom Amount?",
+            "text": "For a custom amount or a specific night, reach out directly to us.",
+            "emailUs": "Email Us",
+            "phoneText": "Phone/Text",
+            "cta": "Contact Us for Custom Voucher"
+        },
+        "testimonials": {
+            "heading": "What Our Guests Say",
+            "cta": "Discover The View"
+        },
+        "howItWorks": {
+            "heading": "How it works",
+            "features": {
+                "instantDelivery": {
+                    "title": "Instant delivery",
+                    "description": "You'll receive a unique voucher code by email"
+                },
+                "transferable": {
+                    "title": "Transferable",
+                    "description": "The code is not nominative"
+                },
+                "flexibleValue": {
+                    "title": "Flexible value",
+                    "description": "Acts as a discount on the total price"
+                },
+                "remainderKept": {
+                    "title": "Remainder kept",
+                    "description": "Remaining balance for future reservations"
+                },
+                "valid12Months": {
+                    "title": "Valid 12 months",
+                    "description": "Plenty of time to plan a retreat"
+                },
+                "nonRefundable": {
+                    "title": "Non-refundable",
+                    "description": "Cannot be exchanged for cash"
+                }
+            }
+        },
+        "cta": {
+            "heading": "Ready to Give the Perfect Gift?",
+            "text": "Choose from our selection of gift vouchers and give someone special the gift of luxury and relaxation.",
+            "button": "Browse All Vouchers"
+        }
+    },
+    "terms": {
+        "heading": "Terms and Conditions",
+        "subheading": "Please read these terms and conditions carefully before booking your stay at The View.",
+        "operator": {
+            "heading": "Operator Information",
+            "intro": "The View is operated by:",
+            "name": "Crafted Signals SRL",
+            "address": "Rue d'Andenne 81/001",
+            "city": "1060 Saint-Gilles, Belgium",
+            "vat": "VAT: BE 0798 582 489"
+        },
+        "booking": {
+            "heading": "Booking Terms",
+            "intro": "By making a reservation at The View, you agree to these terms and conditions. All bookings are subject to availability and confirmation.",
+            "reservationProcess": {
+                "heading": "Reservation Process",
+                "item1": "Reservations can be made through our official booking platform or by direct contact",
+                "item2": "Booking confirmation will be sent via email within 24 hours",
+                "item3": "Full payment is required 14 days before check-in"
+            },
+            "guestCapacity": {
+                "heading": "Guest Capacity",
+                "text": "The View accommodates a maximum of 2 guests. Infants are welcome but must be declared at the time of booking. The property is designed as a romantic retreat for adults."
+            }
+        },
+        "cancellation": {
+            "heading": "Cancellation Policy",
+            "refundPolicy": {
+                "heading": "Refund Policy",
+                "moreThan14Days": {
+                    "label": "More than 14 days before check-in:",
+                    "text": "Full refund of all payments"
+                },
+                "lessThan14Days": {
+                    "label": "14 days or less before check-in:",
+                    "text": "No refund available"
+                }
+            },
+            "notice": "Cancellations must be made in writing via email or through our booking platform. The cancellation date is determined by when we receive your written cancellation notice."
+        },
+        "checkInOut": {
+            "heading": "Check-in and Check-out",
+            "checkIn": {
+                "heading": "Check-in",
+                "time": "From 4:00 PM onwards",
+                "note": "Self-check-in using provided access code"
+            },
+            "checkOut": {
+                "heading": "Check-out",
+                "time": "Before 12:00 PM",
+                "note": "Late check-out may be available upon request"
+            }
+        },
+        "houseRules": {
+            "heading": "House Rules",
+            "permitted": {
+                "heading": "Permitted",
+                "item1": "Maximum 2 adult guests (infants welcome)",
+                "item2": "Quiet enjoyment of the property",
+                "item3": "Use of all provided amenities",
+                "item4": "Smoking on outdoor terraces only"
+            },
+            "notPermitted": {
+                "heading": "Not Permitted",
+                "item1": "Pets of any kind",
+                "item2": "Parties or events",
+                "item3": "Smoking inside the lodge",
+                "item4": "Excessive noise"
+            }
+        },
+        "contact": {
+            "heading": "Contact Information",
+            "operated": "Operated by Crafted Signals SRL",
+            "email": "Email:",
+            "website": "Website:"
+        },
+        "effectiveDate": {
+            "lastUpdated": "Last Updated:",
+            "date": "September 2025",
+            "notice": "These terms and conditions are effective immediately and apply to all bookings made after this date."
+        }
+    },
+    "footer": {
+        "instagram": "Instagram"
+    },
+    "contact": {
+        "email": "hello@theviewlodge.be",
+        "phone": "+32 495 64 99 99",
+        "website": "theviewlodge.be"
+    }
+}

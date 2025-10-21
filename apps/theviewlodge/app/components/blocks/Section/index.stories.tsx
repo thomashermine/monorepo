@@ -1,15 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section } from './index'
+
 import { Heading } from '../../primitives/Heading'
 import { Text } from '../../primitives/Text'
+import { Section } from './index'
 
 const meta: Meta<typeof Section> = {
-    title: 'Blocks/Section',
     component: Section,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
+    title: 'Blocks/Section',
 }
 
 export default meta
@@ -48,7 +49,6 @@ export const CreamBackground: Story = {
 
 export const NoPadding: Story = {
     args: {
-        padding: 'none',
         children: (
             <div className="p-8 bg-sage/20 rounded">
                 <Heading level="h2" size="lg">
@@ -59,5 +59,6 @@ export const NoPadding: Story = {
                 </Text>
             </div>
         ),
+        padding: 'none',
     },
 }

@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef,useState } from 'react'
+
+import { Button } from '../../primitives/Button'
 import { Heading } from '../../primitives/Heading'
 import { Text } from '../../primitives/Text'
-import { Button } from '../../primitives/Button'
 
 export interface HeroSectionProps {
     title: React.ReactNode

@@ -23,10 +23,19 @@ jobs:
                 app:
                     - name: backend
                       dockerfile: Dockerfile.backend
+                      app_name: backend
                     - name: frontend
                       dockerfile: Dockerfile.frontend
-                    - name: storybook
+                      app_name: frontend
+                    - name: frontend-storybook
                       dockerfile: Dockerfile.storybook
+                      app_name: frontend
+                    - name: theviewlodge
+                      dockerfile: Dockerfile.frontend
+                      app_name: theviewlodge
+                    - name: theviewlodge-storybook
+                      dockerfile: Dockerfile.storybook
+                      app_name: theviewlodge
 
         steps:
             - name: Checkout code
@@ -62,7 +71,7 @@ jobs:
                   tags: ${{ steps.meta.outputs.tags }}
                   labels: ${{ steps.meta.outputs.labels }}
                   build-args: |
-                      APP_NAME=${{ matrix.app.name }}
+                      APP_NAME=${{ matrix.app.app_name }}
                   cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.app.name }}:ci
                   cache-to: type=inline,mode=min
 
@@ -75,17 +84,30 @@ jobs:
                 app:
                     - name: backend
                       dockerfile: Dockerfile.backend
+                      app_name: backend
                       port: 3000
                     - name: frontend
                       dockerfile: Dockerfile.frontend
+                      app_name: frontend
                       port: 3000
-                    - name: storybook
+                    - name: frontend-storybook
                       dockerfile: Dockerfile.storybook
+                      app_name: frontend
+                      port: 3000
+                    - name: theviewlodge
+                      dockerfile: Dockerfile.frontend
+                      app_name: theviewlodge
+                      port: 3000
+                    - name: theviewlodge-storybook
+                      dockerfile: Dockerfile.storybook
+                      app_name: theviewlodge
                       port: 3000
         outputs:
             backend-url: ${{ steps.deployment-url.outputs.backend-url }}
             frontend-url: ${{ steps.deployment-url.outputs.frontend-url }}
-            storybook-url: ${{ steps.deployment-url.outputs.storybook-url }}
+            frontend-storybook-url: ${{ steps.deployment-url.outputs.frontend-storybook-url }}
+            theviewlodge-url: ${{ steps.deployment-url.outputs.theviewlodge-url }}
+            theviewlodge-storybook-url: ${{ steps.deployment-url.outputs.theviewlodge-storybook-url }}
 
         steps:
             - name: Checkout code
@@ -143,7 +165,7 @@ jobs:
                   [build]
                     dockerfile = '${{ matrix.app.dockerfile }}'
                     [build.args]
-                      APP_NAME = '${{ matrix.app.name }}'
+                      APP_NAME = '${{ matrix.app.app_name }}'
 
                   [http_service]
                     internal_port = ${{ matrix.app.port }}
@@ -167,6 +189,24 @@ jobs:
               if: steps.app-exists.outputs.exists == 'false'
               run: |
                   flyctl apps create ${{ steps.app-name.outputs.app_name }} --org personal
+              env:
+                  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+            - name: 🔐 Load and set environment variables from ENV_FILE secret
+              run: |
+                  # Create .env file from secret
+                  echo "${{ secrets.ENV_FILE }}" > .env
+
+                  # Import secrets to Fly.io app
+                  if [ -s .env ]; then
+                    echo "📤 Importing secrets to Fly.io app..."
+                    flyctl secrets import --app ${{ steps.app-name.outputs.app_name }} < .env
+                  else
+                    echo "⚠️  ENV_FILE secret is empty or not set, skipping secrets import"
+                  fi
+
+                  # Clean up .env file
+                  rm -f .env
               env:
                   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -281,12 +321,12 @@ jobs:
               run: |
                   BACKEND_URL="${{ needs.deploy-to-flyio.outputs.backend-url }}"
                   echo "Waiting for ${BACKEND_URL} to be ready..."
-                  for i in {1..30}; do
-                    if curl -sf -X POST "${BACKEND_URL}/echo" -H "Content-Type: text/plain" -d "health-check" > /dev/null 2>&1; then
+                  for i in {1..10}; do
+                    if curl -sf "${BACKEND_URL}" > /dev/null 2>&1; then
                       echo "✅ Backend is ready!"
                       exit 0
                     fi
-                    echo "Attempt $i/30: Backend not ready yet, waiting..."
+                    echo "Attempt $i/10: Backend not ready yet, waiting..."
                     sleep 10
                   done
                   echo "❌ Backend did not become ready in time"
@@ -544,9 +584,11 @@ jobs:
                       // Collect all sections
                       const backendUrl = '${{ needs.deploy-to-flyio.outputs.backend-url }}';
                       const frontendUrl = '${{ needs.deploy-to-flyio.outputs.frontend-url }}';
-                      const storybookUrl = '${{ needs.deploy-to-flyio.outputs.storybook-url }}';
+                      const frontendStorybookUrl = '${{ needs.deploy-to-flyio.outputs.frontend-storybook-url }}';
+                      const theviewlodgeUrl = '${{ needs.deploy-to-flyio.outputs.theviewlodge-url }}';
+                      const theviewlodgeStorybookUrl = '${{ needs.deploy-to-flyio.outputs.theviewlodge-storybook-url }}';
 
-                      const deploymentSection = `## 🚀 Deployments Ready!\n\n- **Backend**: ${backendUrl}\n- **Frontend**: ${frontendUrl}\n- **Storybook**: ${storybookUrl}`;
+                      const deploymentSection = `## 🚀 Deployments Ready!\n\n- **Backend**: ${backendUrl}\n- **Frontend**: ${frontendUrl}\n- **Frontend Storybook**: ${frontendStorybookUrl}\n- **The View Lodge**: ${theviewlodgeUrl}\n- **The View Lodge Storybook**: ${theviewlodgeStorybookUrl}`;
 
                       const testSummary = `${{ needs.backend-e2e-test.outputs.test-summary }}` || '';
                       const lighthouseSummary = `${{ needs.lighthouse-test.outputs.lighthouse-summary }}` || '';
@@ -585,7 +627,14 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                app: [backend, frontend, storybook]
+                app:
+                    [
+                        backend,
+                        frontend,
+                        frontend-storybook,
+                        theviewlodge,
+                        theviewlodge-storybook,
+                    ]
 
         steps:
             - name: Setup Fly.io CLI

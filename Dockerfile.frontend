@@ -87,5 +87,13 @@ COPY --from=builder /app/packages ./packages
 # Set working directory to frontend app
 WORKDIR /app/apps/${APP_NAME}
 
+# Create non-root user for security
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S reactrouter -u 1001 && \
+    chown -R reactrouter:nodejs /app
+
+# Switch to non-root user
+USER reactrouter
+
 # Run the application
 CMD ["pnpm", "run", "start"]

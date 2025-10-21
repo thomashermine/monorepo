@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Icon } from './index'
 
 const meta: Meta<typeof Icon> = {
-    title: 'Primitives/Icon',
     component: Icon,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
+    title: 'Primitives/Icon',
 }
 
 export default meta

@@ -1,6 +1,7 @@
 import React from 'react'
-import { Card } from '../Card'
+
 import { Text } from '../../primitives/Text'
+import { Card } from '../Card'
 
 export interface TestimonialCardProps {
     quote: string

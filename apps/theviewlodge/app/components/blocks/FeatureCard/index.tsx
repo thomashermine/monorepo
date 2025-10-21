@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card } from '../Card'
 
 export interface FeatureCardProps {
     image: string
@@ -9,9 +8,9 @@ export interface FeatureCardProps {
 }
 
 const sizeStyles = {
-    small: 'w-[400px] h-[350px]',
-    medium: 'w-[450px] h-[350px]',
     large: 'w-[500px] h-[350px]',
+    medium: 'w-[450px] h-[350px]',
+    small: 'w-[400px] h-[350px]',
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({

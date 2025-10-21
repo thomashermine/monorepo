@@ -29,7 +29,7 @@ jobs:
               run: pnpm install --frozen-lockfile
 
             - name: 🔨 Build packages
-              run: pnpm -r --filter="@monorepo/helpers" build
+              run: pnpm build
 
             - name: 🔍 Type check
               run: pnpm type-check
@@ -54,6 +54,9 @@ jobs:
             - name: ⚙️ Install dependencies
               run: pnpm install --frozen-lockfile
 
+            - name: 🔨 Build packages
+              run: pnpm build
+
             - name: 🔧 Lint
               run: pnpm lint
 
@@ -74,11 +77,20 @@ jobs:
                   node-version: '20'
                   cache: 'pnpm'
 
+            - name: 🔐 Load environment variables from ENV_FILE secret
+              run: |
+                  echo "${{ secrets.ENV_FILE }}" > .env
+                  # Export all variables to GitHub Actions environment
+                  set -a
+                  source .env
+                  set +a
+                  cat .env >> $GITHUB_ENV
+
             - name: ⚙️ Install dependencies
               run: pnpm install --frozen-lockfile
 
             - name: 🔨 Build packages
-              run: pnpm -r --filter="@monorepo/helpers" build
+              run: pnpm build
 
             - name: 🧪 Run Vitest tests
               run: pnpm test-unit
@@ -201,6 +213,15 @@ jobs:
                   node-version: '20'
                   cache: 'pnpm'
 
+            - name: 🔐 Load environment variables from ENV_FILE secret
+              run: |
+                  echo "${{ secrets.ENV_FILE }}" > apps/backend/.env
+                  # Export all variables to GitHub Actions environment
+                  set -a
+                  source apps/backend/.env
+                  set +a
+                  cat apps/backend/.env >> $GITHUB_ENV
+
             - name: ⚙️ Install dependencies
               run: pnpm install --frozen-lockfile
 
@@ -212,8 +233,6 @@ jobs:
 
             - name: 🧪 Run E2E tests
               run: |
-                  # Create .env file for backend
-                  touch apps/backend/.env
 
                   # Start backend server in background
                   pnpm --filter backend start &

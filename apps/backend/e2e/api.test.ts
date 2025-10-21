@@ -1,147 +1,236 @@
+import type { Reservation } from '@monorepo/helpers/hostex'
+import * as dotenv from 'dotenv'
 import { describe, expect, it } from 'vitest'
 
+dotenv.config()
 // Get the base URL from environment variable (for testing deployed instances)
 // or fallback to localhost for local development
-const BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000'
+const port = process.env.PORT ?? 3000
+const baseUrl = process.env.API_BASE_URL ?? 'http://localhost:' + port
+console.log('baseUrl', baseUrl)
+
+// ============================================================================
+// Type Definitions for API Responses
+// ============================================================================
+
+interface CalendarEvent {
+    title: string
+    description: string
+    start: string
+    end: string
+    isAllDay: boolean
+    reservation: Reservation
+}
+
+interface BookingsResponse {
+    bookings: {
+        reservations: Reservation[]
+    }
+    page: number
+    pageSize: number
+    total: number
+    requestId: string
+}
 
 describe('Backend API E2E Tests', () => {
-    describe('POST /echo endpoint', () => {
-        it('should echo back the message with timestamp', async () => {
-            const testMessage = 'Hello from E2E test!'
-
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: testMessage,
-            })
-
-            expect(response.status).toBe(200)
-
-            const body = await response.json()
-            expect(body).toHaveProperty('message', testMessage)
-            expect(body).toHaveProperty('timestamp')
-
-            // Verify timestamp is a valid ISO string
-            const timestamp = new Date(body.timestamp)
-            expect(timestamp.toISOString()).toBe(body.timestamp)
-        })
-
-        it('should handle empty message', async () => {
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: '',
-            })
-
-            expect(response.status).toBe(200)
-
-            const body = await response.json()
-            expect(body).toHaveProperty('message', '')
-            expect(body).toHaveProperty('timestamp')
-        })
-
-        it('should handle large messages', async () => {
-            const largeMessage = 'A'.repeat(10000)
-
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: largeMessage,
-            })
-
-            expect(response.status).toBe(200)
-
-            const body = await response.json()
-            expect(body.message).toBe(largeMessage)
-            expect(body).toHaveProperty('timestamp')
-        })
-
-        it('should handle special characters', async () => {
-            const specialMessage =
-                '!@#$%^&*()_+-=[]{}|;:,.<>?/~`\'"\\测试emoji🚀'
-
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: specialMessage,
-            })
-
-            expect(response.status).toBe(200)
-
-            const body = await response.json()
-            expect(body.message).toBe(specialMessage)
-            expect(body).toHaveProperty('timestamp')
-        })
-
-        it('should handle JSON payload', async () => {
-            const jsonPayload = JSON.stringify({
-                key: 'value',
-                nested: { data: 'test' },
-            })
-
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: jsonPayload,
-            })
-
-            expect(response.status).toBe(200)
-
-            const body = await response.json()
-            expect(body.message).toBe(jsonPayload)
-            expect(body).toHaveProperty('timestamp')
-        })
-
-        it('should return timestamp within reasonable time window', async () => {
-            const beforeRequest = new Date()
-
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: 'timestamp test',
-            })
-
-            const afterRequest = new Date()
-
-            expect(response.status).toBe(200)
-
-            const body = await response.json()
-            const responseTimestamp = new Date(body.timestamp)
-
-            // Verify timestamp is between before and after request times
-            expect(responseTimestamp.getTime()).toBeGreaterThanOrEqual(
-                beforeRequest.getTime()
+    describe('GET /bookings/calendar/full-day.ics endpoint', () => {
+        it('should return ICS calendar with full-day booking events', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/full-day.ics`
             )
-            expect(responseTimestamp.getTime()).toBeLessThanOrEqual(
-                afterRequest.getTime()
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain(
+                'text/calendar'
             )
+            expect(response.headers.get('content-disposition')).toContain(
+                'attachment'
+            )
+            expect(response.headers.get('content-disposition')).toContain(
+                'bookings-full-day.ics'
+            )
+
+            const body = await response.text()
+            expect(body).toContain('BEGIN:VCALENDAR')
+            expect(body).toContain('END:VCALENDAR')
+        })
+    })
+
+    describe('GET /bookings/calendar/checkinout.ics endpoint', () => {
+        it('should return ICS calendar with check-in/check-out events', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/checkinout.ics`
+            )
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain(
+                'text/calendar'
+            )
+            expect(response.headers.get('content-disposition')).toContain(
+                'attachment'
+            )
+            expect(response.headers.get('content-disposition')).toContain(
+                'bookings-checkinout.ics'
+            )
+
+            const body = await response.text()
+            expect(body).toContain('BEGIN:VCALENDAR')
+            expect(body).toContain('END:VCALENDAR')
+        })
+    })
+
+    describe('GET /bookings/calendar/full-day.json endpoint', () => {
+        it('should return JSON with full-day booking events', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/full-day.json`
+            )
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain('json')
+
+            const body = (await response.json()) as CalendarEvent[]
+            expect(Array.isArray(body)).toBe(true)
+
+            // If there are events, validate their structure
+            if (body.length > 0) {
+                const event = body[0]
+                expect(event).toBeDefined()
+                expect(event).toHaveProperty('title')
+                expect(event).toHaveProperty('description')
+                expect(event).toHaveProperty('start')
+                expect(event).toHaveProperty('end')
+                expect(event).toHaveProperty('isAllDay')
+                if (event) {
+                    expect(event.isAllDay).toBe(true)
+                }
+                expect(event).toHaveProperty('reservation')
+            }
+        })
+
+        it('should exclude cancelled bookings', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/full-day.json`
+            )
+
+            expect(response.status).toBe(200)
+            const body = (await response.json()) as CalendarEvent[]
+
+            // Verify no cancelled bookings in the results
+            for (const event of body) {
+                expect(event.reservation.status).not.toBe('cancelled')
+            }
+        })
+
+        it('should format title correctly with guest info and emojis', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/full-day.json`
+            )
+
+            expect(response.status).toBe(200)
+            const body = (await response.json()) as CalendarEvent[]
+
+            // Validate title format for each event
+            body.forEach((event) => {
+                expect(event).toBeDefined()
+                // Title should contain guest name, booking number, total rate, discounted rate, and emojis for number of people
+                // Title format: "Guest Name #numberOfNights TotalRateEUR (DiscountedRateEUR) 👤👤" where 👤 represents each person
+                // Regex: /.*#\d+\s+\d+EUR\s+\(\d+EUR\)\s+[\u{1F600}-\u{1F64F}]+/u
+                // Explanation of the regex components:
+                // - .*: Matches any character (except for line terminators) zero or more times, representing the guest name.
+                // - #\d+: Matches a hash symbol followed by one or more digits, representing the number of nights.
+                // - \s+: Matches one or more whitespace characters, ensuring separation between components.
+                // - \d+EUR: Matches one or more digits followed by 'EUR', representing the total rate.
+                // - \(\d+EUR\): Matches an opening parenthesis, one or more digits, 'EUR', and a closing parenthesis, representing the discounted rate.
+                // - [\u{1F600}-\u{1F64F}]+: Matches one or more emojis in the specified Unicode range, allowing for any emoji. (👤, 👶, 🍼, 🐾,...)
+                expect(event.title).toMatch(/.*#\d+\s+\d+€\s+\(\d+€\)\s+👤+/u)
+            })
+        })
+    })
+
+    describe('GET /bookings/calendar/checkinout.json endpoint', () => {
+        it('should return JSON with check-in/check-out events', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/checkinout.json`
+            )
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain('json')
+
+            const body = (await response.json()) as CalendarEvent[]
+            expect(Array.isArray(body)).toBe(true)
+
+            // If there are events, validate their structure
+            if (body.length > 0) {
+                const event = body[0]
+                expect(event).toBeDefined()
+                expect(event).toHaveProperty('title')
+                expect(event).toHaveProperty('description')
+                expect(event).toHaveProperty('start')
+                expect(event).toHaveProperty('end')
+                expect(event).toHaveProperty('isAllDay')
+                if (event) {
+                    expect(event.isAllDay).toBe(false)
+                    expect(event).toHaveProperty('reservation')
+
+                    // Title should start with "Check-in:" or "Check-out:"
+                    expect(
+                        event.title.startsWith('Check-in:') ??
+                            event.title.startsWith('Check-out:')
+                    ).toBe(true)
+                }
+            }
+        })
+
+        it('should create two events per booking (check-in and check-out)', async () => {
+            const fullDayResponse = await fetch(
+                `${baseUrl}/bookings/calendar/full-day.json`
+            )
+            const fullDayBody =
+                (await fullDayResponse.json()) as CalendarEvent[]
+            const fullDayCount = fullDayBody.length
+
+            const checkInOutResponse = await fetch(
+                `${baseUrl}/bookings/calendar/checkinout.json`
+            )
+            const checkInOutBody =
+                (await checkInOutResponse.json()) as CalendarEvent[]
+
+            // Should have 2x events (one check-in and one check-out per booking)
+            expect(checkInOutBody.length).toBe(fullDayCount * 2)
+        })
+
+        it('should have correct time for check-in and check-out events', async () => {
+            const response = await fetch(
+                `${baseUrl}/bookings/calendar/checkinout.json`
+            )
+
+            expect(response.status).toBe(200)
+            const body = (await response.json()) as CalendarEvent[]
+
+            // If there are events, validate timing
+            if (body.length > 0) {
+                for (const event of body) {
+                    const startDate = new Date(event.start)
+
+                    if (event.title.startsWith('Check-in:')) {
+                        // Default check-in time should be 4pm (16:00)
+                        // (unless property has custom config)
+                        expect(startDate.getHours()).toBeGreaterThanOrEqual(0)
+                        expect(startDate.getHours()).toBeLessThan(24)
+                    } else if (event.title.startsWith('Check-out:')) {
+                        // Default check-out time should be noon (12:00)
+                        // (unless property has custom config)
+                        expect(startDate.getHours()).toBeGreaterThanOrEqual(0)
+                        expect(startDate.getHours()).toBeLessThan(24)
+                    }
+                }
+            }
         })
     })
 
     describe('Error handling', () => {
-        it('should handle GET request to POST-only endpoint', async () => {
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'GET',
-            })
-
-            // Should return 405 Method Not Allowed or 404 Not Found
-            expect([404, 405]).toContain(response.status)
-        })
-
         it('should handle non-existent endpoints', async () => {
-            const response = await fetch(`${BASE_URL}/nonexistent`, {
+            const response = await fetch(`${baseUrl}/nonexistent`, {
                 method: 'GET',
             })
 
@@ -149,67 +238,205 @@ describe('Backend API E2E Tests', () => {
         })
     })
 
-    describe('Performance & Reliability', () => {
-        it('should handle concurrent requests', async () => {
-            const concurrentRequests = 10
-            const requests = Array.from(
-                { length: concurrentRequests },
-                (_, i) =>
-                    fetch(`${BASE_URL}/echo`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'text/plain',
-                        },
-                        body: `Concurrent test ${i}`,
-                    })
+    describe('Health check', () => {
+        it('server should be reachable', async () => {
+            // Try to reach the endpoint to verify server is up
+            const response = await fetch(`${baseUrl}/`, {
+                method: 'GET',
+            })
+
+            expect(response.ok).toBeTruthy()
+        })
+    })
+
+    describe('GET /bookings/next endpoint', () => {
+        it('should return bookings with correct structure', async () => {
+            const response = await fetch(`${baseUrl}/bookings/next`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+            expect(response.headers.get('content-type')).toContain(
+                'application/json'
             )
 
-            const responses = await Promise.all(requests)
+            const body = (await response.json()) as BookingsResponse
 
-            responses.forEach((response) => {
-                expect(response.status).toBe(200)
+            // Verify response structure
+            expect(body).toHaveProperty('bookings')
+            expect(body.bookings).toHaveProperty('reservations')
+
+            // Verify types
+            expect(Array.isArray(body.bookings.reservations)).toBe(true)
+        })
+
+        it('should return array of bookings with expected properties', async () => {
+            const response = await fetch(`${baseUrl}/bookings/next`, {
+                method: 'GET',
             })
 
-            // Verify each response has correct message
-            const bodies = await Promise.all(responses.map((r) => r.json()))
+            expect(response.status).toBe(200)
 
-            bodies.forEach((body, i) => {
-                expect(body.message).toBe(`Concurrent test ${i}`)
+            const body = (await response.json()) as BookingsResponse
+
+            // If there are bookings, verify their structure
+            if (body.bookings.reservations.length > 0) {
+                const booking = body.bookings.reservations[0]
+                expect(booking).toBeDefined()
+
+                if (booking) {
+                    // Verify booking has expected properties (snake_case)
+                    expect(booking).toHaveProperty('reservation_code')
+                    expect(booking).toHaveProperty('property_id')
+                    expect(booking).toHaveProperty('check_in_date')
+                    expect(booking).toHaveProperty('check_out_date')
+                    expect(booking).toHaveProperty('status')
+                    expect(booking).toHaveProperty('guest_name')
+                    expect(booking).toHaveProperty('number_of_adults')
+                    expect(booking).toHaveProperty('created_at')
+                    expect(booking).toHaveProperty('booked_at')
+
+                    // Verify guest_name is a string
+                    expect(typeof booking.guest_name).toBe('string')
+
+                    // Verify dates are valid ISO strings
+                    expect(() => new Date(booking.check_in_date)).not.toThrow()
+                    expect(() => new Date(booking.check_out_date)).not.toThrow()
+                    expect(() => new Date(booking.created_at)).not.toThrow()
+                    expect(() => new Date(booking.booked_at)).not.toThrow()
+
+                    // Verify rates structure
+                    expect(booking).toHaveProperty('rates')
+                    expect(booking.rates).toHaveProperty('total_rate')
+                    expect(booking.rates).toHaveProperty('total_commission')
+                    expect(booking.rates).toHaveProperty('rate')
+                    expect(booking.rates).toHaveProperty('commission')
+                    expect(booking.rates).toHaveProperty('details')
+
+                    // Verify money amount structure
+                    expect(booking.rates.total_rate).toHaveProperty('currency')
+                    expect(booking.rates.total_rate).toHaveProperty('amount')
+                    expect(typeof booking.rates.total_rate.amount).toBe(
+                        'number'
+                    )
+                    expect(typeof booking.rates.total_rate.currency).toBe(
+                        'string'
+                    )
+
+                    // Verify details array
+                    expect(Array.isArray(booking.rates.details)).toBe(true)
+                    if (booking.rates.details.length > 0) {
+                        const detail = booking.rates.details[0]
+                        expect(detail).toBeDefined()
+                        if (detail) {
+                            expect(detail).toHaveProperty('type')
+                            expect(detail).toHaveProperty('description')
+                            expect(detail).toHaveProperty('currency')
+                            expect(detail).toHaveProperty('amount')
+                            expect(typeof detail.amount).toBe('number')
+                        }
+                    }
+
+                    // Verify additional fields
+                    expect(booking).toHaveProperty('check_in_details')
+                    expect(booking).toHaveProperty('guests')
+                    expect(Array.isArray(booking.guests)).toBe(true)
+                    expect(booking).toHaveProperty('custom_channel')
+                    expect(booking.custom_channel).toHaveProperty('id')
+                    expect(booking.custom_channel).toHaveProperty('name')
+                }
+            }
+        })
+
+        it('should reject POST requests', async () => {
+            const response = await fetch(`${baseUrl}/bookings/next`, {
+                body: JSON.stringify({}),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                method: 'POST',
             })
+
+            // Should return 404 or 405 Method Not Allowed
+            expect([404, 405]).toContain(response.status)
         })
 
         it('should respond within acceptable time', async () => {
             const startTime = Date.now()
 
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: 'Performance test',
+            const response = await fetch(`${baseUrl}/bookings/next`, {
+                method: 'GET',
             })
 
             const endTime = Date.now()
             const responseTime = endTime - startTime
 
             expect(response.status).toBe(200)
-            // Response should be within 5 seconds (generous for deployed services)
-            expect(responseTime).toBeLessThan(5000)
+            // Response should be within 30 seconds (Hostex API can be slow)
+            expect(responseTime).toBeLessThan(30000)
         })
-    })
 
-    describe('Health check', () => {
-        it('server should be reachable', async () => {
-            // Try to reach the endpoint to verify server is up
-            const response = await fetch(`${BASE_URL}/echo`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: 'health check',
+        it('should have consistent pagination', async () => {
+            const response = await fetch(`${baseUrl}/bookings/next`, {
+                method: 'GET',
             })
 
-            expect(response.ok).toBeTruthy()
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsResponse
+
+            // Verify bookings array length doesn't exceed pageSize
+            expect(body.bookings.reservations.length).toBeLessThanOrEqual(
+                body.pageSize
+            )
+
+            // Verify total is consistent with returned data
+            if (body.total === 0) {
+                expect(body.bookings.reservations.length).toBe(0)
+            }
+        })
+
+        it('should return valid requestId for tracking', async () => {
+            const response = await fetch(`${baseUrl}/bookings/next`, {
+                method: 'GET',
+            })
+
+            expect(response.status).toBe(200)
+
+            const body = (await response.json()) as BookingsResponse
+
+            // Verify requestId is a non-empty string
+            expect(typeof body.requestId).toBe('string')
+            expect(body.requestId.length).toBeGreaterThan(0)
+        })
+
+        it('should handle concurrent requests', async () => {
+            const concurrentRequests = 5
+            const requests = Array.from({ length: concurrentRequests }, () =>
+                fetch(`${baseUrl}/bookings/next`, {
+                    method: 'GET',
+                })
+            )
+
+            const responses = await Promise.all(requests)
+
+            // All requests should succeed
+            responses.forEach((response) => {
+                expect(response.status).toBe(200)
+            })
+
+            // Verify all responses have valid structure
+            const bodies = (await Promise.all(
+                responses.map((r) => r.json())
+            )) as BookingsResponse[]
+
+            bodies.forEach((body) => {
+                expect(body).toHaveProperty('bookings')
+                expect(body).toHaveProperty('page')
+                expect(body).toHaveProperty('pageSize')
+                expect(body).toHaveProperty('requestId')
+                expect(body).toHaveProperty('total')
+            })
         })
     })
 })

@@ -15,27 +15,27 @@ export interface TextProps {
 }
 
 const sizeStyles: Record<TextSize, string> = {
-    xs: 'text-xs',
-    sm: 'text-sm',
+    '2xl': 'text-2xl',
     base: 'text-base',
     lg: 'text-lg',
+    sm: 'text-sm',
     xl: 'text-xl',
-    '2xl': 'text-2xl',
+    xs: 'text-xs',
 }
 
 const colorStyles: Record<TextColor, string> = {
     charcoal: 'text-charcoal',
-    stone: 'text-stone',
-    sage: 'text-sage',
     cream: 'text-cream',
+    sage: 'text-sage',
+    stone: 'text-stone',
     white: 'text-white',
 }
 
 const weightStyles: Record<TextWeight, string> = {
-    light: 'font-light',
-    normal: 'font-normal',
-    medium: 'font-medium',
     bold: 'font-bold',
+    light: 'font-light',
+    medium: 'font-medium',
+    normal: 'font-normal',
 }
 
 export const Text: React.FC<TextProps> = ({

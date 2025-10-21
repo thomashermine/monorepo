@@ -1,7 +1,8 @@
 import React from 'react'
-import { Card } from '../Card'
+
 import { Heading } from '../../primitives/Heading'
 import { Text } from '../../primitives/Text'
+import { Card } from '../Card'
 
 export interface FAQItemProps {
     question: string

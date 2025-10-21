@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { useHashNavigation } from '~/hooks/helpers'
 import { AmenityCard } from '~/components/blocks/AmenityCard'
 import { FAQItem } from '~/components/blocks/FAQItem'
 import { FeatureCard } from '~/components/blocks/FeatureCard'
@@ -15,13 +16,29 @@ import { NavigationBar } from '~/components/components/NavigationBar'
 import { Button } from '~/components/primitives/Button'
 import { Heading } from '~/components/primitives/Heading'
 import { Text } from '~/components/primitives/Text'
-import i18nextServer from '~/i18next.server'
 
 import type { Route } from './+types/_index'
 
-export async function loader({ request }: Route.LoaderArgs) {
-    const t = await i18nextServer.getFixedT(request)
+export async function loader({ request, params }: Route.LoaderArgs) {
+    // Get language from URL path (e.g., /fr or /)
+    const url = new URL(request.url)
+    const pathname = url.pathname
+    const pathSegments = pathname.split('/').filter(Boolean)
+    const firstSegment = pathSegments[0]
+    const supportedLngs = ['en', 'fr', 'es', 'nl', 'de']
+    const locale =
+        params.lang ||
+        (firstSegment && supportedLngs.includes(firstSegment)
+            ? firstSegment
+            : 'en')
+
+    // Import server module only in loader
+    const i18nextServer = await import('~/i18next.server').then(
+        (m) => m.default
+    )
+    const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })
     return {
+        locale,
         meta: {
             description: t('meta.home.description'),
             ogTitle: t('meta.home.ogTitle'),
@@ -51,45 +68,60 @@ export function meta({ data }: Route.MetaArgs) {
     ]
 }
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
     const { t, i18n } = useTranslation()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+    // Handle hash navigation for anchor links
+    useHashNavigation()
+
+    // Get locale from loader data or fallback to i18n.language
+    const currentLocale = loaderData?.locale || i18n.language
+
+    // Build navigation items with language-aware paths
+    const getLocalizedPath = (path: string) => {
+        if (currentLocale === 'en') return path
+        return `/${currentLocale}${path}`
+    }
+
     const navigationItems = [
-        { href: '#', label: t('navigation.home') },
-        { href: '#book', label: t('navigation.bookNow') },
-        { href: '/vouchers', label: t('navigation.giftVouchers') },
-        { href: '#contact', label: t('navigation.contact') },
+        { href: getLocalizedPath('/'), label: t('navigation.home') },
+        { href: getLocalizedPath('/#book'), label: t('navigation.bookNow') },
+        {
+            href: getLocalizedPath('/vouchers'),
+            label: t('navigation.giftVouchers'),
+        },
+        { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
     ]
 
     const languages = [
         {
             code: 'EN',
-            current: i18n.language === 'en',
+            current: currentLocale === 'en',
             href: '/',
             label: t('languages.english'),
         },
         {
             code: 'FR',
-            current: i18n.language === 'fr',
+            current: currentLocale === 'fr',
             href: '/fr',
             label: t('languages.french'),
         },
         {
             code: 'NL',
-            current: i18n.language === 'nl',
+            current: currentLocale === 'nl',
             href: '/nl',
             label: t('languages.dutch'),
         },
         {
             code: 'DE',
-            current: i18n.language === 'de',
+            current: currentLocale === 'de',
             href: '/de',
             label: t('languages.german'),
         },
         {
             code: 'ES',
-            current: i18n.language === 'es',
+            current: currentLocale === 'es',
             href: '/es',
             label: t('languages.spanish'),
         },
@@ -173,16 +205,19 @@ export default function Home() {
     ]
 
     const footerLinks = [
-        { href: '#', label: t('navigation.home') },
-        { href: '#book', label: t('navigation.bookNow') },
-        { href: '/vouchers', label: t('navigation.giftVouchers') },
-        { href: '#contact', label: t('navigation.contact') },
+        { href: getLocalizedPath('/'), label: t('navigation.home') },
+        { href: getLocalizedPath('/#book'), label: t('navigation.bookNow') },
+        {
+            href: getLocalizedPath('/vouchers'),
+            label: t('navigation.giftVouchers'),
+        },
+        { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
         {
             external: true,
             href: 'https://www.instagram.com/theviewlodge.be',
             label: t('footer.instagram'),
         },
-        { href: '/terms', label: t('navigation.terms') },
+        { href: getLocalizedPath('/terms'), label: t('navigation.terms') },
     ]
 
     return (

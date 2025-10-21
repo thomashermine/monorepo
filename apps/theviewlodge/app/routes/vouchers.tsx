@@ -1,25 +1,44 @@
-import type { Route } from './+types/vouchers'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { NavigationBar } from '~/components/components/NavigationBar'
-import { MobileMenu } from '~/components/components/MobileMenu'
-import { HeroSection } from '~/components/components/HeroSection'
-import { Section } from '~/components/blocks/Section'
-import { Heading } from '~/components/primitives/Heading'
-import { Text } from '~/components/primitives/Text'
-import { Button } from '~/components/primitives/Button'
+
+import { useHashNavigation } from '~/hooks/helpers'
 import { Card } from '~/components/blocks/Card'
+import { Section } from '~/components/blocks/Section'
 import { TestimonialCard } from '~/components/blocks/TestimonialCard'
 import { Footer } from '~/components/components/Footer'
-import { Icon } from '~/components/primitives/Icon'
-import i18nextServer from '~/i18next.server'
+import { HeroSection } from '~/components/components/HeroSection'
+import { MobileMenu } from '~/components/components/MobileMenu'
+import { NavigationBar } from '~/components/components/NavigationBar'
+import { Button } from '~/components/primitives/Button'
+import { Heading } from '~/components/primitives/Heading'
+import { Icon, type IconName } from '~/components/primitives/Icon'
+import { Text } from '~/components/primitives/Text'
 
-export async function loader({ request }: Route.LoaderArgs) {
-    const t = await i18nextServer.getFixedT(request)
+import type { Route } from './+types/vouchers'
+
+export async function loader({ request, params }: Route.LoaderArgs) {
+    // Get language from URL path (e.g., /fr/vouchers or /vouchers)
+    const url = new URL(request.url)
+    const pathname = url.pathname
+    const pathSegments = pathname.split('/').filter(Boolean)
+    const firstSegment = pathSegments[0]
+    const supportedLngs = ['en', 'fr', 'es', 'nl', 'de']
+    const locale =
+        params.lang ||
+        (firstSegment && supportedLngs.includes(firstSegment)
+            ? firstSegment
+            : 'en')
+
+    // Import server module only in loader
+    const i18nextServer = await import('~/i18next.server').then(
+        (m) => m.default
+    )
+    const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })
     return {
+        locale,
         meta: {
-            title: t('meta.vouchers.title'),
             description: t('meta.vouchers.description'),
+            title: t('meta.vouchers.title'),
         },
     }
 }
@@ -30,53 +49,68 @@ export function meta({ data }: Route.MetaArgs) {
             title: data?.meta.title,
         },
         {
-            name: 'description',
             content: data?.meta.description,
+            name: 'description',
         },
     ]
 }
 
-export default function Vouchers() {
+export default function Vouchers({ loaderData }: Route.ComponentProps) {
     const { t, i18n } = useTranslation()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+    // Handle hash navigation for anchor links
+    useHashNavigation()
+
+    // Get locale from loader data or fallback to i18n.language
+    const currentLocale = loaderData?.locale || i18n.language
+
+    // Build navigation items with language-aware paths
+    const getLocalizedPath = (path: string) => {
+        if (currentLocale === 'en') return path
+        return `/${currentLocale}${path}`
+    }
+
     const navigationItems = [
-        { label: t('navigation.home'), href: '/' },
-        { label: t('navigation.bookNow'), href: '/#book' },
-        { label: t('navigation.giftVouchers'), href: '/vouchers' },
-        { label: t('navigation.contact'), href: '/#contact' },
+        { href: getLocalizedPath('/'), label: t('navigation.home') },
+        { href: getLocalizedPath('/#book'), label: t('navigation.bookNow') },
+        {
+            href: getLocalizedPath('/vouchers'),
+            label: t('navigation.giftVouchers'),
+        },
+        { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
     ]
 
     const languages = [
         {
             code: 'EN',
-            label: t('languages.english'),
+            current: currentLocale === 'en',
             href: '/vouchers',
-            current: i18n.language === 'en',
+            label: t('languages.english'),
         },
         {
             code: 'FR',
-            label: t('languages.french'),
+            current: currentLocale === 'fr',
             href: '/fr/vouchers',
-            current: i18n.language === 'fr',
+            label: t('languages.french'),
         },
         {
             code: 'NL',
-            label: t('languages.dutch'),
+            current: currentLocale === 'nl',
             href: '/nl/vouchers',
-            current: i18n.language === 'nl',
+            label: t('languages.dutch'),
         },
         {
             code: 'DE',
-            label: t('languages.german'),
+            current: currentLocale === 'de',
             href: '/de/vouchers',
-            current: i18n.language === 'de',
+            label: t('languages.german'),
         },
         {
             code: 'ES',
-            label: t('languages.spanish'),
+            current: currentLocale === 'es',
             href: '/es/vouchers',
-            current: i18n.language === 'es',
+            label: t('languages.spanish'),
         },
     ]
 
@@ -97,82 +131,82 @@ export default function Vouchers() {
             amount: '199€',
             description: t('vouchers.selection.amounts.199.description'),
             details: t('vouchers.selection.amounts.199.details'),
-            url: 'https://craftedsignals-saas.odoo.com/shop/the-view-gift-voucher-199eur-90',
             featured: false,
+            url: 'https://craftedsignals-saas.odoo.com/shop/the-view-gift-voucher-199eur-90',
         },
         {
             amount: '299€',
             description: t('vouchers.selection.amounts.299.description'),
             details: t('vouchers.selection.amounts.299.details'),
-            url: 'https://craftedsignals-saas.odoo.com/shop/the-view-gift-voucher-299eur-91',
             featured: true,
+            url: 'https://craftedsignals-saas.odoo.com/shop/the-view-gift-voucher-299eur-91',
         },
         {
             amount: '499€',
             description: t('vouchers.selection.amounts.499.description'),
             details: t('vouchers.selection.amounts.499.details'),
-            url: 'https://craftedsignals-saas.odoo.com/shop/the-view-gift-voucher-499-92',
             large: true,
+            url: 'https://craftedsignals-saas.odoo.com/shop/the-view-gift-voucher-499-92',
         },
     ]
 
     const features = [
         {
-            icon: 'star',
-            title: t('vouchers.howItWorks.features.instantDelivery.title'),
             description: t(
                 'vouchers.howItWorks.features.instantDelivery.description'
             ),
+            icon: 'star',
+            title: t('vouchers.howItWorks.features.instantDelivery.title'),
         },
         {
-            icon: 'wifi',
-            title: t('vouchers.howItWorks.features.transferable.title'),
             description: t(
                 'vouchers.howItWorks.features.transferable.description'
             ),
+            icon: 'wifi',
+            title: t('vouchers.howItWorks.features.transferable.title'),
         },
         {
-            icon: 'moon',
-            title: t('vouchers.howItWorks.features.flexibleValue.title'),
             description: t(
                 'vouchers.howItWorks.features.flexibleValue.description'
             ),
+            icon: 'moon',
+            title: t('vouchers.howItWorks.features.flexibleValue.title'),
         },
         {
-            icon: 'parking',
-            title: t('vouchers.howItWorks.features.remainderKept.title'),
             description: t(
                 'vouchers.howItWorks.features.remainderKept.description'
             ),
+            icon: 'parking',
+            title: t('vouchers.howItWorks.features.remainderKept.title'),
         },
         {
-            icon: 'smart-home',
-            title: t('vouchers.howItWorks.features.valid12Months.title'),
             description: t(
                 'vouchers.howItWorks.features.valid12Months.description'
             ),
+            icon: 'smart-home',
+            title: t('vouchers.howItWorks.features.valid12Months.title'),
         },
         {
-            icon: 'bottle',
-            title: t('vouchers.howItWorks.features.nonRefundable.title'),
             description: t(
                 'vouchers.howItWorks.features.nonRefundable.description'
             ),
+            icon: 'bottle',
+            title: t('vouchers.howItWorks.features.nonRefundable.title'),
         },
     ]
 
     const testimonials = [
         {
-            quote: t('testimonials.reviews.thimo.quote'),
             author: t('testimonials.reviews.thimo.author'),
+            quote: t('testimonials.reviews.thimo.quote'),
         },
         {
-            quote: t('testimonials.reviews.heidi.quote'),
             author: t('testimonials.reviews.heidi.author'),
+            quote: t('testimonials.reviews.heidi.quote'),
         },
         {
-            quote: t('testimonials.reviews.julie.quote'),
             author: t('testimonials.reviews.julie.author'),
+            quote: t('testimonials.reviews.julie.quote'),
         },
     ]
 
@@ -372,7 +406,7 @@ export default function Vouchers() {
                         >
                             <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mb-6 mx-auto">
                                 <Icon
-                                    name={feature.icon as any}
+                                    name={feature.icon as IconName}
                                     size="lg"
                                     className="text-sage"
                                 />
@@ -413,8 +447,14 @@ export default function Vouchers() {
 
             <Footer
                 quickLinks={[
-                    { label: t('navigation.home'), href: '/' },
-                    { label: t('navigation.terms'), href: '/terms' },
+                    {
+                        href: getLocalizedPath('/'),
+                        label: t('navigation.home'),
+                    },
+                    {
+                        href: getLocalizedPath('/terms'),
+                        label: t('navigation.terms'),
+                    },
                 ]}
                 languages={languages}
             />

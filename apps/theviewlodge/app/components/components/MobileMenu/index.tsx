@@ -1,6 +1,7 @@
 import React from 'react'
-import { Logo } from '../../primitives/Logo'
+
 import { Icon } from '../../primitives/Icon'
+import { Logo } from '../../primitives/Logo'
 import type { NavigationItem } from '../NavigationBar'
 
 export interface MobileMenuProps {

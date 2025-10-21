@@ -11,32 +11,32 @@ export interface CardProps {
 }
 
 const paddingStyles: Record<string, string> = {
+    lg: 'p-8',
+    md: 'p-6',
     none: '',
     sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
 }
 
 const shadowStyles: Record<string, string> = {
+    lg: 'shadow-lg',
+    md: 'shadow-md',
     none: '',
     sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg',
     xl: 'shadow-xl',
 }
 
 const roundedStyles: Record<string, string> = {
-    none: '',
-    md: 'rounded-md',
-    lg: 'rounded-lg',
-    xl: 'rounded-xl',
     '2xl': 'rounded-2xl',
+    lg: 'rounded-lg',
+    md: 'rounded-md',
+    none: '',
+    xl: 'rounded-xl',
 }
 
 const backgroundStyles: Record<string, string> = {
-    white: 'bg-white',
     cream: 'bg-cream/40',
     transparent: 'bg-transparent',
+    white: 'bg-white',
 }
 
 export const Card: React.FC<CardProps> = ({

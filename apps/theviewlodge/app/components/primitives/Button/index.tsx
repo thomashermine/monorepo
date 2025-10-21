@@ -20,17 +20,17 @@ export interface ButtonProps
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-    primary: 'bg-white text-charcoal hover:bg-cream',
-    secondary: 'bg-cream text-charcoal hover:bg-cream/80',
-    sage: 'bg-sage text-white hover:bg-sage/80',
     charcoal: 'bg-charcoal text-white hover:bg-charcoal/80',
+    primary: 'bg-white text-charcoal hover:bg-cream',
+    sage: 'bg-sage text-white hover:bg-sage/80',
+    secondary: 'bg-cream text-charcoal hover:bg-cream/80',
     stone: 'bg-stone text-white hover:bg-stone/80',
 }
 
 const sizeStyles: Record<ButtonSize, string> = {
-    sm: 'px-6 py-3 text-sm',
-    md: 'px-8 py-4 text-base',
     lg: 'px-12 py-6 text-xl',
+    md: 'px-8 py-4 text-base',
+    sm: 'px-6 py-3 text-sm',
     xl: 'px-16 py-8 text-2xl',
 }
 

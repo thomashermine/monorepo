@@ -1,7 +1,8 @@
 import React from 'react'
+
 import { Heading } from '../../primitives/Heading'
-import { Text } from '../../primitives/Text'
 import { Icon } from '../../primitives/Icon'
+import { Text } from '../../primitives/Text'
 
 export interface FooterLink {
     label: string
@@ -30,7 +31,7 @@ export const Footer: React.FC<FooterProps> = ({
     languages = [],
 }) => {
     return (
-        <footer className="bg-charcoal text-white py-16">
+        <footer id="contact" className="bg-charcoal text-white py-16">
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-3 gap-12">
                     {/* Column 1 - About */}

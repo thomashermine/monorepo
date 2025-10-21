@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-theviewlodge
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: monorepo-theviewlodge
+    template:
+        metadata:
+            labels:
+                app: monorepo-theviewlodge
+        spec:
+            imagePullSecrets:
+                - name: ghcr-secret-monorepo
+            containers:
+                - name: theviewlodge
+                  image: ghcr.io/thomashermine/monorepo/theviewlodge
+                  ports:
+                      - containerPort: 3000
+                  envFrom:
+                      - configMapRef:
+                            name: monorepo-config
+                      - secretRef:
+                            name: monorepo-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: monorepo-theviewlodge
+spec:
+    selector:
+        app: monorepo-theviewlodge
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 3000
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-theviewlodge-ingress
+    annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+spec:
+    ingressClassName: nginx
+    tls:
+        - hosts:
+              - theviewlodge.monorepo.thomashermine.be
+          secretName: monorepo-theviewlodge-tls
+    rules:
+        - host: theviewlodge.monorepo.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-theviewlodge
+                            port:
+                                number: 80

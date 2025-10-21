@@ -13,33 +13,48 @@ const i18nextPromise = i18next
     .use(Backend) // Setup backend to load translation files
     .init({
         ...i18n,
-        // This function detects the namespaces your routes rendered while SSR use
-        ns: getInitialNamespaces(),
+        
         backend: {
             // Load translations from the public folder
             loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
-        detection: {
-            // Here only enable htmlTag detection, we'll detect the language only
-            // server-side with remix-i18next, by using the `<html lang>` attribute
-            // we can communicate to the client the language detected server-side
-            order: ['htmlTag', 'localStorage'],
+        
+// Enable this to see debug output in console
+debug: true,
+        
+
+detection: {
+            
+            
+            
             // Cache the language in localStorage for persistence
-            caches: ['localStorage'],
-            // Don't look at URL paths for language detection
-            lookupFromPathIndex: 0,
+caches: ['localStorage'],
+            
+            
+
+
+// Don't look at URL paths for language detection
+lookupFromPathIndex: 0,
+            
+            // Here only enable htmlTag detection, we'll detect the language only
+// server-side with remix-i18next, by using the `<html lang>` attribute
+// we can communicate to the client the language detected server-side
+order: ['htmlTag', 'localStorage'],
         },
-        // Enable this to see debug output in console
-        debug: true,
-        // Ensure interpolation is enabled
-        interpolation: {
+        
+        
+// Ensure interpolation is enabled
+interpolation: {
             escapeValue: false, // React already escapes values
         },
+        
+        // This function detects the namespaces your routes rendered while SSR use
+ns: getInitialNamespaces(),
         // Trigger re-render when language changes
         react: {
-            useSuspense: false,
             bindI18n: 'languageChanged loaded',
             bindI18nStore: 'added removed',
+            useSuspense: false,
         },
     })
 

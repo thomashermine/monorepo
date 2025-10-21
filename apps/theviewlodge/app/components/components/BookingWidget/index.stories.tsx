@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { BookingWidget } from './index'
 
 const meta: Meta<typeof BookingWidget> = {
-    title: 'Components/BookingWidget',
     component: BookingWidget,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
+    title: 'Components/BookingWidget',
 }
 
 export default meta

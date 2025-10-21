@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Logo } from './index'
 
 const meta: Meta<typeof Logo> = {
-    title: 'Primitives/Logo',
     component: Logo,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
+    title: 'Primitives/Logo',
 }
 
 export default meta

@@ -14,3 +14,4 @@ metadata:
 type: Opaque
 stringData:
     SOME_SECRET_KEY: 'some-secret-key'
+    HOSTEX_ACCESS_TOKEN: 'VgswIgslJ26RMmgbUOuUwccZz3eIMjXqGPA3wt5UlWTGUXgy6dctOxf1EZy3yPSw'

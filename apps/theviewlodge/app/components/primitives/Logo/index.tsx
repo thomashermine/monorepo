@@ -8,15 +8,15 @@ export interface LogoProps {
 }
 
 const sizeStyles = {
-    sm: 'h-8',
-    md: 'h-10',
     lg: 'h-12',
+    md: 'h-10',
+    sm: 'h-8',
 }
 
 const textSizeStyles = {
-    sm: 'text-lg',
-    md: 'text-xl',
     lg: 'text-2xl',
+    md: 'text-xl',
+    sm: 'text-lg',
 }
 
 export const Logo: React.FC<LogoProps> = ({

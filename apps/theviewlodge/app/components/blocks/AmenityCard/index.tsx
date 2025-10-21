@@ -1,6 +1,7 @@
 import React from 'react'
-import { Icon, type IconName } from '../../primitives/Icon'
+
 import { Heading } from '../../primitives/Heading'
+import { Icon, type IconName } from '../../primitives/Icon'
 import { Text } from '../../primitives/Text'
 
 export interface AmenityCardProps {

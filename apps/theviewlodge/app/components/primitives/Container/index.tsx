@@ -17,15 +17,15 @@ export interface ContainerProps {
 }
 
 const maxWidthStyles: Record<string, string> = {
-    sm: 'max-w-2xl',
-    md: 'max-w-3xl',
-    lg: 'max-w-4xl',
-    xl: 'max-w-5xl',
     '2xl': 'max-w-6xl',
     '4xl': 'max-w-7xl',
     '6xl': 'max-w-[1400px]',
     '7xl': 'max-w-[1600px]',
     full: 'max-w-full',
+    lg: 'max-w-4xl',
+    md: 'max-w-3xl',
+    sm: 'max-w-2xl',
+    xl: 'max-w-5xl',
 }
 
 export const Container: React.FC<ContainerProps> = ({

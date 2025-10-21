@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import { Button } from '../../primitives/Button'
 
 export interface GalleryImage {
@@ -30,15 +31,15 @@ export const Gallery: React.FC<GalleryProps> = ({
     }
 
     const aspectRatioClasses: Record<string, string> = {
-        '3/4': 'aspect-[3/4]',
-        square: 'aspect-square',
-        '4/3': 'aspect-[4/3]',
-        '2/3': 'aspect-[2/3]',
         '16/10': 'aspect-[16/10]',
+        '2/3': 'aspect-[2/3]',
+        '3/2': 'aspect-[3/2]',
+        '3/4': 'aspect-[3/4]',
         '3/5': 'aspect-[3/5]',
+        '4/3': 'aspect-[4/3]',
         '4/5': 'aspect-[4/5]',
         '5/3': 'aspect-[5/3]',
-        '3/2': 'aspect-[3/2]',
+        square: 'aspect-square',
     }
 
     return (

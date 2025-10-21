@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { MobileMenu } from './index'
 import { useState } from 'react'
 
+import { MobileMenu } from './index'
+
 const meta: Meta<typeof MobileMenu> = {
-    title: 'Components/MobileMenu',
     component: MobileMenu,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
+    title: 'Components/MobileMenu',
 }
 
 export default meta
@@ -16,18 +17,18 @@ type Story = StoryObj<typeof MobileMenu>
 
 export const Open: Story = {
     args: {
+        currentLanguage: 'EN',
         isOpen: true,
         items: [
-            { label: 'Home', href: '#' },
-            { label: 'Book Now', href: '#book' },
-            { label: 'Gift Vouchers', href: '/vouchers' },
-            { label: 'Contact', href: '#contact' },
+            { href: '#', label: 'Home' },
+            { href: '#book', label: 'Book Now' },
+            { href: '/vouchers', label: 'Gift Vouchers' },
+            { href: '#contact', label: 'Contact' },
         ],
-        currentLanguage: 'EN',
         languages: [
-            { code: 'EN', label: 'English', href: '/en' },
-            { code: 'FR', label: 'Français', href: '/fr' },
-            { code: 'NL', label: 'Nederlands', href: '/nl' },
+            { code: 'EN', href: '/en', label: 'English' },
+            { code: 'FR', href: '/fr', label: 'Français' },
+            { code: 'NL', href: '/nl', label: 'Nederlands' },
         ],
     },
 }
@@ -47,15 +48,15 @@ export const Interactive: Story = {
                     isOpen={isOpen}
                     onClose={() => setIsOpen(false)}
                     items={[
-                        { label: 'Home', href: '#' },
-                        { label: 'Book Now', href: '#book' },
-                        { label: 'Gift Vouchers', href: '/vouchers' },
-                        { label: 'Contact', href: '#contact' },
+                        { href: '#', label: 'Home' },
+                        { href: '#book', label: 'Book Now' },
+                        { href: '/vouchers', label: 'Gift Vouchers' },
+                        { href: '#contact', label: 'Contact' },
                     ]}
                     currentLanguage="EN"
                     languages={[
-                        { code: 'EN', label: 'English', href: '/en' },
-                        { code: 'FR', label: 'Français', href: '/fr' },
+                        { code: 'EN', href: '/en', label: 'English' },
+                        { code: 'FR', href: '/fr', label: 'Français' },
                     ]}
                 />
             </div>

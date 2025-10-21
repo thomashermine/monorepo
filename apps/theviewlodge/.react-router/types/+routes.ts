@@ -19,23 +19,47 @@ type Pages = {
   "/terms": {
     params: {};
   };
+  "/:lang": {
+    params: {
+      "lang": string;
+    };
+  };
+  "/:lang/vouchers": {
+    params: {
+      "lang": string;
+    };
+  };
+  "/:lang/terms": {
+    params: {
+      "lang": string;
+    };
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/vouchers" | "/terms";
+    page: "/" | "/vouchers" | "/terms" | "/:lang" | "/:lang/vouchers" | "/:lang/terms";
   };
   "routes/home.tsx": {
     id: "routes/home";
     page: "/";
+  } | {
+    id: "routes/home-lang";
+    page: "/:lang";
   };
   "routes/vouchers.tsx": {
     id: "routes/vouchers";
     page: "/vouchers";
+  } | {
+    id: "routes/vouchers-lang";
+    page: "/:lang/vouchers";
   };
   "routes/terms.tsx": {
     id: "routes/terms";
     page: "/terms";
+  } | {
+    id: "routes/terms-lang";
+    page: "/:lang/terms";
   };
 };

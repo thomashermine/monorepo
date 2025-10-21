@@ -9,7 +9,7 @@
         --color-stone: #a8a8a8;
         --color-charcoal: #2c2c2c;
 
-        --font-family-baskerville:
+        --font-baskerville:
             'Libre Baskerville', ui-serif, Georgia, Cambria, 'Times New Roman',
             Times, serif;
     }
@@ -17,6 +17,11 @@
 
 @layer base {
     /* Global styles */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Account for fixed navigation bar */
+    }
+
     body {
         @apply bg-cream text-charcoal;
     }

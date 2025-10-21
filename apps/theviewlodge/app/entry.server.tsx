@@ -1,17 +1,17 @@
+import { resolve } from 'node:path'
 import { PassThrough } from 'node:stream'
 
-import type { AppLoadContext, EntryContext } from 'react-router'
 import { createReadableStreamFromReadable } from '@react-router/node'
-import { ServerRouter } from 'react-router'
+import { createInstance } from 'i18next'
+import Backend from 'i18next-fs-backend'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
-import { createInstance } from 'i18next'
 import { I18nextProvider, initReactI18next } from 'react-i18next'
-import Backend from 'i18next-fs-backend'
-import { resolve } from 'node:path'
+import type { EntryContext } from 'react-router'
+import { ServerRouter } from 'react-router'
 
-import i18nextServer from './i18next.server'
 import i18n from './i18n'
+import i18nextServer from './i18next.server'
 
 const ABORT_DELAY = 5_000
 
@@ -19,8 +19,7 @@ export default async function handleRequest(
     request: Request,
     responseStatusCode: number,
     responseHeaders: Headers,
-    routerContext: EntryContext,
-    loadContext: AppLoadContext
+    routerContext: EntryContext
 ) {
     const callbackName = isbot(request.headers.get('user-agent'))
         ? 'onAllReady'
@@ -36,11 +35,11 @@ export default async function handleRequest(
         .use(Backend)
         .init({
             ...i18n,
-            lng,
-            ns,
             backend: {
                 loadPath: resolve('./public/locales/{{lng}}/{{ns}}.json'),
             },
+            lng,
+            ns,
         })
 
     return new Promise((resolve, reject) => {
@@ -70,9 +69,6 @@ export default async function handleRequest(
 
                     pipe(body)
                 },
-                onShellError(error: unknown) {
-                    reject(error)
-                },
                 onError(error: unknown) {
                     responseStatusCode = 500
                     // Log streaming rendering errors from inside the shell.  Don't log
@@ -81,6 +77,9 @@ export default async function handleRequest(
                     if (shellRendered) {
                         console.error(error)
                     }
+                },
+                onShellError(error: unknown) {
+                    reject(error)
                 },
             }
         )
