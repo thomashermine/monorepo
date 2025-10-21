@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Button } from '../../primitives/Button'
 
@@ -17,6 +18,7 @@ export const Gallery: React.FC<GalleryProps> = ({
     images,
     foldable = true,
 }) => {
+    const { t } = useTranslation()
     const [isUnfolded, setIsUnfolded] = useState(false)
 
     const handleToggle = () => {
@@ -83,7 +85,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                                     size="md"
                                     onClick={handleToggle}
                                 >
-                                    See more
+                                    {t('gallery.seeMore')}
                                 </Button>
                             </div>
                         </>
@@ -92,7 +94,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                     {isUnfolded && (
                         <button
                             onClick={handleToggle}
-                            className="gallery-close-btn show bg-charcoal text-white px-6 py-3 text-base font-medium rounded-full hover:bg-charcoal/80 transition-colors flex items-center gap-2"
+                            className="gallery-close-btn show bg-charcoal text-white px-6 py-3 text-base font-medium rounded-full hover:bg-charcoal/80 transition-colors flex items-center gap-2 cursor-pointer"
                         >
                             <svg
                                 className="w-5 h-5"
@@ -107,7 +109,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                                     d="M6 18L18 6M6 6l12 12"
                                 />
                             </svg>
-                            Close Gallery
+                            {t('gallery.closeGallery')}
                         </button>
                     )}
                 </>

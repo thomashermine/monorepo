@@ -132,15 +132,24 @@ export const Footer: React.FC<FooterProps> = ({
                                 <Text className="text-gray-400 mb-2">
                                     The View is operated by:
                                 </Text>
-                                <div className="bg-black text-white p-4 rounded inline-block">
-                                    <p className="font-['Helvetica'] text-lg font-bold tracking-tight">
-                                        Crafted Signals
-                                        <sup className="text-xs ml-2">©</sup>
-                                    </p>
-                                    <p className="font-['Helvetica'] text-sm">
-                                        Building Futures.
-                                    </p>
-                                </div>
+                                <a
+                                    href="https://thomashermine.be"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block transition-opacity hover:opacity-80"
+                                >
+                                    <div className="bg-black text-white p-4 rounded inline-block">
+                                        <p className="font-['Helvetica'] text-lg font-bold tracking-tight">
+                                            Crafted Signals
+                                            <sup className="text-xs ml-2">
+                                                ©
+                                            </sup>
+                                        </p>
+                                        <p className="font-['Helvetica'] text-sm">
+                                            Building Futures.
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

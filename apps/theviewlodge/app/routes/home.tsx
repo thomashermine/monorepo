@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useHashNavigation } from '~/hooks/helpers'
+import { ActivityCard } from '~/components/blocks/ActivityCard'
 import { AmenityCard } from '~/components/blocks/AmenityCard'
 import { FAQItem } from '~/components/blocks/FAQItem'
 import { FeatureCard } from '~/components/blocks/FeatureCard'
@@ -11,13 +11,16 @@ import { BookingWidget } from '~/components/components/BookingWidget'
 import { Footer } from '~/components/components/Footer'
 import { Gallery } from '~/components/components/Gallery'
 import { HeroSection } from '~/components/components/HeroSection'
+import { Map } from '~/components/components/Map'
 import { MobileMenu } from '~/components/components/MobileMenu'
 import { NavigationBar } from '~/components/components/NavigationBar'
 import { Button } from '~/components/primitives/Button'
 import { Heading } from '~/components/primitives/Heading'
 import { Text } from '~/components/primitives/Text'
+import { useHashNavigation } from '~/hooks/helpers'
+import { useTestimonials } from '~/hooks/useTestimonials'
 
-import type { Route } from './+types/_index'
+import type { Route } from './+types/home'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
     // Get language from URL path (e.g., /fr or /)
@@ -170,24 +173,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         },
     ]
 
-    const testimonials = [
-        {
-            author: t('testimonials.reviews.eline.author'),
-            quote: t('testimonials.reviews.eline.quote'),
-        },
-        {
-            author: t('testimonials.reviews.tim.author'),
-            quote: t('testimonials.reviews.tim.quote'),
-        },
-        {
-            author: t('testimonials.reviews.conny.author'),
-            quote: t('testimonials.reviews.conny.quote'),
-        },
-        {
-            author: t('testimonials.reviews.thimo.author'),
-            quote: t('testimonials.reviews.thimo.quote'),
-        },
-    ]
+    const testimonials = useTestimonials()
 
     const faqs = [
         {
@@ -201,6 +187,34 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         {
             answer: t('faq.items.pets.answer'),
             question: t('faq.items.pets.question'),
+        },
+        {
+            answer: t('faq.items.booking.answer'),
+            question: t('faq.items.booking.question'),
+        },
+        {
+            answer: t('faq.items.essentials.answer'),
+            question: t('faq.items.essentials.question'),
+        },
+        {
+            answer: t('faq.items.yearRound.answer'),
+            question: t('faq.items.yearRound.question'),
+        },
+        {
+            answer: t('faq.items.activities.answer'),
+            question: t('faq.items.activities.question'),
+        },
+        {
+            answer: t('faq.items.privacy.answer'),
+            question: t('faq.items.privacy.question'),
+        },
+        {
+            answer: t('faq.items.kitchen.answer'),
+            question: t('faq.items.kitchen.question'),
+        },
+        {
+            answer: t('faq.items.publicTransport.answer'),
+            question: t('faq.items.publicTransport.question'),
         },
     ]
 
@@ -303,6 +317,32 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 </div>
             </Section>
 
+            {/* Location Section */}
+            <Section background="white" padding="lg">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <Text size="lg" className="mb-4 text-sage">
+                            {t('location.subtitle')}
+                        </Text>
+                        <Heading level="h2" size="lg" className="mb-6">
+                            {t('location.heading')}
+                        </Heading>
+                        <Text size="lg" className="whitespace-pre-line">
+                            {t('location.description')}
+                        </Text>
+                    </div>
+                    <div className="lg:order-last">
+                        <div className="aspect-[4/3] bg-gradient-to-br from-sage/30 to-stone/40 rounded-2xl overflow-hidden">
+                            <img
+                                src="/images/theviewlodge-panoramic-valley-view.jpg"
+                                alt={t('gallery.images.valleyView')}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
             {/* Amenities Gallery */}
             <Section background="cream" padding="lg">
                 <div className="text-center mb-16">
@@ -334,6 +374,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                             subtitle={t(
                                 'amenities.features.whirlpool.subtitle'
                             )}
+                            size="small"
+                        />
+                        <FeatureCard
+                            image="/images/theviewlodge-kitchen-coffee-counter.jpg"
+                            title={t('amenities.features.kitchen.title')}
+                            subtitle={t('amenities.features.kitchen.subtitle')}
                             size="small"
                         />
                     </div>
@@ -380,6 +426,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                                 'amenities.items.peaceful.description'
                             )}
                         />
+                        <AmenityCard
+                            icon="compass"
+                            title={t('amenities.items.localExperiences.title')}
+                            description={t(
+                                'amenities.items.localExperiences.description'
+                            )}
+                        />
                     </div>
                 </div>
             </Section>
@@ -398,6 +451,113 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     </Button>
                 </div>
                 <Gallery images={galleryImages} foldable={true} />
+            </Section>
+
+            {/* Gift Voucher CTA */}
+            <Section background="sage" padding="lg">
+                <div className="text-center text-white">
+                    <Heading level="h2" size="xl" className="mb-6 text-white">
+                        {t('giftVoucherCTA.heading')}
+                    </Heading>
+                    <Text
+                        size="xl"
+                        className="max-w-2xl mx-auto mb-8 text-white"
+                    >
+                        {t('giftVoucherCTA.description')}
+                    </Text>
+                    <Button
+                        as="a"
+                        href={getLocalizedPath('/vouchers')}
+                        variant="primary"
+                        size="lg"
+                    >
+                        {t('giftVoucherCTA.cta')}
+                    </Button>
+                </div>
+            </Section>
+
+            {/* Activities Around The View */}
+            <Section background="cream" padding="lg">
+                <div className="text-center mb-16">
+                    <Heading level="h2" size="xl" className="mb-4">
+                        {t('activities.heading')}
+                    </Heading>
+                    <Text size="xl" className="max-w-2xl mx-auto mb-8">
+                        {t('activities.subheading')}
+                    </Text>
+                    <Button as="a" href="#book" variant="sage">
+                        {t('activities.cta')}
+                    </Button>
+                </div>
+
+                <div className="space-y-8 max-w-6xl mx-auto">
+                    <ActivityCard
+                        image="/images/activity-fagnes.jpg"
+                        badge={t('activities.items.fagnes.badge')}
+                        title={t('activities.items.fagnes.title')}
+                        subtitle={t('activities.items.fagnes.subtitle')}
+                        description={t('activities.items.fagnes.description')}
+                        location={t('activities.items.fagnes.location')}
+                        locationUrl={t('activities.items.fagnes.locationUrl')}
+                        imageAlt={t('activities.items.fagnes.imageAlt')}
+                    />
+
+                    <ActivityCard
+                        image="/images/activity-forest.jpg"
+                        badge={t('activities.items.parcDesSources.badge')}
+                        title={t('activities.items.parcDesSources.title')}
+                        subtitle={t('activities.items.parcDesSources.subtitle')}
+                        description={t(
+                            'activities.items.parcDesSources.description'
+                        )}
+                        location={t('activities.items.parcDesSources.location')}
+                        locationUrl={t(
+                            'activities.items.parcDesSources.locationUrl'
+                        )}
+                        imageAlt={t('activities.items.parcDesSources.imageAlt')}
+                    />
+
+                    <ActivityCard
+                        image="/images/activity-spa.jpg"
+                        badge={t('activities.items.spa.badge')}
+                        title={t('activities.items.spa.title')}
+                        subtitle={t('activities.items.spa.subtitle')}
+                        description={t('activities.items.spa.description')}
+                        location={t('activities.items.spa.location')}
+                        locationUrl={t('activities.items.spa.locationUrl')}
+                        imageAlt={t('activities.items.spa.imageAlt')}
+                    />
+
+                    <ActivityCard
+                        image="/images/activity-racing.jpg"
+                        badge={t('activities.items.francorchamps.badge')}
+                        title={t('activities.items.francorchamps.title')}
+                        subtitle={t('activities.items.francorchamps.subtitle')}
+                        description={t(
+                            'activities.items.francorchamps.description'
+                        )}
+                        location={t('activities.items.francorchamps.location')}
+                        locationUrl={t(
+                            'activities.items.francorchamps.locationUrl'
+                        )}
+                        imageAlt={t('activities.items.francorchamps.imageAlt')}
+                    />
+
+                    <ActivityCard
+                        image="/images/activity-waterfall.jpg"
+                        badge={t('activities.items.ninglinspo.badge')}
+                        title={t('activities.items.ninglinspo.title')}
+                        subtitle={t('activities.items.ninglinspo.subtitle')}
+                        description={t(
+                            'activities.items.ninglinspo.description'
+                        )}
+                        location={t('activities.items.ninglinspo.location')}
+                        locationUrl={t(
+                            'activities.items.ninglinspo.locationUrl'
+                        )}
+                        imageAlt={t('activities.items.ninglinspo.imageAlt')}
+                    />
+                </div>
             </Section>
 
             {/* Booking Widget */}
@@ -424,9 +584,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     </Text>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 max-w-7xl mx-auto space-y-6">
                     {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={index} {...testimonial} />
+                        <div key={index} className="break-inside-avoid mb-6">
+                            <TestimonialCard {...testimonial} />
+                        </div>
                     ))}
                 </div>
             </Section>
@@ -450,6 +612,47 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         {faqs.map((faq, index) => (
                             <FAQItem key={index} {...faq} />
                         ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* Visit Us Section */}
+            <Section background="white" padding="lg" id="contact">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <Heading level="h1" size="2xl" className="mb-8">
+                            {t('visitUs.heading')}
+                        </Heading>
+                        <div className="mb-8">
+                            <Text size="xl" className="text-stone-500">
+                                {t('visitUs.address.line1')}
+                            </Text>
+                            <Text size="xl" className="text-stone-500">
+                                {t('visitUs.address.line2')}
+                            </Text>
+                            <Text size="xl" className="text-stone-500">
+                                {t('visitUs.address.line3')}
+                            </Text>
+                        </div>
+                        <Button
+                            as="a"
+                            href="https://maps.app.goo.gl/8fcy1PAkcbocUkQs5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="stone"
+                        >
+                            {t('visitUs.cta')}
+                        </Button>
+                    </div>
+                    <div className="lg:order-last">
+                        <div className="aspect-[4/3] bg-stone-100 rounded-2xl overflow-hidden">
+                            <Map
+                                longitude={5.7767}
+                                latitude={50.4167}
+                                zoom={13}
+                                className="w-full h-full"
+                            />
+                        </div>
                     </div>
                 </div>
             </Section>

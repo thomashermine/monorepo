@@ -46,7 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
     ...props
 }) => {
     const baseStyles =
-        'font-medium transition-colors rounded-full shadow-lg inline-block text-center'
+        'font-medium transition-colors rounded-full shadow-lg inline-block text-center cursor-pointer'
     const widthStyle = fullWidth ? 'w-full block' : 'inline-block'
     const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyle} ${className}`
 

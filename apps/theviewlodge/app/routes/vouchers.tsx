@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useHashNavigation } from '~/hooks/helpers'
 import { Card } from '~/components/blocks/Card'
 import { Section } from '~/components/blocks/Section'
 import { TestimonialCard } from '~/components/blocks/TestimonialCard'
@@ -13,6 +12,8 @@ import { Button } from '~/components/primitives/Button'
 import { Heading } from '~/components/primitives/Heading'
 import { Icon, type IconName } from '~/components/primitives/Icon'
 import { Text } from '~/components/primitives/Text'
+import { useHashNavigation } from '~/hooks/helpers'
+import { useTestimonials } from '~/hooks/useTestimonials'
 
 import type { Route } from './+types/vouchers'
 
@@ -195,20 +196,7 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
         },
     ]
 
-    const testimonials = [
-        {
-            author: t('testimonials.reviews.thimo.author'),
-            quote: t('testimonials.reviews.thimo.quote'),
-        },
-        {
-            author: t('testimonials.reviews.heidi.author'),
-            quote: t('testimonials.reviews.heidi.quote'),
-        },
-        {
-            author: t('testimonials.reviews.julie.author'),
-            quote: t('testimonials.reviews.julie.quote'),
-        },
-    ]
+    const testimonials = useTestimonials().slice(0, 3)
 
     return (
         <>
@@ -249,14 +237,125 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                     <Heading level="h2" size="xl" className="mb-8">
                         {t('vouchers.intro.heading')}
                     </Heading>
-                    <Text size="xl" className="mb-8">
+                    <Text size="xl" className="mb-8 whitespace-pre-line">
                         {t('vouchers.intro.text')}
                     </Text>
                 </div>
             </Section>
 
+            {/* Why Choose The View */}
+            <Section background="cream" padding="lg">
+                <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                    <div>
+                        <div className="aspect-[4/3] bg-gradient-to-br from-sage/30 to-stone/40 rounded-2xl overflow-hidden">
+                            <img
+                                src="/images/theviewlodge-sauna-mountain-view.jpg"
+                                alt={t('gallery.images.saunaView')}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <Heading level="h2" size="xl" className="mb-8">
+                            {t('vouchers.whyChoose.heading')}
+                        </Heading>
+                        <div className="space-y-4 mb-8">
+                            <div className="flex items-start gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-sage flex items-center justify-center mt-1">
+                                    <svg
+                                        className="w-4 h-4 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                </div>
+                                <Text size="lg" className="text-charcoal">
+                                    {t('vouchers.whyChoose.features.sauna')}
+                                </Text>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-sage flex items-center justify-center mt-1">
+                                    <svg
+                                        className="w-4 h-4 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                </div>
+                                <Text size="lg" className="text-charcoal">
+                                    {t('vouchers.whyChoose.features.location')}
+                                </Text>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-sage flex items-center justify-center mt-1">
+                                    <svg
+                                        className="w-4 h-4 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                </div>
+                                <Text size="lg" className="text-charcoal">
+                                    {t('vouchers.whyChoose.features.smartHome')}
+                                </Text>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-sage flex items-center justify-center mt-1">
+                                    <svg
+                                        className="w-4 h-4 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                </div>
+                                <Text size="lg" className="text-charcoal">
+                                    {t('vouchers.whyChoose.features.views')}
+                                </Text>
+                            </div>
+                        </div>
+                        <Text
+                            size="xl"
+                            className="italic mb-6 text-charcoal font-serif"
+                        >
+                            {t('vouchers.whyChoose.tagline')}
+                        </Text>
+                        <Text size="lg" className="text-sage font-medium">
+                            {t('vouchers.whyChoose.cta')}
+                        </Text>
+                    </div>
+                </div>
+            </Section>
+
             {/* Vouchers */}
-            <Section id="vouchers" background="cream" padding="lg">
+            <Section id="vouchers" background="white" padding="lg">
                 <div className="text-center mb-16">
                     <Heading level="h2" size="xl" className="mb-4">
                         {t('vouchers.selection.heading')}
@@ -322,48 +421,70 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
             </Section>
 
             {/* Custom Voucher */}
-            <Section background="cream" padding="sm">
-                <div className="max-w-3xl mx-auto text-center">
-                    <Heading level="h2" size="md" className="mb-6">
+            <Section background="cream" padding="lg">
+                <div className="max-w-4xl mx-auto text-center">
+                    <Heading level="h2" size="xl" className="mb-6">
                         {t('vouchers.custom.heading')}
                     </Heading>
-                    <Text size="lg" className="mb-6">
+                    <Text size="lg" className="mb-8 max-w-2xl mx-auto">
                         {t('vouchers.custom.text')}
                     </Text>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
-                        <div className="text-center">
-                            <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mb-3 mx-auto">
-                                <Icon name="email" className="text-sage" />
+
+                    <Card
+                        background="white"
+                        padding="lg"
+                        shadow="lg"
+                        className="mb-8"
+                    >
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
+                            <div className="text-center">
+                                <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <Icon
+                                        name="email"
+                                        className="text-sage"
+                                        size="lg"
+                                    />
+                                </div>
+                                <Heading
+                                    level="h3"
+                                    size="sm"
+                                    weight="medium"
+                                    className="mb-2"
+                                >
+                                    {t('vouchers.custom.emailUs')}
+                                </Heading>
+                                <Text size="base" className="text-charcoal">
+                                    {t('contact.email')}
+                                </Text>
                             </div>
-                            <Heading
-                                level="h3"
-                                size="xs"
-                                weight="medium"
-                                className="mb-1"
-                            >
-                                {t('vouchers.custom.emailUs')}
-                            </Heading>
-                            <Text size="sm">{t('contact.email')}</Text>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mb-3 mx-auto">
-                                <Icon name="phone" className="text-sage" />
+                            <div className="text-center">
+                                <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <Icon
+                                        name="phone"
+                                        className="text-sage"
+                                        size="lg"
+                                    />
+                                </div>
+                                <Heading
+                                    level="h3"
+                                    size="sm"
+                                    weight="medium"
+                                    className="mb-2"
+                                >
+                                    {t('vouchers.custom.phoneText')}
+                                </Heading>
+                                <Text size="base" className="text-charcoal">
+                                    {t('contact.phone')}
+                                </Text>
                             </div>
-                            <Heading
-                                level="h3"
-                                size="xs"
-                                weight="medium"
-                                className="mb-1"
-                            >
-                                {t('vouchers.custom.phoneText')}
-                            </Heading>
-                            <Text size="sm">{t('contact.phone')}</Text>
                         </div>
-                    </div>
+                    </Card>
+
                     <Button
                         as="a"
                         href="mailto:hello@theviewlodge.be?subject=Custom Gift Voucher Request"
                         variant="charcoal"
+                        size="lg"
                     >
                         {t('vouchers.custom.cta')}
                     </Button>
@@ -381,9 +502,11 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                     </Button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 max-w-7xl mx-auto space-y-6">
                     {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={index} {...testimonial} />
+                        <div key={index} className="break-inside-avoid mb-6">
+                            <TestimonialCard {...testimonial} />
+                        </div>
                     ))}
                 </div>
             </Section>

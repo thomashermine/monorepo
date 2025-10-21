@@ -34,7 +34,7 @@
             "main": "Vues époustouflantes,",
             "sub": "Relaxation infinie"
         },
-        "subtitle": "Lodge Bien-être Forestier au Cœur des Ardennes Belges.",
+        "subtitle": "Lodge Forestier Bien-être au Cœur des Ardennes Belges.",
         "cta": "Réservez votre séjour"
     },
     "intro": {
@@ -42,8 +42,13 @@
         "cta": "Réserver maintenant"
     },
     "cabin": {
-        "heading": "Notre lodge unique offre sérénité avec un sauna, un bain nordique extérieur, un bain à remous intérieur et des équipements luxueux",
+        "heading": "Notre lodge unique offre sérénité et bien-être avec un sauna, un bain nordique extérieur, un bain à remous intérieur et des équipements complets.",
         "cta": "Réserver maintenant"
+    },
+    "location": {
+        "subtitle": "⏤",
+        "heading": "The View : Un Joyau Caché au Cœur de la Nature",
+        "description": "Perché au sommet d'une colline isolée dans les Ardennes belges, The View offre une intimité inégalée et des vues panoramiques à couper le souffle. Notre emplacement unique en bordure du parc naturel vous garantit d'être entouré par une nature sauvage préservée tout en profitant de tout le confort d'un hébergement haut de gamme.\n\nDepuis votre terrasse privée, admirez le lever du soleil qui peint les vallées de teintes dorées, ou détendez-vous en soirée pendant que la forêt s'anime des sons de la nature. C'est plus qu'un hébergement—c'est votre porte d'entrée pour renouer avec le monde naturel."
     },
     "amenities": {
         "heading": "Équipements Bien-être",
@@ -60,6 +65,10 @@
             "whirlpool": {
                 "title": "Bain à Remous",
                 "subtitle": "Relaxation luxueuse"
+            },
+            "kitchen": {
+                "title": "Cuisine Équipée",
+                "subtitle": "Tout le nécessaire pour cuisiner à la maison"
             }
         },
         "cta": "Découvrez le confort",
@@ -83,6 +92,10 @@
             "peaceful": {
                 "title": "Retraite Paisible",
                 "description": "Échappez-vous de l'agitation"
+            },
+            "localExperiences": {
+                "title": "Expériences locales",
+                "description": "Découvrez la culture authentique des Ardennes"
             }
         }
     },
@@ -90,6 +103,8 @@
         "heading": "Galerie",
         "subheading": "Découvrez la beauté et la tranquillité de The View",
         "cta": "Commencez votre retraite",
+        "seeMore": "Voir plus",
+        "closeGallery": "Fermer la galerie",
         "images": {
             "aerialView": "Vue aérienne du lodge",
             "forestCanopy": "Canopée forestière",
@@ -131,6 +146,14 @@
             "julie": {
                 "author": "Julie",
                 "quote": "Un vrai petit cocon au cœur de la nature."
+            },
+            "ina": {
+                "author": "Ina",
+                "quote": "Séjour incroyable ! The View Lodge est encore plus beau que sur les photos. Se réveiller chaque matin avec des vues panoramiques sur la nature était irréel. L'endroit est douillet, élégant et parfaitement calme. L'espace bien-être privé était un point fort et tout était propre et de haute qualité. Un joyau caché dans les Ardennes — hautement recommandé !"
+            },
+            "florian": {
+                "author": "Florian",
+                "quote": "Endroit absolument magnifique ! The View Lodge est une échappée de luxe paisible entourée par la nature. Les vues sont à couper le souffle, l'intérieur est élégant et impeccable, et le sauna et l'espace bien-être donnent l'impression d'un spa privé. Chaque détail est conçu avec soin et l'atmosphère est chaleureuse et relaxante. Parfait pour se déconnecter, se ressourcer et profiter d'une pure tranquillité. Nous avons hâte de revenir !"
             }
         }
     },
@@ -140,8 +163,8 @@
         "cta": "Réservez votre escapade",
         "items": {
             "amenities": {
-                "question": "Quels équipements propose The View ?",
-                "answer": "The View dispose d'un sauna privé, d'une baignoire à bulles, de vues magnifiques et d'une expérience domotique complète, incluant un mode romance avec éclairage et musique personnalisés."
+                "question": "Quels équipements offre The View ?",
+                "answer": "The View propose un sauna privé, une baignoire à bulles, des vues imprenables et une expérience de maison intelligente complète, y compris un mode romance avec éclairage et musique personnalisés."
             },
             "capacity": {
                 "question": "Combien de personnes peuvent séjourner à The View ?",
@@ -149,7 +172,35 @@
             },
             "pets": {
                 "question": "Puis-je amener mon animal de compagnie ou mon enfant ?",
-                "answer": "Les animaux de compagnie ne sont pas autorisés. Les bébés sont les bienvenus, mais The View est principalement conçu comme une escapade romantique pour adultes."
+                "answer": "Les animaux de compagnie ne sont pas autorisés. Les nourrissons sont les bienvenus, mais The View est principalement conçu comme une escapade romantique pour adultes."
+            },
+            "booking": {
+                "question": "Comment puis-je réserver mon séjour à The View ?",
+                "answer": "Vous pouvez vérifier la disponibilité et réserver votre séjour directement sur notre site web, theviewlodge.be/#book"
+            },
+            "essentials": {
+                "question": "Dois-je apporter des essentiels avec moi ?",
+                "answer": "Non, The View fournit des articles de toilette, des serviettes et de la literie, assurant un séjour sans souci et confortable."
+            },
+            "yearRound": {
+                "question": "The View est-il accessible toute l'année ?",
+                "answer": "Oui, The View est ouvert toute l'année, offrant des expériences uniques à chaque saison, des hivers douillets aux escapades estivales vibrantes."
+            },
+            "activities": {
+                "question": "Quelles activités sont disponibles à proximité ?",
+                "answer": "Vous pouvez profiter des sentiers de randonnée qui commencent directement à la cabane dans le Parc des Sources. De plus, la cabane est à 5 minutes de La Gleize, 15 minutes de Plopsa Coo, 20 minutes de Spa (bains thermaux, restaurants), et 30 minutes du circuit de Francorchamps."
+            },
+            "privacy": {
+                "question": "Quelle est l'intimité de l'emplacement ?",
+                "answer": "La cabane est la dernière habitation perchée au sommet d'une colline, située juste au bord du parc naturel, offrant une parfaite intimité et sérénité."
+            },
+            "kitchen": {
+                "question": "Qu'est-ce qui est inclus dans la cuisine ?",
+                "answer": "La cuisine est entièrement équipée avec tous les essentiels pour cuisiner, y compris un four à micro-ondes, un four traditionnel, un lave-vaisselle, un grand réfrigérateur & congélateur, une plaque à induction, et plus encore."
+            },
+            "publicTransport": {
+                "question": "Le transport public est-il disponible pour atteindre The View ?",
+                "answer": "Oui, The View est accessible par transport public. Nous sommes à 5 minutes à pied de l'arrêt de bus TEC Stoumont Targnon, desservi par la ligne 142 (départs quotidiens limités). Cette ligne connecte à plusieurs gares SNCB : Coo, Trois Ponts, et Aywaille, qui offrent un accès facile à Liège et Bruxelles avec des trains toutes les heures en semaine et toutes les deux heures le week-end. Contactez-nous pour voir si l'organisation d'un transfert est possible."
             }
         }
     },
@@ -164,7 +215,18 @@
         },
         "intro": {
             "heading": "Vous cherchez le cadeau parfait pour quelqu'un de spécial ?",
-            "text": "Offrez-leur une escapade inoubliable au cœur des Ardennes belges avec un chèque cadeau pour The View."
+            "text": "Offrez-leur une escapade inoubliable au cœur des Ardennes belges avec un chèque cadeau pour The View – une cabane bien-être unique où la nature et le luxe se rencontrent.\n\nQue ce soit pour une escapade romantique, une surprise d'anniversaire, ou simplement pour dire merci, nos chèques cadeaux offrent la flexibilité de choisir le moment parfait pour leur séjour."
+        },
+        "whyChoose": {
+            "heading": "Pourquoi choisir The View ?",
+            "features": {
+                "sauna": "Sauna privé et bain à remous",
+                "location": "Emplacement isolé au bord du Parc des Sources",
+                "smartHome": "Fonctionnalités de maison intelligente pour un séjour sur mesure",
+                "views": "Vues panoramiques à couper le souffle"
+            },
+            "tagline": "The View n'est pas seulement une destination – c'est un sanctuaire de détente et d'élégance.",
+            "cta": "Offrez le cadeau de la sérénité aujourd'hui."
         },
         "selection": {
             "heading": "Choisissez Votre Chèque Cadeau",
@@ -329,5 +391,71 @@
         "email": "hello@theviewlodge.be",
         "phone": "+32 495 64 99 99",
         "website": "theviewlodge.be"
+    },
+    "visitUs": {
+        "heading": "The View",
+        "address": {
+            "line1": "Targnon",
+            "line2": "4987 Stoumont",
+            "line3": "Belgique"
+        },
+        "cta": "Visitez-nous"
+    },
+    "giftVoucherCTA": {
+        "heading": "Bons cadeaux",
+        "description": "Offrez un cadeau de détente et de luxe à The View",
+        "cta": "Découvrir les bons cadeaux"
+    },
+    "activities": {
+        "heading": "Autour de The View",
+        "subheading": "Découvrez la beauté naturelle et les attractions autour de The View",
+        "cta": "Planifiez votre évasion",
+        "items": {
+            "fagnes": {
+                "badge": "À votre porte",
+                "title": "Les Fagnes",
+                "subtitle": "Beauté Sauvage de la Nature",
+                "description": "Explorez les vastes paysages ouverts des Fagnes, une région de haute terre unique près de The View. Parfait pour la randonnée et l'observation de la faune, ses marais sereins et ses vues panoramiques offrent une véritable évasion dans la nature.",
+                "location": "Directement autour de The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Hautes+Fagnes",
+                "imageAlt": "Paysage panoramique des Fagnes avec sentier en bois"
+            },
+            "parcDesSources": {
+                "badge": "À votre porte",
+                "title": "Parc des Sources",
+                "subtitle": "La Nature à Votre Porte",
+                "description": "Entrez dans le Parc des Sources, une vaste forêt protégée entourant The View. Avec ses sentiers de randonnée pittoresques et son environnement paisible, c'est parfait pour les promenades en nature, l'observation de la faune et les moments de tranquillité au cœur des Ardennes.",
+                "location": "Directement autour de The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Parc+des+Sources+Spa+Belgium",
+                "imageAlt": "Sentier forestier dans le Parc des Sources"
+            },
+            "spa": {
+                "badge": "20 min",
+                "title": "La Ville de Spa",
+                "subtitle": "Bien-être et Charme",
+                "description": "Découvrez la ville historique de Spa, célèbre pour ses eaux thermales et son patrimoine de bien-être. Profitez de soins de spa de classe mondiale, de rues charmantes et de la cuisine locale dans ce site du patrimoine mondial de l'UNESCO.",
+                "location": "À 20 minutes de The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Spa+Belgium",
+                "imageAlt": "Centre historique de la ville de Spa"
+            },
+            "francorchamps": {
+                "badge": "30 min",
+                "title": "Circuit de Francorchamps",
+                "subtitle": "Sensations sur la Piste",
+                "description": "Vivez l'adrénaline du Circuit de Spa-Francorchamps, à seulement 30 minutes de The View. Célèbre pour ses courses de Formule 1 et ses virages emblématiques, c'est une destination incontournable pour les passionnés de sport automobile.",
+                "location": "À 30 minutes de The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Circuit+de+Spa-Francorchamps",
+                "imageAlt": "Circuit de Spa-Francorchamps"
+            },
+            "ninglinspo": {
+                "badge": "15 min",
+                "title": "Gorge de Ninglinspo",
+                "subtitle": "Merveille Naturelle",
+                "description": "Découvrez la beauté époustouflante de Ninglinspo, la gorge de cascade la plus spectaculaire de Belgique. Suivez le sentier de randonnée pittoresque le long des cascades et à travers des formations rocheuses dramatiques dans cette zone naturelle protégée.",
+                "location": "À 15 minutes de The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Ninglinspo+Belgium",
+                "imageAlt": "Cascades de Ninglinspo"
+            }
+        }
     }
 }
