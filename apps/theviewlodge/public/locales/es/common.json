@@ -1,27 +1,27 @@
 {
     "meta": {
         "home": {
-            "title": "The View - Vistas impresionantes, Relajación infinita. Lodge de bienestar en Stoumont, Bélgica",
-            "description": "Retiro de bienestar premium en las Ardenas belgas. Sauna privado, bañera de hidromasaje, vistas impresionantes. Escapada romántica perfecta en Stoumont, Bélgica.",
+            "title": "The View - Vistas Impresionantes, Relajación Infinita. Lodge de Bienestar en Stoumont, Bélgica",
+            "description": "Retiro de bienestar premium en las Ardenas belgas. Sauna privado, jacuzzi, vistas magníficas. Escapada romántica perfecta en Stoumont, Bélgica.",
             "ogTitle": "The View - Retiro de Bienestar Premium en las Ardenas Belgas"
         },
         "vouchers": {
-            "title": "Vales Regalo - The View - Regalo Perfecto para un Retiro de Bienestar",
-            "description": "Regala lujo y relajación con los vales regalo de The View. Perfecto para escapadas románticas en las Ardenas belgas."
+            "title": "Bonos Regalo - The View - Regalo Perfecto para un Retiro de Bienestar",
+            "description": "Regala el regalo de la relajación con los bonos regalo de The View. Perfecto para escapadas románticas en las Ardenas belgas."
         },
         "terms": {
             "title": "Términos y Condiciones - The View",
-            "description": "Términos y condiciones para reservar y hospedarse en The View, Bélgica. Política de cancelación, términos de reserva e información legal."
+            "description": "Términos y condiciones de reserva y estancia en The View, Bélgica. Política de cancelación, condiciones de reserva e información legal."
         },
         "prices": {
-            "title": "Precios y Disponibilidad - The View - Reserve Su Estadía",
-            "description": "Descubra nuestros precios dinámicos para The View. Consulte la disponibilidad y tarifas en tiempo real para su retiro de bienestar perfecto en las Ardenas belgas."
+            "title": "Precios y Disponibilidad - The View - Reserve su Estancia",
+            "description": "Descubra nuestros precios dinámicos para The View. Consulte disponibilidad y precios en tiempo real para su retiro de bienestar perfecto en las Ardenas belgas."
         }
     },
     "navigation": {
         "home": "Inicio",
         "bookNow": "Reservar",
-        "giftVouchers": "Vales Regalo",
+        "giftVouchers": "Bonos Regalo",
         "prices": "Precios",
         "contact": "Contacto",
         "terms": "Términos",
@@ -36,47 +36,47 @@
     },
     "hero": {
         "title": {
-            "main": "Vistas impresionantes,",
-            "sub": "Relajación infinita"
+            "main": "Vistas Impresionantes,",
+            "sub": "Relajación Infinita"
         },
-        "subtitle": "Lodge de Bienestar Forestal en el Corazón de las Ardenas Belgas.",
-        "cta": "Reserve su estadía"
+        "subtitle": "Lodge Forestal de Bienestar en el Corazón de las Ardenas Belgas.",
+        "cta": "Reserve su estancia"
     },
     "intro": {
-        "heading": "Escápese a The View, su santuario personal ubicado en Stoumont — el corazón del Parque Natural de las Ardenas Belgas",
+        "heading": "Escápese a The View, su santuario personal ubicado en Stoumont — en el corazón del Parque Natural de las Ardenas Belgas",
         "cta": "Reservar ahora"
     },
     "cabin": {
-        "heading": "Nuestro lodge único ofrece serenidad con un sauna, bañera nórdica al aire libre, bañera de hidromasaje interior y comodidades de lujo",
-        "cta": "Reservar ahora"
+        "heading": "Nuestro lodge único ofrece serenidad y bienestar con sauna, jacuzzi nórdico exterior, jacuzzi interior y comodidades completas.",
+        "cta": "Reserve hoy"
     },
     "location": {
-        "subtitle": "⏤",
-        "heading": "The View: Una Joya Escondida en el Corazón de la Naturaleza",
-        "description": "Encaramado en la cima de una colina aislada en las Ardenas belgas, The View ofrece privacidad incomparable y vistas panorámicas impresionantes. Nuestra ubicación única en el borde del parque natural garantiza que esté rodeado de naturaleza virgen mientras disfruta de todas las comodidades de un alojamiento premium.\n\nDesde su terraza privada, observe el amanecer pintar los valles con tonos dorados, o relájese por la noche mientras el bosque cobra vida con los sonidos de la naturaleza. Esto es más que un alojamiento—es su puerta de entrada para reconectar con el mundo natural."
+        "subtitle": "The View, Stoumont",
+        "heading": "Una Joya Escondida en el Corazón de la Naturaleza",
+        "description": "Encaramado en la cima de una colina aislada en las Ardenas belgas, The View ofrece una privacidad inigualable y vistas panorámicas impresionantes. Nuestra ubicación única en el borde del Parque Natural de las Fuentes le garantiza estar rodeado de naturaleza salvaje preservada mientras disfruta de todas las comodidades de un alojamiento de alta gama.\n\nDesde su terraza privada, admire el amanecer que pinta los valles con tonos dorados, o relájese por la noche mientras el bosque cobra vida con los sonidos de la naturaleza. The View es más que un alojamiento: es una puerta de entrada para reconectar con la naturaleza."
     },
     "amenities": {
         "heading": "Comodidades de Bienestar",
-        "subheading": "Todo lo que necesita para la escapada perfecta",
+        "subheading": "Todo lo que necesita para una escapada perfecta",
         "features": {
             "sauna": {
                 "title": "Sauna Privado",
                 "subtitle": "Relájese con vistas impresionantes del bosque"
             },
             "hotTub": {
-                "title": "Bañera Nórdica",
+                "title": "Jacuzzi Nórdico",
                 "subtitle": "Relajación al aire libre con vistas al valle"
             },
             "whirlpool": {
-                "title": "Bañera de Hidromasaje",
-                "subtitle": "Relajación de lujo"
+                "title": "Jacuzzi",
+                "subtitle": "Relajación lujosa"
             },
             "kitchen": {
                 "title": "Cocina Equipada",
                 "subtitle": "Todo lo necesario para cocinar en casa"
             }
         },
-        "cta": "Experimente el confort",
+        "cta": "Descubra el confort",
         "items": {
             "wifi": {
                 "title": "WiFi Gratuito",
@@ -84,19 +84,19 @@
             },
             "stargazing": {
                 "title": "Observación de Estrellas",
-                "description": "Cielos nocturnos despejados lejos de las luces de la ciudad"
+                "description": "Cielo nocturno despejado lejos de las luces de la ciudad"
             },
             "parking": {
-                "title": "Estacionamiento Privado",
-                "description": "Plaza de estacionamiento dedicada"
+                "title": "Aparcamiento Privado",
+                "description": "Plaza de aparcamiento dedicada"
             },
             "smartHome": {
                 "title": "Casa Inteligente",
-                "description": "Audio multihabitación, saludo personal, modo romántico"
+                "description": "Audio multihabitación, bienvenida personalizada, modo romance"
             },
             "peaceful": {
                 "title": "Retiro Tranquilo",
-                "description": "Escape del ajetreo y el bullicio"
+                "description": "Escape del ajetreo"
             },
             "localExperiences": {
                 "title": "Experiencias locales",
@@ -112,41 +112,58 @@
         "closeGallery": "Cerrar galería",
         "images": {
             "aerialView": "Vista aérea del lodge",
-            "forestCanopy": "Dosel del bosque",
+            "forestCanopy": "Dosel forestal",
             "frontFacade": "Fachada frontal",
             "valleyView": "Vista del valle",
             "bathroomJacuzzi": "Jacuzzi del baño",
             "saunaView": "Vista del sauna",
-            "hotTub": "Bañera nórdica",
+            "hotTub": "Jacuzzi nórdico",
             "kitchen": "Cocina",
-            "diningArea": "Área de comedor",
-            "theView": "The View"
+            "diningArea": "Zona de comedor",
+            "theView": "The View",
+            "parking": "Aparcamiento privado",
+            "entering": "Llegada al lodge",
+            "wifi": "WiFi de alta velocidad",
+            "exiting": "Salida del lodge",
+            "hottub": "Jacuzzi con vista panorámica",
+            "aerial": "Vista aérea de The View",
+            "sauna": "Sauna privada",
+            "outdoorDeck": "Terraza exterior con vista al paisaje",
+            "dining": "Comedor",
+            "bathroom": "Baño de lujo",
+            "panoramic": "Vista panorámica del valle",
+            "exterior": "Vista exterior",
+            "living": "Sala de estar",
+            "terrace": "Zona de estar en la terraza",
+            "bedroom": "Dormitorio confortable",
+            "entrance": "Camino de entrada",
+            "outdoor": "Ducha exterior"
         }
     },
     "testimonials": {
-        "badge": "Favorito de los Huéspedes en Airbnb",
-        "heading": "Opiniones de los Huéspedes",
-        "subheading": "Escuche a nuestros huéspedes sobre sus experiencias inolvidables",
+        "badge": "Favorito de los Viajeros en Airbnb",
+        "heading": "Opiniones de Viajeros",
+        "subheading": "Descubra los testimonios de nuestros viajeros sobre sus experiencias inolvidables",
         "reviews": {
             "eline": {
                 "author": "Eline",
-                "quote": "¡Hermosa casa con vistas fantásticas! El contacto con Thomas y Caroline fue muy amable. ¡Si busca un lugar para relajarse, no busque más!"
+                "quote": "¡Hermosa casa con vistas fantásticas! El contacto con Thomas y Caroline fue muy amable. Si buscas un lugar para relajarte, ¡no busques más!"
             },
             "tim": {
                 "author": "Tim",
-                "quote": "Una cabaña estupenda con todo lo que quieres. Y las vistas... ¡realmente impresionantes!"
+                "quote": "¡Una cabaña magnífica con todo lo que quieres. Y las vistas... realmente impresionantes!"
             },
             "conny": {
                 "author": "Conny",
-                "quote": "¡Excelente cabaña de bienestar con vistas increíbles y mucha privacidad, lo disfrutamos!"
+                "quote": "Excelente cabaña de bienestar con vistas increíbles y mucha privacidad, ¡nos encantó!"
             },
             "thimo": {
                 "author": "Thimo",
-                "quote": "¡Qué experiencia tan maravillosa! Realmente tuvimos una estancia súper agradable. La ubicación es perfecta para relajarse completamente."
+                "quote": "¡Qué experiencia tan maravillosa! Realmente pasamos una estancia genial. La ubicación es perfecta para relajarse completamente."
             },
             "heidi": {
                 "author": "Heidi",
-                "quote": "Un oasis de paz con una vista impresionante. ¡Volveremos!"
+                "quote": "Un oasis de paz con una vista magnífica. ¡Volveremos!"
             },
             "julie": {
                 "author": "Julie",
@@ -154,88 +171,92 @@
             },
             "ina": {
                 "author": "Ina",
-                "quote": "¡Estancia increíble! The View Lodge es aún más hermoso que en las fotos. Despertar cada mañana con vistas panorámicas a la naturaleza se sentía irreal. El lugar es acogedor, elegante y perfectamente tranquilo. El área de bienestar privada fue un punto destacado y todo estaba limpio y de alta calidad. Una joya escondida en las Ardenas — ¡muy recomendado!"
+                "quote": "¡Estancia increíble! The View Lodge es aún más hermoso que en las fotos. Despertarse cada mañana con vistas panorámicas de la naturaleza fue irreal. El lugar es acogedor, elegante y perfectamente tranquilo. El espacio de bienestar privado fue un punto destacado y todo estaba limpio y de alta calidad. Una joya escondida en las Ardenas — ¡altamente recomendado!"
             },
             "florian": {
                 "author": "Florian",
-                "quote": "¡Lugar absolutamente impresionante! The View Lodge es un escape de lujo tranquilo rodeado de naturaleza. Las vistas son impresionantes, el interior es elegante e impecable, y el sauna y el área de bienestar lo hacen sentir como un spa privado. Cada detalle está cuidadosamente diseñado y la atmósfera es cálida y relajante. Perfecto para desconectar, recargar energías y disfrutar de pura tranquilidad. ¡No podemos esperar para volver!"
+                "quote": "¡Lugar absolutamente magnífico! The View Lodge es una escapada tranquila rodeada de naturaleza. Las vistas son impresionantes, el interior es elegante e impecable, y el sauna y el espacio de bienestar dan la sensación de un spa privado. Cada detalle está diseñado con cuidado y el ambiente es cálido y relajante. Perfecto para desconectar, recargarse y disfrutar de pura tranquilidad. ¡Esperamos volver!"
             }
         }
     },
     "faq": {
         "heading": "Preguntas Frecuentes",
-        "subheading": "Todo lo que necesita saber sobre su estadía",
+        "subheading": "Todo lo que necesita saber sobre su estancia",
         "cta": "Reserve su escapada",
         "items": {
             "amenities": {
                 "question": "¿Qué comodidades ofrece The View?",
-                "answer": "The View ofrece un sauna privado, un baño de burbujas, vistas impresionantes y una experiencia completa de hogar inteligente, que incluye un modo romántico con iluminación y música personalizadas."
+                "answer": "The View ofrece un sauna privado, un jacuzzi nórdico exterior, una bañera de burbujas interior, vistas impresionantes y una experiencia de casa inteligente completa, incluyendo un modo romance con iluminación y música personalizadas."
             },
             "capacity": {
                 "question": "¿Cuántas personas pueden alojarse en The View?",
-                "answer": "El lodge está diseñado para un máximo de dos personas, ofreciendo el entorno perfecto para un retiro íntimo y romántico."
+                "answer": "El lodge está diseñado para un máximo de dos personas, ofreciendo el entorno perfecto para un retiro íntimo y romántico. También aceptamos bebés y niños."
             },
             "pets": {
-                "question": "¿Puedo traer mi mascota o hijo?",
-                "answer": "No se permiten mascotas. Los bebés son bienvenidos, pero The View está diseñado principalmente como una escapada romántica para adultos."
+                "question": "¿Puedo traer mi mascota?",
+                "answer": "No se permiten mascotas por razones de alergias y para garantizar la comodidad de todos nuestros huéspedes."
+            },
+            "kids": {
+                "question": "¿Puedo traer a mi hijo?",
+                "answer": "Los bebés y niños menores de 12 años son bienvenidos, pero deben ser anunciados en el momento de la reserva."
             },
             "booking": {
-                "question": "¿Cómo puedo reservar mi estadía en The View?",
-                "answer": "Puede verificar la disponibilidad y reservar su estadía directamente en nuestro sitio web, theviewlodge.be/#book"
+                "question": "¿Cómo puedo reservar mi estancia en The View?",
+                "answer": "Puede verificar la disponibilidad y reservar su estancia directamente en nuestro sitio web, theviewlodge.be/#book"
             },
             "essentials": {
                 "question": "¿Debo traer artículos esenciales conmigo?",
-                "answer": "No, The View proporciona artículos de aseo, toallas y ropa de cama, asegurando una estadía sin preocupaciones y cómoda."
+                "answer": "No, pensamos en todo por usted 😌. The View pone a su disposición todos los artículos de tocador, toallas y ropa de cama necesarios para garantizarle una estancia muy agradable y sin preocupaciones. La cocina también está equipada con algunas cápsulas Nespresso, pastillas para lavavajillas y especias básicas."
             },
             "yearRound": {
-                "question": "¿The View está accesible durante todo el año?",
-                "answer": "Sí, The View está abierto todo el año, ofreciendo experiencias únicas en cada estación, desde inviernos acogedores hasta escapadas de verano vibrantes."
+                "question": "¿The View está accesible todo el año?",
+                "answer": "Sí, The View está abierto todo el año, ofreciendo experiencias únicas en cada estación, desde inviernos acogedores hasta escapadas de verano soleadas."
             },
             "activities": {
                 "question": "¿Qué actividades están disponibles cerca?",
-                "answer": "Puede disfrutar de senderos de senderismo que comienzan directamente desde la cabaña en el Parc des Sources. Además, la cabaña está a 5 minutos de La Gleize, 15 minutos de Plopsa Coo, 20 minutos de Spa (baños termales, restaurantes) y 30 minutos del circuito de Francorchamps."
+                "answer": "Puede disfrutar de senderos de senderismo que comienzan directamente desde el lodge en el Parque de las Fuentes. Además, el lodge está a 5 minutos de La Gleize, 15 minutos de Plopsa Coo, 20 minutos de Spa (baños termales, restaurantes) y 25 minutos del circuito de Francorchamps."
             },
             "privacy": {
                 "question": "¿Qué tan privada es la ubicación?",
-                "answer": "La cabaña es la última vivienda situada en la cima de una colina, ubicada justo al borde del parque natural, ofreciendo perfecta privacidad y serenidad."
+                "answer": "La cabaña es la última vivienda encaramada en la cima de una colina, situada justo en el borde del parque natural, ofreciendo perfecta privacidad y serenidad."
             },
             "kitchen": {
-                "question": "¿Qué incluye la cocina?",
-                "answer": "La cocina está completamente equipada con todos los esenciales para cocinar, incluyendo un microondas, un horno tradicional, un lavavajillas, un refrigerador y congelador grandes, una placa de inducción y más."
+                "question": "¿Qué está incluido en la cocina?",
+                "answer": "La cocina está completamente equipada con todos los elementos esenciales para cocinar, incluyendo microondas, horno tradicional, lavavajillas, gran refrigerador y congelador, placa de inducción, y algunas cápsulas Nespresso, pastillas para lavavajillas y especias básicas."
             },
             "publicTransport": {
-                "question": "¿Está disponible el transporte público para llegar a The View?",
-                "answer": "Sí, The View es accesible en transporte público. Estamos a 5 minutos a pie de la parada de autobús TEC Stoumont Targnon, servida por la línea 142 (salidas diarias limitadas). Esta línea conecta con varias estaciones de tren SNCB: Coo, Trois Ponts y Aywaille, que ofrecen fácil acceso a Lieja y Bruselas con trenes cada hora en días laborables y cada dos horas los fines de semana. Contáctenos para ver si es posible organizar un traslado."
+                "question": "¿Hay transporte público disponible para llegar a The View?",
+                "answer": "Sí, The View es accesible por transporte público. Estamos a 5 minutos a pie de la parada de autobús TEC Stoumont Targnon, servida por la línea 142 (salidas diarias limitadas). Esta línea le lleva a varias estaciones SNCB: Coo, Trois Ponts y Aywaille, que ofrecen fácil acceso a Lieja y Bruselas con trenes cada hora en días laborables y cada dos horas los fines de semana. Contáctenos para ver si es posible organizar un traslado."
             }
         }
     },
     "vouchers": {
         "hero": {
             "title": {
-                "main": "Vales",
+                "main": "Bonos",
                 "sub": "Regalo"
             },
-            "subtitle": "Regale el Regalo Perfecto de Lujo y Relajación",
-            "cta": "Explorar Vales"
+            "subtitle": "Regale Relajación",
+            "cta": "Ver Bonos"
         },
         "intro": {
             "heading": "¿Busca el regalo perfecto para alguien especial?",
-            "text": "Regáleles una escapada inolvidable en el corazón de las Ardenas belgas con un vale regalo para The View – una cabaña de bienestar única donde la naturaleza y el lujo se encuentran.\n\nYa sea para una escapada romántica, una sorpresa de cumpleaños o simplemente para dar las gracias, nuestros vales regalo ofrecen la flexibilidad de elegir el momento perfecto para su estadía."
+            "text": "Regáleles una escapada inolvidable en el corazón de las Ardenas belgas con un bono regalo para The View - una cabaña de bienestar única donde la naturaleza se encuentra con el confort.\n\nYa sea para una escapada romántica, una sorpresa de cumpleaños o simplemente para decir gracias, nuestros bonos regalo ofrecen la flexibilidad de elegir el momento perfecto para su estancia."
         },
         "whyChoose": {
             "heading": "¿Por qué elegir The View?",
             "features": {
-                "sauna": "Sauna privada y jacuzzi",
-                "location": "Ubicación aislada al borde del Parc des Sources",
-                "smartHome": "Funciones de hogar inteligente para una estadía personalizada",
+                "sauna": "Sauna privado, jacuzzi nórdico exterior y jacuzzi interior",
+                "location": "Ubicación aislada en el borde del Parque de las Fuentes",
+                "smartHome": "Funcionalidades de casa inteligente para una estancia a medida",
                 "views": "Vistas panorámicas impresionantes"
             },
-            "tagline": "The View no es solo un destino – es un santuario de relajación y elegancia.",
-            "cta": "Regale el obsequio de la serenidad hoy."
+            "tagline": "The View no es solo un destino - es un santuario de relajación y elegancia.",
+            "cta": "Regale el regalo de la serenidad hoy."
         },
         "selection": {
-            "heading": "Elija Su Vale Regalo",
-            "subheading": "Seleccione el monto perfecto para su persona especial",
+            "heading": "Elija su Bono Regalo",
+            "subheading": "Seleccione el monto perfecto para alguien especial",
             "mostPopular": "Más Popular",
             "amounts": {
                 "49": {
@@ -248,7 +269,7 @@
                 },
                 "199": {
                     "description": "Noche típica entre semana",
-                    "details": "Perfecto para una escapada a mitad de semana, cubriendo la mayor parte de una noche tranquila entre semana."
+                    "details": "Perfecto para una escapada a mitad de semana, cubriendo la mayor parte de una noche tranquila."
                 },
                 "299": {
                     "description": "Noche típica de fin de semana",
@@ -256,20 +277,20 @@
                 },
                 "499": {
                     "description": "Fin de semana típico de 2 noches",
-                    "details": "El regalo de lujo definitivo: un retiro completo de fin de semana."
+                    "details": "El regalo de la relajación definitiva - un retiro completo de fin de semana."
                 }
             },
-            "purchaseButton": "Comprar Vale de {{amount}}"
+            "purchaseButton": "Comprar Bono de {{amount}}"
         },
         "custom": {
             "heading": "¿Necesita un Monto Personalizado?",
             "text": "Para un monto personalizado o una noche específica, contáctenos directamente.",
-            "emailUs": "Envíenos un Email",
-            "phoneText": "Teléfono/Texto",
-            "cta": "Contáctenos para un Vale Personalizado"
+            "emailUs": "Escríbanos",
+            "phoneText": "Teléfono/SMS",
+            "cta": "Contáctenos para un Bono Personalizado"
         },
         "testimonials": {
-            "heading": "Lo Que Dicen Nuestros Huéspedes",
+            "heading": "Lo Que Dicen Nuestros Viajeros",
             "cta": "Descubrir The View"
         },
         "howItWorks": {
@@ -277,7 +298,7 @@
             "features": {
                 "instantDelivery": {
                     "title": "Entrega instantánea",
-                    "description": "Recibirá un código de vale único por email"
+                    "description": "Recibirá un código de bono único por correo electrónico"
                 },
                 "transferable": {
                     "title": "Transferible",
@@ -285,31 +306,31 @@
                 },
                 "flexibleValue": {
                     "title": "Valor flexible",
-                    "description": "Actúa como un descuento sobre el precio total"
+                    "description": "Se aplica como descuento sobre el precio total de su estancia, ya que nuestros precios varían de noche en noche."
                 },
                 "remainderKept": {
-                    "title": "Saldo retenido",
-                    "description": "Saldo restante para futuras reservas"
+                    "title": "Saldo conservado",
+                    "description": "El saldo restante es reutilizable para otras estancias"
                 },
                 "valid12Months": {
                     "title": "Válido 12 meses",
-                    "description": "Mucho tiempo para planificar un retiro"
+                    "description": "Suficiente tiempo para poder organizar tranquilamente una estancia"
                 },
                 "nonRefundable": {
                     "title": "No reembolsable",
-                    "description": "No se puede cambiar por efectivo"
+                    "description": "No puede ser canjeado por dinero"
                 }
             }
         },
         "cta": {
             "heading": "¿Listo para Regalar el Regalo Perfecto?",
-            "text": "Elija de nuestra selección de vales regalo y regale a alguien especial el regalo del lujo y la relajación.",
-            "button": "Explorar Todos los Vales"
+            "text": "Elija entre nuestra selección de bonos regalo y regale a alguien especial el regalo de la relajación y el bienestar.",
+            "button": "Ver Todos los Bonos"
         }
     },
     "terms": {
         "heading": "Términos y Condiciones",
-        "subheading": "Por favor, lea estos términos y condiciones cuidadosamente antes de reservar su estadía en The View.",
+        "subheading": "Por favor, lea atentamente estos términos y condiciones antes de reservar su estancia en The View.",
         "operator": {
             "heading": "Información del Operador",
             "intro": "The View es operado por:",
@@ -319,17 +340,17 @@
             "vat": "IVA: BE 0798 582 489"
         },
         "booking": {
-            "heading": "Términos de Reserva",
-            "intro": "Al hacer una reserva en The View, acepta estos términos y condiciones. Todas las reservas están sujetas a disponibilidad y confirmación.",
+            "heading": "Condiciones de Reserva",
+            "intro": "Al realizar una reserva en The View, acepta estos términos y condiciones. Todas las reservas están sujetas a disponibilidad y confirmación.",
             "reservationProcess": {
                 "heading": "Proceso de Reserva",
-                "item1": "Las reservas se pueden hacer a través de nuestra plataforma de reservas oficial o por contacto directo",
-                "item2": "La confirmación de reserva se enviará por email dentro de las 24 horas",
-                "item3": "Se requiere el pago completo 14 días antes del check-in"
+                "item1": "Las reservas se pueden realizar a través de nuestra plataforma de reserva oficial o por contacto directo",
+                "item2": "La confirmación de reserva se enviará por correo electrónico dentro de las 24 horas",
+                "item3": "Se requiere el pago completo 14 días antes de la llegada"
             },
             "guestCapacity": {
                 "heading": "Capacidad de Huéspedes",
-                "text": "The View acomoda un máximo de 2 huéspedes. Los bebés son bienvenidos pero deben ser declarados al momento de la reserva. La propiedad está diseñada como un retiro romántico para adultos."
+                "text": "The View aloja un máximo de 2 personas. Los bebés y niños menores de 12 años son bienvenidos, pero deben ser declarados en el momento de la reserva. La propiedad está diseñada como un retiro romántico para adultos."
             }
         },
         "cancellation": {
@@ -337,37 +358,37 @@
             "refundPolicy": {
                 "heading": "Política de Reembolso",
                 "moreThan14Days": {
-                    "label": "Más de 14 días antes del check-in:",
+                    "label": "Más de 14 días antes de la llegada:",
                     "text": "Reembolso completo de todos los pagos"
                 },
                 "lessThan14Days": {
-                    "label": "14 días o menos antes del check-in:",
+                    "label": "14 días o menos antes de la llegada:",
                     "text": "No hay reembolso disponible"
                 }
             },
-            "notice": "Las cancelaciones deben hacerse por escrito por email o a través de nuestra plataforma de reservas. La fecha de cancelación se determina cuando recibimos su aviso de cancelación por escrito."
+            "notice": "Las cancelaciones deben realizarse por escrito por correo electrónico o a través de nuestra plataforma de reserva. La fecha de cancelación se determina por la recepción de su aviso de cancelación por escrito."
         },
         "checkInOut": {
             "heading": "Entrada y Salida",
             "checkIn": {
                 "heading": "Entrada",
-                "time": "Desde las 16:00 en adelante",
-                "note": "Auto check-in usando el código de acceso proporcionado"
+                "time": "A partir de las 16:00",
+                "note": "Registro autónomo con código de acceso proporcionado"
             },
             "checkOut": {
                 "heading": "Salida",
                 "time": "Antes de las 12:00",
-                "note": "La salida tardía puede estar disponible bajo petición"
+                "note": "Una salida tardía puede estar disponible bajo petición"
             }
         },
         "houseRules": {
-            "heading": "Reglas de la Casa",
+            "heading": "Normas de la Casa",
             "permitted": {
                 "heading": "Permitido",
-                "item1": "Máximo 2 huéspedes adultos (bebés bienvenidos)",
+                "item1": "Máximo 2 adultos (bebés y niños menores de 12 años son bienvenidos)",
                 "item2": "Disfrute tranquilo de la propiedad",
                 "item3": "Uso de todas las comodidades proporcionadas",
-                "item4": "Fumar solo en terrazas exteriores"
+                "item4": "Fumar solo en las terrazas exteriores"
             },
             "notPermitted": {
                 "heading": "No Permitido",
@@ -380,12 +401,12 @@
         "contact": {
             "heading": "Información de Contacto",
             "operated": "Operado por Crafted Signals SRL",
-            "email": "Email:",
+            "email": "Correo electrónico:",
             "website": "Sitio web:"
         },
         "effectiveDate": {
             "lastUpdated": "Última actualización:",
-            "date": "Septiembre 2025",
+            "date": "Octubre 2025",
             "notice": "Estos términos y condiciones son efectivos inmediatamente y se aplican a todas las reservas realizadas después de esta fecha."
         }
     },
@@ -407,9 +428,9 @@
         "cta": "Visítenos"
     },
     "giftVoucherCTA": {
-        "heading": "Vales de regalo",
-        "description": "Regale relajación y lujo en The View",
-        "cta": "Descubrir los vales de regalo"
+        "heading": "Bonos regalo",
+        "description": "Regale un regalo de relajación y bienestar en The View",
+        "cta": "Descubrir los bonos regalo"
     },
     "activities": {
         "heading": "Alrededor de The View",
@@ -418,27 +439,27 @@
         "items": {
             "fagnes": {
                 "badge": "A su puerta",
-                "title": "Les Fagnes",
-                "subtitle": "Belleza Natural Salvaje",
-                "description": "Explore los vastos paisajes abiertos de Les Fagnes, una región única de tierras altas cerca de The View. Perfecto para el senderismo y la observación de la vida silvestre, sus serenos pantanos y vistas panorámicas ofrecen un verdadero escape a la naturaleza.",
+                "title": "Las Fagnes",
+                "subtitle": "Belleza Salvaje de la Naturaleza",
+                "description": "Explore los vastos paisajes abiertos de las Fagnes, una región natural única cerca de The View. Perfecto para el senderismo y la observación de fauna, sus pantanos serenos y vistas panorámicas ofrecen una verdadera escapada en la naturaleza.",
                 "location": "Directamente alrededor de The View",
                 "locationUrl": "https://www.google.com/maps/search/?api=1&query=Hautes+Fagnes",
-                "imageAlt": "Paisaje panorámico de Les Fagnes con pasarela de madera"
+                "imageAlt": "Paisaje panorámico de las Fagnes con sendero de madera"
             },
             "parcDesSources": {
                 "badge": "A su puerta",
-                "title": "Parc des Sources",
-                "subtitle": "La Naturaleza a Su Puerta",
-                "description": "Entre en el Parc des Sources, un vasto bosque protegido que rodea The View. Con sus pintorescos senderos y ambiente tranquilo, es perfecto para paseos por la naturaleza, observación de fauna y momentos de tranquilidad en el corazón de las Ardenas.",
+                "title": "Parque de las Fuentes",
+                "subtitle": "La Naturaleza a su Puerta",
+                "description": "Entre en el Parque de las Fuentes, un vasto bosque protegido que rodea The View. Con sus senderos de senderismo pintorescos y su entorno tranquilo, es el lugar perfecto para paseos por la naturaleza, observación de fauna y vivir momentos de tranquilidad en el corazón de las Ardenas.",
                 "location": "Directamente alrededor de The View",
                 "locationUrl": "https://www.google.com/maps/search/?api=1&query=Parc+des+Sources+Spa+Belgium",
-                "imageAlt": "Sendero forestal en el Parc des Sources"
+                "imageAlt": "Sendero forestal en el Parque de las Fuentes"
             },
             "spa": {
                 "badge": "20 min",
                 "title": "La Ciudad de Spa",
                 "subtitle": "Bienestar y Encanto",
-                "description": "Descubra la histórica ciudad de Spa, famosa por sus aguas termales y patrimonio de bienestar. Disfrute de tratamientos de spa de clase mundial, calles encantadoras y cocina local en este sitio del Patrimonio Mundial de la UNESCO.",
+                "description": "Descubra la histórica ciudad de Spa, famosa por sus aguas termales y su patrimonio de bienestar. Disfrute de tratamientos de spa de clase mundial, calles encantadoras y cocina local en este sitio del patrimonio mundial de la UNESCO.",
                 "location": "A 20 minutos de The View",
                 "locationUrl": "https://www.google.com/maps/search/?api=1&query=Spa+Belgium",
                 "imageAlt": "Centro histórico de la ciudad de Spa"
@@ -446,20 +467,20 @@
             "francorchamps": {
                 "badge": "30 min",
                 "title": "Circuito de Francorchamps",
-                "subtitle": "Emociones en la Pista",
-                "description": "Experimente la adrenalina del Circuito de Spa-Francorchamps, a solo 30 minutos de The View. Famoso por sus carreras de Fórmula 1 y curvas icónicas, es un destino imprescindible para los entusiastas del automovilismo.",
+                "subtitle": "Sensaciones en la Pista",
+                "description": "Viva la adrenalina del Circuito de Spa-Francorchamps, a solo 30 minutos de The View. Famoso por sus carreras de Fórmula 1 y sus curvas emblemáticas, es un destino imprescindible para los apasionados del deporte motor.",
                 "location": "A 30 minutos de The View",
                 "locationUrl": "https://www.google.com/maps/search/?api=1&query=Circuit+de+Spa-Francorchamps",
-                "imageAlt": "Circuito de carreras de Spa-Francorchamps"
+                "imageAlt": "Circuito de Spa-Francorchamps"
             },
             "ninglinspo": {
                 "badge": "15 min",
-                "title": "Garganta de Ninglinspo",
+                "title": "Paseo de Ninglinspo",
                 "subtitle": "Maravilla Natural",
-                "description": "Descubra la impresionante belleza de Ninglinspo, la garganta de cascadas más espectacular de Bélgica. Siga el pintoresco sendero junto a cascadas y a través de formaciones rocosas dramáticas en esta área natural protegida.",
+                "description": "Descubra la belleza impresionante de Ninglinspo, el río más espectacular de Bélgica. Siga el sendero de senderismo pintoresco a lo largo de las cascadas y a través de formaciones rocosas dramáticas en esta área natural protegida.",
                 "location": "A 15 minutos de The View",
                 "locationUrl": "https://www.google.com/maps/search/?api=1&query=Ninglinspo+Belgium",
-                "imageAlt": "Cascadas de Ninglinspo"
+                "imageAlt": "Paseo de Ninglinspo"
             }
         }
     },
@@ -469,57 +490,363 @@
                 "main": "Precios y",
                 "sub": "Disponibilidad"
             },
-            "subtitle": "Precios justos y transparentes que se adaptan a la demanda",
-            "cta": "Consultar disponibilidad"
+            "subtitle": "Precios transparentes y adaptados a la demanda",
+            "cta": "Verificar disponibilidad"
         },
         "dynamicPricing": {
             "heading": "Nuestro Enfoque de Precios",
-            "text": "En The View, creemos en precios justos y transparentes. Nuestras tarifas fluctúan naturalmente según la demanda, la temporada y la disponibilidad—al igual que las aerolíneas u hoteles.\n\nEsto significa que a menudo puede encontrar un excelente valor reservando durante períodos más tranquilos, mientras que las temporadas altas reflejan la mayor demanda de nuestro exclusivo retiro de bienestar. Queremos recompensar a los viajeros flexibles con mejores tarifas, al tiempo que garantizamos que todos experimenten la misma calidad y servicio excepcionales."
+            "text": "En The View, creemos en precios justos y transparentes. Nuestros precios fluctúan naturalmente según la demanda, la temporada y la disponibilidad.\n\nEsto significa que a menudo puede encontrar una excelente relación calidad-precio reservando durante períodos más tranquilos, mientras que los períodos de alta temporada reflejan la mayor demanda de nuestro retiro de bienestar exclusivo. Queremos recompensar a los viajeros flexibles con mejores precios, mientras garantizamos a todos la misma calidad y servicio."
         },
         "factors": {
             "heading": "¿Qué Influye en Nuestros Precios?",
-            "subheading": "Varios factores determinan la tarifa por noche de su estadía",
+            "subheading": "Varios factores determinan el precio por noche de su estancia",
             "items": {
                 "season": {
                     "title": "Temporada y Clima",
-                    "description": "Las temporadas altas como el verano y las vacaciones suelen tener tarifas más altas debido al aumento de la demanda"
+                    "description": "Las temporadas altas como el verano y las vacaciones generalmente tienen precios más altos debido al aumento de la demanda"
                 },
                 "dayOfWeek": {
                     "title": "Día de la Semana",
-                    "description": "Las noches de fin de semana generalmente tienen precios más altos que las estadías entre semana"
+                    "description": "Las estancias entre semana son generalmente más caras que las noches de fin de semana"
                 },
                 "demand": {
                     "title": "Demanda Actual",
-                    "description": "Las fechas populares tienen tarifas más altas, mientras que los períodos más tranquilos ofrecen mejor valor"
+                    "description": "Los períodos más tranquilos ofrecen mejor relación calidad-precio"
                 },
                 "advance": {
                     "title": "Ventana de Reserva",
-                    "description": "Las reservas anticipadas pueden asegurar mejores tarifas, mientras que la disponibilidad de última hora puede variar"
+                    "description": "Las reservas anticipadas pueden garantizar mejores precios, y las ofertas de último minuto a veces pueden ser muy ventajosas"
                 },
                 "special": {
                     "title": "Eventos Especiales",
-                    "description": "Los eventos locales como carreras de F1 o festivales pueden influir en los precios"
+                    "description": "Los eventos locales como las carreras de F1 o los festivales pueden influir en los precios"
                 },
                 "lastMinute": {
-                    "title": "Ofertas de Última Hora",
-                    "description": "Ocasionalmente, ofrecemos descuentos para escapadas espontáneas con poca antelación"
+                    "title": "Ofertas de Último Minuto",
+                    "description": "Ocasionalmente, ofrecemos descuentos para escapadas espontáneas a corto plazo. ¡No dude en seguirnos en Instagram para no perderse nada!"
                 }
             },
             "cta": "Ver precios en vivo"
         },
         "vouchers": {
-            "heading": "Considere Nuestros Vales Regalo",
-            "text": "¿Busca asegurar valor? Nuestros vales regalo son una manera perfecta de asegurar una estadía futura. Nunca caducan, se pueden usar para cualquier reserva y son regalos maravillosos para sus seres queridos.",
-            "cta": "Explorar Vales Regalo"
+            "heading": "Considere Nuestros Bonos Regalo",
+            "text": "¿Busca garantizar una buena oferta? Nuestros bonos regalo son una forma perfecta de asegurar una estancia futura. Expiran después de 12 meses, pueden usarse para cualquier reserva y son regalos maravillosos para sus seres queridos.",
+            "cta": "Descubrir los Bonos Regalo"
         },
         "booking": {
-            "title": "Consultar Disponibilidad y Precios",
-            "description": "Seleccione sus fechas a continuación para ver la disponibilidad y tarifas en tiempo real para The View"
+            "title": "Verificar Disponibilidad y Precios",
+            "description": "Seleccione sus fechas a continuación para ver disponibilidad y precios en tiempo real para The View"
         }
     },
     "bookingWidget": {
-        "title": "Reserve Su Estadía",
+        "title": "Reserve su Estancia",
         "description": "Reserve su escapada perfecta en The View",
         "iframeTitle": "Widget de Reserva"
+    },
+    "guide": {
+        "meta": {
+            "title": "Guía del Huésped - The View",
+            "description": "Guía completa para el huésped en The View - tu cabaña de bienestar en el bosque en las Ardenas belgas",
+            "ogTitle": "Guía del Huésped - The View Lodge"
+        },
+        "title": "Guía del Huésped",
+        "subtitle": "Tu santuario de bienestar en el bosque",
+        "nav": {
+            "welcome": "Bienvenido",
+            "parking": "Estacionamiento",
+            "checkin": "Check-in & Acceso",
+            "wellness": "Bienestar & Spa",
+            "kitchen": "Cocina & Comedor",
+            "sofabed": "Sofá Cama",
+            "smarthome": "WiFi & Hogar Inteligente",
+            "trashes": "Desperdicios & Reciclaje",
+            "activities": "Actividades",
+            "restaurants": "Restaurantes",
+            "checkout": "Check-out",
+            "emergency": "Emergencia"
+        },
+        "contact": {
+            "title": "¿Necesitas Ayuda?"
+        },
+        "welcome": {
+            "title": "Bienvenido a",
+            "subtitle": "Cabaña de Bienestar en el Bosque",
+            "greeting": "Querido",
+            "greetingDefault": "Queridos huéspedes,",
+            "intro": "Bienvenido a tu santuario en el bosque. Situado en el borde de Le Parc des Sources, The View es un hogar que hemos creado con cuidado y amor — un lugar de calma, belleza y reconexión.",
+            "message": "Esperamos que disfrutes cada segundo. Aquí está todo lo que necesitas saber para que tu estancia sea perfecta y serena.",
+            "quote": "\"The View no es solo un destino. Es una experiencia — y confía en nosotros, querrás quedarte un poco más.\"",
+            "authors": "— Caroline & Thomas"
+        },
+        "parking": {
+            "title": "Llegada & Estacionamiento",
+            "instructionsTitle": "Instrucciones de Estacionamiento",
+            "instructions": "Por favor estaciona junto a la propiedad, permitiendo que los autos puedan pasar por cualquiera de los caminos."
+        },
+        "checkin": {
+            "title": "Check-in, Entrada & Salida",
+            "entering": {
+                "title": "Entrando",
+                "step1": "Encuentra el teclado numérico junto a la puerta",
+                "step2": "Introduce el código que recibiste de forma privada",
+                "step3": "La puerta se desbloqueará automáticamente (puede tardar unos segundos)",
+                "step4": "Para bloquear: para cerrar desde adentro, levanta la manija de la puerta hacia arriba y gira la perilla redonda a la derecha"
+            },
+            "exiting": {
+                "title": "Saliendo",
+                "step1": "Levanta la manija de la puerta hacia arriba hasta que escuches un clic",
+                "step2": "Presiona \"<\" en el teclado numérico para cerrar la puerta",
+                "step3": "¡Eso es todo! Disfruta tu día"
+            }
+        },
+        "wellness": {
+            "title": "Bienestar: Sauna, Jacuzzi & Bañera de Hidromasaje",
+            "sauna": {
+                "title": "Sauna Privada",
+                "gettingStarted": "Para Empezar:",
+                "preheating": "Comienza a precalentar aproximadamente 1 hora antes de tu sesión",
+                "control": "Utiliza la tableta en la sala de estar o la pequeña pantalla en el lado izquierdo de la sauna para encenderla o apagarla",
+                "readyTitle": "Cómo Saber que Está Lista:",
+                "ready": "Está lista cuando alcanza aproximadamente 90°C",
+                "monitor": "Monitorea la temperatura en la tableta, pequeña pantalla y termómetro dentro",
+                "safetyTitle": "Consejos de Seguridad para un Uso Feliz:",
+                "sessions": "Limita las sesiones a 15–20 minutos a la vez",
+                "hydrate": "Mantente hidratado antes y después",
+                "turnOff": "Apaga la sauna cuando termines de usarla",
+                "avoid": "Evita el alcohol o comidas pesadas antes de entrar"
+            },
+            "whirlpool": {
+                "title": "Bañera de Hidromasaje Interior",
+                "intro": "En el baño, encontrarás una bañera de hidromasaje:",
+                "step1": "Llena la bañera hasta que el agua esté por encima de los chorros",
+                "step2": "Presiona el botón de encendido durante 5 segundos para activar las burbujas",
+                "step3": "¡Disfruta el momento!"
+            },
+            "hottub": {
+                "title": "Bañera de Hidromasaje Escandinava al Aire Libre",
+                "coverAccess": "Acceso a la Cubierta: En ambos lados de la bañera nórdica, hay clips que mantienen la cubierta cerrada. El código para desbloquearlos es 0000.",
+                "intro": "Para disfrutar de la bañera al aire libre:",
+                "step1": "Retira el flotador de cloro antes de usar la bañera",
+                "step2": "Toma una ducha rápida antes de entrar",
+                "step3": "Usa los botones en el costado para controlar los chorros y las luces",
+                "step4": "El agua se mantiene a la temperatura perfecta — no necesitas ajustar nada",
+                "step5": "Al terminar, vuelve a colocar la tapa y el flotador de cloro",
+                "step6": "Por favor, guarda los momentos románticos para el dormitorio — mantengamos la bañera cómoda para todos"
+            }
+        },
+        "kitchen": {
+            "title": "Cocina & Comedor",
+            "fullyEquipped": "Cocina Totalmente Equipada",
+            "intro": "La cocina está totalmente equipada con todos los elementos esenciales para cocinar, incluyendo:",
+            "items": {
+                "microwave": "Horno de microondas",
+                "oven": "Horno convencional",
+                "induction": "Placa de inducción",
+                "dishwasher": "Lavavajillas",
+                "fridge": "Refrigerador y congelador grande",
+                "coffee": "Máquina de café",
+                "raclette": "Parrilla de raclette",
+                "cookware": "Utensilios de cocina completos",
+                "dining": "Elementos esenciales para el comedor"
+            },
+            "drawerTitle": "Cajón doble en la cocina",
+            "drawerInfo": "Dentro del primer cajón, hay un segundo, más pequeño. Contiene especias, entre otras cosas.",
+            "breakfast": {
+                "title": "Servicio de Desayuno (por pedido)",
+                "order": "Por favor, ordena al menos 24 horas de anticipación (mínimo dos personas)",
+                "delivery": "Entregado fresco y local a tu puerta",
+                "small": {
+                    "title": "Pequeño — €25/pp",
+                    "item1": "🥐 Pistolet, croissant, pain au chocolat",
+                    "item2": "🍞 Pan multigrano, mantequilla, mermelada",
+                    "item3": "🥓 Jamón cocido, queso tipo gouda",
+                    "item4": "🍊 250ml de jugo de naranja, 1 fruta",
+                    "item5": "🥣 Yogur natural orgánico"
+                },
+                "medium": {
+                    "title": "Mediano — €30/pp",
+                    "includes": "Todo en pequeño, más:",
+                    "item1": "🧀 Embutido y queso adicional",
+                    "item2": "🍯 Granola casera + leche",
+                    "item3": "🥧 Quiche de vegetales",
+                    "item4": "🍇 Ensalada de frutas frescas",
+                    "item5": ""
+                },
+                "brunch": {
+                    "title": "Brunch — €40/pp",
+                    "includes": "Todo en mediano, más:",
+                    "item1": "🥣 Sopa de vegetales",
+                    "item2": "🐟 Salmón ahumado casero",
+                    "item3": "🍳 Huevos revueltos y tocino",
+                    "item4": "🍰 Surtido de postres",
+                    "item5": ""
+                }
+            }
+        },
+        "sofabed": {
+            "title": "Sofá Cama",
+            "intro": "Si vas a desplegar el sofá:",
+            "step1": "Retira los grandes cojines traseros",
+            "step2": "Localiza el asa debajo del asiento",
+            "step3": "Levántalo suavemente — la cama se desplegará fácilmente"
+        },
+        "smarthome": {
+            "title": "WiFi, Hogar Inteligente & Medios",
+            "wifi": {
+                "title": "Conexión WiFi",
+                "instructions": "Para conectarte a WiFi:",
+                "scan": "Escanea este código QR, o usa:"
+            },
+            "controls": {
+                "title": "Controles de Hogar Inteligente",
+                "heating": "Calefacción",
+                "heatingInfo": "Pre-calentamos la cabaña para ti. Simplemente relájate, está todo cuidado 😌",
+                "lights": "Luces & Ambiente",
+                "lightsInfo": "Usa la tableta montada en la pared en la sala de estar para:",
+                "adjust": "Ajustar el color y brillo de las luces",
+                "ambiance": "Crear diferentes ambientes (romántico, acogedor, etc.)",
+                "romance": "También hay un Modo Romance — pruébalo 😉",
+                "music": "Música",
+                "tablet": "Usa la tableta de la sala para reproducir música en cada habitación",
+                "cast": "O abre Spotify/YouTube Music en tu teléfono y selecciona el altavoz de la lista de dispositivos de Google Cast"
+            }
+        },
+        "waste": {
+            "title": "Desperdicios & Reciclaje",
+            "intro": "Ayúdanos a mantener nuestro hermoso entorno prístino separando adecuadamente tus desperdicios.",
+            "glass": {
+                "title": "Vidrio",
+                "items": "Botellas, frascos"
+            },
+            "pmc": {
+                "title": "PMC",
+                "items": "Envases de plástico, metal, Tetrapack"
+            },
+            "cardboard": {
+                "title": "Cartón",
+                "items": "Cajas de cartón, papel"
+            },
+            "residual": {
+                "title": "Desperdicios Residuales",
+                "items": "Todo lo demás"
+            },
+            "location": "Si los pequeños contenedores dentro están llenos, puedes vaciarlos en el área de almacenamiento cerca de las escaleras de entrada, bajo la terraza.",
+            "thanks": "¡Gracias por ayudarnos a mantener nuestro albergue ecológico!"
+        },
+        "activities": {
+            "title": "Actividades",
+            "walking": {
+                "title": "Caminatas desde la Cabaña",
+                "panorama": {
+                    "title": "🌄 Caminata Rápida al Panorama (5 minutos)",
+                    "description": "Toma el camino detrás del lugar de estacionamiento detrás de la cabaña para una hermosa vista panorámica en solo 5 minutos.",
+                    "tip": "¡Perfecto para café matutino o ver el atardecer!"
+                },
+                "alltrails": {
+                    "title": "📱 App AllTrails - Descubre Más Senderos",
+                    "description": "Descarga AllTrails para descubrir cientos de senderos para caminatas en las Ardenas con mapas, reseñas y clasificaciones de dificultad."
+                }
+            },
+            "nearby": {
+                "title": "Cerca (en coche)",
+                "ninglinspo": {
+                    "title": "🥾 Balade de Ninglinspo",
+                    "description": "Una de las caminatas más hermosas en las Ardenas, junto a un arroyo salvaje.",
+                    "url": "https://www.google.com/maps/search/Balade+de+Ninglinspo"
+                },
+                "vecquee": {
+                    "title": "🌲 Promenade de la Vecquée",
+                    "description": "Ideal para una inmersión total en el bosque.",
+                    "url": "https://www.google.com/maps/search/Promenade+de+la+Vecqu%C3%A9e"
+                },
+                "coo": {
+                    "title": "🏔️ Tour du Lac de Coo",
+                    "description": "Agradable y accesible, con una cascada como extra.",
+                    "url": "https://www.google.com/maps/search/Tour+du+Lac+de+Coo"
+                }
+            },
+            "seasonal": {
+                "title": "Experiencias Estacionales",
+                "rightNow": "Ahora mismo",
+                "spring": {
+                    "title": "🌸 Flores Silvestres de Primavera & Despertar del Bosque",
+                    "description": "Marzo - Mayo: Momento perfecto para caminatas en el bosque mientras la naturaleza despierta con flores silvestres y follaje verde fresco.",
+                    "details": "Mejores lugares: sendero de Ninglinspo y caminos del bosque Vecquée."
+                },
+                "summer": {
+                    "title": "☀️ Actividades al Aire Libre & Aventuras en el Río",
+                    "description": "Junio - Agosto: Ideal para actividades acuáticas, senderismo y disfrutar de la bañera al aire libre bajo las estrellas.",
+                    "details": "Horas de luz extendidas perfectas para relajación nocturna en la naturaleza."
+                },
+                "autumn": {
+                    "title": "🦌 Temporada de Berrea de los Ciervos (Brame du cerf)",
+                    "description": "Septiembre - Octubre: Experimenta los sonidos únicos de la temporada de berrea en los bosques de las Ardenas.",
+                    "details": "Frecuentemente podemos escuchar a los ciervos desde la terraza. También puedes dirigirte a La Gleize, cerca del centro de reciclaje, en la intersección de rue La Vaulx-Renard y Froidcour. Estaciona a lo largo del camino y entra al bosque por la mañana temprano o al atardecer."
+                },
+                "winter": {
+                    "title": "❄️ Bienestar de Invierno & Retiros Acogedores",
+                    "description": "Diciembre - Febrero: ¡Clima perfecto para la sauna y la bañera! Disfruta el contraste de relajación cálida y aire fresco.",
+                    "details": "Caminatas invernales mágicas en bosques cubiertos de nieve, seguidas de calentarse en la sauna."
+                }
+            }
+        },
+        "restaurants": {
+            "title": "Restaurantes Recomendados",
+            "linea": {
+                "name": "Linea",
+                "description": "Italiano +++",
+                "type": "Excelente cocina italiana",
+                "url": "https://www.google.com/maps/search/Linea+restaurant+Stoumont+Belgium"
+            },
+            "douxragots": {
+                "name": "Les Doux Ragots",
+                "description": "Brasserie bien ejecutada, hermosa ubicación",
+                "type": "Brasserie local con gran ambiente",
+                "url": "https://www.google.com/maps/search/Les+Doux+Ragots+restaurant+Belgium"
+            },
+            "bpost": {
+                "name": "BPost Stoumont - Distribuidor de Comidas",
+                "description": "Distribuidor automático de comidas junto a la oficina de correos",
+                "type": "Opciones de comida rápidas y convenientes",
+                "url": "https://www.google.com/maps/place/Route+de+l%27Ambl%C3%A8ve+50,+4987+Stoumont,+Belgium"
+            },
+            "artegusto": {
+                "name": "Arte Gusto",
+                "description": "Pizza para llevar (pedido 2 veces por semana)",
+                "type": "Deliciosas pizzas para llevar por encargo",
+                "url": "https://www.facebook.com/artegusto.be"
+            }
+        },
+        "checkout": {
+            "title": "Check-out",
+            "leaving": {
+                "title": "Salida & Cierre de la Puerta",
+                "step1": "Levanta la manija de la puerta hacia arriba hasta que escuches un clic",
+                "step2": "Presiona \"<\" en el teclado numérico para cerrar la puerta",
+                "step3": "Envíanos un mensaje en Airbnb o chat en vivo para informarnos que te has ido"
+            },
+            "thatsIt": "¡Eso es todo!",
+            "message": "No se necesita nada más — nos encargamos de todo incluyendo basura, limpieza, y preparación para los próximos huéspedes. ¡Gracias por hospedarte con nosotros!",
+            "feedback": "Si hay algo que debamos mejorar, por favor contáctanos. De lo contrario, una excelente reseña en",
+            "and": "y/o",
+            "helps": "¡siempre nos ayuda mucho! 🙏"
+        },
+        "emergency": {
+            "title": "Información de Emergencia",
+            "needHelp": "¿Necesitas Ayuda?",
+            "contact": "Contáctanos en cualquier momento por WhatsApp o teléfono:",
+            "urgent": "¿Emergencia?",
+            "callTwice": "Llama dos veces seguidas para que podamos alertarnos con urgencia.",
+            "services": "Servicios de Emergencia",
+            "medical": "Para emergencias médicas/incendios",
+            "european": "Número de Emergencia Europeo",
+            "propertyInfo": "Información de la Propiedad",
+            "address": "Dirección",
+            "hospitals": "Hospitales más cercanos",
+            "malmedy": "Centre Hospitalier de Malmedy - ~25 minutos",
+            "liege": "CHR Citadelle (Liège) - ~45 minutos",
+            "pharmacy": "Farmacia más cercana",
+            "pharmacyInfo": "Pharmacie de Stoumont - ~10 minutos"
+        }
     }
 }

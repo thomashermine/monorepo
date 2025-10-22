@@ -35,4 +35,9 @@
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
+
+    /* Scroll margin for anchor links */
+    .scroll-mt-8 {
+        scroll-margin-top: 2rem;
+    }
 }

@@ -135,65 +135,116 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     ]
 
     const galleryImages = [
+        // Kitchen images
         {
-            alt: t('gallery.images.aerialView'),
-            aspectRatio: '3/4',
-            src: '/images/theviewlodge-aerial-field-house.jpg',
-        },
-        {
-            alt: t('gallery.images.forestCanopy'),
+            alt: t('gallery.images.kitchen'),
             aspectRatio: 'square',
-            src: '/images/theviewlodge-aerial-forest-canopy.jpg',
+            src: '/images/theviewlodge-kitchen-coffee-counter.jpg',
         },
         {
-            alt: t('gallery.images.frontFacade'),
+            alt: t('gallery.images.hottub'),
             aspectRatio: '4/3',
-            src: '/images/theviewlodge-aerial-front-facade.jpg',
+            src: '/images/theviewlodge-hottub.jpg',
         },
         {
-            alt: t('gallery.images.valleyView'),
-            aspectRatio: '2/3',
+            alt: t('gallery.images.aerial'),
+            aspectRatio: 'square',
             src: '/images/theviewlodge-aerial-valley-view.jpg',
         },
         {
-            alt: t('gallery.images.bathroomJacuzzi'),
-            aspectRatio: 'square',
-            src: '/images/theviewlodge-bathroom-jacuzzi-jets.jpg',
+            alt: t('gallery.images.kitchen'),
+            aspectRatio: '3/4',
+            src: '/images/theviewlodge-kitchen-dining-beams.jpg',
         },
         {
-            alt: t('gallery.images.saunaView'),
+            alt: t('gallery.images.sauna'),
             aspectRatio: 'square',
             src: '/images/theviewlodge-sauna-mountain-view.jpg',
         },
         {
-            alt: t('gallery.images.hotTub'),
+            alt: t('gallery.images.outdoorDeck'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-deck-chair-landscape.jpg',
+        },
+        {
+            alt: t('gallery.images.dining'),
             aspectRatio: 'square',
-            src: '/images/theviewlodge-hottub.jpg',
+            src: '/images/theviewlodge-dining-window-view.jpg',
+        },
+        {
+            alt: t('gallery.images.bathroom'),
+            aspectRatio: '3/4',
+            src: '/images/theviewlodge-bathroom-jacuzzi-jets.jpg',
+        },
+        {
+            alt: t('gallery.images.panoramic'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-panoramic-valley-view.jpg',
         },
         {
             alt: t('gallery.images.kitchen'),
-            aspectRatio: '3/5',
-            src: '/images/theviewlodge-kitchen-coffee-counter.jpg',
+            aspectRatio: 'square',
+            src: '/images/theviewlodge-kitchen-sunset-light.jpg',
         },
         {
-            alt: t('gallery.images.livingRoom'),
-            aspectRatio: '16/9',
-            src: '/images/theviewlodge-living-room-fireplace.jpg',
-        },
-        {
-            alt: t('gallery.images.bedroom'),
+            alt: t('gallery.images.sauna'),
             aspectRatio: '4/3',
-            src: '/images/theviewlodge-bedroom-mountain-view.jpg',
+            src: '/images/theviewlodge-sauna-accessories.jpg',
+        },
+        {
+            alt: t('gallery.images.exterior'),
+            aspectRatio: '3/4',
+            src: '/images/theviewlodge-exterior-corner-trees.jpg',
+        },
+        {
+            alt: t('gallery.images.living'),
+            aspectRatio: 'square',
+            src: '/images/theviewlodge-living-sofa-terrace.jpg',
+        },
+        {
+            alt: t('gallery.images.bathroom'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-bathroom-sink-accessories.jpg',
         },
         {
             alt: t('gallery.images.terrace'),
-            aspectRatio: '3/2',
-            src: '/images/theviewlodge-terrace-sunset.jpg',
+            aspectRatio: 'square',
+            src: '/images/theviewlodge-terrace-seating.jpg',
         },
         {
-            alt: t('gallery.images.winterView'),
-            aspectRatio: '16/9',
-            src: '/images/theviewlodge-winter-landscape.jpg',
+            alt: t('gallery.images.bedroom'),
+            aspectRatio: '3/4',
+            src: '/images/theviewlodge-bedroom-window-natural.jpg',
+        },
+        {
+            alt: t('gallery.images.hottub'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-hottub-sunset-view.jpg',
+        },
+        {
+            alt: t('gallery.images.entrance'),
+            aspectRatio: 'square',
+            src: '/images/theviewlodge-entrance-path-trees.jpg',
+        },
+        {
+            alt: t('gallery.images.dining'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-dining-table-decor.jpg',
+        },
+        {
+            alt: t('gallery.images.outdoor'),
+            aspectRatio: 'square',
+            src: '/images/theviewlodge-outdoor-shower-deck.jpg',
+        },
+        {
+            alt: t('gallery.images.bedroom'),
+            aspectRatio: '3/4',
+            src: '/images/theviewlodge-bedroom-mirror-skylight.jpg',
+        },
+        {
+            alt: t('gallery.images.aerial'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-aerial-forest-canopy.jpg',
         },
     ]
 
@@ -207,6 +258,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         {
             answer: t('faq.items.capacity.answer'),
             question: t('faq.items.capacity.question'),
+        },
+        {
+            answer: t('faq.items.kids.answer'),
+            question: t('faq.items.kids.question'),
         },
         {
             answer: t('faq.items.pets.answer'),

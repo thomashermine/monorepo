@@ -22,6 +22,9 @@ type Pages = {
   "/terms": {
     params: {};
   };
+  "/guide": {
+    params: {};
+  };
   "/:lang": {
     params: {
       "lang": string;
@@ -42,12 +45,17 @@ type Pages = {
       "lang": string;
     };
   };
+  "/:lang/guide": {
+    params: {
+      "lang": string;
+    };
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/vouchers" | "/prices" | "/terms" | "/:lang" | "/:lang/vouchers" | "/:lang/prices" | "/:lang/terms";
+    page: "/" | "/vouchers" | "/prices" | "/terms" | "/guide" | "/:lang" | "/:lang/vouchers" | "/:lang/prices" | "/:lang/terms" | "/:lang/guide";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -76,5 +84,12 @@ type RouteFiles = {
   } | {
     id: "routes/terms-lang";
     page: "/:lang/terms";
+  };
+  "routes/guide.tsx": {
+    id: "routes/guide";
+    page: "/guide";
+  } | {
+    id: "routes/guide-lang";
+    page: "/:lang/guide";
   };
 };
