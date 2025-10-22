@@ -94,6 +94,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             href: getLocalizedPath('/vouchers'),
             label: t('navigation.giftVouchers'),
         },
+        {
+            href: getLocalizedPath('/prices'),
+            label: t('navigation.prices'),
+        },
         { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
     ]
 
@@ -171,6 +175,26 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             aspectRatio: '3/5',
             src: '/images/theviewlodge-kitchen-coffee-counter.jpg',
         },
+        {
+            alt: t('gallery.images.livingRoom'),
+            aspectRatio: '16/9',
+            src: '/images/theviewlodge-living-room-fireplace.jpg',
+        },
+        {
+            alt: t('gallery.images.bedroom'),
+            aspectRatio: '4/3',
+            src: '/images/theviewlodge-bedroom-mountain-view.jpg',
+        },
+        {
+            alt: t('gallery.images.terrace'),
+            aspectRatio: '3/2',
+            src: '/images/theviewlodge-terrace-sunset.jpg',
+        },
+        {
+            alt: t('gallery.images.winterView'),
+            aspectRatio: '16/9',
+            src: '/images/theviewlodge-winter-landscape.jpg',
+        },
     ]
 
     const testimonials = useTestimonials()
@@ -225,6 +249,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             href: getLocalizedPath('/vouchers'),
             label: t('navigation.giftVouchers'),
         },
+        {
+            href: getLocalizedPath('/prices'),
+            label: t('navigation.prices'),
+        },
         { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
         {
             external: true,
@@ -275,7 +303,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <Section background="white" padding="lg">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <Heading level="h2" size="xl" className="mb-8">
+                        <Heading
+                            level="h2"
+                            size="xl"
+                            className="mb-8"
+                            animate="immediate"
+                        >
                             {t('intro.heading')}
                         </Heading>
                         <Button as="a" href="#book" variant="sage">
@@ -321,13 +354,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <Section background="white" padding="lg">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <Text size="lg" className="mb-4 text-sage">
+                        <Text size="lg" className="mb-4 text-sage" animate>
                             {t('location.subtitle')}
                         </Text>
                         <Heading level="h2" size="lg" className="mb-6">
                             {t('location.heading')}
                         </Heading>
-                        <Text size="lg" className="whitespace-pre-line">
+                        <Text size="lg" className="whitespace-pre-line" animate>
                             {t('location.description')}
                         </Text>
                     </div>
@@ -349,40 +382,32 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     <Heading level="h2" size="xl" className="mb-4">
                         {t('amenities.heading')}
                     </Heading>
-                    <Text size="xl" className="max-w-2xl mx-auto">
+                    <Text size="xl" className="max-w-2xl mx-auto" animate>
                         {t('amenities.subheading')}
                     </Text>
                 </div>
 
-                <div className="overflow-x-auto pb-6 scrollbar-hide">
-                    <div className="flex gap-6 px-6 w-max">
-                        <FeatureCard
-                            image="/images/theviewlodge-sauna-mountain-view.jpg"
-                            title={t('amenities.features.sauna.title')}
-                            subtitle={t('amenities.features.sauna.subtitle')}
-                            size="large"
-                        />
-                        <FeatureCard
-                            image="/images/theviewlodge-hottub.jpg"
-                            title={t('amenities.features.hotTub.title')}
-                            subtitle={t('amenities.features.hotTub.subtitle')}
-                            size="small"
-                        />
-                        <FeatureCard
-                            image="/images/theviewlodge-bathroom-jacuzzi-jets.jpg"
-                            title={t('amenities.features.whirlpool.title')}
-                            subtitle={t(
-                                'amenities.features.whirlpool.subtitle'
-                            )}
-                            size="small"
-                        />
-                        <FeatureCard
-                            image="/images/theviewlodge-kitchen-coffee-counter.jpg"
-                            title={t('amenities.features.kitchen.title')}
-                            subtitle={t('amenities.features.kitchen.subtitle')}
-                            size="small"
-                        />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                    <FeatureCard
+                        image="/images/theviewlodge-sauna-mountain-view.jpg"
+                        title={t('amenities.features.sauna.title')}
+                        subtitle={t('amenities.features.sauna.subtitle')}
+                    />
+                    <FeatureCard
+                        image="/images/theviewlodge-hottub.jpg"
+                        title={t('amenities.features.hotTub.title')}
+                        subtitle={t('amenities.features.hotTub.subtitle')}
+                    />
+                    <FeatureCard
+                        image="/images/theviewlodge-bathroom-jacuzzi-jets.jpg"
+                        title={t('amenities.features.whirlpool.title')}
+                        subtitle={t('amenities.features.whirlpool.subtitle')}
+                    />
+                    <FeatureCard
+                        image="/images/theviewlodge-kitchen-coffee-counter.jpg"
+                        title={t('amenities.features.kitchen.title')}
+                        subtitle={t('amenities.features.kitchen.subtitle')}
+                    />
                 </div>
 
                 <div className="text-center my-12">
@@ -391,49 +416,41 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     </Button>
                 </div>
 
-                <div className="overflow-x-auto pb-4 scrollbar-hide">
-                    <div className="flex gap-8 px-6 w-max">
-                        <AmenityCard
-                            icon="wifi"
-                            title={t('amenities.items.wifi.title')}
-                            description={t('amenities.items.wifi.description')}
-                        />
-                        <AmenityCard
-                            icon="star"
-                            title={t('amenities.items.stargazing.title')}
-                            description={t(
-                                'amenities.items.stargazing.description'
-                            )}
-                        />
-                        <AmenityCard
-                            icon="parking"
-                            title={t('amenities.items.parking.title')}
-                            description={t(
-                                'amenities.items.parking.description'
-                            )}
-                        />
-                        <AmenityCard
-                            icon="smart-home"
-                            title={t('amenities.items.smartHome.title')}
-                            description={t(
-                                'amenities.items.smartHome.description'
-                            )}
-                        />
-                        <AmenityCard
-                            icon="moon"
-                            title={t('amenities.items.peaceful.title')}
-                            description={t(
-                                'amenities.items.peaceful.description'
-                            )}
-                        />
-                        <AmenityCard
-                            icon="compass"
-                            title={t('amenities.items.localExperiences.title')}
-                            description={t(
-                                'amenities.items.localExperiences.description'
-                            )}
-                        />
-                    </div>
+                <div className="flex gap-8 px-6 w-max mx-auto">
+                    <AmenityCard
+                        icon="wifi"
+                        title={t('amenities.items.wifi.title')}
+                        description={t('amenities.items.wifi.description')}
+                    />
+                    <AmenityCard
+                        icon="star"
+                        title={t('amenities.items.stargazing.title')}
+                        description={t(
+                            'amenities.items.stargazing.description'
+                        )}
+                    />
+                    <AmenityCard
+                        icon="parking"
+                        title={t('amenities.items.parking.title')}
+                        description={t('amenities.items.parking.description')}
+                    />
+                    <AmenityCard
+                        icon="smart-home"
+                        title={t('amenities.items.smartHome.title')}
+                        description={t('amenities.items.smartHome.description')}
+                    />
+                    <AmenityCard
+                        icon="moon"
+                        title={t('amenities.items.peaceful.title')}
+                        description={t('amenities.items.peaceful.description')}
+                    />
+                    <AmenityCard
+                        icon="compass"
+                        title={t('amenities.items.localExperiences.title')}
+                        description={t(
+                            'amenities.items.localExperiences.description'
+                        )}
+                    />
                 </div>
             </Section>
 
@@ -443,7 +460,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     <Heading level="h2" size="xl" className="mb-4">
                         {t('gallery.heading')}
                     </Heading>
-                    <Text size="xl" className="max-w-2xl mx-auto mb-8">
+                    <Text size="xl" className="max-w-2xl mx-auto mb-8" animate>
                         {t('gallery.subheading')}
                     </Text>
                     <Button as="a" href="#book" variant="sage">
@@ -453,15 +470,22 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 <Gallery images={galleryImages} foldable={true} />
             </Section>
 
+            {/* Booking Widget */}
+            <BookingWidget />
+
             {/* Gift Voucher CTA */}
             <Section background="sage" padding="lg">
                 <div className="text-center text-white">
-                    <Heading level="h2" size="xl" className="mb-6 text-white">
+                    <Heading
+                        level="h2"
+                        size="xl"
+                        className="mb-6 text-charcoal"
+                    >
                         {t('giftVoucherCTA.heading')}
                     </Heading>
                     <Text
                         size="xl"
-                        className="max-w-2xl mx-auto mb-8 text-white"
+                        className="max-w-2xl mx-auto mb-8 text-charcoal"
                     >
                         {t('giftVoucherCTA.description')}
                     </Text>
@@ -482,7 +506,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     <Heading level="h2" size="xl" className="mb-4">
                         {t('activities.heading')}
                     </Heading>
-                    <Text size="xl" className="max-w-2xl mx-auto mb-8">
+                    <Text size="xl" className="max-w-2xl mx-auto mb-8" animate>
                         {t('activities.subheading')}
                     </Text>
                     <Button as="a" href="#book" variant="sage">
@@ -560,9 +584,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 </div>
             </Section>
 
-            {/* Booking Widget */}
-            <BookingWidget />
-
             {/* Testimonials */}
             <Section background="white" padding="lg">
                 <div className="text-center mb-16">
@@ -579,7 +600,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     <Heading level="h2" size="xl" className="mb-4">
                         {t('testimonials.heading')}
                     </Heading>
-                    <Text size="xl" className="max-w-2xl mx-auto">
+                    <Text size="xl" className="max-w-2xl mx-auto" animate>
                         {t('testimonials.subheading')}
                     </Text>
                 </div>
@@ -600,7 +621,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         <Heading level="h2" size="xl" className="mb-4">
                             {t('faq.heading')}
                         </Heading>
-                        <Text size="xl" className="max-w-2xl mx-auto mb-8">
+                        <Text
+                            size="xl"
+                            className="max-w-2xl mx-auto mb-8"
+                            animate
+                        >
                             {t('faq.subheading')}
                         </Text>
                         <Button as="a" href="#book" variant="sage">

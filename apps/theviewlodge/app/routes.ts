@@ -4,6 +4,7 @@ export default [
     // Default language (English) routes - no prefix
     index('routes/home.tsx'),
     route('vouchers', 'routes/vouchers.tsx'),
+    route('prices', 'routes/prices.tsx'),
     route('terms', 'routes/terms.tsx'),
 
     // Language-prefixed routes with explicit IDs
@@ -12,6 +13,11 @@ export default [
         file: 'routes/vouchers.tsx',
         id: 'routes/vouchers-lang',
         path: ':lang/vouchers',
+    },
+    {
+        file: 'routes/prices.tsx',
+        id: 'routes/prices-lang',
+        path: ':lang/prices',
     },
     { file: 'routes/terms.tsx', id: 'routes/terms-lang', path: ':lang/terms' },
 ] satisfies RouteConfig

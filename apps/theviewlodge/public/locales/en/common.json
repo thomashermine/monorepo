@@ -12,12 +12,17 @@
         "terms": {
             "title": "Terms and Conditions - The View",
             "description": "Terms and conditions for booking and staying at The View, Belgium. Cancellation policy, booking terms, and legal information."
+        },
+        "prices": {
+            "title": "Pricing & Availability - The View - Book Your Stay",
+            "description": "Discover our dynamic pricing for The View. Check real-time availability and rates for your perfect wellness retreat in the Belgian Ardennes."
         }
     },
     "navigation": {
         "home": "Home",
         "bookNow": "Book Now",
         "giftVouchers": "Gift Vouchers",
+        "prices": "Prices",
         "contact": "Contact",
         "terms": "Terms",
         "termsAndConditions": "Terms & Conditions"
@@ -457,5 +462,64 @@
                 "imageAlt": "Ninglinspo waterfalls"
             }
         }
+    },
+    "prices": {
+        "hero": {
+            "title": {
+                "main": "Pricing &",
+                "sub": "Availability"
+            },
+            "subtitle": "Fair, transparent pricing that adapts to demand",
+            "cta": "Check availability"
+        },
+        "dynamicPricing": {
+            "heading": "Our Approach to Pricing",
+            "text": "At The View, we believe in fair and transparent pricing. Our rates fluctuate naturally based on demand, season, and availability—much like airlines or hotels.\n\nThis means you can often find great value by booking during quieter periods, while peak times reflect the higher demand for our exclusive wellness retreat. We want to reward flexible travelers with better rates, while ensuring everyone experiences the same exceptional quality and service."
+        },
+        "factors": {
+            "heading": "What Influences Our Pricing?",
+            "subheading": "Several factors determine the nightly rate for your stay",
+            "items": {
+                "season": {
+                    "title": "Season & Weather",
+                    "description": "Peak seasons like summer and holidays typically have higher rates due to increased demand"
+                },
+                "dayOfWeek": {
+                    "title": "Day of the Week",
+                    "description": "Weekend nights are generally priced higher than weekday stays"
+                },
+                "demand": {
+                    "title": "Current Demand",
+                    "description": "Popular dates see higher rates, while quieter periods offer better value"
+                },
+                "advance": {
+                    "title": "Booking Window",
+                    "description": "Early bookings may secure better rates, while last-minute availability can vary"
+                },
+                "special": {
+                    "title": "Special Events",
+                    "description": "Local events like F1 races or festivals may influence pricing"
+                },
+                "lastMinute": {
+                    "title": "Last-Minute Deals",
+                    "description": "Occasionally, we offer discounts for spontaneous getaways on short notice"
+                }
+            },
+            "cta": "View live pricing"
+        },
+        "vouchers": {
+            "heading": "Consider Our Gift Vouchers",
+            "text": "Looking to lock in value? Our gift vouchers are a perfect way to secure a future stay. They never expire, can be used toward any booking, and make wonderful gifts for loved ones.",
+            "cta": "Explore Gift Vouchers"
+        },
+        "booking": {
+            "title": "Check Availability & Pricing",
+            "description": "Select your dates below to see real-time availability and rates for The View"
+        }
+    },
+    "bookingWidget": {
+        "title": "Book Your Stay",
+        "description": "Reserve your perfect getaway at The View",
+        "iframeTitle": "Booking Widget"
     }
 }

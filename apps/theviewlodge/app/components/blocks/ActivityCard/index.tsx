@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { fadeInUp, slideInFromRight } from '~/hooks/useAnimation'
 
 export interface ActivityCardProps {
     image: string
@@ -22,23 +24,58 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
     imageAlt,
 }) => {
     return (
-        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <motion.div
+            className="relative bg-white rounded-3xl shadow-2xl overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            whileHover={{
+                y: -8,
+                boxShadow:
+                    '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 12px 20px -8px rgba(0, 0, 0, 0.15)',
+                transition: { duration: 0.3 },
+            }}
+        >
             <div className="flex flex-col lg:flex-row-reverse">
                 {/* Image Section */}
-                <div className="lg:w-1/2 relative overflow-hidden">
+                <motion.div
+                    className="lg:w-1/2 relative overflow-hidden"
+                    variants={slideInFromRight}
+                >
                     <div
                         className="h-80 lg:h-96 bg-cover bg-center"
                         style={{ backgroundImage: `url('${image}')` }}
                     />
                     <div className="absolute top-6 left-6">
-                        <div className="bg-sage/90 backdrop-blur-sm text-white px-6 py-3 rounded-full font-medium text-lg shadow-lg">
+                        <motion.div
+                            className="bg-sage/90 backdrop-blur-sm text-white px-6 py-3 rounded-full font-medium text-lg shadow-lg"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3, duration: 0.4 }}
+                        >
                             {badge}
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Content Section */}
-                <div className="lg:w-1/2 p-12 flex flex-col justify-center">
+                <motion.div
+                    className="lg:w-1/2 p-12 flex flex-col justify-center"
+                    variants={{
+                        hidden: { opacity: 0, x: -30 },
+                        visible: {
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                duration: 0.6,
+                                delay: 0.2,
+                                ease: [0.25, 0.1, 0.25, 1],
+                            },
+                        },
+                    }}
+                >
                     <h3 className="text-4xl font-light mb-4 font-baskerville text-charcoal">
                         {title}
                     </h3>
@@ -83,8 +120,8 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
                             )}
                         </span>
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 }

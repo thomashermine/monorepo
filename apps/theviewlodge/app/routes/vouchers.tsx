@@ -79,6 +79,10 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
             href: getLocalizedPath('/vouchers'),
             label: t('navigation.giftVouchers'),
         },
+        {
+            href: getLocalizedPath('/prices'),
+            label: t('navigation.prices'),
+        },
         { href: getLocalizedPath('/#contact'), label: t('navigation.contact') },
     ]
 
@@ -196,7 +200,7 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
         },
     ]
 
-    const testimonials = useTestimonials().slice(0, 3)
+    const testimonials = useTestimonials().slice(0, 4)
 
     return (
         <>
@@ -234,7 +238,12 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
             {/* Introduction */}
             <Section background="white" padding="lg">
                 <div className="max-w-4xl mx-auto text-center">
-                    <Heading level="h2" size="xl" className="mb-8">
+                    <Heading
+                        level="h2"
+                        size="xl"
+                        className="mb-8"
+                        animate="immediate"
+                    >
                         {t('vouchers.intro.heading')}
                     </Heading>
                     <Text size="xl" className="mb-8 whitespace-pre-line">
@@ -276,7 +285,7 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                                         />
                                     </svg>
                                 </div>
-                                <Text size="lg" className="text-charcoal">
+                                <Text size="lg" color="charcoal">
                                     {t('vouchers.whyChoose.features.sauna')}
                                 </Text>
                             </div>
@@ -296,7 +305,7 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                                         />
                                     </svg>
                                 </div>
-                                <Text size="lg" className="text-charcoal">
+                                <Text size="lg" color="charcoal">
                                     {t('vouchers.whyChoose.features.location')}
                                 </Text>
                             </div>
@@ -316,7 +325,7 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                                         />
                                     </svg>
                                 </div>
-                                <Text size="lg" className="text-charcoal">
+                                <Text size="lg" color="charcoal">
                                     {t('vouchers.whyChoose.features.smartHome')}
                                 </Text>
                             </div>
@@ -336,24 +345,67 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                                         />
                                     </svg>
                                 </div>
-                                <Text size="lg" className="text-charcoal">
+                                <Text size="lg" color="charcoal">
                                     {t('vouchers.whyChoose.features.views')}
                                 </Text>
                             </div>
                         </div>
                         <Text
                             size="xl"
-                            className="italic mb-6 text-charcoal font-serif"
+                            className="italic mb-6 font-serif"
+                            color="charcoal"
                         >
                             {t('vouchers.whyChoose.tagline')}
                         </Text>
-                        <Text size="lg" className="text-sage font-medium">
+                        <Text
+                            size="lg"
+                            className="text-sage font-medium"
+                            color="sage"
+                        >
                             {t('vouchers.whyChoose.cta')}
                         </Text>
                     </div>
                 </div>
             </Section>
 
+            {/* How It Works */}
+            <Section background="sage" padding="lg">
+                <div className="text-center mb-16">
+                    <Heading level="h2" size="xl" className="mb-4">
+                        {t('vouchers.howItWorks.heading')}
+                    </Heading>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    {features.map((feature, index) => (
+                        <Card
+                            key={index}
+                            background="white"
+                            padding="lg"
+                            hover={true}
+                        >
+                            <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <Icon
+                                    name={feature.icon as IconName}
+                                    size="lg"
+                                    className="text-sage"
+                                />
+                            </div>
+                            <Heading
+                                level="h3"
+                                size="xs"
+                                weight="medium"
+                                className="mb-4 text-center"
+                            >
+                                {feature.title}
+                            </Heading>
+                            <Text className="text-center">
+                                {feature.description}
+                            </Text>
+                        </Card>
+                    ))}
+                </div>
+            </Section>
             {/* Vouchers */}
             <Section id="vouchers" background="white" padding="lg">
                 <div className="text-center mb-16">
@@ -377,6 +429,8 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                                 className={`overflow-hidden relative ${colSpan}`}
                                 background="white"
                                 shadow="lg"
+                                rounded="xl"
+                                padding="none"
                             >
                                 {voucher.featured && (
                                     <div className="absolute top-4 right-4 bg-charcoal text-white px-4 py-2 rounded-full text-sm font-medium">
@@ -389,30 +443,33 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                                     <div className="text-6xl font-light font-baskerville text-charcoal mb-2">
                                         {voucher.amount}
                                     </div>
-                                    <Text className="text-charcoal font-medium text-sm">
+                                    <Text className="text-charcoal font-medium text-sm ">
                                         {voucher.description}
                                     </Text>
                                 </div>
                                 <div className="p-8">
-                                    <Text className="mb-6">
-                                        {voucher.details}
-                                    </Text>
-                                    <Button
-                                        as="a"
-                                        href={voucher.url}
-                                        target="_blank"
-                                        variant={
-                                            voucher.featured || voucher.large
-                                                ? 'charcoal'
-                                                : 'sage'
-                                        }
-                                        fullWidth={true}
-                                    >
-                                        {t(
-                                            'vouchers.selection.purchaseButton',
-                                            { amount: voucher.amount }
-                                        )}
-                                    </Button>
+                                    <div className="min-h-[3lh]">
+                                        <Text className="mb-6">
+                                            {voucher.details}
+                                        </Text>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <Button
+                                            as="a"
+                                            href={voucher.url}
+                                            target="_blank"
+                                            variant={'sage'}
+                                            size="md"
+                                            fullWidth={
+                                                voucher.large ? true : false
+                                            }
+                                        >
+                                            {t(
+                                                'vouchers.selection.purchaseButton',
+                                                { amount: voucher.amount }
+                                            )}
+                                        </Button>
+                                    </div>
                                 </div>
                             </Card>
                         )
@@ -511,54 +568,19 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                 </div>
             </Section>
 
-            {/* How It Works */}
-            <Section background="cream" padding="lg">
-                <div className="text-center mb-16">
-                    <Heading level="h2" size="xl" className="mb-4">
-                        {t('vouchers.howItWorks.heading')}
-                    </Heading>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {features.map((feature, index) => (
-                        <Card
-                            key={index}
-                            background="white"
-                            padding="lg"
-                            hover={true}
-                        >
-                            <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-                                <Icon
-                                    name={feature.icon as IconName}
-                                    size="lg"
-                                    className="text-sage"
-                                />
-                            </div>
-                            <Heading
-                                level="h3"
-                                size="xs"
-                                weight="medium"
-                                className="mb-4 text-center"
-                            >
-                                {feature.title}
-                            </Heading>
-                            <Text className="text-center">
-                                {feature.description}
-                            </Text>
-                        </Card>
-                    ))}
-                </div>
-            </Section>
-
             {/* CTA */}
             <Section background="sage" padding="lg">
                 <div className="text-center">
-                    <Heading level="h2" size="xl" className="mb-6 text-white">
+                    <Heading
+                        level="h2"
+                        size="xl"
+                        className="mb-6 text-charcoal"
+                    >
                         {t('vouchers.cta.heading')}
                     </Heading>
                     <Text
                         size="xl"
-                        className="max-w-2xl mx-auto mb-8 text-white"
+                        className="max-w-2xl mx-auto mb-8 text-charcoal"
                     >
                         {t('vouchers.cta.text')}
                     </Text>
@@ -573,6 +595,27 @@ export default function Vouchers({ loaderData }: Route.ComponentProps) {
                     {
                         href: getLocalizedPath('/'),
                         label: t('navigation.home'),
+                    },
+                    {
+                        href: getLocalizedPath('/#book'),
+                        label: t('navigation.bookNow'),
+                    },
+                    {
+                        href: getLocalizedPath('/vouchers'),
+                        label: t('navigation.giftVouchers'),
+                    },
+                    {
+                        href: getLocalizedPath('/prices'),
+                        label: t('navigation.prices'),
+                    },
+                    {
+                        href: getLocalizedPath('/#contact'),
+                        label: t('navigation.contact'),
+                    },
+                    {
+                        external: true,
+                        href: 'https://www.instagram.com/theviewlodge.be',
+                        label: t('footer.instagram'),
                     },
                     {
                         href: getLocalizedPath('/terms'),

@@ -12,12 +12,17 @@
         "terms": {
             "title": "Términos y Condiciones - The View",
             "description": "Términos y condiciones para reservar y hospedarse en The View, Bélgica. Política de cancelación, términos de reserva e información legal."
+        },
+        "prices": {
+            "title": "Precios y Disponibilidad - The View - Reserve Su Estadía",
+            "description": "Descubra nuestros precios dinámicos para The View. Consulte la disponibilidad y tarifas en tiempo real para su retiro de bienestar perfecto en las Ardenas belgas."
         }
     },
     "navigation": {
         "home": "Inicio",
         "bookNow": "Reservar",
         "giftVouchers": "Vales Regalo",
+        "prices": "Precios",
         "contact": "Contacto",
         "terms": "Términos",
         "termsAndConditions": "Términos y Condiciones"
@@ -457,5 +462,64 @@
                 "imageAlt": "Cascadas de Ninglinspo"
             }
         }
+    },
+    "prices": {
+        "hero": {
+            "title": {
+                "main": "Precios y",
+                "sub": "Disponibilidad"
+            },
+            "subtitle": "Precios justos y transparentes que se adaptan a la demanda",
+            "cta": "Consultar disponibilidad"
+        },
+        "dynamicPricing": {
+            "heading": "Nuestro Enfoque de Precios",
+            "text": "En The View, creemos en precios justos y transparentes. Nuestras tarifas fluctúan naturalmente según la demanda, la temporada y la disponibilidad—al igual que las aerolíneas u hoteles.\n\nEsto significa que a menudo puede encontrar un excelente valor reservando durante períodos más tranquilos, mientras que las temporadas altas reflejan la mayor demanda de nuestro exclusivo retiro de bienestar. Queremos recompensar a los viajeros flexibles con mejores tarifas, al tiempo que garantizamos que todos experimenten la misma calidad y servicio excepcionales."
+        },
+        "factors": {
+            "heading": "¿Qué Influye en Nuestros Precios?",
+            "subheading": "Varios factores determinan la tarifa por noche de su estadía",
+            "items": {
+                "season": {
+                    "title": "Temporada y Clima",
+                    "description": "Las temporadas altas como el verano y las vacaciones suelen tener tarifas más altas debido al aumento de la demanda"
+                },
+                "dayOfWeek": {
+                    "title": "Día de la Semana",
+                    "description": "Las noches de fin de semana generalmente tienen precios más altos que las estadías entre semana"
+                },
+                "demand": {
+                    "title": "Demanda Actual",
+                    "description": "Las fechas populares tienen tarifas más altas, mientras que los períodos más tranquilos ofrecen mejor valor"
+                },
+                "advance": {
+                    "title": "Ventana de Reserva",
+                    "description": "Las reservas anticipadas pueden asegurar mejores tarifas, mientras que la disponibilidad de última hora puede variar"
+                },
+                "special": {
+                    "title": "Eventos Especiales",
+                    "description": "Los eventos locales como carreras de F1 o festivales pueden influir en los precios"
+                },
+                "lastMinute": {
+                    "title": "Ofertas de Última Hora",
+                    "description": "Ocasionalmente, ofrecemos descuentos para escapadas espontáneas con poca antelación"
+                }
+            },
+            "cta": "Ver precios en vivo"
+        },
+        "vouchers": {
+            "heading": "Considere Nuestros Vales Regalo",
+            "text": "¿Busca asegurar valor? Nuestros vales regalo son una manera perfecta de asegurar una estadía futura. Nunca caducan, se pueden usar para cualquier reserva y son regalos maravillosos para sus seres queridos.",
+            "cta": "Explorar Vales Regalo"
+        },
+        "booking": {
+            "title": "Consultar Disponibilidad y Precios",
+            "description": "Seleccione sus fechas a continuación para ver la disponibilidad y tarifas en tiempo real para The View"
+        }
+    },
+    "bookingWidget": {
+        "title": "Reserve Su Estadía",
+        "description": "Reserve su escapada perfecta en The View",
+        "iframeTitle": "Widget de Reserva"
     }
 }

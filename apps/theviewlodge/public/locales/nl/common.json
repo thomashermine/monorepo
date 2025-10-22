@@ -12,15 +12,20 @@
         "terms": {
             "title": "Terms and Conditions - The View",
             "description": "Terms and conditions for booking and staying at The View, Belgium. Cancellation policy, booking terms, and legal information."
+        },
+        "prices": {
+            "title": "Prijzen & Beschikbaarheid - The View - Boek Je Verblijf",
+            "description": "Ontdek onze dynamische prijzen voor The View. Bekijk realtime beschikbaarheid en tarieven voor je perfecte wellness-retraite in de Belgische Ardennen."
         }
     },
     "navigation": {
         "home": "Home",
-        "bookNow": "Book Now",
-        "giftVouchers": "Gift Vouchers",
+        "bookNow": "Reserveren",
+        "giftVouchers": "Cadeaubonnen",
+        "prices": "Prijzen",
         "contact": "Contact",
-        "terms": "Terms",
-        "termsAndConditions": "Terms & Conditions"
+        "terms": "Voorwaarden",
+        "termsAndConditions": "Algemene Voorwaarden"
     },
     "languages": {
         "english": "English",
@@ -457,5 +462,64 @@
                 "imageAlt": "Ninglinspo watervallen"
             }
         }
+    },
+    "prices": {
+        "hero": {
+            "title": {
+                "main": "Prijzen &",
+                "sub": "Beschikbaarheid"
+            },
+            "subtitle": "Eerlijke, transparante prijzen die zich aanpassen aan de vraag",
+            "cta": "Beschikbaarheid bekijken"
+        },
+        "dynamicPricing": {
+            "heading": "Onze Aanpak van Prijzen",
+            "text": "Bij The View geloven we in eerlijke en transparante prijzen. Onze tarieven fluctueren natuurlijk op basis van vraag, seizoen en beschikbaarheid—net als luchtvaartmaatschappijen of hotels.\n\nDit betekent dat u vaak een goede prijs-kwaliteitverhouding kunt vinden door te boeken in rustigere periodes, terwijl piekperiodes de hogere vraag naar ons exclusieve wellness-retraite weerspiegelen. We willen flexibele reizigers belonen met betere tarieven, terwijl we ervoor zorgen dat iedereen dezelfde uitzonderlijke kwaliteit en service ervaart."
+        },
+        "factors": {
+            "heading": "Wat Beïnvloedt Onze Prijzen?",
+            "subheading": "Verschillende factoren bepalen het nachttarief voor uw verblijf",
+            "items": {
+                "season": {
+                    "title": "Seizoen & Weer",
+                    "description": "Piekseizoenen zoals zomer en feestdagen hebben doorgaans hogere tarieven vanwege toegenomen vraag"
+                },
+                "dayOfWeek": {
+                    "title": "Dag van de Week",
+                    "description": "Weekendnachten zijn over het algemeen duurder dan doordeweekse verblijven"
+                },
+                "demand": {
+                    "title": "Huidige Vraag",
+                    "description": "Populaire data hebben hogere tarieven, terwijl rustigere periodes een betere prijs-kwaliteitverhouding bieden"
+                },
+                "advance": {
+                    "title": "Boekingsperiode",
+                    "description": "Vroege boekingen kunnen betere tarieven garanderen, terwijl last-minute beschikbaarheid kan variëren"
+                },
+                "special": {
+                    "title": "Speciale Evenementen",
+                    "description": "Lokale evenementen zoals F1-races of festivals kunnen de prijzen beïnvloeden"
+                },
+                "lastMinute": {
+                    "title": "Last-Minute Deals",
+                    "description": "Af en toe bieden we kortingen voor spontane uitjes op korte termijn"
+                }
+            },
+            "cta": "Bekijk live prijzen"
+        },
+        "vouchers": {
+            "heading": "Overweeg Onze Cadeaubonnen",
+            "text": "Wilt u waarde vastleggen? Onze cadeaubonnen zijn een perfecte manier om een toekomstig verblijf veilig te stellen. Ze verlopen nooit, kunnen voor elke boeking worden gebruikt en zijn prachtige cadeaus voor dierbaren.",
+            "cta": "Ontdek Cadeaubonnen"
+        },
+        "booking": {
+            "title": "Beschikbaarheid & Prijzen Bekijken",
+            "description": "Selecteer hieronder uw data om realtime beschikbaarheid en tarieven voor The View te zien"
+        }
+    },
+    "bookingWidget": {
+        "title": "Boek Uw Verblijf",
+        "description": "Reserveer uw perfecte uitje bij The View",
+        "iframeTitle": "Boekingswidget"
     }
 }

@@ -16,6 +16,9 @@ type Pages = {
   "/vouchers": {
     params: {};
   };
+  "/prices": {
+    params: {};
+  };
   "/terms": {
     params: {};
   };
@@ -25,6 +28,11 @@ type Pages = {
     };
   };
   "/:lang/vouchers": {
+    params: {
+      "lang": string;
+    };
+  };
+  "/:lang/prices": {
     params: {
       "lang": string;
     };
@@ -39,7 +47,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/vouchers" | "/terms" | "/:lang" | "/:lang/vouchers" | "/:lang/terms";
+    page: "/" | "/vouchers" | "/prices" | "/terms" | "/:lang" | "/:lang/vouchers" | "/:lang/prices" | "/:lang/terms";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -54,6 +62,13 @@ type RouteFiles = {
   } | {
     id: "routes/vouchers-lang";
     page: "/:lang/vouchers";
+  };
+  "routes/prices.tsx": {
+    id: "routes/prices";
+    page: "/prices";
+  } | {
+    id: "routes/prices-lang";
+    page: "/:lang/prices";
   };
   "routes/terms.tsx": {
     id: "routes/terms";

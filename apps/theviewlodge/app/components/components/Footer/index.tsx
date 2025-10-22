@@ -41,6 +41,7 @@ export const Footer: React.FC<FooterProps> = ({
                             size="sm"
                             weight="bold"
                             className="mb-4 text-white"
+                            animate={false}
                         >
                             The View
                         </Heading>
@@ -81,6 +82,7 @@ export const Footer: React.FC<FooterProps> = ({
                                 size="xs"
                                 weight="medium"
                                 className="mb-4 text-white"
+                                animate={false}
                             >
                                 Quick Links
                             </Heading>
@@ -116,6 +118,7 @@ export const Footer: React.FC<FooterProps> = ({
                             size="xs"
                             weight="medium"
                             className="mb-4 text-white"
+                            animate={false}
                         >
                             The View
                         </Heading>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Section } from '../../blocks/Section'
 import { Heading } from '../../primitives/Heading'
@@ -11,18 +12,20 @@ export interface BookingWidgetProps {
 }
 
 export const BookingWidget: React.FC<BookingWidgetProps> = ({
-    title = 'Book Your Stay',
-    description = 'Reserve your perfect getaway at The View',
+    title,
+    description,
     widgetUrl = 'https://w.hostexbooking.site/widget/110484?site_type=1&host_id=102607&listing_id=110484&enabled=1&wmode=opaque',
 }) => {
+    const { t } = useTranslation()
+
     return (
         <Section id="book" background="cream" padding="lg">
             <div className="text-center mb-12">
                 <Heading level="h2" size="xl" className="mb-4">
-                    {title}
+                    {title || t('bookingWidget.title')}
                 </Heading>
                 <Text size="xl" className="max-w-2xl mx-auto">
-                    {description}
+                    {description || t('bookingWidget.description')}
                 </Text>
             </div>
 
@@ -34,7 +37,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({
                         height="600"
                         style={{ border: 0 }}
                         className="w-full"
-                        title="Booking Widget"
+                        title={t('bookingWidget.iframeTitle')}
                     />
                 </div>
             </div>

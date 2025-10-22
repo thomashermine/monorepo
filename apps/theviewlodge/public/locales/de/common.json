@@ -12,15 +12,20 @@
         "terms": {
             "title": "Terms and Conditions - The View",
             "description": "Terms and conditions for booking and staying at The View, Belgium. Cancellation policy, booking terms, and legal information."
+        },
+        "prices": {
+            "title": "Preise & Verfügbarkeit - The View - Buchen Sie Ihren Aufenthalt",
+            "description": "Entdecken Sie unsere dynamische Preisgestaltung für The View. Prüfen Sie die Echtzeit-Verfügbarkeit und Preise für Ihren perfekten Wellness-Rückzugsort in den belgischen Ardennen."
         }
     },
     "navigation": {
-        "home": "Home",
-        "bookNow": "Book Now",
-        "giftVouchers": "Gift Vouchers",
-        "contact": "Contact",
-        "terms": "Terms",
-        "termsAndConditions": "Terms & Conditions"
+        "home": "Startseite",
+        "bookNow": "Buchen",
+        "giftVouchers": "Geschenkgutscheine",
+        "prices": "Preise",
+        "contact": "Kontakt",
+        "terms": "Bedingungen",
+        "termsAndConditions": "AGB"
     },
     "languages": {
         "english": "English",
@@ -457,5 +462,64 @@
                 "imageAlt": "Ninglinspo Wasserfälle"
             }
         }
+    },
+    "prices": {
+        "hero": {
+            "title": {
+                "main": "Preise &",
+                "sub": "Verfügbarkeit"
+            },
+            "subtitle": "Faire, transparente Preise, die sich der Nachfrage anpassen",
+            "cta": "Verfügbarkeit prüfen"
+        },
+        "dynamicPricing": {
+            "heading": "Unser Preisansatz",
+            "text": "Bei The View glauben wir an faire und transparente Preise. Unsere Preise schwanken natürlich je nach Nachfrage, Saison und Verfügbarkeit—ähnlich wie bei Fluggesellschaften oder Hotels.\n\nDas bedeutet, dass Sie oft ein hervorragendes Preis-Leistungs-Verhältnis finden können, wenn Sie in ruhigeren Zeiten buchen, während die Spitzenzeiten die höhere Nachfrage nach unserem exklusiven Wellness-Rückzugsort widerspiegeln. Wir möchten flexible Reisende mit besseren Preisen belohnen und gleichzeitig sicherstellen, dass alle dieselbe außergewöhnliche Qualität und denselben Service erleben."
+        },
+        "factors": {
+            "heading": "Was Beeinflusst Unsere Preise?",
+            "subheading": "Mehrere Faktoren bestimmen den Übernachtungspreis für Ihren Aufenthalt",
+            "items": {
+                "season": {
+                    "title": "Saison & Wetter",
+                    "description": "Hochsaisons wie Sommer und Feiertage haben typischerweise höhere Preise aufgrund erhöhter Nachfrage"
+                },
+                "dayOfWeek": {
+                    "title": "Wochentag",
+                    "description": "Wochenendnächte sind in der Regel teurer als Aufenthalte unter der Woche"
+                },
+                "demand": {
+                    "title": "Aktuelle Nachfrage",
+                    "description": "Beliebte Termine haben höhere Preise, während ruhigere Zeiten ein besseres Preis-Leistungs-Verhältnis bieten"
+                },
+                "advance": {
+                    "title": "Buchungszeitraum",
+                    "description": "Frühzeitige Buchungen können bessere Preise sichern, während Last-Minute-Verfügbarkeit variieren kann"
+                },
+                "special": {
+                    "title": "Besondere Veranstaltungen",
+                    "description": "Lokale Veranstaltungen wie F1-Rennen oder Festivals können die Preise beeinflussen"
+                },
+                "lastMinute": {
+                    "title": "Last-Minute-Angebote",
+                    "description": "Gelegentlich bieten wir Rabatte für spontane Kurztrips an"
+                }
+            },
+            "cta": "Live-Preise anzeigen"
+        },
+        "vouchers": {
+            "heading": "Erwägen Sie Unsere Geschenkgutscheine",
+            "text": "Möchten Sie Wert sichern? Unsere Geschenkgutscheine sind eine perfekte Möglichkeit, einen zukünftigen Aufenthalt zu sichern. Sie verfallen nie, können für jede Buchung verwendet werden und sind wunderbare Geschenke für Ihre Lieben.",
+            "cta": "Geschenkgutscheine Entdecken"
+        },
+        "booking": {
+            "title": "Verfügbarkeit & Preise Prüfen",
+            "description": "Wählen Sie unten Ihre Daten aus, um die Echtzeit-Verfügbarkeit und Preise für The View zu sehen"
+        }
+    },
+    "bookingWidget": {
+        "title": "Buchen Sie Ihren Aufenthalt",
+        "description": "Reservieren Sie Ihren perfekten Kurzurlaub bei The View",
+        "iframeTitle": "Buchungs-Widget"
     }
 }

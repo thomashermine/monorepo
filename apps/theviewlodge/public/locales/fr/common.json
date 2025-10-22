@@ -12,12 +12,17 @@
         "terms": {
             "title": "Conditions Générales - The View",
             "description": "Conditions générales de réservation et de séjour à The View, Belgique. Politique d'annulation, conditions de réservation et informations légales."
+        },
+        "prices": {
+            "title": "Tarifs & Disponibilités - The View - Réservez Votre Séjour",
+            "description": "Découvrez nos tarifs dynamiques pour The View. Consultez les disponibilités et tarifs en temps réel pour votre retraite bien-être parfaite dans les Ardennes belges."
         }
     },
     "navigation": {
         "home": "Accueil",
         "bookNow": "Réserver",
         "giftVouchers": "Chèques Cadeaux",
+        "prices": "Tarifs",
         "contact": "Contact",
         "terms": "Conditions",
         "termsAndConditions": "Conditions Générales"
@@ -457,5 +462,64 @@
                 "imageAlt": "Cascades de Ninglinspo"
             }
         }
+    },
+    "prices": {
+        "hero": {
+            "title": {
+                "main": "Tarifs &",
+                "sub": "Disponibilités"
+            },
+            "subtitle": "Tarification juste et transparente qui s'adapte à la demande",
+            "cta": "Vérifier les disponibilités"
+        },
+        "dynamicPricing": {
+            "heading": "Notre Approche de Tarification",
+            "text": "À The View, nous croyons en une tarification juste et transparente. Nos tarifs fluctuent naturellement en fonction de la demande, de la saison et de la disponibilité—comme les compagnies aériennes ou les hôtels.\n\nCela signifie que vous pouvez souvent trouver un excellent rapport qualité-prix en réservant pendant les périodes plus calmes, tandis que les périodes de pointe reflètent la demande plus élevée pour notre retraite bien-être exclusive. Nous voulons récompenser les voyageurs flexibles avec de meilleurs tarifs, tout en garantissant à tous la même qualité et le même service exceptionnels."
+        },
+        "factors": {
+            "heading": "Qu'est-ce qui Influence Nos Tarifs ?",
+            "subheading": "Plusieurs facteurs déterminent le tarif par nuit de votre séjour",
+            "items": {
+                "season": {
+                    "title": "Saison & Météo",
+                    "description": "Les hautes saisons comme l'été et les vacances ont généralement des tarifs plus élevés en raison de la demande accrue"
+                },
+                "dayOfWeek": {
+                    "title": "Jour de la Semaine",
+                    "description": "Les nuits de week-end sont généralement plus chères que les séjours en semaine"
+                },
+                "demand": {
+                    "title": "Demande Actuelle",
+                    "description": "Les dates populaires ont des tarifs plus élevés, tandis que les périodes plus calmes offrent un meilleur rapport qualité-prix"
+                },
+                "advance": {
+                    "title": "Fenêtre de Réservation",
+                    "description": "Les réservations anticipées peuvent garantir de meilleurs tarifs, tandis que la disponibilité de dernière minute peut varier"
+                },
+                "special": {
+                    "title": "Événements Spéciaux",
+                    "description": "Les événements locaux comme les courses de F1 ou les festivals peuvent influencer les tarifs"
+                },
+                "lastMinute": {
+                    "title": "Offres de Dernière Minute",
+                    "description": "Occasionnellement, nous offrons des réductions pour des escapades spontanées à court terme"
+                }
+            },
+            "cta": "Voir les tarifs en direct"
+        },
+        "vouchers": {
+            "heading": "Considérez Nos Chèques Cadeaux",
+            "text": "Vous cherchez à garantir une bonne affaire ? Nos chèques cadeaux sont un moyen parfait de sécuriser un séjour futur. Ils n'expirent jamais, peuvent être utilisés pour toute réservation et font de merveilleux cadeaux pour vos proches.",
+            "cta": "Découvrir les Chèques Cadeaux"
+        },
+        "booking": {
+            "title": "Vérifier Disponibilités & Tarifs",
+            "description": "Sélectionnez vos dates ci-dessous pour voir les disponibilités et tarifs en temps réel pour The View"
+        }
+    },
+    "bookingWidget": {
+        "title": "Réservez Votre Séjour",
+        "description": "Réservez votre escapade parfaite à The View",
+        "iframeTitle": "Widget de Réservation"
     }
 }

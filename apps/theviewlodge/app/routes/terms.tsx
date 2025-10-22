@@ -86,7 +86,12 @@ export default function Terms({ loaderData }: Route.ComponentProps) {
             {/* Header */}
             <Section background="white" padding="lg" className="pt-32">
                 <div className="max-w-4xl mx-auto text-center">
-                    <Heading level="h1" size="2xl" className="mb-8">
+                    <Heading
+                        level="h1"
+                        size="2xl"
+                        className="mb-8"
+                        animate="immediate"
+                    >
                         {t('terms.heading')}
                     </Heading>
                     <Text size="xl" className="max-w-2xl mx-auto">

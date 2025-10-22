@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import type { Variants } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 /**
  * Animation variants for common animations
@@ -11,11 +11,11 @@ export const fadeInUp: Variants = {
     },
     visible: {
         opacity: 1,
-        y: 0,
         transition: {
             duration: 0.6,
             ease: [0.25, 0.1, 0.25, 1],
         },
+        y: 0,
     },
 }
 
@@ -39,11 +39,11 @@ export const slideInFromLeft: Variants = {
     },
     visible: {
         opacity: 1,
-        x: 0,
         transition: {
             duration: 0.7,
             ease: [0.25, 0.1, 0.25, 1],
         },
+        x: 0,
     },
 }
 
@@ -54,11 +54,11 @@ export const slideInFromRight: Variants = {
     },
     visible: {
         opacity: 1,
-        x: 0,
         transition: {
             duration: 0.7,
             ease: [0.25, 0.1, 0.25, 1],
         },
+        x: 0,
     },
 }
 
@@ -82,8 +82,8 @@ export const staggerContainer: Variants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.15,
             delayChildren: 0.1,
+            staggerChildren: 0.15,
         },
     },
 }
@@ -112,14 +112,13 @@ export function useInView(threshold = 0.1) {
         return () => observer.disconnect()
     }, [ref, threshold, isInView])
 
-    return { ref: setRef, isInView }
+    return { isInView, ref: setRef }
 }
 
 /**
  * Hover animation variants
  */
 export const hoverScale = {
-    rest: { scale: 1 },
     hover: {
         scale: 1.05,
         transition: {
@@ -127,17 +126,17 @@ export const hoverScale = {
             ease: 'easeOut',
         },
     },
+    rest: { scale: 1 },
 }
 
 export const hoverLift = {
-    rest: { y: 0, boxShadow: '0 10px 30px -15px rgba(0,0,0,0.2)' },
     hover: {
-        y: -8,
         boxShadow: '0 20px 40px -15px rgba(0,0,0,0.3)',
         transition: {
             duration: 0.3,
             ease: 'easeOut',
         },
+        y: -8,
     },
+    rest: { boxShadow: '0 10px 30px -15px rgba(0,0,0,0.2)', y: 0 },
 }
-

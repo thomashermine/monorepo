@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import { fadeInUp } from '~/hooks/useAnimation'
 
 export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type HeadingSize =
@@ -19,6 +21,7 @@ export interface HeadingProps {
     className?: string
     fontFamily?: 'baskerville' | 'sans'
     weight?: 'light' | 'normal' | 'medium' | 'bold'
+    animate?: boolean | 'immediate'
 }
 
 const sizeStyles: Record<HeadingSize, string> = {
@@ -47,11 +50,74 @@ export const Heading: React.FC<HeadingProps> = ({
     className = '',
     fontFamily = 'baskerville',
     weight = 'light',
+    animate = true,
 }) => {
     const Component = level
     const fontFamilyClass =
         fontFamily === 'baskerville' ? 'font-baskerville' : ''
     const combinedClassName = `${sizeStyles[size]} ${weightStyles[weight]} ${fontFamilyClass} leading-tight text-charcoal ${className}`
+
+    const ref = useRef<any>(null)
+    const [isInitiallyVisible, setIsInitiallyVisible] = useState(false)
+    const [hasChecked, setHasChecked] = useState(false)
+
+    useEffect(() => {
+        if (animate === true && ref.current && !hasChecked) {
+            // Check if element is in viewport on mount
+            const rect = ref.current.getBoundingClientRect()
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0
+            setIsInitiallyVisible(isVisible)
+            setHasChecked(true)
+        }
+    }, [animate, hasChecked])
+
+    if (animate === 'immediate') {
+        // Animate immediately on mount (for above-the-fold content)
+        const MotionComponent = motion.create(Component)
+        return (
+            <MotionComponent
+                className={combinedClassName}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInUp}
+            >
+                {children}
+            </MotionComponent>
+        )
+    }
+
+    if (animate === true) {
+        const MotionComponent = motion.create(Component)
+
+        // If initially visible, animate immediately instead of waiting for scroll
+        if (isInitiallyVisible) {
+            return (
+                <MotionComponent
+                    ref={ref}
+                    className={combinedClassName}
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInUp}
+                >
+                    {children}
+                </MotionComponent>
+            )
+        }
+
+        // Otherwise use scroll-based animation
+        return (
+            <MotionComponent
+                ref={ref}
+                className={combinedClassName}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={fadeInUp}
+            >
+                {children}
+            </MotionComponent>
+        )
+    }
 
     return <Component className={combinedClassName}>{children}</Component>
 }
