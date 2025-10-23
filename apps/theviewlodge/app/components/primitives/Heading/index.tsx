@@ -94,7 +94,7 @@ export const Heading: React.FC<HeadingProps> = ({
         if (isInitiallyVisible) {
             return (
                 <MotionComponent
-                    ref={ref}
+                    ref={ref as React.RefObject<HTMLHeadingElement>}
                     className={combinedClassName}
                     initial="hidden"
                     animate="visible"
@@ -108,7 +108,7 @@ export const Heading: React.FC<HeadingProps> = ({
         // Otherwise use scroll-based animation
         return (
             <MotionComponent
-                ref={ref}
+                ref={ref as React.RefObject<HTMLHeadingElement>}
                 className={combinedClassName}
                 initial="hidden"
                 whileInView="visible"

@@ -143,7 +143,7 @@ export default function GuestGuide() {
                 if (section) {
                     const sectionTop = (section as HTMLElement).offsetTop
                     if (scrollPosition >= sectionTop) {
-                        setActiveSection(navItems[i].href.substring(1))
+                        setActiveSection(navItems[i]?.href?.substring(1) ?? '')
                         break
                     }
                 }

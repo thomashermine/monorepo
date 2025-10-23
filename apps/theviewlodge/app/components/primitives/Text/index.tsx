@@ -92,7 +92,12 @@ export const Text: React.FC<TextProps> = ({
         if (isInitiallyVisible) {
             return (
                 <MotionComponent
-                    ref={ref}
+                    ref={
+                        ref as React.RefObject<HTMLParagraphElement | null> &
+                            React.RefObject<HTMLSpanElement | null> &
+                            React.RefObject<HTMLDivElement | null> &
+                            React.RefObject<HTMLLIElement | null>
+                    }
                     className={combinedClassName}
                     initial="hidden"
                     animate="visible"
@@ -106,7 +111,12 @@ export const Text: React.FC<TextProps> = ({
         // Otherwise use scroll-based animation
         return (
             <MotionComponent
-                ref={ref}
+                ref={
+                    ref as React.RefObject<HTMLParagraphElement | null> &
+                        React.RefObject<HTMLSpanElement | null> &
+                        React.RefObject<HTMLDivElement | null> &
+                        React.RefObject<HTMLLIElement | null>
+                }
                 className={combinedClassName}
                 initial="hidden"
                 whileInView="visible"

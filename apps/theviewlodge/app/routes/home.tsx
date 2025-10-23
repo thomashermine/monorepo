@@ -578,7 +578,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         description={t('activities.items.fagnes.description')}
                         location={t('activities.items.fagnes.location')}
                         locationUrl={t('activities.items.fagnes.locationUrl')}
-                        imageAlt={t('activities.items.fagnes.imageAlt')}
                     />
 
                     <ActivityCard
@@ -593,7 +592,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         locationUrl={t(
                             'activities.items.parcDesSources.locationUrl'
                         )}
-                        imageAlt={t('activities.items.parcDesSources.imageAlt')}
                     />
 
                     <ActivityCard
@@ -604,7 +602,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         description={t('activities.items.spa.description')}
                         location={t('activities.items.spa.location')}
                         locationUrl={t('activities.items.spa.locationUrl')}
-                        imageAlt={t('activities.items.spa.imageAlt')}
                     />
 
                     <ActivityCard
@@ -619,7 +616,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         locationUrl={t(
                             'activities.items.francorchamps.locationUrl'
                         )}
-                        imageAlt={t('activities.items.francorchamps.imageAlt')}
                     />
 
                     <ActivityCard
@@ -634,7 +630,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         locationUrl={t(
                             'activities.items.ninglinspo.locationUrl'
                         )}
-                        imageAlt={t('activities.items.ninglinspo.imageAlt')}
                     />
                 </div>
             </Section>
