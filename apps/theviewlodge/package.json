@@ -14,7 +14,6 @@
         "lint": "eslint app --ext .ts,.js",
         "lint-fix": "pnpm lint --fix",
         "build-storybook": "storybook build",
-        "test-storybook": "pnpm run --parallel test-storybook",
         "test-e2e": "playwright test",
         "test-e2e:ui": "playwright test --ui",
         "test-e2e:headed": "playwright test --headed",
