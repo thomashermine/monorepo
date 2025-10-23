@@ -31,7 +31,7 @@ const sizeStyles = {
     xl: 'w-8 h-8',
 }
 
-const iconPaths: Record<IconName, JSX.Element> = {
+const iconPaths: Record<IconName, React.ReactElement> = {
     bottle: (
         <path
             strokeLinecap="round"

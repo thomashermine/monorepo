@@ -196,7 +196,7 @@ The app detects language in the following order:
 ## Example: Language Switcher Component
 
 ```tsx
-import { SUPPORTED_LANGUAGES } from '~/utils/i18n'
+import { SUPPORTED_LANGUAGES } from '@/utils/i18n'
 import { useTranslation } from 'react-i18next'
 
 export function LanguageSwitcher() {

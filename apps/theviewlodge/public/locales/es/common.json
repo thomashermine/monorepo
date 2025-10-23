@@ -843,10 +843,10 @@
             "propertyInfo": "Información de la Propiedad",
             "address": "Dirección",
             "hospitals": "Hospitales más cercanos",
-            "malmedy": "Centre Hospitalier de Malmedy - ~25 minutos",
-            "liege": "CHR Citadelle (Liège) - ~45 minutos",
+            "malmedy": "Centre Hospitalier de Malmedy - @25 minutos",
+            "liege": "CHR Citadelle (Liège) - @45 minutos",
             "pharmacy": "Farmacia más cercana",
-            "pharmacyInfo": "Pharmacie de Stoumont - ~10 minutos"
+            "pharmacyInfo": "Pharmacie de Stoumont - @10 minutos"
         }
     }
 }

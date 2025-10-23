@@ -843,10 +843,10 @@
             "propertyInfo": "Informatie over het pand",
             "address": "Adres",
             "hospitals": "Dichtstbijzijnde Ziekenhuizen",
-            "malmedy": "Centre Hospitalier de Malmedy - ~25 minuten",
-            "liege": "CHR Citadelle (Luik) - ~45 minuten",
+            "malmedy": "Centre Hospitalier de Malmedy - @25 minuten",
+            "liege": "CHR Citadelle (Luik) - @45 minuten",
             "pharmacy": "Dichtstbijzijnde Apotheek",
-            "pharmacyInfo": "Apotheek de Stoumont - ~10 minuten"
+            "pharmacyInfo": "Apotheek de Stoumont - @10 minuten"
         }
     }
 }

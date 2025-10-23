@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Section } from '~/components/blocks/Section'
-import { BookingWidget } from '~/components/components/BookingWidget'
-import { Footer } from '~/components/components/Footer'
-import { HeroSection } from '~/components/components/HeroSection'
-import { MobileMenu } from '~/components/components/MobileMenu'
-import { NavigationBar } from '~/components/components/NavigationBar'
-import { Button } from '~/components/primitives/Button'
-import { Heading } from '~/components/primitives/Heading'
-import { Text } from '~/components/primitives/Text'
-import { useHashNavigation } from '~/hooks/helpers'
+import { Section } from '@/components/blocks/Section'
+import { BookingWidget } from '@/components/components/BookingWidget'
+import { Footer } from '@/components/components/Footer'
+import { HeroSection } from '@/components/components/HeroSection'
+import { MobileMenu } from '@/components/components/MobileMenu'
+import { NavigationBar } from '@/components/components/NavigationBar'
+import { Button } from '@/components/primitives/Button'
+import { Heading } from '@/components/primitives/Heading'
+import { Text } from '@/components/primitives/Text'
+import { useHashNavigation } from '@/hooks/helpers'
 
 import type { Route } from './+types/prices'
 
@@ -28,7 +28,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             : 'en')
 
     // Import server module only in loader
-    const i18nextServer = await import('~/i18next.server').then(
+    const i18nextServer = await import('@/i18next.server').then(
         (m) => m.default
     )
     const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })

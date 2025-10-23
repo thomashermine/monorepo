@@ -14,7 +14,7 @@ export function Map({
     className = '',
 }: MapProps) {
     const mapContainer = useRef<HTMLDivElement>(null)
-    const map = useRef<any>(null)
+    const map = useRef<mapboxgl.Map | null>(null)
 
     useEffect(() => {
         if (map.current) return // Initialize map only once
@@ -30,11 +30,11 @@ export function Map({
                 'pk.eyJ1IjoibmV4dHJpZGUiLCJhIjoiTXZQZW5lMCJ9.9EOiNzi_IX83-gqGgkmTDg'
 
             map.current = new mapboxgl.default.Map({
+                attributionControl: true,
+                center: [longitude, latitude],
                 container: mapContainer.current,
                 style: 'mapbox://styles/mapbox/light-v11',
-                center: [longitude, latitude],
                 zoom: zoom,
-                attributionControl: true,
             })
 
             // Add a marker

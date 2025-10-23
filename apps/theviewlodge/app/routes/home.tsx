@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ActivityCard } from '~/components/blocks/ActivityCard'
-import { AmenityCard } from '~/components/blocks/AmenityCard'
-import { FAQItem } from '~/components/blocks/FAQItem'
-import { FeatureCard } from '~/components/blocks/FeatureCard'
-import { Section } from '~/components/blocks/Section'
-import { TestimonialCard } from '~/components/blocks/TestimonialCard'
-import { BookingWidget } from '~/components/components/BookingWidget'
-import { Footer } from '~/components/components/Footer'
-import { Gallery } from '~/components/components/Gallery'
-import { HeroSection } from '~/components/components/HeroSection'
-import { Map } from '~/components/components/Map'
-import { MobileMenu } from '~/components/components/MobileMenu'
-import { NavigationBar } from '~/components/components/NavigationBar'
-import { Button } from '~/components/primitives/Button'
-import { Heading } from '~/components/primitives/Heading'
-import { Text } from '~/components/primitives/Text'
-import { useHashNavigation } from '~/hooks/helpers'
-import { useTestimonials } from '~/hooks/useTestimonials'
+import { ActivityCard } from '@/components/blocks/ActivityCard'
+import { AmenityCard } from '@/components/blocks/AmenityCard'
+import { FAQItem } from '@/components/blocks/FAQItem'
+import { FeatureCard } from '@/components/blocks/FeatureCard'
+import { Section } from '@/components/blocks/Section'
+import { TestimonialCard } from '@/components/blocks/TestimonialCard'
+import { BookingWidget } from '@/components/components/BookingWidget'
+import { Footer } from '@/components/components/Footer'
+import { Gallery } from '@/components/components/Gallery'
+import { HeroSection } from '@/components/components/HeroSection'
+import { Map } from '@/components/components/Map'
+import { MobileMenu } from '@/components/components/MobileMenu'
+import { NavigationBar } from '@/components/components/NavigationBar'
+import { Button } from '@/components/primitives/Button'
+import { Heading } from '@/components/primitives/Heading'
+import { Text } from '@/components/primitives/Text'
+import { useHashNavigation } from '@/hooks/helpers'
+import { useTestimonials } from '@/hooks/useTestimonials'
 
 import type { Route } from './+types/home'
 
@@ -36,7 +36,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             : 'en')
 
     // Import server module only in loader
-    const i18nextServer = await import('~/i18next.server').then(
+    const i18nextServer = await import('@/i18next.server').then(
         (m) => m.default
     )
     const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })

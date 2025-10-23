@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Card } from '~/components/blocks/Card'
-import { Section } from '~/components/blocks/Section'
-import { Footer } from '~/components/components/Footer'
-import { MobileMenu } from '~/components/components/MobileMenu'
-import { NavigationBar } from '~/components/components/NavigationBar'
-import { Heading } from '~/components/primitives/Heading'
-import { Text } from '~/components/primitives/Text'
+import { Card } from '@/components/blocks/Card'
+import { Section } from '@/components/blocks/Section'
+import { Footer } from '@/components/components/Footer'
+import { MobileMenu } from '@/components/components/MobileMenu'
+import { NavigationBar } from '@/components/components/NavigationBar'
+import { Heading } from '@/components/primitives/Heading'
+import { Text } from '@/components/primitives/Text'
 
 import type { Route } from './+types/terms'
 
@@ -25,7 +25,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             : 'en')
 
     // Import server module only in loader
-    const i18nextServer = await import('~/i18next.server').then(
+    const i18nextServer = await import('@/i18next.server').then(
         (m) => m.default
     )
     const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })

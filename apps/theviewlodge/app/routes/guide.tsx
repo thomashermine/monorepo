@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router'
 
-import { Button } from '~/components/primitives/Button'
-import { Heading } from '~/components/primitives/Heading'
-import { Text } from '~/components/primitives/Text'
+import { Button } from '@/components/primitives/Button'
+import { Heading } from '@/components/primitives/Heading'
+import { Text } from '@/components/primitives/Text'
 
 import type { Route } from './+types/guide'
 
@@ -21,7 +21,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             ? firstSegment
             : 'en')
 
-    const i18nextServer = await import('~/i18next.server').then(
+    const i18nextServer = await import('@/i18next.server').then(
         (m) => m.default
     )
     const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })
@@ -54,16 +54,12 @@ interface NavItem {
     label: string
 }
 
-export default function GuestGuide({ loaderData }: Route.ComponentProps) {
+export default function GuestGuide() {
     const { t, i18n } = useTranslation()
     const [searchParams] = useSearchParams()
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [activeSection, setActiveSection] = useState('welcome')
     const [guestName, setGuestName] = useState<string | null>(null)
-
-    // Get locale from loader data or fallback to i18n.language
-    const currentLocale = loaderData?.locale || i18n.language
-
     // Get guest name from URL params
     useEffect(() => {
         const name = searchParams.get('guest') || searchParams.get('name')
@@ -249,7 +245,7 @@ export default function GuestGuide({ loaderData }: Route.ComponentProps) {
 
                     {/* Navigation Menu */}
                     <nav className="space-y-2">
-                        {navItems.map((item) => {
+                        {navItems.map((item: NavItem) => {
                             const isEmergency = item.href === '#emergency'
                             return (
                                 <a

@@ -1,4 +1,14 @@
-import i18n from '~/i18n'
+import i18n from '@/i18n'
+
+/**
+ * Supported languages configuration
+ */
+export const SUPPORTED_LANGUAGES = [
+    { code: 'en', name: 'English' },
+    { code: 'fr', name: 'Français' },
+    { code: 'nl', name: 'Nederlands' },
+    { code: 'de', name: 'Deutsch' },
+] as const
 
 /**
  * Build a localized path for the given route

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { fadeInUp } from '~/hooks/useAnimation'
+import { fadeInUp } from '@/hooks/useAnimation'
 
 export type TextSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl'
 export type TextColor = 'charcoal' | 'stone' | 'sage' | 'cream' | 'white'
@@ -13,7 +13,7 @@ export interface TextProps {
     color?: TextColor
     weight?: TextWeight
     className?: string
-    as?: 'p' | 'span' | 'div'
+    as?: 'p' | 'span' | 'div' | 'li'
     italic?: boolean
     animate?: boolean | 'immediate'
 }
@@ -56,7 +56,7 @@ export const Text: React.FC<TextProps> = ({
     const italicClass = italic ? 'italic' : ''
     const combinedClassName = `${sizeStyles[size]} ${colorStyles[color]} ${weightStyles[weight]} ${italicClass} leading-relaxed ${className}`
 
-    const ref = useRef<any>(null)
+    const ref = useRef<HTMLElement | null>(null)
     const [isInitiallyVisible, setIsInitiallyVisible] = useState(false)
     const [hasChecked, setHasChecked] = useState(false)
 

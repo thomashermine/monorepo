@@ -1,19 +1,19 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Card } from '~/components/blocks/Card'
-import { Section } from '~/components/blocks/Section'
-import { TestimonialCard } from '~/components/blocks/TestimonialCard'
-import { Footer } from '~/components/components/Footer'
-import { HeroSection } from '~/components/components/HeroSection'
-import { MobileMenu } from '~/components/components/MobileMenu'
-import { NavigationBar } from '~/components/components/NavigationBar'
-import { Button } from '~/components/primitives/Button'
-import { Heading } from '~/components/primitives/Heading'
-import { Icon, type IconName } from '~/components/primitives/Icon'
-import { Text } from '~/components/primitives/Text'
-import { useHashNavigation } from '~/hooks/helpers'
-import { useTestimonials } from '~/hooks/useTestimonials'
+import { Card } from '@/components/blocks/Card'
+import { Section } from '@/components/blocks/Section'
+import { TestimonialCard } from '@/components/blocks/TestimonialCard'
+import { Footer } from '@/components/components/Footer'
+import { HeroSection } from '@/components/components/HeroSection'
+import { MobileMenu } from '@/components/components/MobileMenu'
+import { NavigationBar } from '@/components/components/NavigationBar'
+import { Button } from '@/components/primitives/Button'
+import { Heading } from '@/components/primitives/Heading'
+import { Icon, type IconName } from '@/components/primitives/Icon'
+import { Text } from '@/components/primitives/Text'
+import { useHashNavigation } from '@/hooks/helpers'
+import { useTestimonials } from '@/hooks/useTestimonials'
 
 import type { Route } from './+types/vouchers'
 
@@ -31,7 +31,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             : 'en')
 
     // Import server module only in loader
-    const i18nextServer = await import('~/i18next.server').then(
+    const i18nextServer = await import('@/i18next.server').then(
         (m) => m.default
     )
     const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })

@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { fadeInUp } from '~/hooks/useAnimation'
+import React, { useEffect, useRef, useState } from 'react'
+
+import { fadeInUp } from '@/hooks/useAnimation'
 
 export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type HeadingSize =
@@ -57,7 +58,7 @@ export const Heading: React.FC<HeadingProps> = ({
         fontFamily === 'baskerville' ? 'font-baskerville' : ''
     const combinedClassName = `${sizeStyles[size]} ${weightStyles[weight]} ${fontFamilyClass} leading-tight text-charcoal ${className}`
 
-    const ref = useRef<any>(null)
+    const ref = useRef<HTMLElement | null>(null)
     const [isInitiallyVisible, setIsInitiallyVisible] = useState(false)
     const [hasChecked, setHasChecked] = useState(false)
 
@@ -111,7 +112,7 @@ export const Heading: React.FC<HeadingProps> = ({
                 className={combinedClassName}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ amount: 0.3, once: true }}
                 variants={fadeInUp}
             >
                 {children}

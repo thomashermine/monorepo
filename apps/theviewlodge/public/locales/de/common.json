@@ -843,10 +843,10 @@
             "propertyInfo": "Objektinformationen",
             "address": "Adresse",
             "hospitals": "Nächstgelegene Krankenhäuser",
-            "malmedy": "Centre Hospitalier de Malmedy - ~25 Minuten",
-            "liege": "CHR Citadelle (Lüttich) - ~45 Minuten",
+            "malmedy": "Centre Hospitalier de Malmedy - @25 Minuten",
+            "liege": "CHR Citadelle (Lüttich) - @45 Minuten",
             "pharmacy": "Nächste Apotheke",
-            "pharmacyInfo": "Pharmacie de Stoumont - ~10 Minuten"
+            "pharmacyInfo": "Pharmacie de Stoumont - @10 Minuten"
         }
     }
 }
