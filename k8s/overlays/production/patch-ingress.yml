@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-    name: monorepo-ingress
+    name: monorepo-frontend-ingress
 spec:
     tls:
         - hosts:
@@ -17,5 +17,27 @@ spec:
                     backend:
                         service:
                             name: monorepo-frontend
+                            port:
+                                number: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-theviewlodge-ingress
+spec:
+    tls:
+        - hosts:
+              - theviewlodge.monorepo.thomashermine.be
+          secretName: monorepo-theviewlodge-tls
+    rules:
+        - host: theviewlodge.monorepo.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-theviewlodge
                             port:
                                 number: 80
