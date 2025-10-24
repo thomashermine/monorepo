@@ -107,6 +107,7 @@ kustomize build k8s/overlays/{staging|production} | kubectl apply -f -
 -   `GET /bookings/calendar/checkinout.ics` - Check-in/check-out events (ICS format)
 -   `GET /bookings/calendar/full-day.json` - Full-day events (JSON, debug)
 -   `GET /bookings/calendar/checkinout.json` - Check-in/check-out events (JSON, debug)
+-   `GET /messages/export/llm-training.txt` - Export guest messages for LLM training (TXT format)
 
 ## CI/CD
 

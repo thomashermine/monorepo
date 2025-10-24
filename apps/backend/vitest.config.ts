@@ -5,13 +5,14 @@ export default defineConfig({
         conditions: ['development', 'import', 'module', 'default'],
     },
     test: {
-        globals: true,
-        environment: 'node',
-        exclude: ['e2e/**/*.test.ts'], // Ran by playwright
-        include: ['src/**/*.test.ts'],
         coverage: {
-            provider: 'v8',
             include: ['src/**/*.test.ts'],
+            provider: 'v8',
         },
+        environment: 'node',
+        exclude: ['e2e/**/*.test.ts'],
+        globals: true,
+        // Ran by playwright
+        include: ['src/**/*.test.ts'],
     },
 })

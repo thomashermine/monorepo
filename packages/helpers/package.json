@@ -18,7 +18,7 @@
     "devDependencies": {
         "@eslint/js": "^9.37.0",
         "@faker-js/faker": "^9.3.0",
-        "@types/xmlrpc": "^1.3.11",
+        "@types/xmlrpc": "^1.3.10",
         "eslint": "^9.37.0",
         "eslint-plugin-simple-import-sort": "^12.1.1",
         "eslint-plugin-sort-keys-fix": "^1.1.2",
@@ -40,64 +40,44 @@
     },
     "exports": {
         "./hostex": {
-            "development": "./src/hostex/index.ts",
-            "types": "./dist/hostex/index.d.ts",
-            "default": "./dist/hostex/index.js"
-        },
-        "./hostex/types": {
-            "development": "./src/hostex/types.ts",
-            "types": "./dist/hostex/types.d.ts",
-            "default": "./dist/hostex/types.js"
-        },
-        "./hostex/mocks": {
-            "development": "./src/hostex/mocks.ts",
-            "types": "./dist/hostex/mocks.d.ts",
-            "default": "./dist/hostex/mocks.js"
+            "types": "./src/hostex/index.d.ts",
+            "default": "./src/hostex/index.ts"
         },
         "./openai": {
-            "development": "./src/openai/index.ts",
-            "types": "./dist/openai/index.d.ts",
-            "default": "./dist/openai/index.js"
+            "types": "./src/openai/index.d.ts",
+            "default": "./src/openai/index.ts"
         },
         "./openai/types": {
-            "development": "./src/openai/types.ts",
-            "types": "./dist/openai/types.d.ts",
-            "default": "./dist/openai/types.js"
+            "types": "./src/openai/types.d.ts",
+            "default": "./src/openai/types.ts"
         },
         "./openai/mocks": {
-            "development": "./src/openai/mocks.ts",
-            "types": "./dist/openai/mocks.d.ts",
-            "default": "./dist/openai/mocks.js"
+            "types": "./src/openai/mocks.d.ts",
+            "default": "./src/openai/mocks.ts"
         },
         "./joke": {
-            "development": "./src/joke/index.ts",
-            "types": "./dist/joke/index.d.ts",
-            "default": "./dist/joke/index.js"
+            "types": "./src/joke/index.d.ts",
+            "default": "./src/joke/index.ts"
         },
         "./date": {
-            "development": "./src/date/index.ts",
-            "types": "./dist/date/index.d.ts",
-            "default": "./dist/date/index.js"
+            "types": "./src/date/index.d.ts",
+            "default": "./src/date/index.ts"
         },
         "./calendar": {
-            "development": "./src/calendar/index.ts",
-            "types": "./dist/calendar/index.d.ts",
-            "default": "./dist/calendar/index.js"
+            "types": "./src/calendar/index.d.ts",
+            "default": "./src/calendar/index.ts"
         },
         "./odoo": {
-            "development": "./src/odoo/index.ts",
-            "types": "./dist/odoo/index.d.ts",
-            "default": "./dist/odoo/index.js"
+            "types": "./src/odoo/index.d.ts",
+            "default": "./src/odoo/index.ts"
         },
         "./odoo/types": {
-            "development": "./src/odoo/types.ts",
-            "types": "./dist/odoo/types.d.ts",
-            "default": "./dist/odoo/types.js"
+            "types": "./src/odoo/types.d.ts",
+            "default": "./src/odoo/types.ts"
         },
         "./odoo/mocks": {
-            "development": "./src/odoo/mocks.ts",
-            "types": "./dist/odoo/mocks.d.ts",
-            "default": "./dist/odoo/mocks.js"
+            "types": "./src/odoo/mocks.d.ts",
+            "default": "./src/odoo/mocks.ts"
         }
     }
 }

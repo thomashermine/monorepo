@@ -169,12 +169,18 @@ const makeRequest = <T>(
 
                 if (!response.ok) {
                     if ('object' in data && data.object === 'error') {
+                        const errorData = data as {
+                            object: 'error'
+                            status: number
+                            code: string
+                            message: string
+                        }
                         throw new NotionError({
                             message:
-                                data.message ||
+                                errorData.message ||
                                 `HTTP ${response.status}: ${response.statusText}`,
-                            code: data.code,
-                            status: data.status,
+                            code: errorData.code,
+                            status: errorData.status,
                         })
                     }
                     throw new NotionError({
@@ -239,7 +245,7 @@ export const makeNotionServiceLayer = (
 
 const makeNotionServiceImplementation = (config: NotionConfig) => ({
     // Database operations
-    queryDatabase: (databaseId, params) =>
+    queryDatabase: (databaseId: string, params?: QueryDatabaseParams) =>
         makeRequest<QueryDatabaseResponse>(
             config,
             `/v1/databases/${databaseId}/query`,
@@ -248,41 +254,46 @@ const makeNotionServiceImplementation = (config: NotionConfig) => ({
                 body: JSON.stringify(params || {}),
             }
         ),
-    retrieveDatabase: (databaseId) =>
+    retrieveDatabase: (databaseId: string) =>
         makeRequest<Database>(config, `/v1/databases/${databaseId}`),
-    createDatabase: (input) =>
+    createDatabase: (input: CreateDatabaseInput) =>
         makeRequest<Database>(config, '/v1/databases', {
             method: 'POST',
             body: JSON.stringify(input),
         }),
-    updateDatabase: (databaseId, input) =>
+    updateDatabase: (databaseId: string, input: UpdateDatabaseInput) =>
         makeRequest<Database>(config, `/v1/databases/${databaseId}`, {
             method: 'PATCH',
             body: JSON.stringify(input),
         }),
 
     // Page operations
-    retrievePage: (pageId) => makeRequest<Page>(config, `/v1/pages/${pageId}`),
-    createPage: (input) =>
+    retrievePage: (pageId: string) =>
+        makeRequest<Page>(config, `/v1/pages/${pageId}`),
+    createPage: (input: CreatePageInput) =>
         makeRequest<Page>(config, '/v1/pages', {
             method: 'POST',
             body: JSON.stringify(input),
         }),
-    updatePage: (pageId, input) =>
+    updatePage: (pageId: string, input: UpdatePageInput) =>
         makeRequest<Page>(config, `/v1/pages/${pageId}`, {
             method: 'PATCH',
             body: JSON.stringify(input),
         }),
-    archivePage: (pageId) =>
+    archivePage: (pageId: string) =>
         makeRequest<Page>(config, `/v1/pages/${pageId}`, {
             method: 'PATCH',
             body: JSON.stringify({ archived: true }),
         }),
 
     // Block operations
-    retrieveBlock: (blockId) =>
+    retrieveBlock: (blockId: string) =>
         makeRequest<Block>(config, `/v1/blocks/${blockId}`),
-    retrieveBlockChildren: (blockId, startCursor, pageSize) => {
+    retrieveBlockChildren: (
+        blockId: string,
+        startCursor?: string,
+        pageSize?: number
+    ) => {
         const params = new URLSearchParams()
         if (startCursor) params.set('start_cursor', startCursor)
         if (pageSize) params.set('page_size', String(pageSize))
@@ -293,7 +304,7 @@ const makeNotionServiceImplementation = (config: NotionConfig) => ({
             `/v1/blocks/${blockId}/children${query}`
         )
     },
-    appendBlockChildren: (blockId, input) =>
+    appendBlockChildren: (blockId: string, input: AppendBlockChildrenInput) =>
         makeRequest<ListBlockChildrenResponse>(
             config,
             `/v1/blocks/${blockId}/children`,
@@ -302,14 +313,15 @@ const makeNotionServiceImplementation = (config: NotionConfig) => ({
                 body: JSON.stringify(input),
             }
         ),
-    deleteBlock: (blockId) =>
+    deleteBlock: (blockId: string) =>
         makeRequest<Block>(config, `/v1/blocks/${blockId}`, {
             method: 'DELETE',
         }),
 
     // User operations
-    retrieveUser: (userId) => makeRequest<User>(config, `/v1/users/${userId}`),
-    listUsers: (startCursor, pageSize) => {
+    retrieveUser: (userId: string) =>
+        makeRequest<User>(config, `/v1/users/${userId}`),
+    listUsers: (startCursor?: string, pageSize?: number) => {
         const params = new URLSearchParams()
         if (startCursor) params.set('start_cursor', startCursor)
         if (pageSize) params.set('page_size', String(pageSize))
@@ -320,14 +332,14 @@ const makeNotionServiceImplementation = (config: NotionConfig) => ({
     retrieveBotUser: () => makeRequest<User>(config, '/v1/users/me'),
 
     // Search
-    search: (params) =>
+    search: (params?: SearchParams) =>
         makeRequest<SearchResponse>(config, '/v1/search', {
             method: 'POST',
             body: JSON.stringify(params || {}),
         }),
 
     // Comments
-    listComments: (params) => {
+    listComments: (params: ListCommentsParams) => {
         const urlParams = new URLSearchParams({
             block_id: params.block_id,
         })
@@ -341,7 +353,7 @@ const makeNotionServiceImplementation = (config: NotionConfig) => ({
             `/v1/comments?${urlParams.toString()}`
         )
     },
-    createComment: (input) =>
+    createComment: (input: CreateCommentInput) =>
         makeRequest<Comment>(config, '/v1/comments', {
             method: 'POST',
             body: JSON.stringify(input),

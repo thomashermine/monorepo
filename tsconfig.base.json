@@ -1,11 +1,8 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
-        "baseUrl": ".",
-        "lib": ["ES2023"],
         "module": "ESNext",
-        "moduleDetection": "force",
-        "moduleResolution": "Bundler",
+        "moduleResolution": "bundler",
         "noUncheckedIndexedAccess": true,
         "noUncheckedSideEffectImports": true,
         "outDir": "dist",
@@ -13,10 +10,13 @@
         "skipLibCheck": true,
         "sourceMap": true,
         "strict": true,
-        "target": "ESNext",
-        "types": [],
-        "verbatimModuleSyntax": true
+        "target": "ES2022",
+        "verbatimModuleSyntax": true,
+        "typeRoots": [
+            "../../node_modules/@types",
+            "../../packages/helpers/src/**/*",
+            "../../packages/config/src/**/*"
+        ]
     },
-    "exclude": ["node_modules", "dist", "build"],
-    "include": ["src/**/*", "e2e/**/*", "vite.config.ts"]
+    "exclude": ["dist", "build", "node_modules", "prod"]
 }
