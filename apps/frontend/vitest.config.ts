@@ -29,6 +29,7 @@ export default defineConfig({
         setupFiles: ['.storybook/vitest.setup.ts'],
     },
     resolve: {
+        conditions: ['development', 'import', 'module', 'browser', 'default'],
         alias: {
             '@': path.resolve(dirname, './app'),
         },

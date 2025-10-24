@@ -40,50 +40,62 @@
     },
     "exports": {
         "./hostex": {
+            "development": "./src/hostex/index.ts",
             "types": "./dist/hostex/index.d.ts",
             "default": "./dist/hostex/index.js"
         },
         "./hostex/types": {
+            "development": "./src/hostex/types.ts",
             "types": "./dist/hostex/types.d.ts",
             "default": "./dist/hostex/types.js"
         },
         "./hostex/mocks": {
+            "development": "./src/hostex/mocks.ts",
             "types": "./dist/hostex/mocks.d.ts",
             "default": "./dist/hostex/mocks.js"
         },
         "./openai": {
+            "development": "./src/openai/index.ts",
             "types": "./dist/openai/index.d.ts",
             "default": "./dist/openai/index.js"
         },
         "./openai/types": {
+            "development": "./src/openai/types.ts",
             "types": "./dist/openai/types.d.ts",
             "default": "./dist/openai/types.js"
         },
         "./openai/mocks": {
+            "development": "./src/openai/mocks.ts",
             "types": "./dist/openai/mocks.d.ts",
             "default": "./dist/openai/mocks.js"
         },
         "./joke": {
+            "development": "./src/joke/index.ts",
             "types": "./dist/joke/index.d.ts",
             "default": "./dist/joke/index.js"
         },
         "./date": {
+            "development": "./src/date/index.ts",
             "types": "./dist/date/index.d.ts",
             "default": "./dist/date/index.js"
         },
         "./calendar": {
+            "development": "./src/calendar/index.ts",
             "types": "./dist/calendar/index.d.ts",
             "default": "./dist/calendar/index.js"
         },
         "./odoo": {
+            "development": "./src/odoo/index.ts",
             "types": "./dist/odoo/index.d.ts",
             "default": "./dist/odoo/index.js"
         },
         "./odoo/types": {
+            "development": "./src/odoo/types.ts",
             "types": "./dist/odoo/types.d.ts",
             "default": "./dist/odoo/types.js"
         },
         "./odoo/mocks": {
+            "development": "./src/odoo/mocks.ts",
             "types": "./dist/odoo/mocks.d.ts",
             "default": "./dist/odoo/mocks.js"
         }

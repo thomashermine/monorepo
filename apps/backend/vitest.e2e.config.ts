@@ -1,14 +1,8 @@
-import path from 'node:path'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
     resolve: {
-        alias: {
-            '@monorepo/helpers': path.resolve(
-                __dirname,
-                '../../packages/helpers/src'
-            ),
-        },
+        conditions: ['development', 'import', 'module', 'default'],
     },
     test: {
         globals: true,

@@ -35,10 +35,12 @@
     },
     "exports": {
         "./config": {
+            "development": "./src/config/index.ts",
             "types": "./dist/config/index.d.ts",
             "default": "./dist/config/index.js"
         },
         "./eslint": {
+            "development": "./src/eslint/index.ts",
             "types": "./dist/eslint/index.d.ts",
             "default": "./dist/eslint/index.js"
         }

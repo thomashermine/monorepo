@@ -6,7 +6,7 @@
     "scripts": {
         "build": "pnpm run --filter @monorepo/helpers build && pnpm run --filter @monorepo/config build && vite build",
         "type-check": "tsc --noEmit",
-        "dev": "tsx --watch src/main.ts",
+        "dev": "tsx --conditions=development --watch src/main.ts",
         "d": "pnpm run dev",
         "start": "node dist/main.js",
         "lint": "eslint src --ext .ts,.js",

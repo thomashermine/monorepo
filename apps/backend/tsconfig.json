@@ -1,4 +1,10 @@
 {
     "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "paths": {
+            "@monorepo/helpers/*": ["../../packages/helpers/src/*"],
+            "@monorepo/config/*": ["../../packages/config/src/*"]
+        }
+    },
     "include": ["src/**/*", "vite.config.ts"]
 }

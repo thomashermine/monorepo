@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
     build: {
         emptyOutDir: true,
         lib: {
@@ -24,4 +24,11 @@ export default defineConfig({
         sourcemap: true,
         ssr: true,
     },
-})
+    resolve: {
+        // Use development condition for dev/test, production uses default
+        conditions:
+            mode === 'production'
+                ? ['import', 'module', 'default']
+                : ['development', 'import', 'module', 'default'],
+    },
+}))

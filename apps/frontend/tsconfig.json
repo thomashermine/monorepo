@@ -13,7 +13,9 @@
         "rootDirs": [".", "./.react-router/types"],
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./app/*"]
+            "@/*": ["./app/*"],
+            "@monorepo/helpers/*": ["../../packages/helpers/src/*"],
+            "@monorepo/config/*": ["../../packages/config/src/*"]
         },
         "noEmit": true
     }
