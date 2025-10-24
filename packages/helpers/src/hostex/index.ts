@@ -189,7 +189,6 @@ const makeRequest = <T>(
                     signal: controller.signal,
                 })
 
-                console.log('response', response)
                 clearTimeout(timeoutId)
 
                 const data = (await response.json()) as {
@@ -359,20 +358,120 @@ export const HostexServiceLive = Layer.effect(
                     }
                 ),
             getConversations: (page = 1, pageSize = 20) => {
+                const offset = (page - 1) * pageSize
                 const query = new URLSearchParams({
-                    page: String(page),
-                    pageSize: String(pageSize),
+                    offset: String(offset),
+                    limit: String(pageSize),
                 }).toString()
 
-                return makeRequest<ConversationsResponse>(
-                    config,
-                    `/conversations?${query}`
+                return makeRequest<{
+                    request_id: string
+                    error_code: number
+                    error_msg: string
+                    data: {
+                        conversations: Array<{
+                            id: string
+                            channel_type: string
+                            last_message_at: string
+                            guest: {
+                                name: string
+                                phone: string | null
+                                email: string
+                            }
+                            property_title: string
+                            check_in_date: string
+                            check_out_date: string
+                        }>
+                        total?: number
+                    }
+                }>(config, `/conversations?${query}`).pipe(
+                    Effect.map((response) => ({
+                        data: response.data.conversations.map((conv) => ({
+                            id: conv.id,
+                            reservationCode: undefined,
+                            guestName: conv.guest.name,
+                            propertyId: conv.property_title,
+                            channel: conv.channel_type,
+                            lastMessageAt: conv.last_message_at,
+                            unreadCount: 0,
+                        })),
+                        total:
+                            response.data.total ||
+                            response.data.conversations.length,
+                        page,
+                        pageSize,
+                        requestId: response.request_id,
+                    }))
                 )
             },
             getConversationDetails: (conversationId) =>
-                makeRequest<ConversationDetailsResponse>(
-                    config,
-                    `/conversations/${conversationId}`
+                makeRequest<{
+                    request_id: string
+                    error_code: number
+                    error_msg: string
+                    data?: {
+                        id: string
+                        channel_type: string
+                        last_message_at?: string
+                        guest: {
+                            name: string
+                            phone: string | null
+                            email: string
+                        }
+                        property_title?: string
+                        check_in_date?: string
+                        check_out_date?: string
+                        messages: Array<{
+                            id: string
+                            sender_role: 'host' | 'guest'
+                            display_type: string
+                            content: string
+                            attachment: string | null
+                            created_at: string
+                        }>
+                    }
+                }>(config, `/conversations/${conversationId}`).pipe(
+                    Effect.flatMap((response) => {
+                        if (!response.data || !response.data.messages) {
+                            return Effect.fail(
+                                new HostexError({
+                                    message: `Invalid response structure for conversation ${conversationId}`,
+                                    requestId: response.request_id,
+                                    errorCode: String(response.error_code),
+                                })
+                            )
+                        }
+                        const conv = response.data
+                        const msgs = response.data.messages
+                        return Effect.succeed({
+                            data: {
+                                conversation: {
+                                    id: conv.id,
+                                    reservationCode: undefined,
+                                    guestName: conv.guest.name,
+                                    propertyId: conv.property_title || '',
+                                    channel: conv.channel_type,
+                                    lastMessageAt:
+                                        conv.last_message_at ||
+                                        new Date().toISOString(),
+                                    unreadCount: 0,
+                                },
+                                messages: msgs.map((msg) => ({
+                                    id: msg.id,
+                                    conversationId: conv.id,
+                                    content: msg.content,
+                                    sentBy: msg.sender_role,
+                                    sentAt: msg.created_at,
+                                    messageType:
+                                        msg.display_type === 'Text'
+                                            ? ('text' as const)
+                                            : ('image' as const),
+                                    imageUrl: msg.attachment || undefined,
+                                })),
+                            },
+                            requestId: response.request_id,
+                        })
+                    })
                 ),
             sendMessage: (input) =>
                 makeRequest<SendMessageResponse>(
@@ -534,20 +633,120 @@ export const makeHostexServiceLayer = (
                 }
             ),
         getConversations: (page = 1, pageSize = 20) => {
+            const offset = (page - 1) * pageSize
             const query = new URLSearchParams({
-                page: String(page),
-                pageSize: String(pageSize),
+                offset: String(offset),
+                limit: String(pageSize),
             }).toString()
 
-            return makeRequest<ConversationsResponse>(
-                config,
-                `/conversations?${query}`
+            return makeRequest<{
+                request_id: string
+                error_code: number
+                error_msg: string
+                data: {
+                    conversations: Array<{
+                        id: string
+                        channel_type: string
+                        last_message_at: string
+                        guest: {
+                            name: string
+                            phone: string | null
+                            email: string
+                        }
+                        property_title: string
+                        check_in_date: string
+                        check_out_date: string
+                    }>
+                    total?: number
+                }
+            }>(config, `/conversations?${query}`).pipe(
+                Effect.map((response) => ({
+                    data: response.data.conversations.map((conv) => ({
+                        id: conv.id,
+                        reservationCode: undefined,
+                        guestName: conv.guest.name,
+                        propertyId: conv.property_title,
+                        channel: conv.channel_type,
+                        lastMessageAt: conv.last_message_at,
+                        unreadCount: 0,
+                    })),
+                    total:
+                        response.data.total ||
+                        response.data.conversations.length,
+                    page,
+                    pageSize,
+                    requestId: response.request_id,
+                }))
             )
         },
         getConversationDetails: (conversationId) =>
-            makeRequest<ConversationDetailsResponse>(
-                config,
-                `/conversations/${conversationId}`
+            makeRequest<{
+                request_id: string
+                error_code: number
+                error_msg: string
+                data?: {
+                    id: string
+                    channel_type: string
+                    last_message_at?: string
+                    guest: {
+                        name: string
+                        phone: string | null
+                        email: string
+                    }
+                    property_title?: string
+                    check_in_date?: string
+                    check_out_date?: string
+                    messages: Array<{
+                        id: string
+                        sender_role: 'host' | 'guest'
+                        display_type: string
+                        content: string
+                        attachment: string | null
+                        created_at: string
+                    }>
+                }
+            }>(config, `/conversations/${conversationId}`).pipe(
+                Effect.flatMap((response) => {
+                    if (!response.data || !response.data.messages) {
+                        return Effect.fail(
+                            new HostexError({
+                                message: `Invalid response structure for conversation ${conversationId}`,
+                                requestId: response.request_id,
+                                errorCode: String(response.error_code),
+                            })
+                        )
+                    }
+                    const conv = response.data
+                    const msgs = response.data.messages
+                    return Effect.succeed({
+                        data: {
+                            conversation: {
+                                id: conv.id,
+                                reservationCode: undefined,
+                                guestName: conv.guest.name,
+                                propertyId: conv.property_title || '',
+                                channel: conv.channel_type,
+                                lastMessageAt:
+                                    conv.last_message_at ||
+                                    new Date().toISOString(),
+                                unreadCount: 0,
+                            },
+                            messages: msgs.map((msg) => ({
+                                id: msg.id,
+                                conversationId: conv.id,
+                                content: msg.content,
+                                sentBy: msg.sender_role,
+                                sentAt: msg.created_at,
+                                messageType:
+                                    msg.display_type === 'Text'
+                                        ? ('text' as const)
+                                        : ('image' as const),
+                                imageUrl: msg.attachment || undefined,
+                            })),
+                        },
+                        requestId: response.request_id,
+                    })
+                })
             ),
         sendMessage: (input) =>
             makeRequest<SendMessageResponse>(
