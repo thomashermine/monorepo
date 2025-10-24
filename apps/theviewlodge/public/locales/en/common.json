@@ -43,7 +43,7 @@
         "cta": "Book Your Stay"
     },
     "intro": {
-        "heading": "Escape to The View, your personal sanctuary nestled in Stoumont — at the heart of the Belgian Ardennes Nature Park",
+        "heading": "Escape to The View, your personal sanctuary nestled in Stoumont — at the heart of the Belgian Ardennes.",
         "cta": "Book Now"
     },
     "cabin": {
@@ -141,8 +141,8 @@
         }
     },
     "testimonials": {
-        "badge": "Traveler's Favorite on Airbnb",
-        "heading": "Traveler Reviews",
+        "badge": "Guests Favorite on Airbnb",
+        "heading": "Guests Reviews",
         "subheading": "Discover testimonials from our guests about their unforgettable experiences",
         "reviews": {
             "eline": {
@@ -448,7 +448,7 @@
             },
             "parcDesSources": {
                 "badge": "At your doorstep",
-                "title": "Parc des Sources",
+                "title": "Parc Naturel des Sources",
                 "subtitle": "Nature at Your Doorstep",
                 "description": "Step into the Parc des Sources, a vast protected forest surrounding The View. With its scenic hiking trails and peaceful surroundings, it's the perfect place for nature walks, wildlife observation, and experiencing moments of tranquility in the heart of the Ardennes.",
                 "location": "Directly around The View",

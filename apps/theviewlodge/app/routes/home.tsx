@@ -135,7 +135,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     ]
 
     const galleryImages = [
-        // Kitchen images
+        {
+            alt: t('gallery.images.dining'),
+            aspectRatio: 'square',
+            src: '/images/theviewlodge-dining-window-view.jpg',
+        },
         {
             alt: t('gallery.images.kitchen'),
             aspectRatio: 'square',
@@ -145,11 +149,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             alt: t('gallery.images.hottub'),
             aspectRatio: '4/3',
             src: '/images/theviewlodge-hottub.jpg',
-        },
-        {
-            alt: t('gallery.images.aerial'),
-            aspectRatio: 'square',
-            src: '/images/theviewlodge-aerial-valley-view.jpg',
         },
         {
             alt: t('gallery.images.kitchen'),
@@ -166,11 +165,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             aspectRatio: '4/3',
             src: '/images/theviewlodge-deck-chair-landscape.jpg',
         },
-        {
-            alt: t('gallery.images.dining'),
-            aspectRatio: 'square',
-            src: '/images/theviewlodge-dining-window-view.jpg',
-        },
+
         {
             alt: t('gallery.images.bathroom'),
             aspectRatio: '3/4',
