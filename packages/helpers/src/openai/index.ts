@@ -1,8 +1,7 @@
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
-
 import { Config, Context, Effect, Layer } from 'effect'
+import { readFile } from 'fs/promises'
 import OpenAI from 'openai'
+import { join } from 'path'
 
 import type {
     ChatCompletionOptions,
@@ -223,5 +222,5 @@ export const OpenAIServiceLive = makeOpenAIServiceLive({
 })
 
 // Re-export types and helpers
-export * from './types'
 export * from './helpers'
+export * from './types'
