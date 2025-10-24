@@ -1,0 +1,852 @@
+{
+    "meta": {
+        "home": {
+            "title": "The View - Adembenemende Uitzichten, Oneindige Ontspanning. Wellness Lodge in Stoumont, België",
+            "description": "Premium wellness retraite in de Belgische Ardennen. Privé sauna, hottub, prachtige uitzichten. Perfecte romantische ontsnapping in Stoumont, België.",
+            "ogTitle": "The View - Premium Wellness Retraite in de Belgische Ardennen"
+        },
+        "vouchers": {
+            "title": "Cadeaubonnen - The View - Het Perfecte Cadeau voor een Wellness Retraite",
+            "description": "Geef het cadeau van ontspanning met The View cadeaubonnen. Perfect voor romantische ontsnappingen in de Belgische Ardennen."
+        },
+        "terms": {
+            "title": "Algemene Voorwaarden - The View",
+            "description": "Algemene voorwaarden voor reservering en verblijf bij The View, België. Annuleringsbeleid, reserveringsvoorwaarden en juridische informatie."
+        },
+        "prices": {
+            "title": "Prijzen & Beschikbaarheid - The View - Boek Uw Verblijf",
+            "description": "Ontdek onze dynamische prijzen voor The View. Bekijk real-time beschikbaarheid en tarieven voor uw perfecte wellness retraite in de Belgische Ardennen."
+        }
+    },
+    "navigation": {
+        "home": "Home",
+        "bookNow": "Boek Nu",
+        "giftVouchers": "Cadeaubonnen",
+        "prices": "Prijzen",
+        "contact": "Contact",
+        "terms": "Voorwaarden",
+        "termsAndConditions": "Algemene Voorwaarden"
+    },
+    "languages": {
+        "english": "English",
+        "french": "Français",
+        "dutch": "Nederlands",
+        "german": "Deutsch",
+        "spanish": "Español"
+    },
+    "hero": {
+        "title": {
+            "main": "Adembenemende uitzichten,",
+            "sub": "Oneindige ontspanning"
+        },
+        "subtitle": "Wellness Boslodge in het Hart van de Belgische Ardennen.",
+        "cta": "Boek uw verblijf"
+    },
+    "intro": {
+        "heading": "Ontsnap naar The View, uw persoonlijke toevluchtsoord genesteld in Stoumont — in het hart van het Natuurpark van de Belgische Ardennen",
+        "cta": "Boek nu"
+    },
+    "cabin": {
+        "heading": "Onze unieke lodge biedt sereniteit en wellness met een sauna, buitenhottub, binnenjacuzzi en volledige voorzieningen.",
+        "cta": "Boek vandaag"
+    },
+    "location": {
+        "subtitle": "The View, Stoumont",
+        "heading": "Een Verborgen Juweel in het Hart van de Natuur",
+        "description": "Gelegen op een afgelegen heuveltop in de Belgische Ardennen, biedt The View ongeëvenaarde privacy en adembenemende panoramische uitzichten. Onze unieke locatie aan de rand van het Parc Naturel des Sources garandeert dat u omringd bent door ongerepte wilde natuur terwijl u geniet van alle comfort van een premium accommodatie.\n\nVanaf uw privéterras kunt u de zonsopgang bewonderen die de valleien in gouden tinten schildert, of 's avonds ontspannen terwijl het bos tot leven komt met de geluiden van de natuur. The View is meer dan een accommodatie: het is een toegangspoort om opnieuw verbinding te maken met de natuur."
+    },
+    "amenities": {
+        "heading": "Wellness Voorzieningen",
+        "subheading": "Alles wat u nodig heeft voor een perfecte ontsnapping",
+        "features": {
+            "sauna": {
+                "title": "Privé Sauna",
+                "subtitle": "Ontspan met een prachtig uitzicht op het bos"
+            },
+            "hotTub": {
+                "title": "Hottub",
+                "subtitle": "Ontspanning in de buitenlucht met uitzicht op de vallei"
+            },
+            "whirlpool": {
+                "title": "Jacuzzi",
+                "subtitle": "Luxueuze ontspanning"
+            },
+            "kitchen": {
+                "title": "Uitgeruste Keuken",
+                "subtitle": "Alles wat u nodig heeft om thuis te koken"
+            }
+        },
+        "cta": "Ontdek het comfort",
+        "items": {
+            "wifi": {
+                "title": "Gratis WiFi",
+                "description": "Snel internet door de hele lodge"
+            },
+            "stargazing": {
+                "title": "Sterren Kijken",
+                "description": "Heldere nachtelijke hemel ver van stadsverlichting"
+            },
+            "parking": {
+                "title": "Privé Parking",
+                "description": "Toegewezen parkeerplaats"
+            },
+            "smartHome": {
+                "title": "Smart Home",
+                "description": "Multi-room audio, gepersonaliseerde welkom, romantische modus"
+            },
+            "peaceful": {
+                "title": "Vredige Retraite",
+                "description": "Ontsnap aan de drukte"
+            },
+            "localExperiences": {
+                "title": "Lokale Ervaringen",
+                "description": "Ontdek de authentieke Ardense cultuur"
+            }
+        }
+    },
+    "gallery": {
+        "heading": "Galerij",
+        "subheading": "Ontdek de schoonheid en rust van The View",
+        "cta": "Begin uw retraite",
+        "seeMore": "Meer zien",
+        "closeGallery": "Galerij sluiten",
+        "images": {
+            "aerialView": "Luchtfoto van de lodge",
+            "forestCanopy": "Boskruin",
+            "frontFacade": "Voorgevel",
+            "valleyView": "Uitzicht op de vallei",
+            "bathroomJacuzzi": "Badkamer jacuzzi",
+            "saunaView": "Uitzicht vanuit de sauna",
+            "hotTub": "Hottub",
+            "kitchen": "Keuken",
+            "diningArea": "Eethoek",
+            "theView": "The View",
+            "parking": "Privé parking",
+            "entering": "Aankomst bij de lodge",
+            "wifi": "Snel WiFi",
+            "exiting": "Vertrek van de lodge",
+            "hottub": "Hot tub met panoramisch uitzicht",
+            "aerial": "Luchtfoto van The View",
+            "sauna": "Privé sauna",
+            "outdoorDeck": "Buitenterras met landschapszicht",
+            "dining": "Eetkamer",
+            "bathroom": "Luxe badkamer",
+            "panoramic": "Panoramisch uitzicht op de vallei",
+            "exterior": "Buitenaanzicht",
+            "living": "Woonkamer",
+            "terrace": "Terras zithoek",
+            "bedroom": "Comfortabele slaapkamer",
+            "entrance": "Ingangspad",
+            "outdoor": "Buitendouche terras"
+        }
+    },
+    "testimonials": {
+        "badge": "Favoriete Gasten op Airbnb",
+        "heading": "Gastenbeoordelingen",
+        "subheading": "Ontdek de verhalen van onze gasten over hun onvergetelijke ervaringen",
+        "reviews": {
+            "eline": {
+                "author": "Eline",
+                "quote": "Prachtig huis met fantastische uitzichten! Het contact met Thomas en Caroline was zeer vriendelijk. Als je op zoek bent naar een plek om te ontspannen, zoek niet verder!"
+            },
+            "tim": {
+                "author": "Tim",
+                "quote": "Een prachtig huisje met alles wat je wilt. En de uitzichten... echt adembenemend!"
+            },
+            "conny": {
+                "author": "Conny",
+                "quote": "Uitstekend wellness huisje met ongelooflijke uitzichten en veel privacy, we vonden het geweldig!"
+            },
+            "thimo": {
+                "author": "Thimo",
+                "quote": "Wat een geweldige ervaring! We hebben echt een super verblijf gehad. De locatie is perfect om volledig te ontspannen."
+            },
+            "heidi": {
+                "author": "Heidi",
+                "quote": "Een oase van rust met een prachtig uitzicht. We komen terug!"
+            },
+            "julie": {
+                "author": "Julie",
+                "quote": "Een echt klein cocon in het hart van de natuur."
+            },
+            "ina": {
+                "author": "Ina",
+                "quote": "Ongelooflijk verblijf! The View Lodge is nog mooier dan op de foto's. Elke ochtend wakker worden met panoramische uitzichten op de natuur was onwerkelijk. De plek is gezellig, elegant en perfect rustig. De privé wellness ruimte was een hoogtepunt en alles was schoon en van hoge kwaliteit. Een verborgen juweel in de Ardennen — zeer aanbevolen!"
+            },
+            "florian": {
+                "author": "Florian",
+                "quote": "Absoluut prachtige plek! The View Lodge is een vredige ontsnapping omringd door de natuur. De uitzichten zijn adembenemend, het interieur is stijlvol en onberispelijk, en de sauna en wellness ruimte voelen als een privé spa. Elk detail is met zorg ontworpen en de sfeer is warm en ontspannend. Perfect om los te koppelen, op te laden en te genieten van pure rust. We kijken ernaar uit om terug te komen!"
+            }
+        }
+    },
+    "faq": {
+        "heading": "Veelgestelde Vragen",
+        "subheading": "Alles wat u moet weten over uw verblijf",
+        "cta": "Boek uw ontsnapping",
+        "items": {
+            "amenities": {
+                "question": "Welke voorzieningen biedt The View?",
+                "answer": "The View biedt een privé sauna, buitenhottub, binnenjacuzzi, adembenemende uitzichten en een complete smart home ervaring, inclusief een romantische modus met gepersonaliseerde verlichting en muziek."
+            },
+            "capacity": {
+                "question": "Hoeveel mensen kunnen verblijven bij The View?",
+                "answer": "De lodge is ontworpen voor maximaal twee personen en biedt de perfecte setting voor een intieme en romantische retraite. We verwelkomen ook baby's en kinderen."
+            },
+            "pets": {
+                "question": "Kan ik mijn huisdier meenemen?",
+                "answer": "Huisdieren zijn niet toegestaan vanwege allergieën en om het comfort van al onze gasten te garanderen."
+            },
+            "kids": {
+                "question": "Kan ik mijn kind meenemen?",
+                "answer": "Baby's en kinderen onder de 12 jaar zijn welkom, maar moeten worden aangegeven bij het maken van de reservering."
+            },
+            "booking": {
+                "question": "Hoe kan ik mijn verblijf bij The View boeken?",
+                "answer": "U kunt de beschikbaarheid controleren en uw verblijf direct boeken op onze website, theviewlodge.be/#book"
+            },
+            "essentials": {
+                "question": "Moet ik essentiële spullen meenemen?",
+                "answer": "Nee, wij denken aan alles voor u 😌. The View voorziet in alle benodigde toiletartikelen, handdoeken en beddengoed om u een zeer aangenaam en zorgeloos verblijf te garanderen. De keuken is ook uitgerust met enkele Nespresso capsules, vaatwastabletten en basisspecerijen."
+            },
+            "yearRound": {
+                "question": "Is The View het hele jaar door toegankelijk?",
+                "answer": "Ja, The View is het hele jaar geopend en biedt unieke ervaringen in elk seizoen, van gezellige winters tot zonnige zomerontsnappingen."
+            },
+            "activities": {
+                "question": "Welke activiteiten zijn beschikbaar in de buurt?",
+                "answer": "U kunt genieten van wandelpaden die direct vanaf de lodge beginnen in het Parc des Sources. Daarnaast ligt de lodge op 5 minuten van La Gleize, 15 minuten van Plopsa Coo, 20 minuten van Spa (thermale baden, restaurants), en 25 minuten van het circuit van Francorchamps."
+            },
+            "privacy": {
+                "question": "Hoe privé is de locatie?",
+                "answer": "De cabine is de laatste woning gelegen op een heuveltop, direct aan de rand van het natuurpark, en biedt perfecte privacy en sereniteit."
+            },
+            "kitchen": {
+                "question": "Wat is inbegrepen in de keuken?",
+                "answer": "De keuken is volledig uitgerust met alle essentiële zaken om te koken, inclusief een magnetron, traditionele oven, vaatwasser, grote koelkast & vriezer, inductiekookplaat, en enkele Nespresso capsules, vaatwastabletten en basisspecerijen."
+            },
+            "publicTransport": {
+                "question": "Is openbaar vervoer beschikbaar om The View te bereiken?",
+                "answer": "Ja, The View is bereikbaar met openbaar vervoer. We liggen op 5 minuten lopen van de TEC bushalte Stoumont Targnon, bediend door lijn 142 (beperkte dagelijkse diensten). Deze lijn brengt u naar verschillende NMBS stations: Coo, Trois Ponts en Aywaille, die gemakkelijke toegang bieden tot Luik en Brussel met treinen elk uur op weekdagen en om de twee uur in het weekend. Neem contact met ons op om te zien of het organiseren van een transfer mogelijk is."
+            }
+        }
+    },
+    "vouchers": {
+        "hero": {
+            "title": {
+                "main": "Cadeau",
+                "sub": "bonnen"
+            },
+            "subtitle": "Geef Ontspanning Cadeau",
+            "cta": "Bekijk Bonnen"
+        },
+        "intro": {
+            "heading": "Op zoek naar het perfecte cadeau voor iemand speciaal?",
+            "text": "Geef hen een onvergetelijke ontsnapping in het hart van de Belgische Ardennen met een cadeaubon voor The View - een unieke wellness cabine waar natuur en comfort samenkomen.\n\nOf het nu gaat om een romantische ontsnapping, een verjaardagsverrassing, of gewoon om bedankt te zeggen, onze cadeaubonnen bieden de flexibiliteit om het perfecte moment voor hun verblijf te kiezen."
+        },
+        "whyChoose": {
+            "heading": "Waarom kiezen voor The View?",
+            "features": {
+                "sauna": "Privé sauna, buitenhottub en binnenjacuzzi",
+                "location": "Afgelegen locatie aan de rand van het Parc des Sources",
+                "smartHome": "Smart home functies voor een verblijf op maat",
+                "views": "Adembenemende panoramische uitzichten"
+            },
+            "tagline": "The View is niet alleen een bestemming - het is een toevluchtsoord van ontspanning en elegantie.",
+            "cta": "Geef vandaag het cadeau van sereniteit."
+        },
+        "selection": {
+            "heading": "Kies Uw Cadeaubon",
+            "subheading": "Selecteer het perfecte bedrag voor iemand speciaal",
+            "mostPopular": "Meest Populair",
+            "amounts": {
+                "49": {
+                    "description": "Perfect voor een klein gebaar",
+                    "details": "Een attent cadeau om bij te dragen aan een onvergetelijke wellness ervaring."
+                },
+                "99": {
+                    "description": "Genereuze bijdrage",
+                    "details": "Een genereus cadeau dat hen dichter bij hun perfecte wellness retraite brengt."
+                },
+                "199": {
+                    "description": "Typische doordeweekse nacht",
+                    "details": "Perfect voor een mid-week ontsnapping, dekt het grootste deel van een vredige nacht."
+                },
+                "299": {
+                    "description": "Typische weekendnacht",
+                    "details": "Het perfecte cadeau voor een romantische weekendontsnapping."
+                },
+                "499": {
+                    "description": "Typisch 2-nachten weekend",
+                    "details": "Het cadeau van ultieme ontspanning - een volledig weekendretraite."
+                }
+            },
+            "purchaseButton": "Koop €{{amount}} Bon"
+        },
+        "custom": {
+            "heading": "Heeft u een Aangepast Bedrag Nodig?",
+            "text": "Voor een aangepast bedrag of een specifieke nacht, neem direct contact met ons op.",
+            "emailUs": "E-mail Ons",
+            "phoneText": "Telefoon/SMS",
+            "cta": "Neem Contact Op voor een Aangepaste Bon"
+        },
+        "testimonials": {
+            "heading": "Wat Onze Gasten Zeggen",
+            "cta": "Ontdek The View"
+        },
+        "howItWorks": {
+            "heading": "Hoe het werkt",
+            "features": {
+                "instantDelivery": {
+                    "title": "Directe levering",
+                    "description": "U ontvangt een unieke boncode per e-mail"
+                },
+                "transferable": {
+                    "title": "Overdraagbaar",
+                    "description": "De code is niet op naam"
+                },
+                "flexibleValue": {
+                    "title": "Flexibele waarde",
+                    "description": "Wordt toegepast als korting op de totale prijs van uw verblijf, aangezien onze prijzen per nacht variëren."
+                },
+                "remainderKept": {
+                    "title": "Saldo behouden",
+                    "description": "Het resterende saldo is herbruikbaar voor andere verblijven"
+                },
+                "valid12Months": {
+                    "title": "12 maanden geldig",
+                    "description": "Lang genoeg om rustig een verblijf te organiseren"
+                },
+                "nonRefundable": {
+                    "title": "Niet terugbetaalbaar",
+                    "description": "Kan niet worden ingewisseld voor geld"
+                }
+            }
+        },
+        "cta": {
+            "heading": "Klaar om het Perfecte Cadeau te Geven?",
+            "text": "Kies uit onze selectie cadeaubonnen en geef iemand speciaal het cadeau van ontspanning en wellness.",
+            "button": "Bekijk Alle Bonnen"
+        }
+    },
+    "terms": {
+        "heading": "Algemene Voorwaarden",
+        "subheading": "Lees deze algemene voorwaarden zorgvuldig door voordat u uw verblijf bij The View boekt.",
+        "operator": {
+            "heading": "Informatie over de Exploitant",
+            "intro": "The View wordt geëxploiteerd door:",
+            "name": "Crafted Signals BV",
+            "address": "Anderlechtstraat 81/001",
+            "city": "1060 Sint-Gillis, België",
+            "vat": "BTW: BE 0798 582 489"
+        },
+        "booking": {
+            "heading": "Reserveringsvoorwaarden",
+            "intro": "Door een reservering te maken bij The View, gaat u akkoord met deze algemene voorwaarden. Alle reserveringen zijn onder voorbehoud van beschikbaarheid en bevestiging.",
+            "reservationProcess": {
+                "heading": "Reserveringsproces",
+                "item1": "Reserveringen kunnen worden gemaakt via ons officiële boekingsplatform of door direct contact",
+                "item2": "Reserveringsbevestiging wordt binnen 24 uur per e-mail verzonden",
+                "item3": "Volledige betaling is vereist 14 dagen voor aankomst"
+            },
+            "guestCapacity": {
+                "heading": "Gastencapaciteit",
+                "text": "The View verwelkomt maximaal 2 personen. Baby's en kinderen onder de 12 jaar zijn welkom, maar moeten worden aangegeven bij het maken van de reservering. De accommodatie is ontworpen als een romantische retraite voor volwassenen."
+            }
+        },
+        "cancellation": {
+            "heading": "Annuleringsbeleid",
+            "refundPolicy": {
+                "heading": "Terugbetalingsbeleid",
+                "moreThan14Days": {
+                    "label": "Meer dan 14 dagen voor aankomst:",
+                    "text": "Volledige terugbetaling van alle betalingen"
+                },
+                "lessThan14Days": {
+                    "label": "14 dagen of minder voor aankomst:",
+                    "text": "Geen terugbetaling beschikbaar"
+                }
+            },
+            "notice": "Annuleringen moeten schriftelijk worden gedaan per e-mail of via ons boekingsplatform. De annuleringsdatum wordt bepaald door de ontvangst van uw schriftelijke annuleringsmelding."
+        },
+        "checkInOut": {
+            "heading": "Inchecken en Uitchecken",
+            "checkIn": {
+                "heading": "Inchecken",
+                "time": "Vanaf 16:00 uur",
+                "note": "Zelfstandig inchecken met verstrekte toegangscode"
+            },
+            "checkOut": {
+                "heading": "Uitchecken",
+                "time": "Voor 12:00 uur",
+                "note": "Laat uitchecken kan beschikbaar zijn op aanvraag"
+            }
+        },
+        "houseRules": {
+            "heading": "Huisregels",
+            "permitted": {
+                "heading": "Toegestaan",
+                "item1": "Maximum 2 volwassenen (baby's en kinderen onder de 12 jaar zijn welkom)",
+                "item2": "Rustig genieten van de accommodatie",
+                "item3": "Gebruik van alle verstrekte voorzieningen",
+                "item4": "Roken alleen op de buitenterrassen"
+            },
+            "notPermitted": {
+                "heading": "Niet Toegestaan",
+                "item1": "Huisdieren van welke aard dan ook",
+                "item2": "Feesten of evenementen",
+                "item3": "Roken binnen in de lodge",
+                "item4": "Overmatig lawaai"
+            }
+        },
+        "contact": {
+            "heading": "Contactinformatie",
+            "operated": "Geëxploiteerd door Crafted Signals BV",
+            "email": "E-mail:",
+            "website": "Website:"
+        },
+        "effectiveDate": {
+            "lastUpdated": "Laatst bijgewerkt:",
+            "date": "Oktober 2025",
+            "notice": "Deze algemene voorwaarden zijn onmiddellijk van kracht en zijn van toepassing op alle reserveringen die na deze datum worden gemaakt."
+        }
+    },
+    "footer": {
+        "instagram": "Instagram"
+    },
+    "contact": {
+        "email": "hello@theviewlodge.be",
+        "phone": "+32 495 64 99 99",
+        "website": "theviewlodge.be"
+    },
+    "visitUs": {
+        "heading": "The View",
+        "address": {
+            "line1": "Targnon",
+            "line2": "4987 Stoumont",
+            "line3": "België"
+        },
+        "cta": "Bezoek ons"
+    },
+    "giftVoucherCTA": {
+        "heading": "Cadeaubonnen",
+        "description": "Geef een cadeau van ontspanning en wellness bij The View",
+        "cta": "Ontdek cadeaubonnen"
+    },
+    "activities": {
+        "heading": "Rondom The View",
+        "subheading": "Ontdek de natuurlijke schoonheid en attracties rondom The View",
+        "cta": "Plan uw ontsnapping",
+        "items": {
+            "fagnes": {
+                "badge": "Voor de deur",
+                "title": "De Hoge Venen",
+                "subtitle": "Wilde Natuurlijke Schoonheid",
+                "description": "Verken de uitgestrekte open landschappen van de Hoge Venen, een uniek natuurgebied nabij The View. Perfect voor wandelen en wildlife spotten, de serene moerassen en panoramische uitzichten bieden een echte ontsnapping in de natuur.",
+                "location": "Direct rondom The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Hautes+Fagnes",
+                "imageAlt": "Panoramisch landschap van de Hoge Venen met houten pad"
+            },
+            "parcDesSources": {
+                "badge": "Voor de deur",
+                "title": "Parc des Sources",
+                "subtitle": "Natuur voor de Deur",
+                "description": "Stap het Parc des Sources binnen, een uitgestrekt beschermd bos rondom The View. Met zijn schilderachtige wandelpaden en vredige omgeving is het de perfecte plek voor natuurwandelingen, wildlife spotten en momenten van rust in het hart van de Ardennen.",
+                "location": "Direct rondom The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Parc+des+Sources+Spa+Belgium",
+                "imageAlt": "Bospad in het Parc des Sources"
+            },
+            "spa": {
+                "badge": "20 min",
+                "title": "De Stad Spa",
+                "subtitle": "Wellness en Charme",
+                "description": "Ontdek de historische stad Spa, beroemd om zijn thermale wateren en wellness erfgoed. Geniet van wereldklasse spa behandelingen, charmante straatjes en lokale keuken in deze UNESCO werelderfgoedlocatie.",
+                "location": "20 minuten van The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Spa+Belgium",
+                "imageAlt": "Historisch stadscentrum van Spa"
+            },
+            "francorchamps": {
+                "badge": "30 min",
+                "title": "Circuit van Francorchamps",
+                "subtitle": "Spanning op de Baan",
+                "description": "Ervaar de adrenaline van het Circuit van Spa-Francorchamps, slechts 30 minuten van The View. Beroemd om zijn Formule 1 races en iconische bochten, het is een must-visit bestemming voor motorsportliefhebbers.",
+                "location": "30 minuten van The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Circuit+de+Spa-Francorchamps",
+                "imageAlt": "Circuit van Spa-Francorchamps"
+            },
+            "ninglinspo": {
+                "badge": "15 min",
+                "title": "Ninglinspo Wandeling",
+                "subtitle": "Natuurwonder",
+                "description": "Ontdek de adembenemende schoonheid van Ninglinspo, de meest spectaculaire rivier van België. Volg het schilderachtige wandelpad langs watervallen en door dramatische rotsformaties in dit beschermde natuurgebied.",
+                "location": "15 minuten van The View",
+                "locationUrl": "https://www.google.com/maps/search/?api=1&query=Ninglinspo+Belgium",
+                "imageAlt": "Ninglinspo wandeling"
+            }
+        }
+    },
+    "prices": {
+        "hero": {
+            "title": {
+                "main": "Prijzen &",
+                "sub": "Beschikbaarheid"
+            },
+            "subtitle": "Transparante en vraaggestuurde prijzen",
+            "cta": "Controleer beschikbaarheid"
+        },
+        "dynamicPricing": {
+            "heading": "Onze Prijsaanpak",
+            "text": "Bij The View geloven we in eerlijke en transparante prijzen. Onze tarieven fluctueren natuurlijk op basis van vraag, seizoen en beschikbaarheid.\n\nDit betekent dat u vaak een uitstekende prijs-kwaliteitverhouding kunt vinden door te boeken tijdens rustigere periodes, terwijl hoogseizoen de hogere vraag naar onze exclusieve wellness retraite weerspiegelt. We willen flexibele reizigers belonen met betere tarieven, terwijl we iedereen dezelfde kwaliteit en service garanderen."
+        },
+        "factors": {
+            "heading": "Wat Beïnvloedt Onze Prijzen?",
+            "subheading": "Verschillende factoren bepalen het tarief per nacht van uw verblijf",
+            "items": {
+                "season": {
+                    "title": "Seizoen & Weer",
+                    "description": "Hoogseizoen zoals zomer en vakanties hebben over het algemeen hogere tarieven vanwege toegenomen vraag"
+                },
+                "dayOfWeek": {
+                    "title": "Dag van de Week",
+                    "description": "Doordeweekse verblijven zijn over het algemeen duurder dan weekendnachten"
+                },
+                "demand": {
+                    "title": "Huidige Vraag",
+                    "description": "Rustigere periodes bieden betere prijs-kwaliteitverhouding"
+                },
+                "advance": {
+                    "title": "Boekingsvenster",
+                    "description": "Vroeg boeken kan betere tarieven garanderen, en last-minute deals kunnen soms zeer voordelig zijn"
+                },
+                "special": {
+                    "title": "Speciale Evenementen",
+                    "description": "Lokale evenementen zoals F1 races of festivals kunnen de prijzen beïnvloeden"
+                },
+                "lastMinute": {
+                    "title": "Last-Minute Deals",
+                    "description": "Af en toe bieden we kortingen voor spontane korte-termijn ontsnappingen. Volg ons gerust op Instagram om niets te missen!"
+                }
+            },
+            "cta": "Bekijk live prijzen"
+        },
+        "vouchers": {
+            "heading": "Overweeg Onze Cadeaubonnen",
+            "text": "Op zoek naar een goede deal? Onze cadeaubonnen zijn een perfecte manier om een toekomstig verblijf veilig te stellen. Ze verlopen na 12 maanden, kunnen worden gebruikt voor elke reservering en zijn prachtige cadeaus voor uw dierbaren.",
+            "cta": "Ontdek Cadeaubonnen"
+        },
+        "booking": {
+            "title": "Controleer Beschikbaarheid & Prijzen",
+            "description": "Selecteer uw data hieronder om real-time beschikbaarheid en prijzen voor The View te zien"
+        }
+    },
+    "bookingWidget": {
+        "title": "Boek Uw Verblijf",
+        "description": "Boek uw perfecte ontsnapping bij The View",
+        "iframeTitle": "Boekingswidget"
+    },
+    "guide": {
+        "meta": {
+            "title": "Gids voor Gasten - The View",
+            "description": "Complete gids voor gasten van The View - uw wellness boscabine in de Belgische Ardennen",
+            "ogTitle": "Gids voor Gasten - The View Lodge"
+        },
+        "title": "Gids voor Gasten",
+        "subtitle": "Uw wellness bosreservaat",
+        "nav": {
+            "welcome": "Welkom",
+            "parking": "Parkeren",
+            "checkin": "Inchecken & Toegang",
+            "wellness": "Wellness & Spa",
+            "kitchen": "Keuken & Dineren",
+            "sofabed": "Slaapbank",
+            "smarthome": "WiFi & Smart Home",
+            "trashes": "Afval & Recycling",
+            "activities": "Activiteiten",
+            "restaurants": "Restaurants",
+            "checkout": "Uitchecken",
+            "emergency": "Noodgeval"
+        },
+        "contact": {
+            "title": "Hulp Nodig?"
+        },
+        "welcome": {
+            "title": "Welkom bij",
+            "subtitle": "Wellness Boskabine",
+            "greeting": "Beste",
+            "greetingDefault": "Beste gasten,",
+            "intro": "Welkom in uw bosreservaat. Gelegen aan de rand van Le Parc des Sources, is The View een plek die we met zorg en liefde hebben gecreëerd — een plek van rust, schoonheid en herverbinding.",
+            "message": "We hopen dat u van elke seconde geniet. Hier is alles wat u moet weten om uw verblijf soepel en sereen te maken.",
+            "quote": "\"The View is niet alleen een bestemming. Het is een ervaring — en vertrouw ons, u wilt wat langer blijven.\"",
+            "authors": "— Caroline & Thomas"
+        },
+        "parking": {
+            "title": "Aankomst & Parkeren",
+            "instructionsTitle": "Parkeerinstructies",
+            "instructions": "Parkeer langs het pand, zodat auto's aan beide kanten kunnen passeren."
+        },
+        "checkin": {
+            "title": "Inchecken, Binnenkomen & Verlaten",
+            "entering": {
+                "title": "Binnenkomen",
+                "step1": "Vind het toetsenpaneel naast de deur",
+                "step2": "Typ de code in die u privé heeft ontvangen",
+                "step3": "De deur zal automatisch ontgrendelen (dit kan enkele seconden duren)",
+                "step4": "Vergrendelen: om vanaf binnen te vergrendelen, til de deurhendel omhoog en draai de ronde knop naar rechts"
+            },
+            "exiting": {
+                "title": "Verlaten",
+                "step1": "Til de deurhendel omhoog totdat u een klik hoort",
+                "step2": "Druk op \"<\" op het toetsenpaneel om de deur te vergrendelen",
+                "step3": "Dat is het! Geniet van uw dag"
+            }
+        },
+        "wellness": {
+            "title": "Wellness: Sauna, Bubbelbad & Whirlpool Bad",
+            "sauna": {
+                "title": "Privé Sauna",
+                "gettingStarted": "Aan de slag:",
+                "preheating": "Begin ongeveer 1 uur voor uw sessie met voorverwarmen",
+                "control": "Gebruik de tablet in de woonkamer of het kleine scherm aan de linkerzijde van de sauna om het in of uit te schakelen",
+                "readyTitle": "Hoe te Weten dat het Gereed is:",
+                "ready": "Gereed als het ongeveer 90°C bereikt",
+                "monitor": "Controleer de temperatuur op de tablet, het kleine scherm en de thermometer binnenin",
+                "safetyTitle": "Veiligheidstips voor Gelukzalig Gebruik:",
+                "sessions": "Beperk sessies tot 15-20 minuten per keer",
+                "hydrate": "Blijf gehydrateerd voor en na",
+                "turnOff": "Zet de sauna uit wanneer u klaar bent met gebruik",
+                "avoid": "Vermijd alcohol of zware maaltijden voordat u binnengaat"
+            },
+            "whirlpool": {
+                "title": "Binnen Whirlpool Bad",
+                "intro": "In de badkamer vindt u een whirlpool bad:",
+                "step1": "Vul het bad totdat het water boven de jets is",
+                "step2": "Druk 5 seconden op de Aan-knop om de bubbels te activeren",
+                "step3": "Geniet van het moment!"
+            },
+            "hottub": {
+                "title": "Buiten Scandinavische Hot Tub",
+                "coverAccess": "Deksel Toegang: Aan beide zijden van de Noordse hot tub zijn er clips die het deksel gesloten houden. De code om ze te ontgrendelen is 0000.",
+                "intro": "Om van de buiten hot tub te genieten:",
+                "step1": "Verwijder de chloordrijver voordat u de hot tub gebruikt",
+                "step2": "Neem een snelle douche voordat u binnengaat",
+                "step3": "Gebruik de knoppen aan de zijkant om de jets en lichten te bedienen",
+                "step4": "Het water wordt op de perfecte temperatuur gehouden — u hoeft niets aan te passen",
+                "step5": "Wanneer u klaar bent, plaats de dop en de chloordrijver terug",
+                "step6": "Bewaar romantische momenten voor de slaapkamer — laten we de hot tub comfortabel houden voor iedereen"
+            }
+        },
+        "kitchen": {
+            "title": "Keuken & Dineren",
+            "fullyEquipped": "Volledig Uitgeruste Keuken",
+            "intro": "De keuken is volledig uitgerust met alle benodigdheden voor koken, inclusief:",
+            "items": {
+                "microwave": "Magnetronoven",
+                "oven": "Reguliere oven",
+                "induction": "Inductiekookplaat",
+                "dishwasher": "Vaatwasser",
+                "fridge": "Grote koelkast & vriezer",
+                "coffee": "Koffiezetapparaat",
+                "raclette": "Raclette grill",
+                "cookware": "Volledige kookgerei & keukengerei",
+                "dining": "Dineerbenodigdheden"
+            },
+            "drawerTitle": "Dubbele lade in de keuken",
+            "drawerInfo": "In de eerste lade zit een tweede, kleinere lade. Deze bevat kruiden, onder andere dingen.",
+            "breakfast": {
+                "title": "Ontbijtdienst (op bestelling)",
+                "order": "Bestel minstens 24 uur van tevoren (minimum twee personen)",
+                "delivery": "Vers en lokaal bij uw deur geleverd",
+                "small": {
+                    "title": "Klein — €25/pp",
+                    "item1": "🥐 Pistolet, croissant, pain au chocolat",
+                    "item2": "🍞 Meergranenbrood, boter, jam",
+                    "item3": "🥓 Gekookte ham, kaas in gouda-stijl",
+                    "item4": "🍊 250ml sinaasappelsap, 1 fruit",
+                    "item5": "🥣 Biologische yoghurt naturel"
+                },
+                "medium": {
+                    "title": "Medium — €30/pp",
+                    "includes": "Alles in klein plus:",
+                    "item1": "🧀 Extra vleeswaren & kaas",
+                    "item2": "🍯 Zelfgemaakte granola + melk",
+                    "item3": "🥧 Groentequiche",
+                    "item4": "🍇 Verse fruitsalade",
+                    "item5": ""
+                },
+                "brunch": {
+                    "title": "Brunch — €40/pp",
+                    "includes": "Alles in medium plus:",
+                    "item1": "🥣 Groentesoep",
+                    "item2": "🐟 Zelfgemaakte gerookte zalm",
+                    "item3": "🍳 Roerei & spek",
+                    "item4": "🍰 Assortiment desserts",
+                    "item5": ""
+                }
+            }
+        },
+        "sofabed": {
+            "title": "Slaapbank",
+            "intro": "Als u de bank ontvouwt:",
+            "step1": "Verwijder de grote rugkussens",
+            "step2": "Zoek de handgreep onder de zitting",
+            "step3": "Til het soepel op — het bed ontvouwt zich gemakkelijk"
+        },
+        "smarthome": {
+            "title": "WiFi, Smart Home & Media",
+            "wifi": {
+                "title": "WiFi Verbinding",
+                "instructions": "Om verbinding te maken met WiFi:",
+                "scan": "Scan deze QR-code, of gebruik:"
+            },
+            "controls": {
+                "title": "Smart Home Besturing",
+                "heating": "Verwarming",
+                "heatingInfo": "Wij verwarmen de cabine voor. Ontspan gewoon, het is allemaal geregeld 😌",
+                "lights": "Lichten & Sfeer",
+                "lightsInfo": "Gebruik de wandgemonteerde tablet in de woonkamer om:",
+                "adjust": "Kleur en helderheid van de verlichting aan te passen",
+                "ambiance": "Verschillende sferen te creëren (romantisch, gezellig, etc.)",
+                "romance": "Er is ook een Romantiekmodus — probeer het 😉",
+                "music": "Muziek",
+                "tablet": "Gebruik de tablet in de woonkamer om muziek in elke kamer af te spelen",
+                "cast": "Of open Spotify/YouTube Music op uw telefoon en kies de luidspreker uit de lijst van Google Cast-apparaten"
+            }
+        },
+        "waste": {
+            "title": "Afval & Recycling",
+            "intro": "Help ons onze prachtige omgeving schoon te houden door uw afval correct te sorteren.",
+            "glass": {
+                "title": "Glas",
+                "items": "Flessen, potten"
+            },
+            "pmc": {
+                "title": "PMC",
+                "items": "Plastic verpakkingen, metaal, Tetrapack"
+            },
+            "cardboard": {
+                "title": "Karton",
+                "items": "Kartonnen dozen, papier"
+            },
+            "residual": {
+                "title": "Residuafval",
+                "items": "Alles overig"
+            },
+            "location": "Als de kleine bakken binnen vol zijn, kunt u ze legen in de opslagruimte bij de trap bij de ingang, onder het terras.",
+            "thanks": "Dank u voor uw hulp bij het onderhouden van onze milieuvriendelijke lodge!"
+        },
+        "activities": {
+            "title": "Activiteiten",
+            "walking": {
+                "title": "Wandelen vanaf de Lodge",
+                "panorama": {
+                    "title": "🌄 Snelle Panoramawandeling (5 minuten)",
+                    "description": "Neem het pad achter de parkeerplaats achter de hut voor een prachtig panoramisch uitzicht in slechts 5 minuten.",
+                    "tip": "Perfect voor een ochtendkoffie of zonsondergang bezichtiging!"
+                },
+                "alltrails": {
+                    "title": "📱 AllTrails App - Ontdek Meer Wandelpaden",
+                    "description": "Download AllTrails om honderden wandelpaden in de Ardennen te ontdekken met kaarten, beoordelingen en moeilijkheidsgraden."
+                }
+            },
+            "nearby": {
+                "title": "In de Buurt (met de auto)",
+                "ninglinspo": {
+                    "title": "🥾 Balade de Ninglinspo",
+                    "description": "Een van de mooiste wandelingen in de Ardennen, langs een wilde beek.",
+                    "url": "https://www.google.com/maps/search/Balade+de+Ninglinspo"
+                },
+                "vecquee": {
+                    "title": "🌲 Promenade de la Vecquée",
+                    "description": "Ideaal voor volledige bosonderdompeling.",
+                    "url": "https://www.google.com/maps/search/Promenade+de+la+Vecqu%C3%A9e"
+                },
+                "coo": {
+                    "title": "🏔️ Tour du Lac de Coo",
+                    "description": "Aangenaam en toegankelijk, met een waterval als bonus.",
+                    "url": "https://www.google.com/maps/search/Tour+du+Lac+de+Coo"
+                }
+            },
+            "seasonal": {
+                "title": "Seizoensgebonden Ervaringen",
+                "rightNow": "Op dit moment",
+                "spring": {
+                    "title": "🌸 Lente Wilde Bloemen & Bosontwaken",
+                    "description": "Maart - Mei: Perfecte tijd voor boswandelingen als de natuur ontwaakt met bloeiende wilde bloemen en fris groen gebladerte.",
+                    "details": "Beste plekken: Ninglinspo pad en Vecquée bosroutes."
+                },
+                "summer": {
+                    "title": "☀️ Buitenactiviteiten & Rivieravonturen",
+                    "description": "Juni - Augustus: Ideaal voor wateractiviteiten, wandelen en genieten van de buiten hot tub onder de sterren.",
+                    "details": "Uitgebreide daglichturen perfect voor avondontspanning in de natuur."
+                },
+                "autumn": {
+                    "title": "🦌 Hertbronsseizoen (Brame du cerf)",
+                    "description": "September - Oktober: Ervaar de unieke geluiden van het hertbronsseizoen in de Ardennenbossen.",
+                    "details": "We kunnen de herten vaak vanaf het terras horen. U kunt ook naar La Gleize gaan, nabij het recyclingcentrum, op de kruising van rue La Vaulx-Renard en Froidcour. Parkeer langs de weg en betreed het bos vroeg in de ochtend of avond."
+                },
+                "winter": {
+                    "title": "❄️ Winter Wellness & Gezellige Retraites",
+                    "description": "December - Februari: Perfect sauna- en hot tub weer! Geniet van het contrast van stoomachtige ontspanning en frisse lucht.",
+                    "details": "Magische winterwandelingen in besneeuwde bossen, gevolgd door opwarmen in de sauna."
+                }
+            }
+        },
+        "restaurants": {
+            "title": "Aanbevolen Restaurants",
+            "linea": {
+                "name": "Linea",
+                "description": "Italiaans +++",
+                "type": "Uitstekende Italiaanse keuken",
+                "url": "https://www.google.com/maps/search/Linea+restaurant+Stoumont+Belgium"
+            },
+            "douxragots": {
+                "name": "Les Doux Ragots",
+                "description": "Goed uitgevoerde brasserie, prachtige locatie",
+                "type": "Lokale brasserie met geweldige sfeer",
+                "url": "https://www.google.com/maps/search/Les+Doux+Ragots+restaurant+Belgium"
+            },
+            "bpost": {
+                "name": "BPost Stoumont - Maaltijdverdeler",
+                "description": "Automatische maaltijdverdeler naast het postkantoor",
+                "type": "Snelle en gemakkelijke maaltijdopties",
+                "url": "https://www.google.com/maps/place/Route+de+l%27Ambl%C3%A8ve+50,+4987+Stoumont,+Belgium"
+            },
+            "artegusto": {
+                "name": "Arte Gusto",
+                "description": "Pizza afhaal (bestel 2x per week)",
+                "type": "Heerlijke afhaalpizza's op bestelling",
+                "url": "https://www.facebook.com/artegusto.be"
+            }
+        },
+        "checkout": {
+            "title": "Uitchecken",
+            "leaving": {
+                "title": "Vertrekken & De Deur Vergrendelen",
+                "step1": "Til de deurhendel omhoog totdat u een klik hoort",
+                "step2": "Druk op \"<\" op het toetsenpaneel om de deur te vergrendelen",
+                "step3": "Stuur ons een bericht op Airbnb of live chat om ons te laten weten dat u bent vertrokken"
+            },
+            "thatsIt": "Dat is het!",
+            "message": "Niets anders is nodig — wij zorgen voor alles, inclusief afval, schoonmaak en voorbereidingen voor de volgende gasten. Bedankt voor uw verblijf bij ons!",
+            "feedback": "Als er iets is dat we moeten verbeteren, neem dan contact met ons op. Anders, een goede recensie op",
+            "and": "en/of",
+            "helps": "helpt ons altijd enorm! 🙏"
+        },
+        "emergency": {
+            "title": "Noodinformatie",
+            "needHelp": "Hulp Nodig?",
+            "contact": "Neem op elk moment contact op via WhatsApp of telefoon:",
+            "urgent": "Noodgeval?",
+            "callTwice": "Bel twee keer achter elkaar om ons onmiddellijk te waarschuwen.",
+            "services": "Nooddiensten",
+            "medical": "Voor medische/brandongevallen",
+            "european": "Europees Noodnummer",
+            "propertyInfo": "Informatie over het pand",
+            "address": "Adres",
+            "hospitals": "Dichtstbijzijnde Ziekenhuizen",
+            "malmedy": "Centre Hospitalier de Malmedy - @25 minuten",
+            "liege": "CHR Citadelle (Luik) - @45 minuten",
+            "pharmacy": "Dichtstbijzijnde Apotheek",
+            "pharmacyInfo": "Apotheek de Stoumont - @10 minuten"
+        }
+    }
+}

@@ -1,14 +1,17 @@
 # Dockerfile.storybook
 #
-# This Dockerfile is used to build and serve Storybook for the frontend app
+# This Dockerfile is used to build and serve Storybook for apps in apps/
 # It automatically builds all packages in packages/* that have a build script.
-# docker build -t my-storybook -f Dockerfile.storybook .
+# Pass the name of the app as follows:
+# docker build -t my-storybook -f Dockerfile.storybook --build-arg APP_NAME=frontend .
 #
 # ======================================================================================================================
 # Builder
 # ======================================================================================================================
 FROM node:24-alpine AS builder
 
+# Define build argument for app name
+ARG APP_NAME=frontend
 
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
@@ -20,7 +23,7 @@ COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
 COPY tsconfig.base.json ./
 
 # Copy all package.json files for dependency installation
-COPY apps/frontend/package.json ./apps/frontend/
+COPY apps/${APP_NAME}/package.json ./apps/${APP_NAME}/
 # Copy packages directory structure (wildcard doesn't preserve subdirs, so we copy all and clean up)
 COPY packages ./packages
 RUN find packages -mindepth 2 -type f ! -name 'package.json' -delete && \
@@ -31,7 +34,7 @@ RUN pnpm install --frozen-lockfile
 
 # Copy source code for all workspace packages
 COPY packages ./packages
-COPY apps/frontend ./apps/frontend
+COPY apps/${APP_NAME} ./apps/${APP_NAME}
 
 # Build all workspace packages that have a build script
 RUN for pkg in /app/packages/*; do \
@@ -45,7 +48,7 @@ RUN for pkg in /app/packages/*; do \
     done
 
 # Build Storybook
-WORKDIR /app/apps/frontend
+WORKDIR /app/apps/${APP_NAME}
 RUN pnpm run build-storybook
 
 # ======================================================================================================================
@@ -62,7 +65,7 @@ WORKDIR /app
 RUN npm install -g serve
 
 # Copy built Storybook files from builder stage
-COPY --from=builder /app/apps/frontend/storybook-static ./storybook-static
+COPY --from=builder /app/apps/${APP_NAME}/storybook-static ./storybook-static
 
 # Expose port 3000 for consistency with other services
 EXPOSE 3000
