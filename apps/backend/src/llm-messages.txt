@@ -1,0 +1,4074 @@
+=======================================================================================================================
+                                HOSTEX MESSAGE EXPORT FOR LLM TRAINING
+                                   Generated: 2025-10-24T11:16:23.290Z
+                              Messages Since: 2025-07-15T00:00:00.000Z
+                                               Total Conversations: 41
+                                                   Total Messages: 549
+=======================================================================================================================
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2331644847 | Guest: Evert | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:23.228Z
+Total Messages: 1
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-24T10:45:48.000Z)
+  Hello Thomas,
+  
+  First of all, big compliments on your beautiful house and interior design, we absolutely love it!
+  
+  We’re looking to get away for a few days after Christmas and, as big fans of the Ardennes, we came across your place. As
+  much as we’d love to stay, our budget doesn’t quite match the current Airbnb rate of €1,739 for three nights.
+  
+  Would you be open to adjusting the rate for that period?
+  
+  Looking forward to your (hopefully positive) reply!
+  
+  Warm regards,
+  
+  Evert and Loes
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2313734718 | Guest: Frank Wouter Van Dijk | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:23.836Z
+Total Messages: 11
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-05T13:54:39.000Z)
+  Hi Thomas, we just booked your cottage for 23 October, we are really looking forward to this! We want to go hiking in
+  the area for 2 or 3 days and be able to eat out somewhere in the evening. Do you have nice/good tips for us where we can
+  find hiking trails and tips for restaurants in the area? Kind regards, Frank and Marina
+
+[GUEST] (2025-10-07T19:23:39.000Z)
+  Hi, have you seen the above? Don't want to be rude but I'm curious! Have a nice evening! Kind regards, Frank
+
+[HOST] (2025-10-07T19:48:46.000Z)
+  Hi Frank ! Sorry for the late reply, it has been some crazy day at work 😊 
+  We very much look forward to welcoming you at The View! 
+  
+  For dinner, we can highly recommend Linea, in Spa, for beautiful italian food (our favorite) !
+  https://www.linea.restaurant/ - Wwe suggest making a reservation in advance).
+  
+  In Spa, you can also have some nice fondue and raclette at Le Chalet Suisse https://www.chaletsuisse.be/. - reservation
+  in advance too).
+  
+  While in Spa, it’s definitely worth taking some time to walk around this beautiful little town, and if you enjoy
+  pastries, Chez Blanche is an absolute must. Another easy and nice option is Les Doux Ragots in La Gleize, where you can
+  enjoy fries and a burger (or a boulet à la liégeoise) in a cozy chalet atmosphere. There are also a few pizzerias in
+  Coo, easy for a more casual dinner. And for something easy and practical, you will also find a prepared-meal distributor
+  next to the BPost in Stoumont.
+  
+  As for trails, I can very much recommend installing the iOS/Android app "AllTrails", it's very complete. We have a few
+  trails starting from the lodge, and we are quite near the very popular and famous "Ninglinspo" as well 😊 
+  
+  We hope you’ll enjoy your stay ! Don't hesitate if you have any other question ! :)
+
+[GUEST] (2025-10-07T19:51:24.000Z)
+  Hi Thomas, thank you for the message!! We will look into it! 🙏👌
+
+[GUEST] (2025-10-10T17:29:15.000Z)
+  Hi Thomas, another question we love sushi very much but are not necessarily people who are looking for very expensive
+  and exclusive, do you have another tip for where we might go? Grt Frank and Marina
+
+[HOST] (2025-10-10T17:40:28.000Z)
+  Hi Frank, in takeaway I can very much recommend “Yuuki” 😊 
+  
+  https://maps.app.goo.gl/YTHa1S4YQmc7uAV37?g_st=ipc
+  
+  Have a nice evening,
+  
+  🌳🌳 Thomas et Caroline
+
+[HOST] (2025-10-23T06:22:09.000Z)
+  Hello Frank !
+  
+  Today is the big day already! 😌
+  We can’t wait to welcome you at The View 😊 
+  
+  Your checkin starts at 4pm ⏤ but I’ll reach out here if by any chance the place is ready earlier. 
+  
+  You can park the car alongside the main entrance, as the road is quite slippery these days. 
+  
+  Your personal code is : 295281. 
+  
+  And the code for the bath tub is 0000.
+  
+  Then inside you’ll find a small guide that explains everything right on the coffee table ! And if you need anything I’m
+  just a message a way 😌
+  
+  Have a safe trip! 😊 
+  
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-23T12:58:45.000Z)
+  Hi, we are really looking forward to it! We have just taken a beautiful walk at Nadrin and are now eating something in
+  La Roche and Ardenne. I expect we'll be there in about 1.5 hours. Regards, Frank and Marina
+
+[GUEST] (2025-10-23T14:53:49.000Z)
+  We have arrived and it is beautiful!! We just wanted to raise the temperature a little, but we can't find that directly
+  on the tablet, which menu should we look in?
+
+[HOST] (2025-10-23T15:03:50.000Z)
+  Hello Frank! Glad you liked it ☺️ Sorry that the lodge was not warm enough to your liking, I’ve just raised the
+  temperature from 20 to 22 for you 😊 Just tell me if you want it raised more or lowered down later on 😊 It’s floor
+  heating so it might take a while for the change to reflect. Have a wonderful evening and don’t hesitate if you have any
+  other questions ! ☺️ 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-23T15:05:59.000Z)
+  Ok totally super and no sorry it's beautiful!! We saw that even the hot tub is already on, fantastic!! 😀😀
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2314596835 | Guest: Michael Dirks | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:24.400Z
+Total Messages: 29
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-10-19T08:54:34.000Z)
+  Hello Michael !
+  
+  Today is the big day already! 😌
+  We can’t wait to welcome you at The View 😊 
+  
+  Your checkin starts at 4pm ⏤ but I’ll reach out here if by any chance the place is ready earlier. 
+  
+  You can park the car alongside the main entrance, as the road is quite slippery these days. 
+  
+  Your personal code is : 295281. 
+  
+  And the code for the bath tub is 0000.
+  
+  Then inside you’ll find a small guide that explains everything right on the coffee table ! And if you need anything I’m
+  just a message a way 😌
+  
+  Have a safe trip! 😊 
+  
+  
+  🌳🌳 Thomas et Caroline
+
+[HOST] (2025-10-19T13:39:18.000Z)
+  Hello Michael, the place is ready for you! Don't hesitate to reach out if you have any questions! Have a wonderful stay
+  ! 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-19T16:44:32.000Z)
+  Good evening, we just arrived, super nice house!
+
+[GUEST] (2025-10-19T16:45:02.000Z)
+  We would like to eat something in the area (something simple), is there anything nearby that you know of?
+
+[HOST] (2025-10-19T16:45:58.000Z)
+  Glad to read that ! ☺️☺️
+  Yes for a quick bite we can very much recommend “Les Doux Ragots”
+  It’s a very nice small brasserie 😊
+
+[GUEST] (2025-10-19T17:40:47.000Z)
+  Quick question, is there also a lighter to light the candles?
+
+[HOST] (2025-10-19T17:43:14.000Z)
+  You should find one in the inner drawer of the top drawer in the kitchen 😊
+
+[GUEST] (2025-10-19T17:44:11.000Z)
+  Should that be here?
+
+[GUEST] (2025-10-19T17:44:15.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-19T17:47:21.000Z)
+  Yes ! Maybe in small wooden cupboard ? If not, last guests must have left with it :-(
+
+[GUEST] (2025-10-19T17:48:14.000Z)
+  No, there's nothing there either, unfortunately
+
+[GUEST] (2025-10-19T18:06:18.000Z)
+  Another question, can you also link Spotify to the audio system and when I turn on the romantic lighting everything goes
+  off. Do I have to do something or am I doing something wrong?
+
+[HOST] (2025-10-19T18:07:13.000Z)
+  We’ll drop a new lighter tomorrow ☺️
+
+[HOST] (2025-10-19T18:08:08.000Z)
+  For Spotify, once you join our WiFi, you should be able to pick the sound system as output directly in Spotify 😊
+
+[HOST] (2025-10-19T18:08:10.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-19T18:09:33.000Z)
+  Ive just turned romantic mode remotely for you 😊
+
+[GUEST] (2025-10-20T14:42:14.000Z)
+  Hey! Quick question I can't find it that fast, do we have to do anything before we can get into the hot tub?
+
+[GUEST] (2025-10-20T14:42:23.000Z)
+  And thank you for the lighters!!
+
+[HOST] (2025-10-20T14:49:36.000Z)
+  Hi Michael,
+  
+  Nothing special: a small shower (outside, it's nice) before is recommended, remove the cover (00) and enjoy! 😊
+
+[GUEST] (2025-10-22T15:34:26.000Z)
+  Good afternoon, question. We have been in the hot tub twice, we wanted to get back in now only it is now cloudy (bottom
+  almost not visible, I looked in the grey chlorine dispenser and there is a very small amount in it.
+  Can we solve this ourselves? 
+  Please let me know!
+  Michael
+
+[HOST] (2025-10-22T15:50:21.000Z)
+  Hi Michaël!
+  
+  I think it’s indeed a chlorine issue, as the filtration system works every day. There is a chlorine reserve in the gray
+  box next to the Nordic bath. You can add more (be careful, it’s quite an agressive smell when you open the box 😁).
+  
+  We will check with the cleaning team if they refilled it correctly, as you shouldn’t have nearly ran out 😊 
+  
+  Have a wonderful evening and don’t hesitate if you have any other question 😊
+
+[GUEST] (2025-10-22T15:54:25.000Z)
+  I added 1 tablet, this is what was left in it.
+
+[GUEST] (2025-10-22T15:54:29.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-22T15:55:23.000Z)
+  Perfect 😊 That will do! Thanks a ton ☺️
+
+[GUEST] (2025-10-23T06:59:53.000Z)
+  Good morning, do we have anything else to do before check-out? Waste collection or something?
+
+[HOST] (2025-10-23T07:04:24.000Z)
+  Hello Michaël,
+  
+  No need, we will take care of the trash for you. 
+  
+  Just enjoy your morning. :)
+
+[GUEST] (2025-10-23T09:13:00.000Z)
+  Oops, I was just about to sweep the deck before showering and then the broomstick broke. Sorry!
+
+[GUEST] (2025-10-23T09:13:03.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-23T09:18:53.000Z)
+  No worries and thanks for sweeping the deck ☺️
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2329871189 | Guest: Nicolas | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:25.174Z
+Total Messages: 2
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-22T12:43:42.000Z)
+  Hello Thomas,
+  I am contacting you on Airbnb because I booked 2 nights (10 and 11 November 2025) via your website the view Lodge .be
+  I sent an email and tried to contact you via live chat but I didn't get a reply.
+  Could you confirm that the booking is effective and give me information about the payment?
+  Kind regards,
+
+[HOST] (2025-10-22T13:46:21.000Z)
+  Hi Nicolas !
+  Just responded to you be text message 😊
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-176048-102607 | Guest: Nicolas Bonnel | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:25.771Z
+Total Messages: 5
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-14T22:07:59.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-15T06:40:09.000Z)
+  New reservation.
+
+[GUEST] (2025-10-15T08:20:01.000Z)
+  Bonjour,
+  Nous sommes ravis de votre acceptation pour notre séjour et avons hâte de decouvrir votre magnifique chalet.
+  Pourriez vous m’indiquer la procédure pour le paiement?
+  Je vous souhaite une excellente journée 
+  Nicolas Bonnel 
+  Le 15 oct. 2025 à 08:40, Booking Assistant <thread.rm8l18.0xg5y2@bs.mail.hostex.io> a écrit :
+  ﻿
+  Hi Nicolas,
+   
+  Congratulations! Your reservation has been confirmed. We look forward to your stay!
+   
+  FIND US
+  Address:
+  Targnon 29, 4987 Stoumont, Belgium
+  Location details: The best way to reach The View is to find "The View Lodge — Targnon, Stoumont, Belgium" on Google
+  Maps, Apple Maps and Waze — https://maps.app.goo.gl/a32gTnrNerdxRjQ39
+  On other GPS system, you can introduce latitude and longitude manually : 50.4138954, 5.7806075
+  The Lodge is situated atop the hill. You'll find a small white chapel along the N633 — climb the road next to it till
+  you find us!
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+  To check the latest status of your reservation, please
+  click here.
+   
+  Best regards,
+  The View Lodge
+   
+   
+  Your reservation details:
+   
+  Reservation Details
+  The View — Wellness Forest Lodge
+  Check-in/out
+  2025-11-10 2025-11-12 . 2 nights
+  Number of guests
+  2 adults,0 child,0 infant
+  Full name
+  Nicolas Bonnel
+  Phone
+  +33 0674919484
+  Email
+  bonnel.nico@gmail.com
+  Reservation code
+  MGR45915
+  Status
+  Unpaid
+  Rate plan
+  Standard Rate
+  Standard Rate
+  Description
+  Cost
+  €244 x 1 night
+  €244.00
+  €216 x 1 night
+  €216.00
+  Total (EUR)
+  €460.00
+  ✔ 100% refund eligible before Oct 28 2025
+  ✔ Full refund eligible within 24 hours after your payment
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-10-20T08:07:42.000Z)
+  Source: in_box
+
+[GUEST] (2025-10-20T08:07:50.000Z)
+  Bonjour,
+  
+  Nous sommes ravis de votre acceptation pour notre séjour et avons hâte de decouvrir votre magnifique chalet.
+  Pourriez vous m’indiquer la procédure pour le paiement?
+  Je vous souhaite une excellente journée 
+  Nicolas Bonnel
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2326578688 | Guest: François | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:26.342Z
+Total Messages: 4
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-18T19:34:51.000Z)
+  Good morning Thomas, what a beautiful chalet, can we have sex in it?
+  Kind regards,
+  Francois
+
+[HOST] (2025-10-18T19:36:38.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-18T19:37:27.000Z)
+  No.
+  🌳🌳 Thomas et Caroline
+
+[HOST] (2025-10-19T19:36:40.000Z)
+  Pre-approval expired
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-170393-102607 | Guest: Katja Pechmann | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:27.091Z
+Total Messages: 13
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-06T18:07:12.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-07T06:49:56.000Z)
+  New reservation.
+
+[GUEST] (2025-08-12T16:44:50.000Z)
+  Hello,
+   
+  thank you very much for the booking confirmation. We are really looking forward to our stay. But I have one more
+  question. To which account should we transfer the money?
+  Best regards
+  Katja Pechmann
+   
+
+[HOST] (2025-08-12T16:45:44.000Z)
+  Hello Katja !
+  
+  We are thrilled to welcome you at The View 😌
+  
+  We’ll send you a payment link 14 days prior to your arrival, when cancellation won’t be possible anymore 😊 
+  
+  The checkin is possible starting at 16:00, and checkout at 12:00
+  
+  Depending on your arrival time, we’ll try to welcome you in person 😌Otherwise late checkin is possible via a digicode
+  on the door 🙂
+  
+  Do not hesitate if you have any other question ☺️
+  
+  Looking very much forward meeting you 😌
+  
+  🌳🌳Thomas & Caroline
+
+[GUEST] (2025-08-12T16:49:24.000Z)
+  Hey Thomas & Caroline, 
+  perfect, thanks for Information ☺️
+  See you, 
+  Katja 
+  Gesendet mit der WEB.DE Mail App
+  Am 12.08.25 um 18:45 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.5xqzp6@bs.mail.hostex.io>
+  Datum: 12. August 2025
+  An: katjapechmann@web.de
+  Cc:
+  Betreff: New message from The View Lodge
+  Hi Katja,
+   
+  Hello Katja !
+  We are thrilled to welcome you at The View 😌
+  We’ll send you a payment link 14 days prior to your arrival, when cancellation won’t be possible anymore 😊
+  The checkin is possible starting at 16:00, and checkout at 12:00
+  Depending on your arrival time, we’ll try to welcome you in person 😌Otherwise late checkin is possible via a digicode
+  on the door 🙂
+  Do not hesitate if you have any other question ☺️
+  Looking very much forward meeting you 😌
+  🌳🌳Thomas & Caroline
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-10-08T18:19:00.000Z)
+  Hi Thomas and Caroline, 
+  you wrote that you would send me a payment link 14 days before the reservation. We booked the lodge from October 16th to
+  October 19th, and I haven't received a link yet. 
+  So I just wanted to ask if there's a problem. 
+  Thank you very much and best regards, Katja and Nico ☺️
+  Gesendet mit der WEB.DE Mail App
+  Am 12.08.25 um 18:45 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.5xqzp6@bs.mail.hostex.io>
+  Datum: 12. August 2025
+  An: katjapechmann@web.de
+  Cc:
+  Betreff: New message from The View Lodge
+  Hi Katja,
+   
+  Hello Katja !
+  We are thrilled to welcome you at The View 😌
+  We’ll send you a payment link 14 days prior to your arrival, when cancellation won’t be possible anymore 😊
+  The checkin is possible starting at 16:00, and checkout at 12:00
+  Depending on your arrival time, we’ll try to welcome you in person 😌Otherwise late checkin is possible via a digicode
+  on the door 🙂
+  Do not hesitate if you have any other question ☺️
+  Looking very much forward meeting you 😌
+  🌳🌳Thomas & Caroline
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-10-12T11:47:43.000Z)
+  Source: in_box
+
+[GUEST] (2025-10-12T11:53:18.000Z)
+  Dear Thomas,
+  We received a booking confirmation for the holiday home some time ago. According to the information provided, we should
+  have received a payment link at least two weeks before our stay. Unfortunately, we have not received it to date.
+  I already sent an email regarding this matter on Wednesday but have not received a response yet.
+  Therefore, I kindly ask you once again to send us the payment link so we can complete the payment on time.
+  Could you also please confirm whether our booking is still valid?
+  We would appreciate a short reply.
+  Kind regards,
+  Katja and Nico 
+  Gesendet mit der WEB.DE Mail App
+  Am 07.08.25 um 08:49 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.5xqzp6@bs.mail.hostex.io>
+  Datum: 7. August 2025
+  An: katjapechmann@web.de
+  Cc:
+  Betreff: Reservation Confirmed! - The View Lodge
+  Hi Katja,
+   
+  Congratulations! Your reservation has been confirmed.We look forward to your stay!
+   
+  FIND US
+  Address:
+  Targnon 29, 4987 Stoumont, Belgium
+  Location details: The best way to reach The View is to find "The View Lodge — Targnon, Stoumont, Belgium" on Google
+  Maps, Apple Maps and Waze — https://maps.app.goo.gl/a32gTnrNerdxRjQ39
+  On other GPS system, you can introduce latitude and longitude manually : 50.4138954, 5.7806075
+  The Lodge is situated atop the hill. You'll find a small white chapel along the N633 — climb the road next to it till
+  you find us!
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+   
+  Your reservation details:
+   
+  Reservation Details
+  The View — Wellness Forest Lodge
+  Check-in/out
+  2025-10-16 2025-10-19 . 3 nights
+  Number of guests
+  2 adults
+  Full name
+  Katja Pechmann
+  Phone
+  +49 01622687242
+  Email
+  katjapechmann@web.de
+  Reservation code
+  ME0A5UEG
+  Status
+  Unpaid
+  Rate plan
+  Standard Rate
+  Standard Rate
+  Description
+  Cost
+  €179 x 1 night
+  €179.00
+  €199 x 2 nights
+  €398.00
+  Total
+  €577.00
+  ✔ 100% refund eligible before Oct 3 2025
+  ✔ Full refund eligible within 24 hours after your payment
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[HOST] (2025-10-12T12:29:34.000Z)
+  Hello Katja! You are absolutely right, thanks for reminding me😊 I've just sent the invoice and link to payment in a
+  separated email — but in any case, you can also pay by following this link :
+  https://theviewlodge.odoo.com/my/invoices/2072?access_token=    We very much look forward welcoming you! 😊
+
+[GUEST] (2025-10-12T13:21:28.000Z)
+  Hi Thomas, 
+  thanks for the reply. Unfortunately, the link in the attachment (see photo) doesn't work. The link in the separate email
+  doesn't work either.
+  Best regards
+  Katja 
+  Gesendet mit der WEB.DE Mail App
+  Am 12.10.25 um 14:29 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.5xqzp6@bs.mail.hostex.io>
+  Datum: 12. Oktober 2025
+  An: katjapechmann@web.de
+  Cc:
+  Betreff: New message from The View Lodge
+  Hi Katja,
+   
+  Hello Katja! You are absolutely right, thanks for reminding me😊 I've just sent the invoice and link to payment in a
+  separated email — but in any case, you can also pay by following this link :
+  https://theviewlodge.odoo.com/my/invoices/2072?access_token=    We very much look forward welcoming you! 😊
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-10-12T16:12:09.000Z)
+  Source: in_box
+
+[HOST] (2025-10-16T07:55:38.000Z)
+  Hello Katja,
+  
+  As you know, today is the big day already ! 🙌
+  We can’t wait to welcome you at The View ☺️
+  
+  Do you already have a rough idea of when you will arrive ?
+  As I was telling you the other day, we would love to welcome you in person if possible 😌
+  
+  Have a safe trip and a lovely day already ! 😊 
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-16T08:32:36.000Z)
+  Hello Thomas, 
+  yes, we're really looking forward to it ☺️. We think we should be there between 5 and 5:30 p.m. 
+  Best regards, 
+  Katja and Nico
+  Gesendet mit der WEB.DE Mail App
+  Am 16.10.25 um 09:55 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.5xqzp6@bs.mail.hostex.io>
+  Datum: 16. Oktober 2025
+  An: katjapechmann@web.de
+  Cc:
+  Betreff: New message from The View Lodge
+  Hi Katja,
+   
+  Hello Katja,
+  As you know, today is the big day already ! 🙌
+  We can’t wait to welcome you at The View ☺️
+  Do you already have a rough idea of when you will arrive ?
+  As I was telling you the other day, we would love to welcome you in person if possible 😌
+  Have a safe trip and a lovely day already ! 😊
+  🌳🌳 Thomas et Caroline
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-175898-102607 | Guest: Christijn van den heuvel | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:27.638Z
+Total Messages: 5
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-05T17:30:29.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-06T12:56:08.000Z)
+  New reservation.
+
+[GUEST] (2025-10-14T00:05:57.000Z)
+  We are looking forward visiting your beautiful place. Let us know what to to do with the payment. Would be nice if we
+  can pay on arrival. See you there. 
+  Met vriendelijke groet,
+  Christijn van den Heuvel
+  Op 6 okt 2025 om 14:56 heeft Booking Assistant <thread.rm8l18.gdxv2y@bs.mail.hostex.io> het volgende geschreven:
+  ﻿
+  Hi Christijn,
+   
+  Congratulations! Your reservation has been confirmed. We look forward to your stay!
+   
+  FIND US
+  Address:
+  Targnon 29, 4987 Stoumont, Belgium
+  Location details: The best way to reach The View is to find "The View Lodge — Targnon, Stoumont, Belgium" on Google
+  Maps, Apple Maps and Waze — https://maps.app.goo.gl/a32gTnrNerdxRjQ39
+  On other GPS system, you can introduce latitude and longitude manually : 50.4138954, 5.7806075
+  The Lodge is situated atop the hill. You'll find a small white chapel along the N633 — climb the road next to it till
+  you find us!
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+  To check the latest status of your reservation, please
+  click here.
+   
+  Best regards,
+  The View Lodge
+   
+   
+  Your reservation details:
+   
+  Reservation Details
+  The View — Wellness Forest Lodge
+  Check-in/out
+  2025-10-26 2025-10-29 . 3 nights
+  Number of guests
+  2 adults,0 child,1 infant
+  Full name
+  Christijn van den heuvel
+  Phone
+  +31 0648732558
+  Email
+  Christijnvandenheuvel@gmail.com
+  Reservation code
+  MGDZ9QS1
+  Status
+  Unpaid
+  Rate plan
+  Standard Rate
+  Standard Rate
+  Description
+  Cost
+  €204 x 1 night
+  €204.00
+  €207 x 1 night
+  €207.00
+  €213 x 1 night
+  €213.00
+  Total (EUR)
+  €624.00
+  ✔ 100% refund eligible before Oct 13 2025
+  ✔ Full refund eligible within 24 hours after your payment
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[HOST] (2025-10-14T07:04:58.000Z)
+  Hello Christijn ! We very much look forward welcoming you 😌 You can definitely pay at the property when arriving, it's
+  fine for us to ! I'll reach out on the day of arrival to arrange checkin 😊 Till then, wishing you the best! 😌 🌳🌳
+  Thomas et Caroline
+
+[GUEST] (2025-10-15T20:35:34.000Z)
+  ﻿
+  ﻿
+  Good evening Thomas en Caroline,
+  Thank you for your message and information. We will see you there next weekend! 
+  Met vriendelijke groet,
+  Christijn van den Heuvel
+  Op 14 okt 2025 om 09:05 heeft Booking Assistant <thread.rm8l18.gdxv2y@bs.mail.hostex.io> het volgende geschreven:
+  ﻿
+  Hi ,
+   
+  Hello Christijn ! We very much look forward welcoming you 😌 You can definitely pay at the property when arriving, it's
+  fine for us to ! I'll reach out on the day of arrival to arrange checkin 😊 Till then, wishing you the best! 😌 🌳🌳
+  Thomas et Caroline
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2307077101 | Guest: Camilo De Mello | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:28.244Z
+Total Messages: 8
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-13T09:39:28.000Z)
+  Good afternoon,
+  
+  Today we will arrive at the Airbnb. I'd love to hear how to access the Airbnb. 
+  
+  Kind regards,
+  Camilo
+
+[HOST] (2025-10-13T10:54:52.000Z)
+  Hello Camilo,
+  
+  Indeed, today is the big day already ! 🙌 
+  We can’t wait to welcome you at The View ☺️
+  
+  Our checkin starts at 4pm, do you already have a rough idea of when you will arrive ?
+  
+  We would love to welcome you in person if possible 😌
+  
+  Have a safe trip and a lovely day already !
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-13T11:11:10.000Z)
+  Thanks for the reply! Very nice! We hope to be there around 4:00 p.m.
+
+[HOST] (2025-10-13T12:24:58.000Z)
+  Hello again Camilo!,
+  
+  We won’t be able to welcome you in person around 16:00, but don’t worry self checkin is super easy 😊 
+  
+  Your personal code for the numpad next to the door is : 295281. And the code for the Nordic bath is 0000.
+  
+  Everything else is explained on a short guide on the coffee table 😊 
+  
+  If you have any other questions, we’ll be just a message away 😊 
+  
+  Have a safe trip !
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-13T13:36:01.000Z)
+  Hello, 
+  
+  Thank you for the great explanation! We are looking forward to it! 
+  
+  Kind regards,
+  Camilo
+
+[GUEST] (2025-10-13T20:32:03.000Z)
+  Hi Thomas, sorry for the late message. Just used the lovely hot tub, it was already warm when we were there. 
+  
+  However, when we were in it for 5 minutes, the massage jets started to blow. Not all the bubbles went on, just the
+  sides. We can't get these out now, could you help us with this? Thank you in advance!
+
+[HOST] (2025-10-13T20:35:01.000Z)
+  Hi Camilo! 😊 
+  Don’t worry at all about the late message 😌
+  
+  The hot tub automatically circulates water when it gets below a certain temperature, to warm it up again. It will
+  automatically stop doing that as soon as it’s at the proper temperature 😊 
+  
+  You can simply close the cover when you’re done using it, even if the jets still do their thing 😊 
+  
+  Have a nice evening and don’t hesitate if you have any other question 😌
+
+[GUEST] (2025-10-13T20:36:47.000Z)
+  Thanks for the quick response! Good to hear. Thank you for the clarification. 
+  
+  Have a nice evening too 😁
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 9-ea889094-77e6-5ddc-8277-fa177b379c5c | Guest: Julien Moreno | Property: 
+Channel: booking.com
+Last Message: 2025-10-24T11:15:28.850Z
+Total Messages: 11
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-09-04T12:49:42.000Z)
+  Bonjour, vous me confirmez, qu'il s'agit d'un chalet, avec bain à remous, sauna privé dans chambre, et terrasse avec vue
+  privé? 
+  Bien à vous
+
+[HOST] (2025-09-04T12:51:27.000Z)
+  Bonjour Julien !
+
+[HOST] (2025-09-04T12:53:22.000Z)
+  Bonjour Julien ! Tout à fait 😊 A l'extérieur, ce n'est pas un bain à remous mais un bain nordique, soit un cuve
+  recouverte de bois et chauffée à 40° environ 😊 Vous verrez pour l'instant sur notre fiche les photos d'un bain à remous
+  gonflable extérieur INTEX, mais celui-ci va être remplacé fin septembre par la bain nordique, qui sera donc disponible
+  pour votre séjour 😊 Il y a également un bain à remous intérieur, un sauna, et une terrasse. Le logement est 100%
+  privatif 😊
+
+[GUEST] (2025-09-04T12:58:56.000Z)
+  Merci beaucoup pour vos précisions.
+  Rdv fin octobre.
+  je reviendrai vers vous pour le petit-déjeuner. 
+  
+  A bientôt.
+  
+  Julien
+
+[HOST] (2025-09-04T13:31:22.000Z)
+  Avec plaisir 😊 
+  
+  N’hésitez pas si vous avez d’autres questions ! Je vous enverrais quelques photos du nouveau bain nordique une fois
+  qu’il est installé 😊 
+  
+  D’ici là, que tout se passe au mieux pour vous Julien 😌
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-04T13:33:52.000Z)
+  merci beaucoup
+
+[HOST] (2025-10-01T11:52:43.000Z)
+[IMAGE]: [object Object]
+  Hello Julien ! Comme promis, voici quelques photos de notre tout nouveau bain nordique dont vous profiterez fin octobre
+  😊 
+  D'ici, que tout se passe pour le mieux pour vous 😊 
+  
+  ⏤ 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-01T12:09:07.000Z)
+  waahou super! Merci pour votre retour.
+  A bientôt.
+
+[GUEST] (2025-10-02T07:00:42.000Z)
+  Bonjour, 
+  Vous proposez quoi pour le petit déjeuner? En végétarien, nous ne mangeons pas de charcuterie..ect.
+  Bonne journée 
+  
+  Julien
+
+[GUEST] (2025-10-05T06:48:45.000Z)
+  ?
+
+[HOST] (2025-10-12T12:37:52.000Z)
+  Don't forget to pay now to confirm your booking Pay online now Dear Julien Moreno, Thank you for choosing The View Lodge
+  for your upcoming getaway! We are thrilled to host you and look [...] ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏
+  ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏
+  ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏
+  ​ ͏ ​ ͏ ​
+  ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​
+  ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​
+  ͏ ​ ͏ ​ ͏ ​ ͏ ​ ͏ ​
+  
+  View Invoice    INV/2025/00017 - Julien Moreno
+  245.65 € due 10/12/2025
+  ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  
+  Don't forget to pay now to confirm your booking
+  
+  Pay online now
+  
+  Dear Julien Moreno,
+  
+  Thank you for choosing The View Lodge for your upcoming getaway!
+  We are thrilled to host you and look forward to providing an unforgettable experience of relaxation and luxury.
+  
+  To confirm your reservation, we kindly request that you complete the payment process.
+  
+  Pay now
+  
+  We kindly ask that payment be completed within 48 hours to secure your booking.
+  Once we receive your payment, we will send you a confirmation email with all the details for your stay.
+  
+  Need Assistance?
+  
+  If you have any questions or require assistance, feel free to reach out to us by responding to this email or call us at
+  +32 495 64 99 99
+  
+  We can't wait to welcome you to The View Lodge and ensure your stay is truly magical! ✨ 🌳🌳
+  
+  Best regards,
+  
+  The View Lodge Team
+  
+  - https://theviewlodge.be
+  ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  
+  Crafted Signals
+  
+  +32 495 64 99 99 | hello@thomashermine.be
+  
+  Powered by Odoo
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-175991-102607 | Guest: Nadia Kruijt | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:29.689Z
+Total Messages: 3
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-10T22:24:45.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-12T12:29:44.000Z)
+  The reservation has been cancelled.
+
+[HOST] (2025-10-12T12:30:21.000Z)
+  Hello Nadia! Sadly someone requested your date just moment before you. Sorry about that — we would be thrilled to
+  welcome you again at a different date! Wishing you the best, have a nice Sunday! 🌳🌳 Thomas et Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2280213733 | Guest: Bram Kraaieveld | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:30.241Z
+Total Messages: 23
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-06T15:26:34.000Z)
+  Dear Thomas and Caroline,
+  
+  We are looking forward to our arrival in the Ardennes.
+  
+  I was wondering if you have some recommendations for a nice place to have dinner for two people close to the house?
+
+[HOST] (2025-10-07T14:23:20.000Z)
+  Hello Bram ! 
+  
+  Thank you for your message ! We are very happy to welcome you soon in the Ardennes ! :) 
+  
+  For dinner, we can highly recommend Linea, in Spa, for beautiful italian food (our favorite) !
+  https://www.linea.restaurant/ - Wwe suggest making a reservation in advance).
+  
+  In Spa, you can also have some nice fondue and raclette at Le Chalet Suisse https://www.chaletsuisse.be/. - reservation
+  in advance too).
+  
+  While in Spa, it’s definitely worth taking some time to walk around this beautiful little town, and if you enjoy
+  pastries, Chez Blanche is an absolute must.
+  
+  Another easy and nice option is Les Doux Ragots in La Gleize, where you can enjoy fries and a burger (or a boulet à la
+  liégeoise) in a cozy chalet atmosphere. There are also a few pizzerias in Coo, easy for a more casual dinner.
+  
+  And for something easy and practical, you will also find a prepared-meal distributor next to the BPost in Stoumont.
+  
+  We hope you’ll enjoy your stay ! Don't hesitate if you have any other question ! :)
+  
+  Caroline & Thomas 🌿
+
+[GUEST] (2025-10-07T20:24:22.000Z)
+  Thank you very much for your tips!  Perfect!
+
+[HOST] (2025-10-10T07:58:40.000Z)
+  Hello Bram,
+  
+  Today is the big day already ! We can’t wait to welcome you at The View ☺️
+  
+  Our checkin starts at 4pm, do you already have a rough idea of when you will arrive ? 
+  
+  We would love to welcome you in person if possible 😌
+  
+  Have a safe trip and a lovely day already !
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-10T10:26:52.000Z)
+  Hello! We expect to arrive at 16:00. Our travel time is 3 hours, and we have to go through Liege so it might be a bit
+  later.
+  
+  Looking forward to our stay!
+  
+  Sincerely,
+  
+  Bram
+
+[HOST] (2025-10-10T11:34:24.000Z)
+  Hello again Bram,
+  
+  We won’t be able to welcome you in person around 16:00, but don’t worry self checkin is super easy 😊 
+  
+  Your personal code for the numpad next to the door is : 295281. And the code for the Nordic bath is 0000.
+  
+  Everything else is explained on a short guide on the coffee table 😊 
+  
+  If you have any other questions, we’ll be just a message away 😊 
+  
+  Have a safe trip !
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-10T14:40:36.000Z)
+  Thank you! We arrived without problems and it looks very lovely
+
+[GUEST] (2025-10-10T15:54:23.000Z)
+  Dear Caroline, we have a problem. The washbasin in the bedroom suddenly broke down after I put my toiletry kit on there
+  (which isn't heavy at all).
+
+[GUEST] (2025-10-10T15:54:27.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-10T15:54:27.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-10T15:54:28.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-10T15:54:28.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-10T16:07:43.000Z)
+  Oh my god! Thank you so much for letting us know so quickly. Could we come by and have a look in 40min or so?
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-10T16:09:59.000Z)
+  That's okay! Is it also okay if we head out for dinner in the meantime?
+
+[GUEST] (2025-10-10T16:10:15.000Z)
+  We tried to clean it as well as possible
+
+[HOST] (2025-10-10T16:10:53.000Z)
+  Yes off course! I might just call you quickly to plan the next steps once we are there 
+  
+  Thanks for cleaning it up already !
+
+[GUEST] (2025-10-10T16:11:39.000Z)
+  Yes, thats okay! And you're welcome 🤗
+
+[HOST] (2025-10-10T16:53:45.000Z)
+  Hi Bram,
+  
+  I came by and had a look at the vanity — it’s very weird because the support board has snapped very cleanly on both
+  sides and there’s no trace of humidity or wear.
+  
+  In any case, I’ll handle the repair myself so no big deal... I can come in and repair it tomorrow anytime starting at
+  11, it should take about 1 hour at max. Just tell me what time suits you best. Or we can leave it like that till your
+  checkout if you prefer. 
+  
+  Have a nice evening,
+  
+  🌳🌳
+  Thomas & Caroline
+
+[GUEST] (2025-10-10T17:19:07.000Z)
+  Dear Thomas, thanks for your quick response! It is great that you can repair it yourself. We will let you know about our
+  plans for tomorrow later this evening after we get back from dinner
+
+[GUEST] (2025-10-10T18:04:27.000Z)
+  We will leave the lodge around 12:00. Is that okay for you?
+
+[HOST] (2025-10-10T19:19:31.000Z)
+  Perfect ! I’ll be there around that time 😊 Have a good evening
+
+[HOST] (2025-10-11T13:11:11.000Z)
+  Hello Bram,
+  Everything is back in order ! As the glue is still fresh please be very gentle with the vanity, and especially do not
+  lean on it.
+  Enjoy the rest of your stay!
+
+[GUEST] (2025-10-11T13:39:27.000Z)
+  Hello Thomas, it looks very good! Well done. We will be very gentle. 
+  
+  Thanks!
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2318888167 | Guest: Airbnb Support | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:30.714Z
+Total Messages: 2
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-10T16:14:47.000Z)
+  [Airbnb Support]
+  Do you need help with this reservation?
+
+[GUEST] (2025-10-10T16:14:54.000Z)
+  [Airbnb Support]
+  Okay. It seems like you want to request reimbursement from your guest.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2298092798 | Guest: Nele Magner | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:31.249Z
+Total Messages: 9
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-05T08:32:45.000Z)
+  Hi Caroline and Thomas,
+  We are very much looking forward to our trip to Stoumont today! Since we are arriving by car from Germany, we cannot yet
+  say exactly when we will be there. However, we plan to arrive between 4:00 pm and 5:00 pm. 
+  The documents say that you can enter the house via a keypad. What's the password? 
+  Best regards and have a nice Sunday! :)
+
+[HOST] (2025-10-05T08:45:32.000Z)
+  Hello Séverin,
+  
+  Thank you for your message — we’re delighted to welcome you today! 😌
+  
+  You can access The View via the keypad at the entrance using the code 295281.
+  
+  Take your time on the road and enjoy the drive through the Ardennes — everything will be ready for you when you arrive.
+  ☺️
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-05T14:46:06.000Z)
+  Hey Thomas & Caroline, 
+  
+  We arrived well and already feel very comfortable!! The house is fantastic. 
+  
+  When we arrived, another car parked at the house and they have now left. Unfortunately, it was difficult to get to the
+  house by car because it is very slippery. Is there another place to park the car if we don't get to the house in the
+  next few days in bad weather? 
+  
+  Best, 
+  Severin & Nele
+
+[HOST] (2025-10-05T14:53:36.000Z)
+  Hi Severin & Nele,
+  
+  Thanks for your message — we’re really happy to hear you arrived well and are enjoying the house! 😌
+  
+  Yes, if the path is too slippery, you can park a bit lower down the street, along the stairs that lead to the garden.
+  It’s a safe and convenient spot.
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-10-08T10:40:09.000Z)
+  Hey Thomas & Caroline, 
+  
+  We feel very comfortable in The View! It's so cozy and beautiful here 😍
+  We wanted to let you know before we left that two of the candles have burned out. Maybe you want to provide new ones
+  before the next guests arrive. 
+  
+  Best wishes
+  Severin & Nele
+
+[HOST] (2025-10-08T10:42:37.000Z)
+  Hello Séverin & Nele,
+  
+  That's lovely, thank you so much  for your message. We'll put some more in! :) 
+  
+  Enjoy the place! 🌱 
+  
+  Caroline and Thomas
+
+[GUEST] (2025-10-10T08:40:35.000Z)
+  Hello Caroline and Thomas,
+  We are now on our way home. We really liked our stay at The View! A really nice house. Thank you for your quick answers.
+  
+  We weren't sure where to put the rubbish, so we left it in the containers. Only the organic waste is tied up in the
+  sink. We hope that's okay. 
+  
+  When we opened the whirlpool outside, we encountered a fire salamander. Since we didn't know what to do with it, we left
+  it in the pool and closed it. I am also sending a photo of it. We hope that's okay. Since the animals are slightly
+  poisonous, we did not know exactly what to do. 
+  
+  Best regards and thank you!
+
+[GUEST] (2025-10-10T08:42:11.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-10-10T11:51:56.000Z)
+  Hi Frank and Marina, 🌞
+  
+  Thank you so much for your kind message — we’re really happy to hear you enjoyed your stay at The View! 😌
+  
+  No worries at all about the trash or the salamander — you did the right thing by leaving everything as is.
+  
+  If you ever wish to come back, as a thank you gift for being such lovely guest, you can use the code FRIENDSOFTHEVIEW on
+  our website for 15% off your next stay. ☺️
+  
+  🌳🌳
+  Thomas & Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-175897-102607 | Guest: Kristel Nosairi | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:31.815Z
+Total Messages: 13
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-05T14:43:06.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-10-06T06:49:33.000Z)
+  Source: in_box
+
+[GUEST] (2025-10-06T06:51:21.000Z)
+  Good morning! ☺️ i have made a reservation yesterday (21-23okt) in your beautiful accomodation. But i am not sure if i
+  did it right. Thank you in advance, merci beaucoup!
+
+[GUEST] (2025-10-06T06:51:37.000Z)
+  Kind regards,
+
+[GUEST] (2025-10-06T06:51:39.000Z)
+  Kristel
+
+[GUEST] (2025-10-06T08:50:13.000Z)
+  Source: in_box
+
+[GUEST] (2025-10-06T12:35:24.000Z)
+  Source: in_box
+
+[GUEST] (2025-10-06T12:37:05.000Z)
+  I would love to here from you. Because since my booking (request?) yesterday it looks like the dates are not longer
+  available :-(
+
+[GUEST] (2025-10-06T12:37:05.000Z)
+  I would love to here from you. Because since my booking (request?) yesterday it looks like the dates are not longer
+  available :-(
+
+[GUEST] (2025-10-06T12:37:21.000Z)
+  Kind regards, Kristel
+
+[HOST] (2025-10-06T12:55:48.000Z)
+  Hi Kristel! I'm sorry to come with bad news but indeed, we handle booking requests in the order they were made, and
+  someone had made a request just hours before yours. We’re really sorry about that — sometimes dates get taken very
+  quickly. Hopefully we’ll have the chance to welcome you another time — 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-10-06T12:55:53.000Z)
+  The reservation has been cancelled.
+
+[GUEST] (2025-10-06T13:20:56.000Z)
+  Ah how unfortunate! But thank you for your respons.
+  Kind regards,
+  Kristel
+  Verzonden vanuit Outlook voor iOS<https://aka.ms/o0ukef>
+  ________________________________
+  Van: Booking Assistant <thread.rm8l18.84kg4w@bs.mail.hostex.io>
+  Verzonden: Monday, October 6, 2025 2:55:52 PM
+  Aan: Kr1stel@outlook.com <Kr1stel@outlook.com>
+  Onderwerp: New message from The View Lodge
+  [https://oss.image.xiaogetech.com/CDL1751372599818.png]
+  Hi Kristel Nosairi,
+  Hi Kristel! I'm sorry to come with bad news but indeed, we handle booking requests in the order they were made, and
+  someone had made a request just hours before yours. We’re really sorry about that — sometimes dates get taken very
+  quickly. Hopefully we’ll have the chance to welcome you another time — 🌳🌳 Thomas et Caroline
+  If you have any questions, please reply directly to this email. You can also contact us via live
+  chat.<https://u32776212.ct.sendgrid.net/ls/click?upn=u001.P4kGRkL13LyKolayPuLogGZaAG5LGEnEcf4YTQ7QkluSYzrWYfceTHgD7BfgU-2BbbzBqNznXKiFKeB8OG-2FDfZCMtr4WeHihoVbbikYxeaalLxU-2FJLN6hEDhOac9ysD23QD5p-2FZ9HKvOtZZt94Ow67AjsJ-2FNiW4AY93DmnfaNWTI4-2FADVh-2BOO0lpo4HNFnAtD-2FdmGpElto8sQdRq43TeRdaA-3D-3DEEFU_Oa34TvQWXlrLDWie5pDQZxVt7PdP6a4xATR9ghBWfCyZFQYL4ZfV9KD7FZ6kRJOEo9qH5GMbhaVVh9DcJ8RrNMdyHnFhgDIqX0BYgwnw0EvuVVYv2XFWuimJIzAM45jmtV8KeiIg1JZiQdwXYcFdFTgZ-2BCg65-2BRXPgArIMRKYhNbo5fa5Plgr8ToF-2BwFhldwBOL9D1dVsQeo1Tnn6HoooqSmoOGQaH-2F1A24kWzaJCxT6tiyyBHxrFDPf3M9m6fFLWjtsc0L5hYu2IH3pHtsIou7IKTTA5XfN04BmUIKbC6kTkZ6xen49tglZL6FtldA-2B3dWFgEM9q7HGPeKmC-2Bn8pQ-3D-3D>
+  Best regards,
+  The View Lodge
+  If you don't want to receive these emails from in the future, please Unsubscribe<<%asm_group_unsubscribe_raw_url%>>.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2312931999 | Guest: Tobias Fülber | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:32.361Z
+Total Messages: 1
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-10-04T14:20:13.000Z)
+  The reservation has been cancelled.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 9-79450a9e-f7e0-5f7d-b2e8-e2517b0f40ef | Guest: William Fabry | Property: 
+Channel: booking.com
+Last Message: 2025-10-24T11:15:32.926Z
+Total Messages: 4
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-10-01T10:57:53.000Z)
+  Request approved
+
+[GUEST] (2025-10-01T10:57:53.000Z)
+  I'd like to request check-in at 16:00 - 17:00. Is this ok?
+
+[GUEST] (2025-10-01T10:57:56.000Z)
+  Les chiens sont t&#39;ils les bienvenus? (un chien de moyenne taille, gentille et propre!)
+
+[HOST] (2025-10-01T11:51:18.000Z)
+  Bonjour,
+  Merci pour votre message & de votre reservation! Nous adorerions rencontrer votre chien, mais malheureusement les
+  animaux ne sont pas autorisés. 
+  
+  L’endroit est pensé comme une retraite intimiste et romantique, et nous veillons à préserver l’espace et les équipements
+  dans les meilleures conditions pour tous nos hôtes😌
+  
+  Agréable journée à vous,
+  🌳🌳 Thomas et Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-174279-102607 | Guest: Ina Klingel | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:33.497Z
+Total Messages: 57
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-11T12:07:00.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-11T12:43:16.000Z)
+  New reservation.
+
+[GUEST] (2025-08-30T18:29:03.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-30T18:31:41.000Z)
+  dear theview team,
+  i have booked a stay with you at the end of september. the reservation number is ME72HVTY.
+  i wanted to find out how the payment works. so far there has been no information on this. thank you for your feedback.
+  best regards 
+  ina klingel
+
+[GUEST] (2025-08-30T18:32:05.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-30T18:51:07.000Z)
+  dear theview team,
+  i have booked a stay with you at the end of september. the reservation number is ME72HVTY.
+  i wanted to find out how the payment works. so far there has been no information on this. thank you for your feedback.
+  best regards 
+  ina klingel
+  Gesendet mit der mobilen Mail App
+  Am 11.08.25 um 14:43 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.24oe2e@bs.mail.hostex.io>
+  Datum: 11. August 2025
+  An: inaklingel@web.de
+  Cc:
+  Betreff: Reservation Confirmed! - The View Lodge
+  Hi Ina,
+   
+  Congratulations! Your reservation has been confirmed.We look forward to your stay!
+   
+  FIND US
+  Address:
+  Targnon 29, 4987 Stoumont, Belgium
+  Location details: The best way to reach The View is to find "The View Lodge — Targnon, Stoumont, Belgium" on Google
+  Maps, Apple Maps and Waze — https://maps.app.goo.gl/a32gTnrNerdxRjQ39
+  On other GPS system, you can introduce latitude and longitude manually : 50.4138954, 5.7806075
+  The Lodge is situated atop the hill. You'll find a small white chapel along the N633 — climb the road next to it till
+  you find us!
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+   
+  Your reservation details:
+   
+  Reservation Details
+  The View — Wellness Forest Lodge
+  Check-in/out
+  2025-09-28 2025-10-02 . 4 nights
+  Number of guests
+  2 adults
+  Full name
+  Ina Klingel
+  Phone
+  +49 1732587793
+  Email
+  inaklingel@web.de
+  Reservation code
+  ME72HVTY
+  Status
+  Unpaid
+  Rate plan
+  Standard Rate
+  Standard Rate
+  Description
+  Cost
+  €179 x 4 nights
+  €716.00
+  Total
+  €716.00
+  ✔ 100% refund eligible before Sep 15 2025
+  ✔ Full refund eligible within 24 hours after your payment
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-08-30T20:10:10.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-09T15:19:44.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-09T15:21:06.000Z)
+  dear theview team,
+  i have booked a stay with you at the end of september. the reservation number is ME72HVTY.
+  i wanted to find out how the payment works. so far there has been no information on this. thank you for your feedback.
+  best regards
+  ina klingel
+
+[GUEST] (2025-09-09T17:51:08.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-11T19:55:37.000Z)
+  Source: in_box
+
+[HOST] (2025-09-12T06:26:28.000Z)
+  Hello Ina! 
+  I’m terribly sorry for the late reply, it seems your email was marked as spam wrongfully by our system. You’ll receive a
+  link for payment 14 days prior to your arrival, when cancellation is no longer possible 😌 If you prefer, it’s also
+  possible to pay at the property, as we try to welcome our guest in person as often as possible 😌
+  
+  We look very much forward welcoming you at The View!
+  
+  All the best till then,
+  
+  — 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-17T18:22:52.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-17T18:27:12.000Z)
+  Hi, unfortunately I didn't receive a link or email and only saw the message here today. Please try my business address
+  ik@studio-modular.de.
+  We definitely want to come and see you and are really looking forward to it.
+  Best regards, Ina
+
+[GUEST] (2025-09-17T18:30:33.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T05:08:57.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T05:09:11.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T05:44:29.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T09:37:22.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T09:39:31.000Z)
+  Hi, now I get the message. But need an account to pay. Booth mail accounts does not work and have no order to pay. You
+  send an invoice to but there are no payment information on it... IBAN is missing, no swift. can you please get me this
+  informations? I prefer to pay before we arrive.
+
+[GUEST] (2025-09-18T09:39:36.000Z)
+  Thank you, Ina
+
+[GUEST] (2025-09-18T09:54:34.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T10:10:02.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T11:30:36.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T12:22:40.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T12:41:19.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-18T12:44:59.000Z)
+  Now it works. I've send you the payment. There is no need or todo for you. Thank you and best regards,
+
+[GUEST] (2025-09-18T12:45:04.000Z)
+  Now it works. I've send you the payment. There is no need or todo for you. Thank you and best regards, Ina
+
+[HOST] (2025-09-18T12:50:09.000Z)
+  Perfect ! Thank you 😊 
+  
+  Have a great day !
+
+[GUEST] (2025-09-18T20:40:40.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-19T18:37:06.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-20T06:36:36.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-26T18:44:33.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-26T18:47:21.000Z)
+  hi thomas and team,
+
+[GUEST] (2025-09-26T18:48:57.000Z)
+  hope everything is fine with the payment? we arrive on sunday between 15-16 h of this works for you? have a good
+  evening, ina
+
+[GUEST] (2025-09-26T18:51:40.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-26T18:51:50.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-26T20:17:20.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T09:09:48.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T09:16:45.000Z)
+  hi thomas,
+  hope everything is fine with the payment? we arrive on sunday between 15-16 h of this works for you? i try to reach you
+  also via live chat and mail. thanks and have a good day, ina
+  Gesendet mit der mobilen Mail App
+  Am 30.08.25 um 20:51 schrieb InaKlingel@web.de
+  Von: InaKlingel@web.de
+  Datum: 30. August 2025
+  An: "Booking Assistant" <thread.rm8l18.24oe2e@bs.mail.hostex.io>
+  Cc:
+  Betreff: Re: Reservation Confirmed! - The View Lodge
+  dear theview team,
+  i have booked a stay with you at the end of september. the reservation number is ME72HVTY.
+  i wanted to find out how the payment works. so far there has been no information on this. thank you for your feedback.
+  best regards 
+  ina klingel
+  Gesendet mit der mobilen Mail App
+  Am 11.08.25 um 14:43 schrieb Booking Assistant
+  Von: "Booking Assistant" <thread.rm8l18.24oe2e@bs.mail.hostex.io>
+  Datum: 11. August 2025
+  An: inaklingel@web.de
+  Cc:
+  Betreff: Reservation Confirmed! - The View Lodge
+  Hi Ina,
+   
+  Congratulations! Your reservation has been confirmed.We look forward to your stay!
+   
+  FIND US
+  Address:
+  Targnon 29, 4987 Stoumont, Belgium
+  Location details: The best way to reach The View is to find "The View Lodge — Targnon, Stoumont, Belgium" on Google
+  Maps, Apple Maps and Waze — https://maps.app.goo.gl/a32gTnrNerdxRjQ39
+  On other GPS system, you can introduce latitude and longitude manually : 50.4138954, 5.7806075
+  The Lodge is situated atop the hill. You'll find a small white chapel along the N633 — climb the road next to it till
+  you find us!
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+   
+  Your reservation details:
+   
+  Reservation Details
+  The View — Wellness Forest Lodge
+  Check-in/out
+  2025-09-28 2025-10-02 . 4 nights
+  Number of guests
+  2 adults
+  Full name
+  Ina Klingel
+  Phone
+  +49 1732587793
+  Email
+  inaklingel@web.de
+  Reservation code
+  ME72HVTY
+  Status
+  Unpaid
+  Rate plan
+  Standard Rate
+  Standard Rate
+  Description
+  Cost
+  €179 x 4 nights
+  €716.00
+  Total
+  €716.00
+  ✔ 100% refund eligible before Sep 15 2025
+  ✔ Full refund eligible within 24 hours after your payment
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[HOST] (2025-09-27T09:37:53.000Z)
+  Hello Ina ! Indeed, tomorrow is the big day already! We can't wait to welcome you 😊 Everything is perfectly fine with
+  your booking and payment 😌 Our checkin hour is 4pm, but we'll do our best to be ready before that, at 3pm. I'll confirm
+  tomorrow morning as soon as the place is ready 😊 Till then, have a nice WE already 😊 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-27T09:58:13.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T11:31:58.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T11:32:07.000Z)
+  hi thomas,
+
+[GUEST] (2025-09-27T11:34:10.000Z)
+  thank you! 16-17 is also perfekt for us. i cant find any information about this in the reservation info. have a good
+  weekend too. looking forward seine you tomorrow ;) best, ina
+
+[GUEST] (2025-09-27T11:42:06.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T13:26:05.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T13:49:33.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T15:47:21.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T15:47:22.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T15:48:20.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T18:41:21.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T19:16:58.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-27T19:17:13.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-28T06:31:19.000Z)
+  Source: in_box
+
+[GUEST] (2025-09-28T06:31:32.000Z)
+  Source: in_box
+
+[HOST] (2025-09-28T12:22:04.000Z)
+  Hello Ina ! 
+  
+  Everything is ready for your stay ✨
+  	•	Your Access code for the entry door: 295181
+  	•	Outdoor Nordic bath code: 0000
+  
+  We wish you a wonderful and relaxing time at The View!
+  
+  We won’t be able to welcome you in person today sadly, but you know where to find me if you need anything, I’m just a
+  message away 😌
+  
+  Have a wonderful day and stay !
+  
+  🌳🌳
+  Thomas & Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2304070007 | Guest: Senne | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:34.040Z
+Total Messages: 5
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-09-25T08:07:01.000Z)
+  Dear,
+  
+  We are interested in staying here for 2 nights with our newborn baby if a price reduction would be possible.
+  
+  Could anything be done about the price, please?
+  
+  Thank you in advance!
+  
+  Best,
+
+[HOST] (2025-09-25T08:12:28.000Z)
+  Hi Senne ! 
+  
+  Thank you so much for reaching out — and warm congratulations on your little one 👶💛
+  
+  Our prices are already the best possible given all the private wellness amenities we include (sauna, jacuzzi, smart
+  features ✨). 
+  
+  That said, we sometimes release last-minute offers for the very next day or two, so it’s always worth checking the
+  evening before your preferred dates 😌
+  
+  We’re also excited to let you know that we’ve just added a beautiful Nordic bath and a brand-new terrace 🌲 — perfect
+  for unwinding while enjoying the stunning view. New photos will be online next week, but they already make the cabin
+  feel even more special.
+  
+  We’d be truly delighted to welcome you and your family for a peaceful and relaxing stay 🌿
+  With warm regards,
+  🌳🌳 Thomas et Caroline
+
+[HOST] (2025-09-25T08:12:41.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-09-25T08:17:52.000Z)
+  Thank you for your message. We'll wait a little longer then😊.
+
+[HOST] (2025-09-26T08:12:42.000Z)
+  Pre-approval expired
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2250173843 | Guest: Eline Verweij | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:34.645Z
+Total Messages: 28
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-03T11:20:16.000Z)
+  Hi Thomas! 
+  
+  I would like to stay at your beautiful lodge in September. Is it allowed to bring our baby? We can provide a travel cot
+  ourselves. 
+  
+  I'd love to hear from you!
+
+[HOST] (2025-08-03T11:22:14.000Z)
+  Hello Eline,
+  
+  We would love to welcome you at The View ☺️
+  Babies are definitely welcomed 😊 We can also provide you a cot, whatever suits you best 😊
+
+[HOST] (2025-08-03T11:22:32.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-03T12:06:42.000Z)
+  Fantastic! I just need to reconcile the dates at work tomorrow and then I can complete the booking. If possible, we
+  would like to use a cot! Very nice! 😊
+
+[HOST] (2025-08-03T13:30:32.000Z)
+  Perfect, looking forward to welcome you and noted for the cot 😊
+
+[HOST] (2025-08-04T11:22:36.000Z)
+  Pre-approval expired
+
+[GUEST] (2025-08-04T12:13:54.000Z)
+  Thank you! I have completed the booking and look forward to coming!
+
+[HOST] (2025-09-04T12:16:49.000Z)
+  Hello Eline,
+  I hope you are doing great 😌 
+  
+  I’m reaching out to let you know that the power company just informed us that the electric network will be shut down for
+  4 hours during your stay : from 8:30 till 12:30 on the 17/09. 
+  We will leave a small battery inside the lodge during you stay to reduce the inconvenience, and you should also have hot
+  water still during that period 😊 
+  
+  We look very much forward to welcoming you 😌 All the best till then !
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-09T12:13:54.000Z)
+  Hi Thomas! 
+  
+  Good to know! Thanks for letting us know. I would like to remind you of my request for the cot. Are a sheet and blankets
+  also available for this? 
+  
+  We look forward to our stay!
+  
+  Best,
+  Eline
+
+[HOST] (2025-09-10T10:46:14.000Z)
+  Hello Eline, 
+  
+  Thank you for your message. We confirm that a baby travel bed will be available during your stay, as well as a sheet for
+  the mattress and a small light blanket for the baby. :)
+  
+  Please let me know if you have any questions! :) 
+  
+  See you soon! 
+  
+  Caroline
+
+[GUEST] (2025-09-12T08:17:28.000Z)
+  Super nice! Thanks Caroline!
+
+[GUEST] (2025-09-15T06:36:35.000Z)
+  Hi Caroline,
+  
+  I have one more question before departure. Are there towels in the cabin? 
+  
+  We look forward to it!
+  
+  Regards, 
+  Eline
+
+[HOST] (2025-09-15T06:45:40.000Z)
+  Hello Eline,
+  
+  Off course! 😊 We provide towels, bed sheets and even bath robes. Everything you might need we'll be there 😌
+  
+  Looking forward welcoming you! 😌
+  
+  — 🌳🌳 Thomas et Caroline
+
+[HOST] (2025-09-15T13:59:18.000Z)
+  Hello Eline !
+  
+  Here we finally are : it’s time for checkin 🌼☺️
+  
+  You’ll find a numpad on the right hand side of the door. The code is : 295181.
+  
+  The cot has been setup already ☺️
+  
+  We are just a few minutes away if you need anything 😌
+  
+  
+  We wish you a very pleasant stay ! 
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-15T18:50:51.000Z)
+  Hi Thomas and Caroline,
+  
+  Thank you in advance for everything! Very nice that the cot was already ready. It's beautiful here!
+  
+  If you have any good tips on what to do nearby, nice walks or a good restaurant, we are definitely open to that!
+  
+  Best,
+  Eline
+
+[HOST] (2025-09-16T06:52:49.000Z)
+  Hi Eline,
+  
+  Off course we have a few tips 😌
+  
+  For restaurant, we can highly recommend “Les Doux Ragots” in La Gleize, as well as Linea in Spa (a reservation is needed
+  for this one). While you are there, Spa is a beautiful little town definitely worth to explore 😊 And you can pick up
+  some very good pastries at “Chez Blanche” 😌
+  
+  In terms of walks, if you leave the cabin straight up after our parking spot, you’ll find a view point about 10min walk
+  from there. And there is a ton of great trails nearby ⏤ the easiest option is to download the app “All Trails” 😊
+
+[HOST] (2025-09-16T07:07:13.000Z)
+  And here are a few more suggestions for walks and activities to do around the Lodge: 
+  
+  Nearby (by car):
+  Ninglinspo walk – one of the most beautiful walks in the Ardennes, along a wild stream.
+  Vecquée Walk – ideal for immersion in the forest.
+  Tour of Lake Coo – pleasant and accessible, with the waterfall as a bonus.
+  
+  About 20 minutes away:
+  Stavelot Abbey – several museums (including one on the Spa-Francorchamps circuit) and interesting temporary exhibitions.
+  In Spa:
+  The famous thermal baths for a moment of relaxation.
+  Small local shops and good restaurants to stroll around and eat well.
+  
+  Right now, it's deer rut season – a unique experience!
+  To listen to it, go to the side of La Gleize, near the recycling centre, at the intersection of Rue La Vaulx-Renard and
+  Froidcour. Park along the road, then enter the woods: there are often people, but the show is worth it.
+  
+  If you have any questions, please don't hesitate to ask!
+  
+  Caroline & Thomas 🌳🌳
+
+[GUEST] (2025-09-16T09:46:33.000Z)
+  Thanks for all the tips! 😊
+
+[GUEST] (2025-09-17T07:36:07.000Z)
+  Good morning! 
+  
+  We currently have no power. Where can we find the small battery left in the lodge? 
+  
+  Best,
+  Eline
+
+[HOST] (2025-09-17T08:01:25.000Z)
+  Hey Eline,
+
+[HOST] (2025-09-17T08:03:33.000Z)
+  Good morning Eline ! 
+  
+  I have bad news 😔I had ordered the battery especially for today, but the delivery has been severely delayed and it
+  hasn’t arrived yet. If the postman still manages to drop it off today, I’ll come by right away to bring it to you.
+  The power should be back by 12:30, but please let me know if you need anything in the meantime ! Sorry again about that…
+  Wishing you a lovely day none the less! 
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-17T08:30:13.000Z)
+  Hi Thomas,
+  
+  No problem! We'll manage without power for the next two hours and will be out in a minute.  
+  
+  Have a nice day!
+
+[HOST] (2025-09-19T09:33:47.000Z)
+  Hi Éline 🌿
+  I hope you’re having a wonderful time at The View ✨
+  Would it be okay if a carpenter stopped by today between 4 and 6 PM, just to take a few quick measurements around the
+  outdoor hot tub ?
+  It won’t take more than 15 minutes, and he won’t need to come inside 🙏
+  
+  Of course, no worries at all if the timing isn’t convenient for you — just let me know ☺️
+  
+  Have a wonderful day,
+  
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-21T08:29:35.000Z)
+  Hi Thomas,
+  
+  Sorry for my late reply! I hadn't seen your message. We were not at the cabin at that time so hopefully it worked out! 
+  
+  Then I have another question. Since the power outage, a number of lights cannot be operated, the sound system does not
+  work and the sauna can no longer be turned on. Now I would like to use the sauna today. Can that still be repaired?
+  
+  I'd love to hear from you! ☺️
+  
+  Best,
+  Eline
+
+[HOST] (2025-09-21T09:02:11.000Z)
+  Hello Éline !
+  
+  Oh no, thanks for telling me ! I think I was able to fix everything remotely 😊
+  I took the liberty to turn on the sauna as well ☺️
+  Could you confirm everything is in order ?
+  
+  Have a wonderful day,
+
+[HOST] (2025-09-21T09:02:19.000Z)
+  🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-21T09:04:04.000Z)
+  Thank you very much! Everything is working again! 😊
+
+[HOST] (2025-09-21T09:38:29.000Z)
+  Perfect 😌😌
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2250454251 | Guest: Conny Blom | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:35.229Z
+Total Messages: 9
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-09-11T18:00:29.000Z)
+  Dear Thomas, Caroline,
+  
+  Tomorrow we have booked your forest cottage from what time is the cottage available for us? Are there towels in the
+  bathroom? I assume we have to bring our own bathrobe? We are looking forward to it! See you tomorrow! Regards Conny and
+  Patrick
+
+[HOST] (2025-09-11T18:20:06.000Z)
+  Hello Conny,
+  
+  Our checking is starting at 4pm, but I have good news! 😌
+  We don’t have a checkout tomorrow and we managed to get our cleaning team to show up earlier so you can checkin at 2pm
+  already ☺️
+  
+  We provide bed sheets, towels, an even Bathrobes. Everything you might need is included and will be ready for you  😌
+  
+  And last good news : you might have seen a inflatable outdoor jacuzzi on our listing but it was replaced yesterday by a
+  brand new wooden Nordic bath 😌
+  
+  Hope you’ll enjoy it ☺️
+  
+  We won’t be able to welcome you in person tomorrow, but self checkin is super easy. Just type the code 295281 on the
+  numpad on the right hand side of the door 😊 
+  
+  And we’ll be just a few minutes away if you need anything !
+  
+  Have a wonderful evening 😌
+
+[GUEST] (2025-09-11T18:23:17.000Z)
+  Hi Thomas thank you for your quick response, that will be all right tomorrow! Glad we can check in as early as 2 p.m.
+  😁And wow a wooden Scandinavian bath! Looking forward to it! Regards and you have a good evening too..
+
+[HOST] (2025-09-12T13:10:10.000Z)
+  Hello Conny, 
+  
+  The code for the Nordic bath cover is 00 
+  
+  Enjoy! 😊
+
+[GUEST] (2025-09-12T13:53:58.000Z)
+  We will definitely do that! What a beautiful cottage!!!
+
+[GUEST] (2025-09-15T08:11:46.000Z)
+  I accidentally switched off the button but we are there until 12 o'clock, it was wonderful!!
+
+[HOST] (2025-09-15T08:13:05.000Z)
+  Hey Conny, no worries 😌 enjoy the last few hours 😌😌
+  
+  — 🌳🌳 Thomas et Caroline
+
+[GUEST] (2025-09-15T09:22:14.000Z)
+  We have left, we had a wonderful time and will definitely come back! Regards, Conny and Patrick
+
+[HOST] (2025-09-15T10:24:40.000Z)
+  Hey Conny and Patrick,
+  
+  We are very very glad to read that ☺️
+  
+  We look very much forward to welcoming you again!
+  
+  As a thank you gift, the code FRIENDSOFTHEVIEW will give you a 15% if you reserve from our website, theviewlodge.be
+  directly. It has no expiration date and it can be used many many times… so feel free to share it with your friends… or
+  to keep it for yourselves 😁
+  
+  You can also follow us on instagram, @theviewlodge.be for last minutes promotion and other news about the place ☺️
+  
+  Have a lovely day and a safe trip back home !
+  
+  🌳🌳 Thomas et Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 5-R.NS02N1ExQzNONkg | Guest: Yamila Cromberge | Property: 
+Channel: hostex_direct
+Last Message: 2025-10-24T11:15:35.830Z
+Total Messages: 2
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-09-01T13:24:23.000Z)
+  Hello Yamila !
+
+[HOST] (2025-09-01T13:26:37.000Z)
+  Hello Yamila ! Tomorrow is the big day already 😌  We can't wait to welcome you at The View ! Do you know your arrival
+  time already? We would be thrilled to welcome you in person ! We have an excellent news : the place will be ready for a
+  little earlier than the expected time of checkin, at 2pm instead of 4pm 😊
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2241273315 | Guest: Gerlof Zuidema | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:36.398Z
+Total Messages: 21
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-26T12:18:18.000Z)
+  Hello Thomas, are there towels available in the Airbnb? Regards, Gerlof & Laura
+
+[HOST] (2025-07-26T16:11:56.000Z)
+  Hello Gerlof and Laura !
+  
+  We are thrilled to welcome you at The View 😌
+  
+  Of course ! We provide free of charge bed sheets, towels, bath robes, shower gel and shampoo,… basically everything
+  you’ll need for a perfect trip 😌
+  
+  Do not hesitate if you have any other questions !
+  
+  Looking very much to meet you,
+  
+  Have a wonderful day,
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-07-26T16:53:32.000Z)
+  Perfect thank you!
+
+[HOST] (2025-08-26T12:00:47.000Z)
+  Hello Gerlof ! 
+  Today is the big day already 😌
+  The View Lodge will be ready to welcome you at 4pm. 
+  
+  You can park your car freely alongside the main entrance of the lodge. 
+  Then, your personal code for the entry door is : 295281. You'll find the numpad just on the right-hand side of the door
+  😊 
+  
+  Once inside, you'll find a small guide explaining everything there is to know ! And off, course, we're just a phone call
+  or a message away should you have any questions 😌
+  
+  We wish you a lovely stay! 
+  
+  🌳🌳 Thomas & Caroline
+
+[HOST] (2025-08-26T12:37:47.000Z)
+  Hello again Gerlof 😊 
+  Good news! The View is ready for you already ! Feel free to checkin whenever you want 😌😌
+
+[GUEST] (2025-08-26T13:16:54.000Z)
+  We're on our way, doing some more shopping, thanks!
+
+[GUEST] (2025-08-26T16:25:53.000Z)
+  Hi Thomas, is there pepper and salt somewhere?
+
+[HOST] (2025-08-26T16:35:11.000Z)
+  Hey Gerlof, yes off course 😊 In one of the drawer of the kitchen. The first drawer is hiding a second smaller drawer
+  inside 😊
+
+[GUEST] (2025-08-26T16:35:52.000Z)
+  😅
+
+[GUEST] (2025-08-26T16:35:57.000Z)
+  Thank you!
+
+[HOST] (2025-08-26T16:37:45.000Z)
+  You’re welcome ☺️I promise it’s the only hidden treasure 😁
+
+[GUEST] (2025-08-29T12:15:04.000Z)
+  Hi Thomas, the spa gives error E90, do you know how to fix this?
+
+[HOST] (2025-08-29T12:20:47.000Z)
+  Hi Gerlof,
+  
+  No worries, the filter needs to be changed.:) 
+  
+  There are some in the small trunk next to the hot tub. 
+  
+  To change the hot tub filter, just turn off the pump, unscrew the filter housing cover, remove the worn cartridge,
+  insert the new cartridge, then screw the lid back on before turning on the pump. Buttons: Enter then flame and filter. 
+  
+  If there's a problem, I can come. I'm ten minutes away.:)
+  
+  Caroline
+
+[GUEST] (2025-08-29T12:24:07.000Z)
+  Which button is enter?
+
+[HOST] (2025-08-29T12:24:58.000Z)
+  On/off button :)
+
+[GUEST] (2025-08-29T12:26:36.000Z)
+  He keeps giving E90
+
+[HOST] (2025-08-29T12:27:13.000Z)
+  I'll be there in 10 minutes. :) 
+  
+  Caroline
+
+[GUEST] (2025-08-29T12:29:14.000Z)
+  Okay, see you soon!
+
+[GUEST] (2025-08-30T09:00:45.000Z)
+  Hello, we are leaving now.  Thank you for the nice days. You have a beautiful cottage with an even more beautiful view!
+  The dirty laundry is in the bath, some of the rubbish is already by the door and there are still some dirty dishes in
+  the dishwasher. 1 of the bathrobes had no belt. This was already the case. The curtain at the sliding door is black in a
+  few places. We didn't do this either and it was already like that. We just wanted to point that out. Have a nice day!
+
+[GUEST] (2025-08-30T09:01:18.000Z)
+  There is still 1 egg and a jar of mayonnaise in the fridge. You can use them or throw them away.
+
+[HOST] (2025-08-30T17:47:23.000Z)
+  Hello,
+  Thank you so much for your kind words — we’re delighted you enjoyed your stay and the views!
+  
+  Thanks also for pointing out the little details about the bathrobe and curtain, that’s very helpful. 
+  No worries at all about the laundry, garbage or dishes, we took care of everything.
+  Safe travels home and we’d be happy to welcome you back anytime!
+  
+  🌳🌳 Thomas & Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-162080-102607 | Guest: Loraine Wilpstra | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:37.007Z
+Total Messages: 54
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-27T19:47:39.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-07-27T19:48:13.000Z)
+  New reservation.
+
+[GUEST] (2025-07-27T19:50:48.000Z)
+  Source: in_box
+
+[GUEST] (2025-07-27T19:50:48.000Z)
+  Source: home
+
+[GUEST] (2025-07-27T20:00:16.000Z)
+  Source: home
+
+[GUEST] (2025-07-27T20:00:17.000Z)
+  Source: in_box
+
+[GUEST] (2025-07-27T20:00:36.000Z)
+  Source: home
+
+[GUEST] (2025-07-27T20:00:38.000Z)
+  Source: in_box
+
+[GUEST] (2025-07-27T20:29:33.000Z)
+  Hi,
+  I recently made a reservation at The View Lodge and would like to ask how the payment is arranged. Do I pay in advance
+  or on arrival?
+  Also, could you please let me know how check-in and check-out work?
+  Kind regards,
+  Loraine Wilpstra
+  Op 27 jul 2025 om 21:48 heeft Booking Assistant <thread.rm8l18.q7z16w@bs.mail.hostex.io> het volgende geschreven:
+  ﻿
+  Hi Loraine,
+   
+  Congratulations! Your reservation has been confirmed.We look forward to your stay!
+   
+  FIND US
+  Address:
+  Targnon 29, 4987 Stoumont, Belgium
+  Location details: The best way to reach The View is to find "The View Lodge — Targnon, Stoumont, Belgium" on Google
+  Maps, Apple Maps and Waze — https://maps.app.goo.gl/a32gTnrNerdxRjQ39
+  On other GPS system, you can introduce latitude and longitude manually : 50.4138954, 5.7806075
+  The Lodge is situated atop the hill. You'll find a small white chapel along the N633 — climb the road next to it till
+  you find us!
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+   
+  Your reservation details:
+   
+  Reservation Details
+  The View — Wellness Forest Lodge
+  Check-in/out
+  2025-08-23 2025-08-26 . 3 nights
+  Number of guests
+  2 adults
+  Full name
+  Loraine Wilpstra
+  Phone
+  +31 642320955
+  Email
+  Loraine.wilpstra@gmail.com
+  Reservation code
+  MDM3CGRH
+  Status
+  Unpaid
+  Rate plan
+  Standard Rate
+  Standard Rate
+  Description
+  Cost
+  €199 x 1 night
+  €199.00
+  €179 x 2 nights
+  €358.00
+  Total
+  €557.00
+  ✔ 100% refund eligible before Aug 10 2025
+  ✔ Full refund eligible within 24 hours after your payment
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-07-27T20:32:18.000Z)
+  Source: home
+
+[GUEST] (2025-07-27T20:32:19.000Z)
+  Source: in_box
+
+[GUEST] (2025-07-28T05:58:55.000Z)
+  Source: in_box
+
+[GUEST] (2025-07-28T05:58:55.000Z)
+  Source: home
+
+[HOST] (2025-07-28T06:49:26.000Z)
+  Hello Loraine,
+  
+  We are thrilled to welcome you at The View 😌
+  
+  We’ll send you a payment link 14 days prior to your arrival, when cancellation won’t be possible anymore 😊 
+  
+  The checkin is possible starting at 16:00, and checkout at 12:00
+  
+  Depending on your arrival time, we’ll try to welcome you in person 😌Otherwise late checkin is possible via a digicode
+  on the door 🙂
+  
+  Do not hesitate if you have any other question ☺️
+  
+  Looking very much forward meeting you 😌
+  
+  🌳🌳Thomas & Caroline
+
+[GUEST] (2025-08-12T09:29:54.000Z)
+  Hi, 
+  Thank you for your message. I think we will arrive at the end of the afternoon, but I will let you know in advance. I
+  look forward to receiving the payment link.
+  Verstuurd vanaf mijn iPhone
+  Op 28 jul 2025 om 08:49 heeft Booking Assistant <thread.rm8l18.q7z16w@bs.mail.hostex.io> het volgende geschreven:
+  ﻿
+  Hi ,
+   
+  Hello Loraine,
+  We are thrilled to welcome you at The View 😌
+  We’ll send you a payment link 14 days prior to your arrival, when cancellation won’t be possible anymore 😊
+  The checkin is possible starting at 16:00, and checkout at 12:00
+  Depending on your arrival time, we’ll try to welcome you in person 😌Otherwise late checkin is possible via a digicode
+  on the door 🙂
+  Do not hesitate if you have any other question ☺️
+  Looking very much forward meeting you 😌
+  🌳🌳Thomas & Caroline
+   
+  If you have any questions, please reply directly to this email. You can also contact us via
+  live chat.
+   
+  Best regards,
+  The View Lodge
+   
+  If you don't want to receive these emails from in the future, please
+  Unsubscribe
+  .
+
+[GUEST] (2025-08-21T13:03:23.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T13:04:55.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T13:11:00.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T13:11:26.000Z)
+  Hello,
+  Could you please let me know if we need to bring our own towels and bed linen? On Saturday, we expect to arrive between
+  4 and 5 p.m., depending on the traffic. We are really looking forward to our stay.
+
+[GUEST] (2025-08-21T13:11:56.000Z)
+  Spreken jullie ook gewoon Nederlands?
+
+[GUEST] (2025-08-21T13:38:29.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T13:57:59.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T15:21:44.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T15:41:12.000Z)
+  Source: in_box
+
+[HOST] (2025-08-21T17:46:39.000Z)
+  Hello Loraine !
+  
+  Thank you for your message. Towels and bed linen are provided, so you do not need to bring your own. :)
+  
+  Perfect timing ! :) 
+  
+  We don’t speak Dutch, but French, English and Spanish (Caroline). But don’t worry, Google Translate can help us
+  translate ;)
+
+[GUEST] (2025-08-21T18:40:28.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T18:42:57.000Z)
+  Verry nice we’ll see you on Saturday!
+
+[GUEST] (2025-08-21T18:44:05.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T18:47:04.000Z)
+  Do you have any recommendations for good restaurants nearby?
+
+[GUEST] (2025-08-21T19:12:00.000Z)
+  Source: in_box
+
+[HOST] (2025-08-21T19:24:12.000Z)
+  Yes, we can highly recommend “Linea” in Spa, and “Doux Ragots” in Stoumont (very close to The View) 😊
+
+[GUEST] (2025-08-21T19:44:06.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T19:44:08.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-21T19:44:21.000Z)
+  Thanks!!
+
+[GUEST] (2025-08-23T09:36:01.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T09:36:10.000Z)
+  Hi, would it be possible for us to receive the door code? I’m currently looking for a new car and on our way we are
+  stopping at a few garages to have a look. This is taking a bit longer than expected, so we plan to have dinner on the
+  way and will only arrive after 6:30 p.m. I’d appreciate it if you could let me know if this is possible.
+
+[GUEST] (2025-08-23T09:43:21.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T09:57:37.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T10:17:13.000Z)
+  Source: in_box
+
+[HOST] (2025-08-23T10:23:43.000Z)
+  Hi Loraine !
+  
+  No worries, it’s all good.
+  
+  Your code is 295281 
+  
+  Happy car hunting ! :)
+
+[GUEST] (2025-08-23T10:51:39.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T10:53:42.000Z)
+  Thank you, we’re looking forward to seeing the beautiful lodge!
+
+[GUEST] (2025-08-23T11:21:34.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T14:27:14.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T18:14:15.000Z)
+  Wow, what a beautiful place! We could really enjoy ourselves here for a few days. One more question: is it possible to
+  play music on the speakers? I can’t seem to find any instructions for them.
+
+[GUEST] (2025-08-23T18:16:06.000Z)
+  Source: in_box
+
+[HOST] (2025-08-23T18:17:34.000Z)
+  Supe glad you enjoy the place Loraine ☺️☺️
+  
+  Once connected to the WiFi (Using the QR code or password shown on the guide on the coffee table), you’ll be able to
+  select the speakers in Spotify, YouTube Music or any app compatible with Google Cast 😊
+
+[GUEST] (2025-08-23T18:23:11.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-23T18:26:40.000Z)
+  Verry Nice thankyou!
+
+[GUEST] (2025-08-23T18:43:37.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-24T08:03:13.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-24T12:47:24.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-26T10:10:42.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-26T10:12:06.000Z)
+  We really enjoyed our stay in your beautiful lodge. We will definitely come back again and will gladly recommend this
+  house to others. Thank you!😊
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2238003894 | Guest: Joana Welsing | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:37.649Z
+Total Messages: 19
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-23T15:05:11.000Z)
+  Dear Thomas,
+  
+  my name is Joana and I'm looking for an accomodation for my sister and her boyfriend for a little getaway. My sister has
+  ME/CFS and is highly restricted in her mobility and can't really go out or do any activities. That's why I'm looking for
+  vacation houses that have a garden and a pool and stumbled across your house! :) In the description it says there is an
+  outdoor whirlpool included, is that right? I haven't seen any photos, that's why I'm asking. 
+  
+  All the best
+  Joana
+
+[HOST] (2025-07-23T15:09:29.000Z)
+  Hello Joana,
+  
+  We would be thrilled to welcome your sister and her boyfriend !
+  
+  We do have an outdoor jacuzzi, I’m sending a few pictures of the spot 😊 
+  
+  Would it be possible for your sister despite her medical condition to climb a few steps ? There is a few to reach the
+  lodge, as pictured too. Otherwise it’s also possible for her to get inside from the bedroom door, as long as someone
+  opens for her 😊
+
+[HOST] (2025-07-23T15:10:22.000Z)
+  Ok, so apparently I can’t send you picture just yet, but I was planning to update the listing anyway so I will do that
+  instead and poke you once it’s done 😌
+
+[HOST] (2025-07-23T15:10:39.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-07-23T15:13:30.000Z)
+  There you go ☺️
+
+[GUEST] (2025-07-23T15:14:16.000Z)
+  Hi Thomas, 
+  
+  thank you so much for your quick reply and your help, esp. with the pictures. That is so helpful for her, as it's always
+  a bit difficult to assess what works for her! :) 
+  
+  I'm sending my sister all the information and get back to you asap. Thank you! 😊
+
+[HOST] (2025-07-23T15:17:19.000Z)
+  My pleasure 😌😌
+  If she needs any more information, please just ask me ☺️ Have a nice afternoon!
+
+[GUEST] (2025-07-23T16:30:46.000Z)
+  Hi Thomas, I just booked your lodge for my sister and her boyfriend! They are both very much looking forward. :) Thank
+  you so much again for your support!
+
+[HOST] (2025-07-23T16:32:58.000Z)
+  Amazing news ! We very much look forward welcoming them 😌😌
+  
+  Have a wonderful evening ☺️
+
+[GUEST] (2025-07-23T17:10:06.000Z)
+  Hello Thomas! We look forward to staying in your home :)
+  Until then, 
+  Best, 
+  Gina and Tobi
+
+[GUEST] (2025-08-14T10:44:39.000Z)
+  Hello Thomas, 
+  We are looking forward to our stay. We are expected to arrive in Targnon tomorrow at 2:30 pm. Would it be possible to
+  stay in the garden/outdoor area of the lodge? And is there a swimming facility nearby? So a swimming spot on a river or
+  lake? We'd love a recommendation :) 
+  Thank you in advance and best regards 
+  Gina
+
+[HOST] (2025-08-14T11:05:42.000Z)
+  Hi Gina,
+  
+  We look very much forward welcoming you tomorrow ☺️
+  The lodge will be cleaned at that time, but are more than welcomed to chill on the terrace, I’ve warned Isabelle, the
+  person that take cleaning in charge that you’ll be there 😊 
+  
+  As for swimming spots, the river is just down the street, about a 10min walk. But if you want an official, safe place
+  you can find one here : https://visitwallonia.com/en-gb/3/i-love/wallonia-land-of-water/where-to-go-wild-swimming
+  
+  Have a beautiful day ☺️
+  
+  See you tomorrow!
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-14T14:46:06.000Z)
+  Hi Thomas, thank you so much for letting us stay on the terrace and for letting Isabelle know.
+  Great that the river is so close. Unfortunately, I'm not so good on foot, do you know a place where you can get close to
+  the water by car? 
+  Thanks and best regards 
+  Gina
+
+[HOST] (2025-08-14T14:59:32.000Z)
+  Hello again Gina 😌
+  The spot I was thinking of is also reachable by car, see here : https://maps.app.goo.gl/E5yRLM1pjMiVZw8j6?g_st=ipc
+  
+  But I’m not a big swimmer myself so I can’t be telling you for sure you’ll be able to swim there. Best and safest option
+  would be to pick one of the official spot recommended by VisitWallonia 😊
+
+[HOST] (2025-08-15T12:30:09.000Z)
+  295281
+
+[GUEST] (2025-08-20T09:30:51.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-20T09:30:51.000Z)
+  Hello Caroline, just wanted to let you know that someone just dropped this off for you :)
+
+[HOST] (2025-08-20T09:41:22.000Z)
+  Hello Gina!
+  
+  Hehe, it's the neighbour. Thank you 🙏 
+  
+  Is everything okay at the chalet? :)
+
+[GUEST] (2025-08-20T10:36:51.000Z)
+  Oh! Yes, everything is great here :)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2243842643 | Guest: Woutervannorel Van Norel | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:38.252Z
+Total Messages: 9
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-08-13T10:25:45.000Z)
+  Hello Woutervannorel,
+  
+  Today’s the big day — we’re really excited to welcome you!
+  
+  Check-in opens at 4 pm, and you’re free to arrive any time after that. We have an easy self check-in system: your
+  personal code for the numpad (to the right of the entry door) is 295281.
+  
+  If you let us know in advance roughly what time you’ll arrive, we’ll do our best to be there to greet you in person.
+  
+  Wishing you a safe journey,
+  and a wonderful evening ahead,
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-13T12:59:51.000Z)
+  Good day we have arrived, we have put the car there and went for a walk. We'll be back in an hour.
+
+[HOST] (2025-08-13T13:05:49.000Z)
+  Perfect 😊 Enjoy the walk! I’ll let you know as soon as cleaning is done, by 4pm at the latest ☺️
+
+[GUEST] (2025-08-13T13:14:43.000Z)
+  Is all good thanks
+
+[HOST] (2025-08-13T14:07:28.000Z)
+  All is ready and in order ☺️
+
+[HOST] (2025-08-13T14:08:00.000Z)
+  Welcome in ! I’m not far if you have any questions do not hesitate to reach out here or at 003249564999 😊 
+  
+  Wishing you all the best for your stay! ☺️☺️
+
+[GUEST] (2025-08-13T14:15:27.000Z)
+  Will be all right. Have a nice day.🫡
+
+[GUEST] (2025-08-15T08:40:22.000Z)
+  Good morning, we're leaving. It was a great cottage thanks for that, there is 1 glass that broke with an ice cube in it.
+  I just wanted to let you know
+
+[HOST] (2025-08-15T08:44:21.000Z)
+  Hello,
+  
+  Glad you had a great timeeeee! 😊 
+  
+  No worries at all ! ☀️ Thanks for letting us know. 
+  
+  Save trip !
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 9-34a759ca-8743-533a-8e59-950d000c24c9 | Guest: Bob van Houten | Property: 
+Channel: booking.com
+Last Message: 2025-10-24T11:15:38.853Z
+Total Messages: 3
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-11T19:54:25.000Z)
+  Hallo,
+  
+  Is het mogelijk om ook een baby mee te nemen? We konden het niet aangeven op booking.com, maar in de omschrijving stond
+  dat dit wel mogelijk was.
+  
+  Groeten,
+  
+  Bob
+
+[HOST] (2025-08-12T14:20:25.000Z)
+  Hello Bob,
+  
+  Sadly, those dates got previously booked on a different platform. 
+  Sorry for that, we'll make sure to fix cross-channel booking synchronisation shortly. 
+  Thank you for your understanding ! 
+  
+  We do accept babies should you wish to book for different dates 😊
+  
+  Wishing you the best,
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-14T17:30:31.000Z)
+  The reservation has been cancelled.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2234392273 | Guest: Tim Roelofs | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:39.485Z
+Total Messages: 61
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-05T16:42:47.000Z)
+  Hello Thomas (Dutch/English?),
+  
+  We are looking forward to stay in your beautiful place with are 10 weeks old daughter Abby.
+  Can we meet and go in at 16:00?
+  
+  BR,
+  
+  Tim
+
+[HOST] (2025-08-05T17:29:11.000Z)
+  Hello Tim!
+  
+  Dutch or English, as you wish 😊 we only speak French and English but AirBnb can translate pretty well ! 
+  
+  Indeed tomorrow is the big day ! 
+  We look very much forward to welcoming you 😊 
+  
+  4pm is the perfect time for us 😊 
+  
+  Caroline will be there to welcome you then ! Don’t hesitate to warn us if you are coming later on 😊 
+  
+  See you tomorrow !
+  
+  🌳🌳 Caroline and Thomas
+
+[GUEST] (2025-08-05T18:07:36.000Z)
+  Thank you Thomas! See you tomorrow
+
+[GUEST] (2025-08-06T08:08:05.000Z)
+  Hello Thomas, are there towels (to shower etc.) in the cottage?
+
+[HOST] (2025-08-06T08:11:36.000Z)
+  Hello Tim!
+  
+  Yes, we provide towels in the cottage. If you have any other questions or needs, feel free to ask. Looking forward to
+  your arrival! 😊
+
+[GUEST] (2025-08-06T08:15:51.000Z)
+  Thanks
+
+[HOST] (2025-08-06T13:54:37.000Z)
+  295281
+
+[GUEST] (2025-08-06T14:31:56.000Z)
+  Merci Caroline! The hot tub is filed to between the min/max lines and we closed it to warm it up. Enjoy your day
+
+[HOST] (2025-08-06T14:33:41.000Z)
+  Thanks Tim !
+  
+  Don’t hesitate to reach out if you need anything. Have a lovely time with your beautiful baby girl ! :)
+
+[HOST] (2025-08-07T07:37:48.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-08-07T07:37:58.000Z)
+  Hello Lieke ☺️
+  
+  When the small bins under the sink are full, you can put the bag under the terrace. That’s it ! We’ll take care of it
+  for you 😊 
+  
+  Hope your first night went smoothly ☺️
+  
+  Don’t hesitate if you have any other questions !
+  
+  Wishing you a wonderful day !
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-07T08:41:27.000Z)
+  Thanks!
+
+[GUEST] (2025-08-07T11:28:42.000Z)
+  The doorhandle of the toilet (inside side) keeps coming off. It seems there was no locking bolt used.
+
+[HOST] (2025-08-07T11:35:03.000Z)
+  Hello,
+  
+  Strange! :/ 
+  
+  Can I come around 4 p.m. to sort this out if the timing is good for you? :) 
+  
+  Caroline
+
+[GUEST] (2025-08-07T11:46:26.000Z)
+  Of course. I do not think we will be there.
+
+[HOST] (2025-08-07T12:13:19.000Z)
+  If you don't mind, I'll come by then!
+  
+  Have a nice day :)
+
+[HOST] (2025-08-07T14:19:15.000Z)
+  Ok ! I got the other one. I’m going to the shop and back to fix it. 😊
+
+[GUEST] (2025-08-08T11:46:20.000Z)
+  Good afternoon Caroline, are you familiar with a good tyre garage (car) nearby?
+
+[GUEST] (2025-08-08T11:46:38.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-08T11:46:44.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-08-08T11:47:06.000Z)
+  Oh shit !
+
+[HOST] (2025-08-08T11:49:55.000Z)
+  Do you have a extra one to drive till there ?
+  
+  You can call https://www.marinmotor.be (they are quick to react)  
+  
+  Or
+  
+   https://garagelechalet.be
+
+[HOST] (2025-08-08T11:50:12.000Z)
+  Do you need me to call ? :)
+
+[HOST] (2025-08-08T11:50:17.000Z)
+  Caroline *
+
+[GUEST] (2025-08-08T11:50:33.000Z)
+  Thanks. No, no extra tyres: runflats
+
+[GUEST] (2025-08-08T11:50:42.000Z)
+  We are waiting for the breakdown service
+
+[GUEST] (2025-08-08T11:50:48.000Z)
+  We'll let you know
+
+[HOST] (2025-08-08T11:52:20.000Z)
+  Courage !
+
+[HOST] (2025-08-08T11:56:13.000Z)
+  If you need me to come, just let me know.
+
+[GUEST] (2025-08-08T11:58:39.000Z)
+  Thank you, we'll be in touch. It's bad luck, but not a disaster
+
+[GUEST] (2025-08-08T13:14:56.000Z)
+  Still no help…
+  We cannot reach the garages (they do not pick up?). 
+  
+  We need 225/40/R19 93Y (BMW) tires
+
+[HOST] (2025-08-08T13:15:38.000Z)
+  I m going to call a few garages
+
+[GUEST] (2025-08-08T13:15:40.000Z)
+  Best would be the dealer in verviers, BMW Discar in Verviers I think
+
+[GUEST] (2025-08-08T13:15:54.000Z)
+  But I understand you are not a fulltime trouble shooter
+
+[HOST] (2025-08-08T13:16:26.000Z)
+  Haha no worries, I’m gonna give a try !
+
+[GUEST] (2025-08-08T13:16:44.000Z)
+  Tires: Pirelli P Zero
+  
+  We need 225/40/R19 93Y (BMW)
+
+[GUEST] (2025-08-08T13:16:47.000Z)
+  2x
+
+[HOST] (2025-08-08T13:30:41.000Z)
+  On me dit de téléphoner directement à l’assistance BMW
+
+[HOST] (2025-08-08T13:30:45.000Z)
+  02 354 81 23
+
+[HOST] (2025-08-08T13:31:14.000Z)
+  Have you tried it yet?
+
+[GUEST] (2025-08-08T13:32:03.000Z)
+  No, not BMW assistance. A breakdown service is already on its way. Now we try to find tyres, that's the only solution
+
+[HOST] (2025-08-08T13:32:50.000Z)
+  Okay 
+  
+  I'm making phone calls. So it's just the tyres
+
+[HOST] (2025-08-08T13:33:16.000Z)
+  Oh no ! I can recommend Marin Motor ⏤ https://maps.app.goo.gl/RHzEQnAjcHthhuvbA?g_st=ipc
+
+[GUEST] (2025-08-08T13:34:06.000Z)
+  I couldn't get them? Went to voicemail
+
+[GUEST] (2025-08-08T13:34:59.000Z)
+  Could you ask them if they have that specific tyre?
+  
+  Tyres: Pirelli P Zero
+  
+  We need 225/40/R19 93Y (BMW)
+
+[GUEST] (2025-08-08T13:35:13.000Z)
+  My French is not good enough for that
+
+[HOST] (2025-08-08T13:35:27.000Z)
+  I'm making phone calls :)
+
+[GUEST] (2025-08-08T13:35:39.000Z)
+  Thank you SO much
+
+[HOST] (2025-08-08T13:41:20.000Z)
+  Could you send me your phone number?
+
+[GUEST] (2025-08-08T13:41:36.000Z)
+  +31657879233
+
+[HOST] (2025-08-08T13:56:43.000Z)
+  Hi ! QTeam Liege Poincaré has two of that size but « continental »
+  
+  Would that work ?
+
+[GUEST] (2025-08-11T12:04:41.000Z)
+  Good afternoon. The pool shows an E90 error. We have changed the filter, but the pump does not work it seems
+
+[HOST] (2025-08-11T12:08:10.000Z)
+  Hi Tim,
+  
+  Perfect, that's the code for the filter. :) 
+  
+  Can you turn off the jacuzzi (you can unplug it and then plug it back in and press the on button on the black control)?
+  Then press "enter" and then the flame and filter. 
+  
+  Tell me if it works, otherwise I'll come and fix it. 
+  
+  I'll put instructions for the next time. :) 
+  
+  Caroline
+
+[GUEST] (2025-08-11T12:27:28.000Z)
+  I think it works 👌🏻
+
+[HOST] (2025-08-11T12:32:59.000Z)
+  Great, excellent news! 🤗👌
+
+[GUEST] (2025-08-12T16:46:32.000Z)
+  Bonsoir Caroline, unfortunately we have to check out tomorrow, we would’ve loved to stay longer. 
+  Will you be there for checkout or do we just lock the door? We will be out at 12:00
+
+[HOST] (2025-08-12T17:44:08.000Z)
+  Good evening Tim,
+  
+  Oh, you're welcome whenever you want☺️! Did everything go well with the lovely Abby then? 
+  
+  I'll try to come by at noon, but I'll confirm tomorrow morning. Otherwise, just close the door, no worries! :)
+
+[HOST] (2025-08-12T17:44:16.000Z)
+  Caroline *
+
+[GUEST] (2025-08-12T17:56:38.000Z)
+  Hello Caroline, if you don't have time: no problem. We'll close up nicely. 
+  Abby loved it here, she really enjoyed it.
+
+[GUEST] (2025-08-12T17:57:12.000Z)
+  We leave a small “thank you” for all your good help with the car tyres.
+
+[HOST] (2025-08-13T09:29:17.000Z)
+  Hello, 
+  
+  If you're still at the lodge, I'll stop by at noon to say goodbye! 😊
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 24-139721-102607 | Guest: Anthony Leidinger | Property: 
+Channel: booking_site
+Last Message: 2025-10-24T11:15:40.284Z
+Total Messages: 4
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-11T07:51:42.000Z)
+  Source: home
+
+[GUEST] (2025-08-11T07:51:45.000Z)
+  Source: in_box
+
+[GUEST] (2025-08-11T08:07:48.000Z)
+  Bonjour, veuillez m'excuser mais je vais devoir modifier les dates de notre venue si c'est possible pour vous. Nous
+  aimerions venir du 20 au 22 mars pour fêter nos 10 ans de couple ? Merci d'avance. Anthony Leidinger
+
+[HOST] (2025-08-11T09:20:41.000Z)
+  Bonjour Anthony, aucun problème, l’annulation est gratuite jusque 14 jours avant la réservation 😊 Je fais le nécessaire
+  ! 😊
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2256326223 | Guest: Florian Kühlborn | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:40.894Z
+Total Messages: 1
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-08T18:17:33.000Z)
+  The reservation has been cancelled.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2246651791 | Guest: Lieke | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:41.441Z
+Total Messages: 10
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-31T08:46:24.000Z)
+  Hi Thomas! We are visiting the Lodge next week and I was wondering (because of the nice weather) how warm it gets inside
+  and if there is an air conditioning or fan? I'd love to hear from you, thanks! Gr Tim and Lieke
+
+[HOST] (2025-07-31T09:15:14.000Z)
+  Hello Lieke and Tim 😌
+  The lodge is very well insulated, and we do provide a fan. We are very well protected by the trees and the forest as
+  well, so the temperature usually don’t rise too much ☺️
+  
+  Small detail : you’ve reached out via a booking inquiry for a new different stay, I’m going to approve it to avoid
+  impacting our Airbnb response rate, but you can just ignore it and it will expire after 24h 😌
+  
+  Looking very much forward meeting you next week and wishing you the best till then !
+  
+  🌳 🌳 Caroline & Thomas
+
+[HOST] (2025-07-31T09:15:30.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-07-31T09:19:24.000Z)
+  Okay great, then we know enough. Thanks for the quick response!
+
+[HOST] (2025-08-01T09:15:34.000Z)
+  Pre-approval expired
+
+[GUEST] (2025-08-06T08:10:54.000Z)
+  Dear Caroline, Thomas. Can you tell us if there are towels in the cottage? Regards
+
+[GUEST] (2025-08-07T07:32:52.000Z)
+  Hello, is there a place we can dump the trash or do we have to gather it for you when we leave?
+
+[HOST] (2025-08-07T07:36:03.000Z)
+  Hello Lieke ☺️
+  
+  When the small bins under the sink are full, you can put the bag under the terrace. That’s it ! We’ll take care of it
+  for you 😊 
+  
+  Hope your first night went smoothly ☺️
+  
+  Don’t hesitate if you have any other questions !
+  
+  Wishing you a wonderful day !
+  
+  🌳🌳 Thomas & Caroline
+
+[HOST] (2025-08-07T07:36:43.000Z)
+  I can’t send you the picture in this conversation, I’ll send it in the other one ☺️
+
+[GUEST] (2025-08-07T08:40:16.000Z)
+  Thank you, we found it!
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2245513173 | Guest: Heidi Baecke | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:42.019Z
+Total Messages: 11
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-03T17:30:34.000Z)
+  Hello Thomas,
+  
+  We booked your house starting tomorrow and I wanted to know how the check-in works. Is there a code or should we let you
+  know our approximate arrival time?
+  
+  Kind regards,
+  
+  Heidi
+
+[HOST] (2025-08-03T17:50:40.000Z)
+  Hello Heidi !
+  Indeed tomorrow is the big day and we very much look forward to welcoming you 😌
+  
+  Checkin starts at 4pm
+  You can arrive whenever it suits you after that, we do offer a really easy self checkin : your personal code for the
+  numpad on the right hand side of the entry door is 295281.
+  
+  If you warn us in advance of when you think you’ll arrive, we’ll try to be there to welcome you in person 😌
+  
+  Have a safe trip tomorrow ! 
+  Enjoy your evening,
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-03T18:09:22.000Z)
+  Hi Thomas 
+  
+  Thanks for your swift response!
+  I will keep you posted on our time of arrival.
+  
+  Looking forward.
+  
+  kind regards,
+  Heidi
+
+[GUEST] (2025-08-04T12:06:03.000Z)
+  Hi Thomas 
+  
+  Just wanted to let you know that we will be arriving between 6 and 7 pm
+  
+  Greetings 
+  
+  Heidi
+
+[HOST] (2025-08-04T13:50:57.000Z)
+  Hi Heidi !
+  
+  We won’t be able to welcome you but no worries self checkin is super easy 😌
+  
+  As a reminder, your code is : 295281 😊 
+  
+  Feel free to reach out here if you have any questions 😊 
+  
+  Have a safe ride !
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-04T19:08:28.000Z)
+  Hi Thomas 
+  We just arrived at your beautiful place, wow what a view!
+  ✨
+
+[HOST] (2025-08-04T20:19:49.000Z)
+  Hey Heidi! So glad to read that ☺️
+  As you can see, we didn’t steal the name 😁
+  If you have any questions or need anything, you know where to find us 😌
+  
+  Have a wonderful first night at The View !
+  
+  ⏤ 🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-08-06T06:57:01.000Z)
+  Hi Thomas, this is Anton, Heidi’s husband. 
+  We’re checking out this morning, we had a fantastic stay and we will definitely be back. 
+  
+  Yesterday we had an issue with the hot tub where it suddenly gave an error code and stopped working.  I pulled out the
+  plug, put it back in, the display of the remote is back on, but pump and heater are not functioning. I just left it as
+  it is, didn’t touch any buttons. It was not a big deal for us, but just wanted to let you know..
+  
+  If you want me to follow specific steps to put it back on (maybe for other guests?) we’re still here till 10:30-11:00,
+  otherwise I’ll just leave it as it is.
+
+[HOST] (2025-08-06T07:19:41.000Z)
+  Hello Anton!
+  
+  So sorry to read about that ! Glad it didn’t had too much of an impact for you. We’ll have this checkout, don’t worry
+  about it at all ☺️
+  
+  As a little thank you for your stay, here’s a small gift from us: the code FRIENDSOFTHEVIEW gives you 15% off if you
+  ever want to book directly through our website. No time limit, no usage limit — so feel free to use it for yourselves,
+  or pass it on to friends 🌿
+  
+  If you have a minute, it would help us a lot if you could leave a 5-star review on Airbnb and on Google Maps (just
+  search “The View Lodge Stoumont”) — it makes a real difference for a young place like ours.
+  
+  Enjoy your last morning with us ☺️
+  
+  See you soon again at The View !
+  
+  — 🌳🌳Caroline & Thomas
+
+[GUEST] (2025-08-06T10:03:25.000Z)
+  Hi Thomas & Caroline
+  Just wanted to let you know that we left. We really enjoyed an amazing 2 days at the Vieuw, we will definitely be back.
+  Enjoy the rest of your week!
+  
+  Heidi & Anton
+
+[HOST] (2025-08-06T11:27:16.000Z)
+  So happy to read that, it means everything for us as we are still at the very beginning of this adventure ☺️ Very much
+  looking forward to welcoming you again! All the best till then!
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 9-2ced546e-cec8-530a-8716-e96218273756 | Guest: Jennifer Bagnall | Property: 
+Channel: booking.com
+Last Message: 2025-10-24T11:15:42.621Z
+Total Messages: 1
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-08-03T13:17:58.000Z)
+  Thank you yes 2026 !!
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2234305964 | Guest: Louisa Van Katwijk | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:43.439Z
+Total Messages: 20
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-07-28T06:52:52.000Z)
+  Hello Louisa & Marijn,
+  
+  Today is the big day already ! 
+  We are thrilled to welcome you at The View 😌
+  
+  Do you already know when you will arrive ? We would love to welcome you in person !
+  
+  Have a safe trip!
+  
+  🌳🌳 Thomas & Caroline
+
+[GUEST] (2025-07-28T08:03:59.000Z)
+  Good day, 
+  
+  We will probably arrive between 4:00 p.m. and 5:00 p.m.
+  
+  I'll send you an exact time when we're on our way.
+
+[HOST] (2025-07-28T08:07:24.000Z)
+  Perfect and have a nice and safe trip 😌
+
+[GUEST] (2025-07-28T13:23:18.000Z)
+  Good day, 
+  
+  We will arrive around 4.10/4.15 p.m.
+
+[HOST] (2025-07-28T13:40:13.000Z)
+  Hello again Louisa,
+  
+  Sadly we won’t be able to welcome you in person, but don’t worry ! Self checkin is super easy 😌
+  
+  Your personal code is 295281. 
+  You can type it on the numpad on the right hand side of the door.
+  
+  You’ll find a short guide explaining everything there is to know on the coffee table. If you have any other question,
+  feel free to ask ! I’ll gladly help you 😌
+  
+  Wishing you a wonderful stay at The View ! 😌
+  
+  🌳 🌳 Thomas & Caroline
+
+[GUEST] (2025-07-28T14:21:35.000Z)
+  No problem, thank you. We have arrived, what a wonderful stay! 😁
+
+[HOST] (2025-07-28T14:26:00.000Z)
+  So glad that you like it 😌
+  Enjoy! ☺️
+
+[GUEST] (2025-07-30T17:38:25.000Z)
+  Good evening, where is there a possibility to throw away the garbage?
+
+[HOST] (2025-07-30T17:42:38.000Z)
+  Good evening !
+  
+  Yes, sure. You can find the garbage bins under the terrasse. 
+  
+  I hope everything is going well ! 
+  
+  Enjoy you stay ! 😊
+  
+  Caroline
+
+[HOST] (2025-07-30T17:43:14.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-07-30T17:43:27.000Z)
+  Right under there 🙂
+
+[GUEST] (2025-07-30T17:43:59.000Z)
+  Ahhh thank you😅
+
+[GUEST] (2025-08-02T12:18:02.000Z)
+  Good afternoon, just now the speaker cap in the sauna fell off. The cap has melted due to the heat of the sauna. For
+  your information.
+
+[HOST] (2025-08-02T12:19:26.000Z)
+  Hello Marijn ! I’ll check it out no worries 😌
+  Have a pleasant last day 🤗
+
+[GUEST] (2025-08-02T12:38:56.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-02T12:39:48.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-02T12:39:57.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-08-02T12:40:01.000Z)
+  
+
+[GUEST] (2025-08-03T09:15:37.000Z)
+  Whe are checking out. Whe really enjoyed our stay here. Thank you😊
+
+[HOST] (2025-08-03T09:58:30.000Z)
+  Hey Louisa & Marijn☺️
+  
+  We’re super glad to hear you had a great time 🤗
+  
+  As a little thank you for your stay, here’s a small gift from us: the code FRIENDSOFTHEVIEW gives you 15% off if you
+  ever want to book directly through our website. No time limit, no usage limit — so feel free to use it for yourselves,
+  or pass it on to friends 🌿
+  
+  If you have a minute, it would help us a lot if you could leave a 5-star review on Airbnb and on Google Maps (just
+  search “The View Lodge Stoumont”) — it makes a real difference for a young place like ours.
+  
+  If you have any feedback about your stay, don’t hesitate to share it here directly (preferably not in the public
+  review), we’re always looking at ways to improve !
+  
+  And if you’re curious to see what’s next, feel free to follow us on Instagram @theviewlodge.be ☺️
+  
+  Thanks again for everything — and you’re always welcome back at The View 🍃✨
+  
+  — 🌳🌳Caroline & Thomas
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2242589866 | Guest: Amy | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:44.008Z
+Total Messages: 2
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-27T16:59:39.000Z)
+  Hi Thomas,
+  We are Fay (4) and Amy (28).
+  We want to spend 2 days in Plopsa coo. Is it true that your beautiful cottage is not too far from here today?
+  
+  And I was wondering, an extra day of booking is unfortunately not possible, right?
+  
+  I'll hear from you!
+  
+  Best,
+  Amy
+
+[HOST] (2025-07-27T17:15:23.000Z)
+  Hello Fay and Amy! 😌 We would be thrilled to welcome you at The View 😊 According to Google Maps it's exactly a 12-min
+  ride to Plopsa from the lodge! You can try it yourself by selecting "The View Lodge" in Apple Maps or Google Maps as
+  your origin, you'll get our exact location ! Indeed we have someone booked on 6/08 already sadly — but I might ask my
+  cleaning team to come earlier so you could start your stay on the 3/08, would that be of interest to you? 😊 Wishing you
+  both a lovely evening ! 🌳🌳 Thomas & Caroline
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 9-77880857-faa5-5f47-85eb-04623cbbecdd | Guest: Timo Knoch | Property: 
+Channel: booking.com
+Last Message: 2025-10-24T11:15:44.581Z
+Total Messages: 26
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-07-24T16:37:04.000Z)
+  Hello Timo,
+  
+  Can you believe tomorrow’s already the big day? We’re truly excited to welcome you to The View! 😌
+  
+  We also have some good news: we’d be happy to offer you an early check-in free of charge — you’re welcome to arrive
+  anytime from noon onwards. ☺️
+  
+  If it works for you, we’d love the chance to greet you in person and show you around. Do you already have a rough idea
+  of your arrival time? 😌
+  
+  Looking forward to hosting you very soon!
+  Warm regards,
+  
+  
+  🌳✨Thomas & Caroline
+
+[GUEST] (2025-07-24T18:10:16.000Z)
+  Dear Thomas and Caroline, thanks for your warm words and the good news. We are planing to start early in the morning. We
+  will need approximately four hours. Estimated time of arrival is 10.00 am. I hope this is fine for you?
+  
+  Greetings
+  Timo
+
+[GUEST] (2025-07-24T18:11:02.000Z)
+  I will keep you updated about the accept arrival time.
+
+[GUEST] (2025-07-25T05:32:32.000Z)
+  Good morning, well will arrive approximately at 10.30 am. See you later
+
+[HOST] (2025-07-25T05:42:57.000Z)
+  Good morning Timo,
+  
+  Thank you for the update! 😊
+  We had originally planned for check-in to start at 12:00, but no worries — we’ll make sure everything is ready a bit
+  earlier so you can arrive around 10:30 as mentioned.
+  
+  The code for the door is 295281 — just enter it on the keypad when you get here.
+  
+  Unfortunately, we won’t be able to welcome you in person at that time, but don’t hesitate to call or message us at +32
+  495 64 99 99 if you have any questions or need anything at all.
+  
+  Wishing you a smooth and scenic drive — enjoy the arrival, and welcome to The View! 🌲
+  
+  Warm regards,
+  Thomas & Caroline
+
+[HOST] (2025-07-25T08:53:31.000Z)
+  Welcome in! 😌
+  
+  You’ll find a welcome gift in the fridge ! 🍾☺️
+  
+  Once again if you have any questions, you know where to find us ! ☺️
+  
+  We would like to come around 6pm tonight for the payment of your stay, would that suits you? If not we can also come by
+  tomorrow if you prefer ☺️
+  
+  Have a wonderful stay!
+  
+  Warm regards,
+  
+  🌳🌳Thomas & Caroline
+
+[GUEST] (2025-07-25T13:29:36.000Z)
+  Hi Thomas & Caroline, the view is beautiful. Thanks for the Champagne 🙂. Perhaps you have some recommendations around
+  the Lodge, which we can reach by food?
+
+[HOST] (2025-07-25T13:33:32.000Z)
+  So glad to read that ☺️
+  Do you mean recommendation for food by foot? 😁
+  
+  No restaurant at walking distance sadly, but we can recommend “Les Doux Ragots” at La Gleize, it’s a 5-10min car ride 😊
+  
+  Otherwise there is a ton of nice options in Spa (15min car trip) : Linea (our favorite), la Bobbeline, l’Olivier,… 😊
+
+[HOST] (2025-07-25T13:42:15.000Z)
+  Also, can I kindly ask you to respond to my previous message? 😌
+  Here it is :
+  
+  We would like to come around 6pm tonight for the payment of your stay, would that suits you? If not we can also come by
+  tomorrow if you prefer ☺️
+  
+  Have a wonderful stay!
+  
+  Warm regards,
+  
+  🌳🌳Thomas & Caroline
+
+[GUEST] (2025-07-26T07:52:06.000Z)
+  Good morning,
+  
+  sorry for the late reply. I didn‘t read your message. Today at 6 pm would be suitable. 
+  
+  To get back to your question, I wanted to asked what can do on foot from the lodge 😄?
+  
+  Greetings
+  Timo
+
+[HOST] (2025-07-26T08:01:23.000Z)
+  Hello,
+  
+  No worries ! Perfect for today 😌
+  
+  You have a tons of walks and trails around the Lodge. There is a small one starting right from the parking spot, you can
+  go up for about 10-15min and you’ll get to a very nice view point.
+  
+  I can also suggest installing the app “AllTrails” that features detailed paths and trails 😌
+  
+  Have a nice day,
+  🌳🌳Thomas & Caroline
+
+[GUEST] (2025-07-26T08:05:23.000Z)
+  Thanks 👍🏻
+
+[HOST] (2025-07-26T15:43:13.000Z)
+  Hi,
+  
+  I will arrive in about 30 minutes. 
+  
+  See you. :)
+  
+  Caroline
+
+[GUEST] (2025-07-26T15:45:53.000Z)
+  See you 👍🏻
+
+[HOST] (2025-07-26T16:26:24.000Z)
+  BE49 0019 4606 9671
+
+[GUEST] (2025-07-26T16:26:29.000Z)
+  ENFIO GmbH
+  Im Sonnenschein 3
+  76467 Bietigheim 
+  Germany
+
+[HOST] (2025-07-26T16:56:45.000Z)
+  Hello Timo,
+
+[HOST] (2025-07-26T16:58:38.000Z)
+  Hello Timo, your invoice is ready but Booking won't let me send it here 😊 Would you have an email adresse where I can
+  send it? Enjoy the rest of your stay 😌
+  
+  Warm regards,
+  
+  🌳🌳Thomas & Caroline
+
+[GUEST] (2025-07-26T18:50:25.000Z)
+  Hi Caroline, thanks a lot. You can sent the invoice to timo.knoch@enfido.eu
+
+[GUEST] (2025-07-27T07:51:54.000Z)
+  Good morning, we have no hot water anymore in the house. Could you please check this?
+
+[HOST] (2025-07-27T08:03:03.000Z)
+  Good morning Timo! 
+  
+  Thank you for letting us know.
+  
+  The hot water system  uses a 120L tank powered by an ecological heat pump. This means that once the tank is empty, it
+  can take a few hours to fully reheat — especially if a bath or long shower was recently taken.
+  
+  Would it be possible that all the hot water was recently used ? That would help us better understand the situation.
+  
+  In any case, the system should gradually recover. Please do keep us posted later today if the issue persists — we’re
+  here to help.
+  
+  Warm regards,
+  Thomas & Caroline
+  The View Lodge
+
+[HOST] (2025-07-27T09:16:16.000Z)
+  Hello Timo, It's me again ! 😁 Just to let you know, I've tweaked a bit the settings of the heat pump : you should no
+  longer run out of hot water anymore 😊 Should it happen never the less, please let me know so I can check what's
+  happening 😌 Have a wonderful day!
+
+[GUEST] (2025-07-27T09:19:59.000Z)
+  Yes we had no hot water since yesterday morning. I forgot to write you. But we will see you the settings works 😉
+
+[GUEST] (2025-07-27T09:20:05.000Z)
+  Thanks
+
+[HOST] (2025-07-27T09:25:09.000Z)
+  Oh! In that case it's definitely not normal... I'm keeping an eye on it and I'll ping you as soon as hot water is back!
+  Sorry about that, we're still fine tuning a few things as you can see ! 😌
+
+[HOST] (2025-07-27T10:31:29.000Z)
+  According to what I see in the smart home system, hot water is available again 😌 Sorry again for the inconvenience, if
+  it happens again feel free to warn us immediately ☺️Have a nice day!
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2220871881 | Guest: Thimo Van Wijnbergen | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:45.158Z
+Total Messages: 11
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-07-20T19:59:52.000Z)
+  Good evening Thimo !
+  
+  Tomorrow is the d-day already ! We can’t wait to welcome you at The View 😌
+  
+  I have great news : we don’t have any checkout tomorrow, so you can checkin whenever you want as early at 14:00 😌
+  
+  Do you know already when you should arrive ? We would love to welcome you in person and show you around ☺️
+  
+  Looking forward meeting you,
+  Have a nice evening !
+
+[GUEST] (2025-07-20T20:44:59.000Z)
+  Goedenavond. 
+  Wat super leuk dat je ons persoonlijk wilt ontvangen wij hebben daarvoor een activiteit. We weten niet precies tot
+  hoelaat dat duurt maar gok dat we er tussen 2 en half 3 bij het huisje zijn.
+
+[HOST] (2025-07-21T10:26:37.000Z)
+  Hello Thimo,
+  Unfortunately, when performing the last checks this morning we found out the outdoor Jaccuzi broke down this night 😱
+  
+  My partner Caroline rushed to the store to buy a new one and is in the process of emptying the old one and replacing it.
+  The new one should be installed by 4pm, and hot probably tomorrow morning at the latest.
+  
+  Due to this unexpected incident, would it be possible for you to wait for 4pm to checkin ? You can off course drop your
+  luggage’s before that if need be 😊 
+  
+  Sorry about that, looking very much to meet you ☺️
+
+[GUEST] (2025-07-21T10:40:05.000Z)
+  Wat verveld kan jij ook niks aan doen. Voor ons is 16:00 geen probleem. Dan zijn wij rond die tijd bij het huisje.
+
+[HOST] (2025-07-21T10:46:50.000Z)
+  Perfect thanks a ton for your understanding ☺️
+
+[HOST] (2025-07-21T14:00:26.000Z)
+  Hello 👋 
+  
+  Here's your door entry code: 395382
+  
+  I look forward to your stay. 😊
+
+[HOST] (2025-07-21T14:09:38.000Z)
+  Here is the good code 295281 *
+
+[HOST] (2025-07-21T14:23:24.000Z)
+  Just a friendly reminder to remember to turn off the jacuzzi water pipe and remove it in about 20 minutes. 
+  
+  For the Check out on Wednesday, you can stay until 4 p.m. if you like. 
+  
+  We're here if you have any questions, don't hesitate! 
+  
+  Enjoy! 😊 🌱 
+  
+  Caroline
+
+[HOST] (2025-07-21T17:27:14.000Z)
+  Thursday not Wednesday *
+
+[GUEST] (2025-07-24T09:11:30.000Z)
+  Heyy,
+  
+  We’ve already left—we wanted to do a little city trip, so feel free to make yourself at home.
+  We just wanted to thank you so much for the lovely stay. Even though things may not have gone exactly as you hoped, we
+  had an amazing time and everything got sorted out, which is what matters most to us.
+  
+  Just a few small points we came across that might be helpful for you to know:
+  	•	The lamp above the bed flickers quite a bit when it’s set to a low setting.
+  	•	We suddenly didn’t have any hot water last night, but it was back again in the morning. This affected all the taps.
+  Last night was the only time it happened.
+  	•	The outdoor shower is amazing, but if you don’t have slippers—like my girlfriend—the stones can be a bit painful.
+  Since it’s such a great spot to shower, maybe it’s an idea to put something down that’s more comfortable to stand on.
+  	•	When you’re in the bathtub, the shower head hangs a bit awkwardly in the way.
+  
+  None of this took away from our experience at all, but we figured it might be helpful feedback for you.
+  
+  Also: we just ran the dishwasher with our things in it.
+  
+  Thanks again for the great days—we really enjoyed the peace and quiet, and you’ve arranged everything so well.
+  
+  Definitely a place we’d love to return to in the future!
+  
+  (We had some ice cream left in the freezer—we can’t really take it with us as it won’t survive the trip back. So feel
+  free to have it if you’d like, otherwise feel free to toss it.)
+
+[HOST] (2025-07-24T09:36:58.000Z)
+  Hey hey ☺️
+  
+  Thank you so much for the kind message — it really means a lot to us! We’re so glad to hear you had a great time, even
+  with the few little hiccups. Knowing everything got sorted and that you still enjoyed the peace and quiet makes us
+  really happy.
+  
+  And thank you as well for the helpful feedback — that’s super valuable. We’ll definitely look into the lamp and the hot
+  water issue to make sure it doesn’t happen again, and the ideas about the outdoor shower and the bath setup are spot on.
+  We really appreciate you taking the time to share all that 🙏
+  
+  Also, thanks for running the dishwasher — much appreciated! And noted for the ice cream 😄
+  
+  As a little thank you for your stay, here’s a small gift from us: the code FRIENDSOFTHEVIEW gives you 15% off if you
+  ever want to book directly through our website. No time limit, no usage limit — so feel free to use it for yourselves,
+  or pass it on to friends 🌿
+  
+  If you have a minute, it would help us a lot if you could leave a 5-star review on Airbnb and on Google Maps (just
+  search “The View Lodge Stoumont”) — it makes a real difference for a young place like ours.
+  
+  And if you’re curious to see what’s next, feel free to follow us on Instagram @theviewlodge.be ☺️
+  
+  Thanks again for everything — and you’re always welcome back at The View 🍃✨
+  
+  — Caroline & Thomas
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2236693786 | Guest: Johanna | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:45.654Z
+Total Messages: 9
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-22T11:25:10.000Z)
+  Hello, 
+  Sorry to bother you. I would have liked to know if you offer long-term rentals for your accommodation. 
+  Thank you and have a good day. 
+  Johanna Gillet
+
+[HOST] (2025-07-22T14:42:25.000Z)
+  Hello Johanna,
+  You don’t bother us, we are here to respond to any question you might have 😌
+  We do have a 20% discount of stays of 7+ nights, you’ll see it calculated directly by AirBnB 😊 
+  For longer stays or higher discounts, we suggest you reach out to us directly on other channels (Search for The View
+  Lodge Stoumon). What dates do you have in mind? 😊 
+  
+  Looking forward welcoming you in our little forest paradise ! 🌳 🌳 🌳
+
+[HOST] (2025-07-22T14:42:41.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-07-22T14:48:21.000Z)
+  Thank you very much for your friendly feedback ☺️
+  
+  Here is my situation and my request in a few words. 
+  
+  I am currently in transition: I was living with my ex-partner and we have just separated. I therefore have to leave the
+  accommodation, even if I am not in an immediate emergency. As the atmosphere is no longer ideal, I am looking for a
+  temporary place to stay, while I find a permanent home that suits me.
+  
+  Rather than rushing into a rental with a classic lease (and the notice constraints), I find the option of a monthly
+  rental Airbnb much more suited to my current situation.
+  
+  I like your property very much, both for its aesthetics and for its location. I currently live in Gomzé-Andoumont, in a
+  small cul-de-sac village surrounded by woods, and I am looking for a similar environment: very quiet, isolated, close to
+  nature. This is an essential criterion for me, as I am rather introverted.
+  
+  I wanted to know if this type of long-term rental would suit you and under what conditions/price it could be done.
+  I am of course available if you have any additional questions.
+
+[HOST] (2025-07-22T14:58:37.000Z)
+  Thank you for taking the time to explain your situation! We truly appreciate you considering The View for this new
+  chapter — and we completely understand the need for calm and nature during a period of transition. We wish you the best
+  of luck for that.
+  
+  That said, due to the high operational costs of our wellness amenities (like the sauna, jacuzzi, and smart automation),
+  we unfortunately can’t go beyond the 20% (or maximum 25%) discount already proposed for longer stays. Anything lower
+  wouldn’t be financially viable for us, even if we’d love to help.
+  
+  We realize this might not make The View the most practical option for your situation, and we totally understand if you
+  decide to look elsewhere. There are many other lovely cabins and gîtes in the Ardennes that might be more suitable for a
+  quiet, nature-focused long-term stay — and probably at a more affordable rate.
+  
+  We sincerely wish you strength and serenity in this transition. And if at any point you feel like taking a wellness
+  break to reset, The View will be here for you 😌😌
+
+[GUEST] (2025-07-22T15:48:20.000Z)
+  Indeed, I was a little worried about the budget and I fully understand, it's a superb property you have there. 
+  But unfortunately, I can't exceed €1,000/month right now for a rental. 
+  
+  Thank you so much for taking the time to read my request and give me feedback. 
+  
+  Have a good day
+
+[HOST] (2025-07-22T18:08:22.000Z)
+  Wishing you the best of luck Johanna 😌
+
+[GUEST] (2025-07-22T18:29:03.000Z)
+  Thank you very much and have a good evening ☺️
+
+[HOST] (2025-07-23T14:42:46.000Z)
+  Pre-approval expired
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2233793627 | Guest: Matthijs | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:46.610Z
+Total Messages: 4
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-19T19:06:18.000Z)
+  Hallo Thomas,
+  
+  Graag zouden wij met onze baby gebruik willen maken van de lodge die u aanbiedt. Aangezien Graag met onze zoon willen
+  komen, vragen wij ons af of er een kinderbedje aanwezig in de lodge. 
+  
+  Ik zie u reactie graag tegemoet.
+  
+  Alvast bedankt.
+  
+  Groet, 
+  Matthijs de Jonge
+
+[HOST] (2025-07-19T20:38:28.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-07-19T20:40:02.000Z)
+  Hello Matthijs,
+  
+  We would be thrilled to welcome you at The View ! We’ll make sure a crib is available at your arrival, of course 😊 
+  
+  Looking forward meeting and welcoming you!
+  
+  Have a nice evening,
+  
+  ⏤ Thomas & Caroline
+
+[HOST] (2025-07-20T20:38:31.000Z)
+  Pre-approval expired
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2220898071 | Guest: Juju Mousson | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:47.223Z
+Total Messages: 31
+-----------------------------------------------------------------------------------------------------------------------
+
+[HOST] (2025-07-17T19:28:22.000Z)
+  Bonsoir Julie,
+  C’est déjà demain le grand jour ! 😊 
+  
+  Avez-vous déjà une idée de votre heure d’arrivée ? Dans la mesure du possible, nous aimerions beaucoup vous accueillir
+  en personne ! 😊 
+  
+  Le checkin est possible à partir de 16h. Si par hasard la maison est prête avant, je vous préviendrais 😊 
+  
+  Belle soirée et au plaisir de vous rencontrer demain!
+
+[GUEST] (2025-07-17T19:52:39.000Z)
+  Bonsoir 😊 vers 15h00  je comptais mais si c'est 16h00 pas de soucis
+
+[GUEST] (2025-07-17T19:54:46.000Z)
+  Merci beaucoup !  Une belle soirée à  vous aussi ☺️ hâte d'être demain 🪷
+
+[HOST] (2025-07-18T12:28:48.000Z)
+  Bonjour Julie,
+  
+  La maison sera prête d’ici une vingtaine de minute. Je vous y attendrais sur place.  À toute à l’heure 😌
+  
+  Votre code personnel : 305382
+
+[HOST] (2025-07-18T12:29:44.000Z)
+  395382, pardon 😊
+
+[HOST] (2025-07-18T13:25:32.000Z)
+  J’ai oublié un détail, il y a un petit cadeau de bienvenue pour vous au frigo 🍾 ☺️☺️☺️
+
+[GUEST] (2025-07-18T13:35:40.000Z)
+  Merciiii nous avons vu 🙈
+
+[GUEST] (2025-07-18T14:52:03.000Z)
+  Pouvez vous me renvoyer le code cela ne va pas
+
+[GUEST] (2025-07-18T14:52:06.000Z)
+  Svp
+
+[GUEST] (2025-07-18T14:53:18.000Z)
+  C est bon on a réussi
+
+[HOST] (2025-07-18T14:54:12.000Z)
+  Ouf ☺️
+
+[GUEST] (2025-07-18T16:35:58.000Z)
+  Vous apportez les peignoirs vers quel heure svp?
+
+[GUEST] (2025-07-18T16:36:35.000Z)
+  🪷
+
+[HOST] (2025-07-18T16:57:02.000Z)
+  Je viens de les déposer devant la porte d’entrée 😊 
+  
+  J’ai aussi mis un sèche cheveux ☺️
+  
+  Belle soirée ! ☺️☺️
+
+[GUEST] (2025-07-18T16:57:31.000Z)
+  Je voulais vous demander un truc
+
+[GUEST] (2025-07-18T16:57:43.000Z)
+  Pour la porte d'entrée
+
+[HOST] (2025-07-18T16:58:40.000Z)
+  Je ne voulais pas déranger ☺️
+  Nous sommes déjà reparti, mais je peux vous appeler si vous voulez ?
+
+[GUEST] (2025-07-18T16:58:56.000Z)
+  Oui
+
+[GUEST] (2025-07-18T16:59:07.000Z)
+  0475.97.07.31
+
+[GUEST] (2025-07-18T20:04:05.000Z)
+  Bonsoir, les lumières du hall d entree sont en automatique ?
+
+[GUEST] (2025-07-18T20:04:11.000Z)
+[IMAGE]: [object Object]
+  
+
+[GUEST] (2025-07-18T20:04:27.000Z)
+  Je n arrive pas a trouver pour les éteindre
+
+[HOST] (2025-07-18T20:04:41.000Z)
+  Oui, elles s’éteignent après quelques minutes 😊
+
+[GUEST] (2025-07-18T20:05:00.000Z)
+  D'accord
+
+[GUEST] (2025-07-18T20:06:27.000Z)
+  Belle soirée
+
+[GUEST] (2025-07-18T20:06:34.000Z)
+  😊
+
+[HOST] (2025-07-19T13:02:07.000Z)
+  Bonjour Julie,
+  
+  J’espère que votre séjour s’est bien passé ☺️☺️
+  
+  Comme vous le savez, vous étiez notre toute première resa!! 🥹
+  
+  Si vous avez la moindre remarques ou chose à améliorer, je suis à votre écoute ! 
+  
+  Et cela nous aiderait donc beaucoup, comme on débute,  si vous pouviez nous laisser une avis  sur AirBnb, ou sur Google
+  Maps (“The View Lodge”). Vous pouvez aussi nous suivre sur Instagram (@theviewlodge.be) pour ne pas manquer notre
+  actualité ☺️
+  
+  Enfin, nous voulions vous faire un petit cadeau tout spécial pour vous remercier de votre venue : le code
+  “FRIENDSOFTHEVIEW” vous permet de réserver avec 15% de réduction via notre ssite. Il est valable sans limite de temps ou
+  d’usage, donc si le séjour vous a plus n’hésitez pas à le partager autour de vous ☺️
+  
+  À très bientôt, bon retour à vous et à votre maman, et merci pour votre visite dans notre petit paradis ☺️☺️
+  
+  — Thomas & Caroline
+
+[GUEST] (2025-07-19T16:03:15.000Z)
+  Merci à vous 2 pour ce joli geste nous ne manquerons pas de vous recommander et si l'occasion se représente nous
+  reviendrons à nouveau 😊
+
+[GUEST] (2025-07-19T16:03:25.000Z)
+  Bonne continuation
+
+[GUEST] (2025-07-19T16:03:32.000Z)
+  🤗🤗🤗
+
+[HOST] (2025-07-19T16:11:50.000Z)
+  Bonjour Julie,
+  
+  Un tout grand merci pour votre magnifique retour, ça nous touche énormément et ça nous encourage beaucoup 🥹🙏
+  
+  J’ai juste une toute petite demande à vous faire… Vous avez pris le temps de partager quelques suggestions
+  d’amélioration (moustiquaires, ventilation, etc.) et on les prend vraiment à cœur — on va d’ailleurs y travailler dans
+  les semaines à venir !
+  
+  Mais comme on démarre tout juste, chaque avis compte énormément pour nous et, sur une plateforme comme AirBnb, même des
+  remarques très légitimes peuvent malheureusement freiner certaines personnes à réserver 😔
+  
+  Si jamais vous êtes d’accord, est-ce que ce serait possible de retirer la partie avec les “petits points constructifs”
+  du commentaire public ? Cela nous aiderait énormément dans notre aventure… 😕
+  
+  Encore un immense merci à vous deux pour votre confiance, et j’espère vraiment avoir le plaisir de vous recroiser un
+  jour à The View 🌲
+  
+  Belle soirée, 
+  Thomas
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+CONVERSATION ID: 0-2232074630 | Guest: Katie | Property: 
+Channel: airbnb
+Last Message: 2025-10-24T11:15:47.764Z
+Total Messages: 7
+-----------------------------------------------------------------------------------------------------------------------
+
+[GUEST] (2025-07-18T08:51:54.000Z)
+  Dear Thomas, 
+  I have come across your lovely cabin in search for a nice relaxing place over the new year holiday. We live in Gent
+  center, and I was wondering if would be possible for our dog to join us? We look for a quiet escape to get away from the
+  fireworks on New years eve, and enjoy nature and realxing. I see that there is no other cabins close by so it would be
+  an ideal setting. Thank you for letting me know!
+  Best,
+  Katie
+
+[HOST] (2025-07-18T08:55:41.000Z)
+  Hello Katie,
+  We would be thrilled to welcome you at The View! Sadly, to preserve the quality of the accommodations we don’t allow
+  pets at the moment. Hope you understand 😌
+  
+  Wishing you a lovely day !
+
+[HOST] (2025-07-18T08:56:02.000Z)
+[IMAGE]: [object Object]
+  
+
+[HOST] (2025-07-18T08:56:54.000Z)
+  I went ahead and pre approved your request should you wish still to enjoy the place without your four legged companion
+  ☺️
+
+[GUEST] (2025-07-18T09:11:08.000Z)
+  Thank you Thomas, but in this situation we won’t be able to this time. 
+  Best
+  Katie
+
+[HOST] (2025-07-18T09:26:23.000Z)
+  Completely understand 😊 If our policy change, I’ll reach out to you 😊 have a wonderful day!
+
+[HOST] (2025-07-19T08:56:09.000Z)
+  Pre-approval expired
+
+
+
+=======================================================================================================================
+                                                 END OF MESSAGE EXPORT
+=======================================================================================================================

@@ -10,6 +10,20 @@ This endpoint exports all messages received and sent via HOSTEX as a continuous 
 GET /messages/export/llm-training.txt
 ```
 
+## Configuration
+
+The cutoff date for message filtering is configured in `src/config/property-times.ts`:
+
+```typescript
+export const MESSAGE_EXPORT_CUTOFF_DATE: Date | null = new Date(
+    '2024-01-01T00:00:00.000Z'
+)
+```
+
+- Set to a `Date` object to filter out messages older than that date
+- Set to `null` to include all messages without any date filtering
+- The date is in ISO 8601 format with UTC timezone
+
 ## Response
 
 - **Content-Type**: `text/plain; charset=utf-8`
@@ -23,6 +37,7 @@ The exported file follows this structure:
 ====================================================================================================
                                  HOSTEX MESSAGE EXPORT FOR LLM TRAINING
                                                 Generated: 2024-01-15T10:30:00.000Z
+                                     Messages Since: 2024-01-01T00:00:00.000Z
                                                        Total Conversations: 42
                                                                Total Messages: 387
 ====================================================================================================
@@ -61,27 +76,40 @@ CONVERSATION ID: conv-789 | Guest: Jane Smith | Property: prop-012
 
 ## Features
 
+### Date Filtering
+
+- Messages older than the configured cutoff date are automatically excluded
+- Cutoff date is configured in `src/config/property-times.ts` via `MESSAGE_EXPORT_CUTOFF_DATE`
+- Set to `null` to include all messages without filtering
+- Conversations with no messages after filtering are excluded from the export
+- The cutoff date is displayed in the export header when active
+
 ### Pagination Handling
+
 - Automatically fetches all conversations across multiple pages
 - Default page size: 100 conversations per page
 - Continues until all conversations are retrieved
 
 ### Message Sorting
+
 - Messages within each conversation are sorted chronologically by `sentAt` timestamp
 - Ensures proper conversation flow for training purposes
 
 ### Content Formatting
+
 - Lines are wrapped at 120 characters for readability
 - Multi-line messages are preserved with proper indentation
 - Image messages are marked with `[IMAGE]:` followed by the URL
 
 ### Metadata Preservation
+
 - Conversation ID, guest name, property ID
 - Optional: Reservation code, channel type
 - Timestamp for last message
 - Message count per conversation
 
 ### Character Encoding
+
 - UTF-8 encoding ensures proper handling of international characters
 - Emojis and special characters are preserved
 
@@ -101,6 +129,7 @@ CONVERSATION ID: conv-789 | Guest: Jane Smith | Property: prop-012
 ## Error Handling
 
 The endpoint inherits the global error handling from the main application:
+
 - Network errors from HOSTEX API are caught and returned as 500 errors
 - Authentication errors are handled by the HostexService layer
 - Timeout: 30 seconds per API call (configurable via `HOSTEX_TIMEOUT` env var)
@@ -108,12 +137,15 @@ The endpoint inherits the global error handling from the main application:
 ## Example Usage
 
 ### cURL
+
 ```bash
 curl -O http://localhost:3000/messages/export/llm-training.txt
 ```
 
 ### Browser
+
 Simply navigate to:
+
 ```
 http://localhost:3000/messages/export/llm-training.txt
 ```
@@ -139,6 +171,7 @@ python train_model.py --data hostex-messages-llm-training.txt
 ## Testing
 
 E2E tests for this endpoint are located in `apps/backend/e2e/api.test.ts` and verify:
+
 - Correct content type and headers
 - Proper file structure (header, conversations, footer)
 - Message formatting with sender labels and timestamps
