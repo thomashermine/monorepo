@@ -630,7 +630,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </Section>
 
             {/* Testimonials */}
-            <Section background="white" padding="lg">
+            <Section background="white" padding="lg" id="testimonials">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-4 shadow-lg">
                         <svg
@@ -660,7 +660,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </Section>
 
             {/* FAQ */}
-            <Section background="cream" padding="lg">
+            <Section background="cream" padding="lg" id="faq">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
                         <Heading level="h2" size="xl" className="mb-4">
