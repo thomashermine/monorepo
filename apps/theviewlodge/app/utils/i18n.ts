@@ -8,6 +8,7 @@ export const SUPPORTED_LANGUAGES = [
     { code: 'fr', name: 'Français' },
     { code: 'nl', name: 'Nederlands' },
     { code: 'de', name: 'Deutsch' },
+    { code: 'es', name: 'Español' },
 ] as const
 
 /**

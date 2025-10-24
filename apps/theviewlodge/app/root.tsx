@@ -9,27 +9,27 @@ import {
     ScrollRestoration,
     useLoaderData,
 } from 'react-router'
+import { useTranslation } from 'react-i18next'
+import { useChangeLanguage } from 'remix-i18next/react'
 
 import type { Route } from './+types/root'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
-    // Get language from URL path (e.g., /fr or /)
-    const url = new URL(request.url)
-    const pathname = url.pathname
-    const pathSegments = pathname.split('/').filter(Boolean)
-    const firstSegment = pathSegments[0]
+    const i18nextServer = await import('./i18next.server').then(
+        (m) => m.default
+    )
+    // Pass params to getLocale so it can extract language from :lang parameter
+    const locale = await i18nextServer.getLocale(request)
 
-    // Supported languages
-    const supportedLngs = ['en', 'fr', 'es', 'nl', 'de']
+    // If there's a lang param in the URL, use that
+    const langFromParams = params?.lang
+    const finalLocale =
+        langFromParams &&
+        ['en', 'fr', 'es', 'nl', 'de'].includes(langFromParams)
+            ? langFromParams
+            : locale
 
-    // Check if first segment is a supported language
-    const locale =
-        params.lang ||
-        (firstSegment && supportedLngs.includes(firstSegment)
-            ? firstSegment
-            : 'en')
-
-    return { locale }
+    return { locale: finalLocale }
 }
 
 export const links: Route.LinksFunction = () => [
@@ -73,6 +73,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+    const { locale } = useLoaderData<typeof loader>()
+    const { i18n } = useTranslation()
+
+    // Sync server-detected language with client
+    useChangeLanguage(locale)
+
     return <Outlet />
 }
 

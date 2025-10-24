@@ -9,24 +9,23 @@ import { Text } from '@/components/primitives/Text'
 import type { Route } from './+types/guide'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
-    // Get language from URL path (e.g., /fr/guide or /guide)
-    const url = new URL(request.url)
-    const pathname = url.pathname
-    const pathSegments = pathname.split('/').filter(Boolean)
-    const firstSegment = pathSegments[0]
-    const supportedLngs = ['en', 'fr', 'es', 'nl', 'de']
-    const locale =
-        params.lang ||
-        (firstSegment && supportedLngs.includes(firstSegment)
-            ? firstSegment
-            : 'en')
-
     const i18nextServer = await import('@/i18next.server').then(
         (m) => m.default
     )
-    const t = await i18nextServer.getFixedT(request, 'common', { lng: locale })
+    const locale = await i18nextServer.getLocale(request)
+
+    // If there's a lang param in the URL, use that
+    const langFromParams = params?.lang
+    const finalLocale =
+        langFromParams &&
+        ['en', 'fr', 'es', 'nl', 'de'].includes(langFromParams)
+            ? langFromParams
+            : locale
+
+    const t = await i18nextServer.getFixedT(finalLocale)
+
     return {
-        locale,
+        locale: finalLocale,
         meta: {
             description: t('guide.meta.description'),
             ogTitle: t('guide.meta.ogTitle'),

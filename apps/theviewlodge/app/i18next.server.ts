@@ -9,6 +9,8 @@ const i18next = new RemixI18Next({
     detection: {
         fallbackLanguage: i18n.fallbackLng,
         supportedLanguages: i18n.supportedLngs,
+        // Detect language from URL path first, then other methods
+        order: ['path', 'cookie', 'header'],
     },
     // This is the configuration for i18next used
     // when translating messages server-side only
@@ -25,17 +27,3 @@ const i18next = new RemixI18Next({
 })
 
 export default i18next
-
-// Helper function to detect language from URL path
-export function getLanguageFromPath(pathname: string): string {
-    const pathSegments = pathname.split('/').filter(Boolean)
-    const firstSegment = pathSegments[0]
-
-    // Check if first segment is a supported language
-    if (firstSegment && i18n.supportedLngs.includes(firstSegment)) {
-        return firstSegment
-    }
-
-    // Default to English if no language prefix
-    return i18n.fallbackLng
-}
