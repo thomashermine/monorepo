@@ -1,11 +1,10 @@
 import { Config, Context, Effect, Layer } from 'effect'
-import * as xmlrpc from 'xmlrpc'
+import xmlrpc from 'xmlrpc'
 
 import {
     type CreateInvoiceInput,
     type CreatePartnerInput,
     type CreateProductInput,
-    type CreateResponse,
     type CreateSaleOrderInput,
     type Domain,
     type ExecuteKwArgs,
@@ -21,7 +20,6 @@ import {
     type Product,
     type RecordId,
     type SaleOrder,
-    type SearchCountResponse,
     type SearchOptions,
     type SearchReadResponse,
     type UnlinkResponse,
@@ -238,11 +236,6 @@ const createClient = (
         const urlObj = new URL(url)
         return xmlrpc.createClient({
             host: urlObj.hostname,
-            port: urlObj.port
-                ? parseInt(urlObj.port)
-                : urlObj.protocol === 'https:'
-                  ? 443
-                  : 80,
             path,
         })
     })
@@ -282,11 +275,42 @@ const makeXmlrpcCall = <T>(
                     data: error,
                 })
             }
+
+            // Better handling for XML-RPC parsing errors (HTML responses)
+            const errorMessage =
+                error instanceof Error ? error.message : 'XMLRPC request failed'
+
+            if (errorMessage.includes('Unknown XML-RPC tag')) {
+                // Try to extract HTML content from the error object
+                let htmlSnippet = ''
+                if (error && typeof error === 'object') {
+                    const errorObj = error as Record<string, unknown>
+                    // The xmlrpc library might store the response in different properties
+                    const body =
+                        errorObj.body ||
+                        errorObj.response ||
+                        errorObj.data ||
+                        errorObj.res
+                    if (body && typeof body === 'string') {
+                        // Include first 500 chars of HTML for debugging
+                        htmlSnippet =
+                            '\n\nReceived HTML content (first 500 chars):\n' +
+                            body.substring(0, 500) +
+                            (body.length > 500 ? '...' : '')
+                    }
+                }
+
+                return new OdooNetworkError({
+                    message:
+                        'Received HTML response instead of XML-RPC. This usually means the Odoo URL is incorrect, the server returned an error page, or Odoo is misconfigured. Check: 1) URL format (should include /xmlrpc/2/common or /xmlrpc/2/object), 2) Server is running and accessible, 3) No proxy/firewall blocking the request. Original error: ' +
+                        errorMessage +
+                        htmlSnippet,
+                    cause: error,
+                })
+            }
+
             return new OdooNetworkError({
-                message:
-                    error instanceof Error
-                        ? error.message
-                        : 'XMLRPC request failed',
+                message: errorMessage,
                 cause: error,
             })
         },
@@ -302,7 +326,7 @@ const authenticate = (
         const client = yield* createClient(config.url, '/xmlrpc/2/common')
         const timeout = config.timeout ?? 30000
 
-        const uid = yield* makeXmlrpcCall<number>(
+        const uid = yield* makeXmlrpcCall<number | false>(
             client,
             'authenticate',
             [config.database, config.username, config.password, {}],
@@ -317,7 +341,7 @@ const authenticate = (
             )
         )
 
-        if (!uid || uid === false) {
+        if (!uid || typeof uid !== 'number') {
             return yield* Effect.fail(
                 new OdooAuthError({
                     message: 'Authentication failed: Invalid credentials',
@@ -325,7 +349,7 @@ const authenticate = (
             )
         }
 
-        return uid as number
+        return uid
     })
 
 /**
@@ -624,7 +648,7 @@ const makeOdooService = (
                     })
                 )
             }
-            return partners[0]
+            return partners[0]!
         }),
 
     createPartner: (input) =>
@@ -659,7 +683,7 @@ const makeOdooService = (
                     })
                 )
             }
-            return products[0]
+            return products[0]!
         }),
 
     createProduct: (input) =>
@@ -694,7 +718,7 @@ const makeOdooService = (
                     })
                 )
             }
-            return orders[0]
+            return orders[0]!
         }),
 
     createSaleOrder: (input) =>
@@ -735,7 +759,7 @@ const makeOdooService = (
                     })
                 )
             }
-            return invoices[0]
+            return invoices[0]!
         }),
 
     createInvoice: (input) =>

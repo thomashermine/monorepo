@@ -21,7 +21,7 @@ export function buildDomain(
     return Effect.sync(() => {
         const domain: Domain = []
         for (const [key, value] of Object.entries(conditions)) {
-            if (value !== undefined && value !== null) {
+            if (value !== undefined && value !== null && (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean')) {
                 domain.push([key, '=', value])
             }
         }
@@ -129,7 +129,7 @@ export function buildComplexDomain(
     return Effect.sync(() => {
         const domain: Domain = []
         for (const condition of conditions) {
-            if (condition.value !== undefined && condition.value !== null) {
+            if (condition.value !== undefined && condition.value !== null && (typeof condition.value === 'string' || typeof condition.value === 'number' || typeof condition.value === 'boolean')) {
                 domain.push([
                     condition.field,
                     condition.operator,
@@ -164,14 +164,14 @@ export function combineDomainsOr(
 ): Effect.Effect<Domain, never> {
     return Effect.sync(() => {
         if (domains.length === 0) return []
-        if (domains.length === 1) return domains[0]
+        if (domains.length === 1) return domains[0]!
 
         const combined: Domain = []
         for (let i = 0; i < domains.length; i++) {
             if (i > 0) {
                 combined.push('|')
             }
-            combined.push(...domains[i])
+            combined.push(...domains[i]!)
         }
         return combined
     })
@@ -205,7 +205,7 @@ export function domainByName(name: string): Effect.Effect<Domain, never> {
 export function extractMany2oneId(
     value: boolean | number | [number, string] | undefined
 ): number | null {
-    if (!value || value === false) return null
+    if (!value) return null
     if (Array.isArray(value)) return value[0]
     if (typeof value === 'number') return value
     return null
@@ -217,7 +217,7 @@ export function extractMany2oneId(
 export function extractMany2oneName(
     value: boolean | number | [number, string] | undefined
 ): string | null {
-    if (!value || value === false) return null
+    if (!value) return null
     if (Array.isArray(value)) return value[1]
     return null
 }

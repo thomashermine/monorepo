@@ -51,7 +51,7 @@ export type RecordId = number
  * Odoo domain filter (array of conditions)
  * Example: [['is_company', '=', true], ['customer', '=', true]]
  */
-export type Domain = Array<string | Array<string | number | boolean>>
+export type Domain = Array<string | Array<string | number | boolean | number[]>>
 
 /**
  * Fields to retrieve in queries
@@ -131,9 +131,15 @@ export interface CreatePartnerInput {
     supplier_rank?: number
     comment?: string
     vat?: string
+    [key: string]: unknown
 }
 
-export interface UpdatePartnerInput extends Partial<CreatePartnerInput> {}
+export interface UpdatePartnerInput
+    extends Partial<
+        Omit<CreatePartnerInput, keyof { [key: string]: unknown }>
+    > {
+    [key: string]: unknown
+}
 
 // ============================================================================
 // Product (product.product) Types
@@ -172,9 +178,15 @@ export interface CreateProductInput {
     barcode?: string
     description?: string
     description_sale?: string
+    [key: string]: unknown
 }
 
-export interface UpdateProductInput extends Partial<CreateProductInput> {}
+export interface UpdateProductInput
+    extends Partial<
+        Omit<CreateProductInput, keyof { [key: string]: unknown }>
+    > {
+    [key: string]: unknown
+}
 
 // ============================================================================
 // Sale Order (sale.order) Types
@@ -228,6 +240,7 @@ export interface CreateSaleOrderInput {
     note?: string
     user_id?: RecordId
     team_id?: RecordId
+    [key: string]: unknown
 }
 
 export interface UpdateSaleOrderInput {
@@ -238,6 +251,7 @@ export interface UpdateSaleOrderInput {
     >
     note?: string
     state?: SaleOrderState
+    [key: string]: unknown
 }
 
 // ============================================================================
@@ -305,6 +319,7 @@ export interface CreateInvoiceInput {
     invoice_line_ids?: Array<[number, number, CreateInvoiceLineInput]>
     narration?: string
     ref?: string
+    [key: string]: unknown
 }
 
 export interface UpdateInvoiceInput {
@@ -316,6 +331,7 @@ export interface UpdateInvoiceInput {
     >
     narration?: string
     state?: InvoiceState
+    [key: string]: unknown
 }
 
 // ============================================================================

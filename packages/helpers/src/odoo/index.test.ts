@@ -1,7 +1,8 @@
-import { Effect, Layer } from 'effect'
+import { Effect } from 'effect'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import type * as xmlrpc from 'xmlrpc'
 
+import { makeOdooServiceLayer, type OdooConfig, OdooService } from './index'
 import {
     mockCreateInvoiceInput,
     mockCreatePartnerInput,
@@ -12,13 +13,6 @@ import {
     mockProduct,
     mockSaleOrder,
 } from './mocks'
-import {
-    makeOdooServiceLayer,
-    OdooAuthError,
-    OdooError,
-    OdooService,
-    type OdooConfig,
-} from './index'
 
 // Mock xmlrpc module
 vi.mock('xmlrpc', () => ({
@@ -33,7 +27,7 @@ describe('OdooService', () => {
     }
     let config: OdooConfig
 
-    beforeEach(() => {
+    beforeEach(async () => {
         vi.clearAllMocks()
         mockClient = {
             methodCall: vi.fn(),
@@ -42,8 +36,9 @@ describe('OdooService', () => {
         // Mock createClient to return our mock client
         const xmlrpcModule = vi.mocked(await import('xmlrpc'))
         xmlrpcModule.createClient = vi.fn(
-            () => mockClient as unknown as xmlrpc.Client
-        )
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            (_options: any) => mockClient as unknown as xmlrpc.Client
+        ) as any
 
         config = {
             url: 'http://localhost:8069',

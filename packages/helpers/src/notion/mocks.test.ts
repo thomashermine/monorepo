@@ -486,7 +486,7 @@ describe('Notion Mocks', () => {
             })
 
             expect(database.archived).toBe(true)
-            expect(database.title[0].plain_text).toBe('My Database')
+            expect(database.title[0]?.plain_text).toBe('My Database')
         })
 
         it('should apply overrides to Page', () => {

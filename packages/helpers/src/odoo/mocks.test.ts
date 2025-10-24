@@ -257,8 +257,8 @@ describe('Odoo Mocks', () => {
             expect(Object.keys(response)).toHaveLength(4)
             fields.forEach((field) => {
                 expect(response[field]).toBeDefined()
-                expect(response[field].type).toBeTruthy()
-                expect(response[field].string).toBeTruthy()
+                expect(response[field]?.type).toBeTruthy()
+                expect(response[field]?.string).toBeTruthy()
             })
         })
 

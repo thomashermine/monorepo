@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
         "module": "ESNext",
         "moduleResolution": "bundler",
         "noUncheckedIndexedAccess": true,
@@ -11,7 +10,6 @@
         "sourceMap": true,
         "strict": true,
         "target": "ES2022",
-        "verbatimModuleSyntax": true,
         "typeRoots": [
             "../../node_modules/@types",
             "../../packages/helpers/src/**/*",
