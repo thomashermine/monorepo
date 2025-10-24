@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router'
 import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router'
 
-import { SUPPORTED_LANGUAGES, localizedPath } from '../utils/i18n'
+import { localizedPath, SUPPORTED_LANGUAGES } from '../utils/i18n'
 
 interface LanguageSwitcherProps {
     className?: string

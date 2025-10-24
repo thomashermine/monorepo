@@ -8,9 +8,10 @@ import i18n from './i18n'
 const i18next = new RemixI18Next({
     detection: {
         fallbackLanguage: i18n.fallbackLng,
-        supportedLanguages: i18n.supportedLngs,
         // Detect language from URL path first, then other methods
-        order: ['path', 'cookie', 'header'],
+        order: ['searchParams', 'cookie', 'header'],
+
+        supportedLanguages: i18n.supportedLngs,
     },
     // This is the configuration for i18next used
     // when translating messages server-side only

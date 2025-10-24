@@ -9,7 +9,6 @@ import {
     ScrollRestoration,
     useLoaderData,
 } from 'react-router'
-import { useTranslation } from 'react-i18next'
 import { useChangeLanguage } from 'remix-i18next/react'
 
 import type { Route } from './+types/root'
@@ -74,7 +73,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
     const { locale } = useLoaderData<typeof loader>()
-    const { i18n } = useTranslation()
 
     // Sync server-detected language with client
     useChangeLanguage(locale)

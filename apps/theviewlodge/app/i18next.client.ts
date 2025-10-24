@@ -21,9 +21,9 @@ const i18nextPromise = i18next
         },
 
         detection: {
+            caches: [],
             // Only trust the server's language detection via htmlTag
-            order: ['htmlTag'],
-            caches: [], // Don't cache on client-side
+            order: ['htmlTag'], // Don't cache on client-side
         },
 
         // Ensure interpolation is enabled
