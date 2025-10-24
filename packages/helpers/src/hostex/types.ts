@@ -458,6 +458,122 @@ export interface CreateWebhookResponse {
 }
 
 // ============================================================================
+// Types - Vouchers (Private API)
+// ============================================================================
+
+export type VoucherDiscountType = 'percent' | 'flat'
+
+export interface VoucherListing {
+    id: number
+    title: string
+    alias: string
+    host_id: number
+    is_listed: number
+    description: string
+    instruction_of_stay: string
+    type: string
+    lodging_category: string
+    bedroom: number
+    bathroom: number
+    max_number_of_guests: number
+    beds: string[]
+    place_id: string
+    location_sharing_type: string
+    location_description: string | null
+    longitude: number
+    latitude: number
+    amenities: unknown[]
+    inventory: number
+    base_price: number
+    weekend_price: number
+    cleaning_fee: number
+    pet_fee: number
+    extra_guest_fee: number
+    included_guest_count: number
+    availability_window: number
+    house_rules: {
+        checkin_start: string
+        checkin_end: string
+        checkout_time: string
+        rules: string[]
+    }
+    timezone_p: string | null
+    timezone: string | null
+    search_url: string | null
+    show_airbnb_reviews: number
+    standard_fees: unknown | null
+    deleted_at: string | null
+    created_at: string
+    updated_at: string
+    photos_count: number
+    lodging_category_str: string
+}
+
+export interface Voucher {
+    id: number
+    host_id: number
+    code: string
+    discount: number
+    discount_type: VoucherDiscountType
+    expired_at: string | null
+    stay_period: number
+    earliest_check_in: string | null
+    latest_check_out: string | null
+    minimum_stay: number
+    number_of_redemption: number | null
+    status: number
+    created_at: string
+    updated_at: string
+    redeemed_time: number
+    listings?: VoucherListing[]
+}
+
+export interface CreateVoucherInput {
+    thirdparty_account_id: string
+    code: string
+    discount_type: VoucherDiscountType
+    discount: number
+    expired_at?: string | null
+    stay_period?: number
+    earliest_check_in?: string | null
+    latest_check_out?: string | null
+    minimum_stay?: number
+    number_of_redemption?: number | null
+    listing_ids?: number[]
+}
+
+export interface CreateVoucherResponse {
+    request_id: string
+    error_code: number
+    error_msg: string
+    data: Voucher
+}
+
+export interface GetVouchersInput {
+    thirdparty_account_id: string
+    page?: number
+    page_size?: number
+}
+
+export interface GetVouchersResponse {
+    request_id: string
+    error_code: number
+    error_msg: string
+    data: Voucher[]
+}
+
+export interface DeleteVoucherInput {
+    thirdparty_account_id: string
+    id: number
+}
+
+export interface DeleteVoucherResponse {
+    request_id: string
+    error_code: number
+    error_msg: string
+}
+
+// ============================================================================
 // Service Configuration
 // ============================================================================
 
@@ -465,4 +581,6 @@ export interface HostexConfig {
     readonly accessToken: string
     readonly baseUrl?: string
     readonly timeout?: number
+    readonly sessionCookie?: string
+    readonly privateApiBaseUrl?: string
 }

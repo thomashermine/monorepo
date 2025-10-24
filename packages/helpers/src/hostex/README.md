@@ -52,6 +52,12 @@ This service provides type-safe, Effect-based wrappers for all major Hostex API 
 - Create new webhooks
 - Delete webhooks
 
+### Vouchers (Private API)
+
+- List promotion codes/vouchers
+- Create new vouchers with discount codes
+- Delete vouchers
+
 ## Installation
 
 ```bash
@@ -327,6 +333,8 @@ When using `HostexServiceLive`, you can configure the service using environment 
 HOSTEX_ACCESS_TOKEN=your-access-token
 HOSTEX_BASE_URL=https://open-api.hostex.com/v3  # optional
 HOSTEX_TIMEOUT=30000  # optional, in milliseconds
+HOSTEX_SESSION_COOKIE=your-session-cookie  # optional, required for voucher methods
+HOSTEX_PRIVATE_API_BASE_URL=https://hostex.io/api/bs  # optional
 ```
 
 ### Direct Configuration
@@ -397,6 +405,164 @@ const program = Effect.gen(function* () {
 ```
 
 For webhook payload examples, see the [Webhooks Usage Guide](https://hostex-openapi.readme.io/reference/usage-guide).
+
+## Vouchers (Private API)
+
+The service provides support for managing promotion codes/vouchers via Hostex's private API. These methods require session cookie authentication.
+
+### Configuration
+
+For voucher methods, you need to set the `HOSTEX_SESSION_COOKIE` environment variable:
+
+```bash
+# .env file
+HOSTEX_ACCESS_TOKEN=your-access-token
+HOSTEX_SESSION_COOKIE=your-session-cookie  # Required for voucher methods
+```
+
+The session cookie is automatically loaded from the environment when using `HostexServiceLive`:
+
+```typescript
+// Service automatically loads from environment
+const program = Effect.gen(function* () {
+    const service = yield* HostexService
+    // Voucher methods are now available
+    const vouchers = yield* service.getVouchers({
+        thirdparty_account_id: '422121',
+    })
+    return vouchers
+}).pipe(Effect.provide(HostexServiceLive))
+```
+
+If using `makeHostexServiceLayer`, you can optionally provide the session cookie:
+
+```typescript
+const hostexLayer = makeHostexServiceLayer({
+    accessToken: 'your-access-token',
+    baseUrl: 'https://open-api.hostex.com/v3',
+    sessionCookie: 'your-session-cookie', // Optional for makeHostexServiceLayer
+    privateApiBaseUrl: 'https://hostex.io/api/bs', // optional, uses default
+})
+```
+
+### List Vouchers
+
+```typescript
+const program = Effect.gen(function* () {
+    const service = yield* HostexService
+
+    const vouchers = yield* service.getVouchers({
+        thirdparty_account_id: '422121',
+        page: 1,
+        page_size: 100,
+    })
+
+    console.log('Vouchers:', vouchers.data)
+    return vouchers
+})
+```
+
+### Create a Voucher
+
+```typescript
+const program = Effect.gen(function* () {
+    const service = yield* HostexService
+
+    // Create a percentage discount voucher
+    const voucher = yield* service.createVoucher({
+        thirdparty_account_id: '422121',
+        code: 'SUMMER20',
+        discount_type: 'percent',
+        discount: 20,
+        expired_at: '2024-12-31',
+        minimum_stay: 2,
+        number_of_redemption: 100,
+        listing_ids: [110484],
+    })
+
+    console.log('Created voucher:', voucher.data.code)
+    return voucher
+})
+
+// Create a flat discount voucher
+const program2 = Effect.gen(function* () {
+    const service = yield* HostexService
+
+    const voucher = yield* service.createVoucher({
+        thirdparty_account_id: '422121',
+        code: 'FLAT50',
+        discount_type: 'flat',
+        discount: 50,
+        minimum_stay: 1,
+    })
+
+    return voucher
+})
+```
+
+### Delete a Voucher
+
+```typescript
+const program = Effect.gen(function* () {
+    const service = yield* HostexService
+
+    const result = yield* service.deleteVoucher({
+        thirdparty_account_id: '422121',
+        id: 100886,
+    })
+
+    console.log('Voucher deleted:', result.error_code === 0)
+    return result
+})
+```
+
+### Voucher Workflow Example
+
+```typescript
+const program = Effect.gen(function* () {
+    const service = yield* HostexService
+
+    // Create a new voucher
+    const created = yield* service.createVoucher({
+        thirdparty_account_id: '422121',
+        code: 'WELCOME10',
+        discount_type: 'percent',
+        discount: 10,
+        minimum_stay: 1,
+    })
+
+    console.log('Created voucher ID:', created.data.id)
+
+    // List all vouchers to verify
+    const vouchers = yield* service.getVouchers({
+        thirdparty_account_id: '422121',
+    })
+
+    console.log('Total vouchers:', vouchers.data.length)
+
+    // Delete the voucher if needed
+    yield* service.deleteVoucher({
+        thirdparty_account_id: '422121',
+        id: created.data.id,
+    })
+
+    return { success: true }
+})
+```
+
+### Voucher Types
+
+```typescript
+import type {
+    Voucher,
+    CreateVoucherInput,
+    GetVouchersInput,
+    DeleteVoucherInput,
+    VoucherDiscountType, // 'percent' | 'flat'
+} from '@monorepo/helpers/hostex'
+```
+
+**Note:** Voucher methods use the Hostex private API and require session cookie authentication instead of the standard access token. These methods are not part of the official public API v3.0.0 and may change without notice.
 
 ## Contributing
 

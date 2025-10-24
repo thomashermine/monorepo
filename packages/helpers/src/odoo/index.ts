@@ -3,6 +3,7 @@ import xmlrpc from 'xmlrpc'
 
 import {
     type CreateInvoiceInput,
+    type CreateLoyaltyCardInput,
     type CreatePartnerInput,
     type CreateProductInput,
     type CreateSaleOrderInput,
@@ -11,6 +12,7 @@ import {
     type Fields,
     type FieldsGetResponse,
     type Invoice,
+    type LoyaltyCard,
     OdooAuthError,
     type OdooConfig,
     OdooError,
@@ -24,6 +26,7 @@ import {
     type SearchReadResponse,
     type UnlinkResponse,
     type UpdateInvoiceInput,
+    type UpdateLoyaltyCardInput,
     type UpdatePartnerInput,
     type UpdateProductInput,
     type UpdateSaleOrderInput,
@@ -220,6 +223,34 @@ export class OdooService extends Context.Tag('OdooService')<
         ) => Effect.Effect<boolean, OdooError | OdooNetworkError>
 
         readonly deleteInvoice: (
+            id: RecordId
+        ) => Effect.Effect<UnlinkResponse, OdooError | OdooNetworkError>
+
+        // Loyalty Card operations
+        readonly getLoyaltyCards: (
+            domain?: Domain,
+            fields?: Fields,
+            options?: SearchOptions
+        ) => Effect.Effect<
+            SearchReadResponse<LoyaltyCard>,
+            OdooError | OdooNetworkError
+        >
+
+        readonly getLoyaltyCard: (
+            id: RecordId,
+            fields?: Fields
+        ) => Effect.Effect<LoyaltyCard, OdooError | OdooNetworkError>
+
+        readonly createLoyaltyCard: (
+            input: CreateLoyaltyCardInput
+        ) => Effect.Effect<RecordId, OdooError | OdooNetworkError>
+
+        readonly updateLoyaltyCard: (
+            id: RecordId,
+            input: UpdateLoyaltyCardInput
+        ) => Effect.Effect<WriteResponse, OdooError | OdooNetworkError>
+
+        readonly deleteLoyaltyCard: (
             id: RecordId
         ) => Effect.Effect<UnlinkResponse, OdooError | OdooNetworkError>
     }
@@ -528,6 +559,28 @@ const makeOdooService = (
     deleteInvoice: (
         id: RecordId
     ) => Effect.Effect<UnlinkResponse, OdooError | OdooNetworkError>
+    getLoyaltyCards: (
+        domain?: Domain,
+        fields?: Fields,
+        options?: SearchOptions
+    ) => Effect.Effect<
+        SearchReadResponse<LoyaltyCard>,
+        OdooError | OdooNetworkError
+    >
+    getLoyaltyCard: (
+        id: RecordId,
+        fields?: Fields
+    ) => Effect.Effect<LoyaltyCard, OdooError | OdooNetworkError>
+    createLoyaltyCard: (
+        input: CreateLoyaltyCardInput
+    ) => Effect.Effect<RecordId, OdooError | OdooNetworkError>
+    updateLoyaltyCard: (
+        id: RecordId,
+        input: UpdateLoyaltyCardInput
+    ) => Effect.Effect<WriteResponse, OdooError | OdooNetworkError>
+    deleteLoyaltyCard: (
+        id: RecordId
+    ) => Effect.Effect<UnlinkResponse, OdooError | OdooNetworkError>
 } => ({
     authenticate: () => authenticate(config),
 
@@ -773,6 +826,41 @@ const makeOdooService = (
 
     deleteInvoice: (id) =>
         makeOdooService(config, uid).unlink('account.move', [id]),
+
+    // Loyalty Card operations
+    getLoyaltyCards: (domain = [], fields, options) =>
+        makeOdooService(config, uid).searchRead<LoyaltyCard>(
+            'loyalty.card',
+            domain,
+            fields,
+            options
+        ),
+
+    getLoyaltyCard: (id, fields) =>
+        Effect.gen(function* () {
+            const cards = yield* makeOdooService(config, uid).read<LoyaltyCard>(
+                'loyalty.card',
+                [id],
+                fields
+            )
+            if (cards.length === 0) {
+                return yield* Effect.fail(
+                    new OdooError({
+                        message: `Loyalty card with id ${id} not found`,
+                    })
+                )
+            }
+            return cards[0]!
+        }),
+
+    createLoyaltyCard: (input) =>
+        makeOdooService(config, uid).create('loyalty.card', input),
+
+    updateLoyaltyCard: (id, input) =>
+        makeOdooService(config, uid).write('loyalty.card', [id], input),
+
+    deleteLoyaltyCard: (id) =>
+        makeOdooService(config, uid).unlink('loyalty.card', [id]),
 })
 
 /**

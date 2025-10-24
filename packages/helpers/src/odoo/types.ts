@@ -335,6 +335,35 @@ export interface UpdateInvoiceInput {
 }
 
 // ============================================================================
+// Loyalty Card (loyalty.card) Types
+// ============================================================================
+
+export interface LoyaltyCard extends OdooRecord {
+    partner_id: RecordId | [RecordId, string]
+    program_id?: RecordId | [RecordId, string]
+    points?: number
+    code?: string
+    expiration_date?: string
+    source?: string
+}
+
+export interface CreateLoyaltyCardInput {
+    partner_id: RecordId
+    program_id?: RecordId
+    points?: number
+    code?: string
+    expiration_date?: string
+    [key: string]: unknown
+}
+
+export interface UpdateLoyaltyCardInput
+    extends Partial<
+        Omit<CreateLoyaltyCardInput, keyof { [key: string]: unknown }>
+    > {
+    [key: string]: unknown
+}
+
+// ============================================================================
 // Generic Response Types
 // ============================================================================
 

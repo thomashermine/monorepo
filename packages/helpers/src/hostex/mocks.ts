@@ -10,8 +10,11 @@ import type {
     ConversationsResponse,
     CreateReservationResponse,
     CreateReviewResponse,
+    CreateVoucherResponse,
     CreateWebhookResponse,
     CustomChannel,
+    DeleteVoucherResponse,
+    GetVouchersResponse,
     ListingCalendarDay,
     ListingCalendarResponse,
     ListingUpdateResponse,
@@ -34,6 +37,9 @@ import type {
     SendMessageResponse,
     UpdateAvailabilitiesResponse,
     UpdateLockCodeResponse,
+    Voucher,
+    VoucherDiscountType,
+    VoucherListing,
     Webhook,
     WebhookEvent,
     WebhooksResponse,
@@ -805,5 +811,179 @@ export const mockRelatedDataset = () => {
         property,
         reservations,
         conversations,
+    }
+}
+
+// ============================================================================
+// Mock Generators - Vouchers (Private API)
+// ============================================================================
+
+/**
+ * Generate a mock VoucherListing
+ */
+export const mockVoucherListing = (
+    overrides?: Partial<VoucherListing>
+): VoucherListing => {
+    return {
+        id: faker.number.int({ min: 100000, max: 999999 }),
+        title: faker.company.catchPhrase(),
+        alias: faker.word.words(2),
+        host_id: faker.number.int({ min: 100000, max: 999999 }),
+        is_listed: 1,
+        description: faker.lorem.paragraph(),
+        instruction_of_stay: faker.lorem.sentences(2),
+        type: faker.helpers.arrayElement(['entire_place', 'private_room']),
+        lodging_category: faker.helpers.arrayElement([
+            'bed_and_breakfast',
+            'apartment',
+            'house',
+        ]),
+        bedroom: faker.number.int({ min: 1, max: 5 }),
+        bathroom: faker.number.int({ min: 1, max: 3 }),
+        max_number_of_guests: faker.number.int({ min: 2, max: 8 }),
+        beds: faker.helpers.arrayElements(['king', 'queen', 'single'], {
+            min: 1,
+            max: 3,
+        }),
+        place_id: faker.string.alphanumeric(27),
+        location_sharing_type: 'general',
+        location_description: null,
+        longitude: faker.location.longitude(),
+        latitude: faker.location.latitude(),
+        amenities: [],
+        inventory: 1,
+        base_price: faker.number.int({ min: 10000, max: 50000 }),
+        weekend_price: faker.number.int({ min: 12000, max: 60000 }),
+        cleaning_fee: faker.number.int({ min: 0, max: 5000 }),
+        pet_fee: faker.number.int({ min: 0, max: 2000 }),
+        extra_guest_fee: faker.number.int({ min: 0, max: 1000 }),
+        included_guest_count: faker.number.int({ min: 0, max: 2 }),
+        availability_window: faker.number.int({ min: 6, max: 24 }),
+        house_rules: {
+            checkin_start: '15:00',
+            checkin_end: '22:00',
+            checkout_time: '11:00',
+            rules: faker.helpers.arrayElements(
+                ['no_pets', 'no_parties', 'no_smoking'],
+                { min: 1, max: 3 }
+            ),
+        },
+        timezone_p: null,
+        timezone: null,
+        search_url: null,
+        show_airbnb_reviews: 0,
+        standard_fees: null,
+        deleted_at: null,
+        created_at: isoDate(),
+        updated_at: isoDate(),
+        photos_count: faker.number.int({ min: 0, max: 20 }),
+        lodging_category_str: faker.helpers.arrayElement([
+            'Bed and Breakfast',
+            'Apartment',
+            'House',
+        ]),
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock Voucher
+ */
+export const mockVoucher = (overrides?: Partial<Voucher>): Voucher => {
+    const discount_type = faker.helpers.arrayElement<VoucherDiscountType>([
+        'percent',
+        'flat',
+    ])
+    return {
+        id: faker.number.int({ min: 100000, max: 999999 }),
+        host_id: faker.number.int({ min: 100000, max: 999999 }),
+        code: faker.string
+            .alphanumeric(8)
+            .toUpperCase()
+            .replace(/[0-9]/g, () =>
+                faker.helpers.arrayElement([
+                    'A',
+                    'B',
+                    'C',
+                    'D',
+                    'E',
+                    'F',
+                    'G',
+                    'H',
+                ])
+            ),
+        discount:
+            discount_type === 'percent'
+                ? faker.number.int({ min: 5, max: 50 })
+                : faker.number.int({ min: 10, max: 500 }),
+        discount_type,
+        expired_at: faker.datatype.boolean({ probability: 0.5 })
+            ? futureDate(365)
+            : null,
+        stay_period: 1,
+        earliest_check_in: faker.datatype.boolean({ probability: 0.2 })
+            ? futureDate(90)
+            : null,
+        latest_check_out: faker.datatype.boolean({ probability: 0.2 })
+            ? futureDate(120)
+            : null,
+        minimum_stay: faker.number.int({ min: 1, max: 7 }),
+        number_of_redemption: faker.datatype.boolean({ probability: 0.3 })
+            ? faker.number.int({ min: 1, max: 100 })
+            : null,
+        status: 1,
+        created_at: isoDate(),
+        updated_at: isoDate(),
+        redeemed_time: faker.number.int({ min: 0, max: 50 }),
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock GetVouchersResponse
+ */
+export const mockGetVouchersResponse = (
+    count: number = 5,
+    overrides?: Partial<GetVouchersResponse>
+): GetVouchersResponse => {
+    return {
+        request_id: mockRequestId(),
+        error_code: 0,
+        error_msg: 'Done.',
+        data: Array.from({ length: count }, () => mockVoucher()),
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock CreateVoucherResponse
+ */
+export const mockCreateVoucherResponse = (
+    overrides?: Partial<CreateVoucherResponse>
+): CreateVoucherResponse => {
+    const voucher = mockVoucher()
+    return {
+        request_id: mockRequestId(),
+        error_code: 0,
+        error_msg: 'Done.',
+        data: {
+            ...voucher,
+            listings: [mockVoucherListing()],
+        },
+        ...overrides,
+    }
+}
+
+/**
+ * Generate a mock DeleteVoucherResponse
+ */
+export const mockDeleteVoucherResponse = (
+    overrides?: Partial<DeleteVoucherResponse>
+): DeleteVoucherResponse => {
+    return {
+        request_id: mockRequestId(),
+        error_code: 0,
+        error_msg: 'Done.',
+        ...overrides,
     }
 }

@@ -4,7 +4,10 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
     type CreateReservationInput,
     type CreateReviewInput,
+    type CreateVoucherInput,
     type CreateWebhookInput,
+    type DeleteVoucherInput,
+    type GetVouchersInput,
     HostexService,
     makeHostexServiceLayer,
     type ReservationsQueryParams,
@@ -22,6 +25,8 @@ describe('HostexService', () => {
         accessToken: 'test-token-123',
         baseUrl: 'https://test-api.hostex.com/v3',
         timeout: 5000,
+        sessionCookie: 'test-session-cookie',
+        privateApiBaseUrl: 'https://test-hostex.io/api/bs',
     }
 
     beforeEach(() => {
@@ -199,7 +204,7 @@ describe('HostexService', () => {
         describe('getReservations', () => {
             it('should fetch reservations without query params', async () => {
                 const mockData = {
-                    bookings: {
+                    data: {
                         reservations: [
                             {
                                 reservation_code: 'RES-001',
@@ -267,12 +272,12 @@ describe('HostexService', () => {
                     program.pipe(Effect.provide(createServiceLayer()))
                 )
 
-                expect(result).toEqual(mockData)
+                expect(result).toEqual(mockData.data.reservations)
             })
 
             it('should fetch reservations with query params', async () => {
                 const mockData = {
-                    bookings: {
+                    data: {
                         reservations: [],
                     },
                 }
@@ -297,7 +302,7 @@ describe('HostexService', () => {
                     program.pipe(Effect.provide(createServiceLayer()))
                 )
 
-                expect(result).toEqual(mockData)
+                expect(result).toEqual(mockData.data.reservations)
                 expect(mockFetch).toHaveBeenCalledWith(
                     expect.stringContaining('/reservations?'),
                     expect.any(Object)
@@ -690,16 +695,40 @@ describe('HostexService', () => {
     describe('Messages', () => {
         describe('getConversations', () => {
             it('should fetch conversations with default pagination', async () => {
-                const mockData = {
+                const mockApiResponse = {
+                    request_id: 'req-890',
+                    error_code: 0,
+                    error_msg: '',
+                    data: {
+                        conversations: [
+                            {
+                                id: 'conv-1',
+                                channel_type: 'airbnb',
+                                last_message_at: '2024-11-20T10:00:00Z',
+                                guest: {
+                                    name: 'John Doe',
+                                    phone: '+1234567890',
+                                    email: 'john@example.com',
+                                },
+                                property_title: 'prop-1',
+                                check_in_date: '2024-12-01',
+                                check_out_date: '2024-12-05',
+                            },
+                        ],
+                        total: 1,
+                    },
+                }
+
+                const expectedResult = {
                     data: [
                         {
                             id: 'conv-1',
-                            reservationCode: 'RES-001',
+                            reservationCode: undefined,
                             guestName: 'John Doe',
                             propertyId: 'prop-1',
                             channel: 'airbnb',
                             lastMessageAt: '2024-11-20T10:00:00Z',
-                            unreadCount: 2,
+                            unreadCount: 0,
                         },
                     ],
                     total: 1,
@@ -708,7 +737,7 @@ describe('HostexService', () => {
                     requestId: 'req-890',
                 }
 
-                mockSuccessResponse(mockData)
+                mockSuccessResponse(mockApiResponse)
 
                 const program = Effect.gen(function* () {
                     const service = yield* HostexService
@@ -719,11 +748,21 @@ describe('HostexService', () => {
                     program.pipe(Effect.provide(createServiceLayer()))
                 )
 
-                expect(result).toEqual(mockData)
+                expect(result).toEqual(expectedResult)
             })
 
             it('should fetch conversations with custom pagination', async () => {
-                const mockData = {
+                const mockApiResponse = {
+                    request_id: 'req-891',
+                    error_code: 0,
+                    error_msg: '',
+                    data: {
+                        conversations: [],
+                        total: 0,
+                    },
+                }
+
+                const expectedResult = {
                     data: [],
                     total: 0,
                     page: 3,
@@ -731,7 +770,7 @@ describe('HostexService', () => {
                     requestId: 'req-891',
                 }
 
-                mockSuccessResponse(mockData)
+                mockSuccessResponse(mockApiResponse)
 
                 const program = Effect.gen(function* () {
                     const service = yield* HostexService
@@ -742,17 +781,54 @@ describe('HostexService', () => {
                     program.pipe(Effect.provide(createServiceLayer()))
                 )
 
-                expect(result).toEqual(mockData)
+                expect(result).toEqual(expectedResult)
             })
         })
 
         describe('getConversationDetails', () => {
             it('should fetch conversation details successfully', async () => {
-                const mockData = {
+                const mockApiResponse = {
+                    request_id: 'req-900',
+                    error_code: 0,
+                    error_msg: '',
+                    data: {
+                        id: 'conv-1',
+                        channel_type: 'airbnb',
+                        last_message_at: '2024-11-20T10:00:00Z',
+                        guest: {
+                            name: 'John Doe',
+                            phone: '+1234567890',
+                            email: 'john@example.com',
+                        },
+                        property_title: 'prop-1',
+                        check_in_date: '2024-12-01',
+                        check_out_date: '2024-12-05',
+                        messages: [
+                            {
+                                id: 'msg-1',
+                                sender_role: 'guest' as const,
+                                display_type: 'Text',
+                                content: 'Hello, when is check-in?',
+                                attachment: null,
+                                created_at: '2024-11-20T09:00:00Z',
+                            },
+                            {
+                                id: 'msg-2',
+                                sender_role: 'host' as const,
+                                display_type: 'Text',
+                                content: 'Check-in is at 3 PM',
+                                attachment: null,
+                                created_at: '2024-11-20T10:00:00Z',
+                            },
+                        ],
+                    },
+                }
+
+                const expectedResult = {
                     data: {
                         conversation: {
                             id: 'conv-1',
-                            reservationCode: 'RES-001',
+                            reservationCode: undefined,
                             guestName: 'John Doe',
                             propertyId: 'prop-1',
                             channel: 'airbnb',
@@ -781,7 +857,7 @@ describe('HostexService', () => {
                     requestId: 'req-900',
                 }
 
-                mockSuccessResponse(mockData)
+                mockSuccessResponse(mockApiResponse)
 
                 const program = Effect.gen(function* () {
                     const service = yield* HostexService
@@ -792,7 +868,7 @@ describe('HostexService', () => {
                     program.pipe(Effect.provide(createServiceLayer()))
                 )
 
-                expect(result).toEqual(mockData)
+                expect(result).toEqual(expectedResult)
             })
         })
 
@@ -971,7 +1047,25 @@ describe('HostexService', () => {
     describe('Webhooks', () => {
         describe('getWebhooks', () => {
             it('should fetch webhooks successfully', async () => {
-                const mockData = {
+                const mockApiResponse = {
+                    data: {
+                        webhooks: [
+                            {
+                                id: 'webhook-1',
+                                url: 'https://example.com/webhook',
+                                events: [
+                                    'reservation.created',
+                                    'reservation.updated',
+                                ],
+                                active: true,
+                                createdAt: '2024-11-01T10:00:00Z',
+                            },
+                        ],
+                    },
+                    request_id: 'req-950',
+                }
+
+                const expectedResult = {
                     data: [
                         {
                             id: 'webhook-1',
@@ -987,7 +1081,7 @@ describe('HostexService', () => {
                     requestId: 'req-950',
                 }
 
-                mockSuccessResponse(mockData)
+                mockSuccessResponse(mockApiResponse)
 
                 const program = Effect.gen(function* () {
                     const service = yield* HostexService
@@ -998,7 +1092,7 @@ describe('HostexService', () => {
                     program.pipe(Effect.provide(createServiceLayer()))
                 )
 
-                expect(result).toEqual(mockData)
+                expect(result).toEqual(expectedResult)
             })
         })
 
@@ -1209,7 +1303,7 @@ describe('HostexService', () => {
 
         it('should skip undefined query parameters', async () => {
             const mockData = {
-                bookings: {
+                data: {
                     reservations: [],
                 },
             }
@@ -1372,6 +1466,492 @@ describe('HostexService', () => {
             )
 
             expect(Exit.isFailure(result)).toBe(true)
+        })
+    })
+
+    describe('Vouchers (Private API)', () => {
+        describe('getVouchers', () => {
+            it('should fetch vouchers successfully', async () => {
+                const mockData = {
+                    request_id: 'RT2025102503522310207',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                    data: [
+                        {
+                            id: 100885,
+                            host_id: 102607,
+                            code: 'TEST888',
+                            discount: 20,
+                            discount_type: 'percent' as const,
+                            expired_at: null,
+                            stay_period: 1,
+                            earliest_check_in: null,
+                            latest_check_out: null,
+                            minimum_stay: 1,
+                            number_of_redemption: null,
+                            status: 1,
+                            created_at: '2025-10-23T22:27:26+02:00',
+                            updated_at: '2025-10-23T22:27:26+02:00',
+                            redeemed_time: 0,
+                        },
+                        {
+                            id: 100882,
+                            host_id: 102607,
+                            code: 'TESTFLAT',
+                            discount: 50,
+                            discount_type: 'flat' as const,
+                            expired_at: '2026-10-26',
+                            stay_period: 1,
+                            earliest_check_in: null,
+                            latest_check_out: null,
+                            minimum_stay: 1,
+                            number_of_redemption: 10,
+                            status: 1,
+                            created_at: '2025-10-24T08:31:37+02:00',
+                            updated_at: '2025-10-24T08:35:02+02:00',
+                            redeemed_time: 3,
+                        },
+                    ],
+                }
+
+                mockSuccessResponse(mockData)
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: GetVouchersInput = {
+                        thirdparty_account_id: '422121',
+                        page: 1,
+                        page_size: 100,
+                    }
+                    return yield* service.getVouchers(input)
+                })
+
+                const result = await Effect.runPromise(
+                    program.pipe(Effect.provide(createServiceLayer()))
+                )
+
+                expect(result.error_code).toBe(0)
+                expect(result.data).toHaveLength(2)
+                expect(result.data[0]?.code).toBe('TEST888')
+                expect(result.data[0]?.discount_type).toBe('percent')
+                expect(result.data[1]?.code).toBe('TESTFLAT')
+                expect(result.data[1]?.discount_type).toBe('flat')
+
+                // Verify the correct endpoint was called
+                expect(mockFetch).toHaveBeenCalledWith(
+                    expect.stringContaining('/promotion_code/list'),
+                    expect.objectContaining({
+                        headers: expect.objectContaining({
+                            'Content-Type': 'application/json',
+                            Accept: 'application/json, text/plain, */*',
+                            Cookie: 'hostex_session=test-session-cookie;',
+                        }),
+                    })
+                )
+            })
+
+            it('should handle error response', async () => {
+                mockFetch.mockResolvedValueOnce({
+                    ok: true,
+                    status: 200,
+                    json: async () => ({
+                        request_id: 'error-req-123',
+                        error_code: 1,
+                        error_msg: 'Authentication failed',
+                        data: [],
+                    }),
+                })
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: GetVouchersInput = {
+                        thirdparty_account_id: '422121',
+                    }
+                    return yield* service.getVouchers(input)
+                })
+
+                const result = await program.pipe(
+                    Effect.provide(createServiceLayer()),
+                    Effect.exit,
+                    Effect.runPromise
+                )
+
+                expect(Exit.isFailure(result)).toBe(true)
+            })
+        })
+
+        describe('createVoucher', () => {
+            it('should create a voucher successfully', async () => {
+                const mockData = {
+                    request_id: 'RT2025102503523131207',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                    data: {
+                        id: 100886,
+                        status: 1,
+                        host_id: 102607,
+                        code: 'TESTCREATE123',
+                        discount: 15,
+                        discount_type: 'percent' as const,
+                        expired_at: null,
+                        stay_period: 1,
+                        earliest_check_in: null,
+                        latest_check_out: null,
+                        minimum_stay: 1,
+                        number_of_redemption: null,
+                        updated_at: '2025-10-24T21:52:31+02:00',
+                        created_at: '2025-10-24T21:52:31+02:00',
+                        redeemed_time: 0,
+                        listings: [
+                            {
+                                id: 110484,
+                                title: 'The View — Wellness Forest Lodge',
+                                alias: 'The View',
+                                host_id: 102607,
+                                is_listed: 1,
+                                description: 'Test description',
+                                instruction_of_stay: 'Test instructions',
+                                type: 'entire_place',
+                                lodging_category: 'bed_and_breakfast',
+                                bedroom: 1,
+                                bathroom: 1,
+                                max_number_of_guests: 2,
+                                beds: ['king'],
+                                place_id: 'ChIJh2NFIAdnwEcRSwpZysklmV0',
+                                location_sharing_type: 'general',
+                                location_description: null,
+                                longitude: 5.783125399508,
+                                latitude: 50.413966052482,
+                                amenities: [],
+                                inventory: 1,
+                                base_price: 17900,
+                                weekend_price: 19900,
+                                cleaning_fee: 0,
+                                pet_fee: 0,
+                                extra_guest_fee: 0,
+                                included_guest_count: 0,
+                                availability_window: 12,
+                                house_rules: {
+                                    checkin_start: '16:00',
+                                    checkin_end: '23:59',
+                                    checkout_time: '12:00',
+                                    rules: [
+                                        'no_pets',
+                                        'no_parties',
+                                        'no_smoking',
+                                    ],
+                                },
+                                timezone_p: null,
+                                timezone: null,
+                                search_url: null,
+                                show_airbnb_reviews: 0,
+                                standard_fees: null,
+                                deleted_at: null,
+                                created_at: '2025-05-27T11:16:24+02:00',
+                                updated_at: '2025-10-23T20:48:56+02:00',
+                                photos_count: 0,
+                                lodging_category_str: 'Bed and Breakfast',
+                            },
+                        ],
+                    },
+                }
+
+                mockSuccessResponse(mockData)
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: CreateVoucherInput = {
+                        thirdparty_account_id: '422121',
+                        code: 'TESTCREATE123',
+                        discount_type: 'percent',
+                        discount: 15,
+                        expired_at: null,
+                        stay_period: 1,
+                        earliest_check_in: null,
+                        latest_check_out: null,
+                        minimum_stay: 1,
+                        number_of_redemption: null,
+                        listing_ids: [110484],
+                    }
+                    return yield* service.createVoucher(input)
+                })
+
+                const result = await Effect.runPromise(
+                    program.pipe(Effect.provide(createServiceLayer()))
+                )
+
+                expect(result.error_code).toBe(0)
+                expect(result.data.code).toBe('TESTCREATE123')
+                expect(result.data.discount).toBe(15)
+                expect(result.data.discount_type).toBe('percent')
+                expect(result.data.listings).toHaveLength(1)
+                expect(result.data.listings?.[0]?.id).toBe(110484)
+
+                // Verify the correct endpoint was called with correct method
+                expect(mockFetch).toHaveBeenCalledWith(
+                    expect.stringContaining('/promotion_code/create'),
+                    expect.objectContaining({
+                        method: 'POST',
+                        body: expect.any(String),
+                        headers: expect.objectContaining({
+                            'Content-Type': 'application/json',
+                        }),
+                    })
+                )
+            })
+
+            it('should handle creation with flat discount', async () => {
+                const mockData = {
+                    request_id: 'RT2025102503523131207',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                    data: {
+                        id: 100887,
+                        status: 1,
+                        host_id: 102607,
+                        code: 'FLAT50',
+                        discount: 50,
+                        discount_type: 'flat' as const,
+                        expired_at: '2026-12-31',
+                        stay_period: 1,
+                        earliest_check_in: null,
+                        latest_check_out: null,
+                        minimum_stay: 2,
+                        number_of_redemption: 100,
+                        updated_at: '2025-10-24T21:52:31+02:00',
+                        created_at: '2025-10-24T21:52:31+02:00',
+                        redeemed_time: 0,
+                        listings: [],
+                    },
+                }
+
+                mockSuccessResponse(mockData)
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: CreateVoucherInput = {
+                        thirdparty_account_id: '422121',
+                        code: 'FLAT50',
+                        discount_type: 'flat',
+                        discount: 50,
+                        expired_at: '2026-12-31',
+                        minimum_stay: 2,
+                        number_of_redemption: 100,
+                    }
+                    return yield* service.createVoucher(input)
+                })
+
+                const result = await Effect.runPromise(
+                    program.pipe(Effect.provide(createServiceLayer()))
+                )
+
+                expect(result.data.code).toBe('FLAT50')
+                expect(result.data.discount_type).toBe('flat')
+                expect(result.data.discount).toBe(50)
+                expect(result.data.minimum_stay).toBe(2)
+                expect(result.data.number_of_redemption).toBe(100)
+            })
+
+            it('should handle error when voucher code already exists', async () => {
+                mockFetch.mockResolvedValueOnce({
+                    ok: false,
+                    status: 400,
+                    json: async () => ({
+                        request_id: 'error-req-123',
+                        error_code: 400,
+                        error_msg: 'Voucher code already exists',
+                    }),
+                })
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: CreateVoucherInput = {
+                        thirdparty_account_id: '422121',
+                        code: 'DUPLICATE',
+                        discount_type: 'percent',
+                        discount: 10,
+                    }
+                    return yield* service.createVoucher(input)
+                })
+
+                const result = await program.pipe(
+                    Effect.provide(createServiceLayer()),
+                    Effect.exit,
+                    Effect.runPromise
+                )
+
+                expect(Exit.isFailure(result)).toBe(true)
+            })
+        })
+
+        describe('deleteVoucher', () => {
+            it('should delete a voucher successfully', async () => {
+                const mockData = {
+                    request_id: 'RT2025102503524455007',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                }
+
+                mockSuccessResponse(mockData)
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: DeleteVoucherInput = {
+                        thirdparty_account_id: '422121',
+                        id: 100886,
+                    }
+                    return yield* service.deleteVoucher(input)
+                })
+
+                const result = await Effect.runPromise(
+                    program.pipe(Effect.provide(createServiceLayer()))
+                )
+
+                expect(result.error_code).toBe(0)
+                expect(result.error_msg).toBe('Done.')
+
+                // Verify the correct endpoint was called
+                expect(mockFetch).toHaveBeenCalledWith(
+                    expect.stringContaining('/promotion_code/delete'),
+                    expect.objectContaining({
+                        method: 'POST',
+                        body: expect.stringContaining('100886'),
+                        headers: expect.objectContaining({
+                            'Content-Type': 'application/json',
+                        }),
+                    })
+                )
+            })
+
+            it('should handle error when voucher not found', async () => {
+                mockFetch.mockResolvedValueOnce({
+                    ok: false,
+                    status: 404,
+                    json: async () => ({
+                        request_id: 'error-req-123',
+                        error_code: 404,
+                        error_msg: 'Voucher not found',
+                    }),
+                })
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+                    const input: DeleteVoucherInput = {
+                        thirdparty_account_id: '422121',
+                        id: 999999,
+                    }
+                    return yield* service.deleteVoucher(input)
+                })
+
+                const result = await program.pipe(
+                    Effect.provide(createServiceLayer()),
+                    Effect.exit,
+                    Effect.runPromise
+                )
+
+                expect(Exit.isFailure(result)).toBe(true)
+            })
+        })
+
+        describe('Voucher Workflow', () => {
+            it('should create, list, and delete voucher in sequence', async () => {
+                // Mock create voucher response
+                mockSuccessResponse({
+                    request_id: 'req-1',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                    data: {
+                        id: 100999,
+                        status: 1,
+                        host_id: 102607,
+                        code: 'WORKFLOW123',
+                        discount: 20,
+                        discount_type: 'percent' as const,
+                        expired_at: null,
+                        stay_period: 1,
+                        earliest_check_in: null,
+                        latest_check_out: null,
+                        minimum_stay: 1,
+                        number_of_redemption: null,
+                        created_at: '2025-10-24T21:52:31+02:00',
+                        updated_at: '2025-10-24T21:52:31+02:00',
+                        redeemed_time: 0,
+                        listings: [],
+                    },
+                })
+
+                // Mock list vouchers response
+                mockSuccessResponse({
+                    request_id: 'req-2',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                    data: [
+                        {
+                            id: 100999,
+                            host_id: 102607,
+                            code: 'WORKFLOW123',
+                            discount: 20,
+                            discount_type: 'percent' as const,
+                            expired_at: null,
+                            stay_period: 1,
+                            earliest_check_in: null,
+                            latest_check_out: null,
+                            minimum_stay: 1,
+                            number_of_redemption: null,
+                            status: 1,
+                            created_at: '2025-10-24T21:52:31+02:00',
+                            updated_at: '2025-10-24T21:52:31+02:00',
+                            redeemed_time: 0,
+                        },
+                    ],
+                })
+
+                // Mock delete voucher response
+                mockSuccessResponse({
+                    request_id: 'req-3',
+                    error_code: 0,
+                    error_msg: 'Done.',
+                })
+
+                const program = Effect.gen(function* () {
+                    const service = yield* HostexService
+
+                    // Create voucher
+                    const createResult = yield* service.createVoucher({
+                        thirdparty_account_id: '422121',
+                        code: 'WORKFLOW123',
+                        discount_type: 'percent',
+                        discount: 20,
+                    })
+
+                    // List vouchers
+                    const listResult = yield* service.getVouchers({
+                        thirdparty_account_id: '422121',
+                    })
+
+                    // Delete voucher
+                    const deleteResult = yield* service.deleteVoucher({
+                        thirdparty_account_id: '422121',
+                        id: createResult.data.id,
+                    })
+
+                    return {
+                        created: createResult.data,
+                        listed: listResult.data,
+                        deleted: deleteResult.error_code === 0,
+                    }
+                })
+
+                const result = await Effect.runPromise(
+                    program.pipe(Effect.provide(createServiceLayer()))
+                )
+
+                expect(result.created.code).toBe('WORKFLOW123')
+                expect(result.listed).toHaveLength(1)
+                expect(result.listed[0]?.code).toBe('WORKFLOW123')
+                expect(result.deleted).toBe(true)
+                expect(mockFetch).toHaveBeenCalledTimes(3)
+            })
         })
     })
 })

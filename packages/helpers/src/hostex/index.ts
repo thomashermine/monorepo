@@ -9,8 +9,14 @@ import {
     type CreateReservationResponse,
     type CreateReviewInput,
     type CreateReviewResponse,
+    type CreateVoucherInput,
+    type CreateVoucherResponse,
     type CreateWebhookInput,
     type CreateWebhookResponse,
+    type DeleteVoucherInput,
+    type DeleteVoucherResponse,
+    type GetVouchersInput,
+    type GetVouchersResponse,
     HostexAuthError,
     type HostexConfig,
     HostexError,
@@ -34,6 +40,8 @@ import {
     type UpdateListingRestrictionInput,
     type UpdateLockCodeInput,
     type UpdateLockCodeResponse,
+    type Voucher,
+    type Webhook,
     type WebhooksResponse,
 } from './types'
 
@@ -159,6 +167,28 @@ export class HostexService extends Context.Tag('HostexService')<
             { success: boolean; requestId: string },
             HostexError | HostexNetworkError
         >
+        readonly registerWebhook: (
+            webhookUrl: string,
+            events: readonly string[]
+        ) => Effect.Effect<Webhook, HostexError | HostexNetworkError>
+        readonly getVouchers: (
+            input: GetVouchersInput
+        ) => Effect.Effect<
+            GetVouchersResponse,
+            HostexError | HostexNetworkError
+        >
+        readonly createVoucher: (
+            input: CreateVoucherInput
+        ) => Effect.Effect<
+            CreateVoucherResponse,
+            HostexError | HostexNetworkError
+        >
+        readonly deleteVoucher: (
+            input: DeleteVoucherInput
+        ) => Effect.Effect<
+            DeleteVoucherResponse,
+            HostexError | HostexNetworkError
+        >
     }
 >() {}
 
@@ -228,6 +258,83 @@ const makeRequest = <T>(
     })
 }
 
+/**
+ * Helper function for making requests to Hostex Private API
+ * Uses session cookie authentication instead of access token
+ */
+const makePrivateRequest = <T>(
+    config: HostexConfig,
+    endpoint: string,
+    options: RequestInit = {}
+): Effect.Effect<T, HostexError | HostexNetworkError> => {
+    const baseUrl = config.privateApiBaseUrl ?? 'https://hostex.io/api/bs'
+    const url = `${baseUrl}${endpoint}`
+
+    const headers = {
+        'Content-Type': 'application/json',
+        Accept: 'application/json, text/plain, */*',
+        ...(config.sessionCookie
+            ? { Cookie: `hostex_session=${config.sessionCookie};` }
+            : {}),
+        ...options.headers,
+    }
+
+    return Effect.tryPromise({
+        try: async () => {
+            const controller = new AbortController()
+            const timeout = config.timeout ?? 30000
+            const timeoutId = setTimeout(() => controller.abort(), timeout)
+
+            try {
+                const response = await fetch(url, {
+                    ...options,
+                    headers,
+                    signal: controller.signal,
+                })
+
+                clearTimeout(timeoutId)
+
+                const data = (await response.json()) as {
+                    error_msg?: string
+                    request_id?: string
+                    error_code?: number
+                } & T
+
+                if (
+                    !response.ok ||
+                    (data.error_code && data.error_code !== 0)
+                ) {
+                    throw new HostexError({
+                        message:
+                            data.error_msg ??
+                            `HTTP ${response.status}: ${response.statusText}`,
+                        requestId: data.request_id ?? 'Unknown requestId',
+                        errorCode:
+                            data.error_code?.toString() ?? 'Unknown errorCode',
+                    })
+                }
+
+                return data as T
+            } catch (error) {
+                clearTimeout(timeoutId)
+                throw error
+            }
+        },
+        catch: (error) => {
+            if (error instanceof HostexError) {
+                return error
+            }
+            return new HostexNetworkError({
+                message:
+                    error instanceof Error
+                        ? error.message
+                        : 'Network request failed',
+                cause: error,
+            })
+        },
+    })
+}
+
 export const HostexServiceLive = Layer.effect(
     HostexService,
     Effect.gen(function* () {
@@ -239,6 +346,12 @@ export const HostexServiceLive = Layer.effect(
             timeout: Config.number('HOSTEX_TIMEOUT').pipe(
                 Config.withDefault(30000)
             ),
+            sessionCookie: Config.string('HOSTEX_SESSION_COOKIE').pipe(
+                Config.option
+            ),
+            privateApiBaseUrl: Config.string(
+                'HOSTEX_PRIVATE_API_BASE_URL'
+            ).pipe(Config.withDefault('https://hostex.io/api/bs')),
         }).pipe(
             Effect.catchAll(() =>
                 Effect.die(
@@ -249,11 +362,26 @@ export const HostexServiceLive = Layer.effect(
             )
         )
 
+        // Extract optional sessionCookie from Option
+        const sessionCookie =
+            config.sessionCookie._tag === 'Some'
+                ? config.sessionCookie.value
+                : undefined
+
+        // Create final config with extracted sessionCookie
+        const finalConfig: HostexConfig = {
+            accessToken: config.accessToken,
+            baseUrl: config.baseUrl,
+            timeout: config.timeout,
+            sessionCookie,
+            privateApiBaseUrl: config.privateApiBaseUrl,
+        }
+
         return {
             getProperties: () =>
-                makeRequest<PropertiesResponse>(config, '/properties'),
+                makeRequest<PropertiesResponse>(finalConfig, '/properties'),
             getRoomTypes: () =>
-                makeRequest<RoomTypesResponse>(config, '/room_types'),
+                makeRequest<RoomTypesResponse>(finalConfig, '/room_types'),
             getReservations: (params) => {
                 const query = params
                     ? `?${new URLSearchParams(
@@ -270,13 +398,13 @@ export const HostexServiceLive = Layer.effect(
                     : ''
 
                 return makeRequest<ReservationsResponse>(
-                    config,
+                    finalConfig,
                     `/reservations${query}`
                 ).pipe(Effect.map((response) => response.data.reservations))
             },
             createReservation: (input) =>
                 makeRequest<CreateReservationResponse>(
-                    config,
+                    finalConfig,
                     '/reservations',
                     {
                         method: 'POST',
@@ -285,13 +413,13 @@ export const HostexServiceLive = Layer.effect(
                 ),
             cancelReservation: (code) =>
                 makeRequest<{ success: boolean; requestId: string }>(
-                    config,
+                    finalConfig,
                     `/reservations/${code}`,
                     { method: 'DELETE' }
                 ),
             updateLockCode: (input) =>
                 makeRequest<UpdateLockCodeResponse>(
-                    config,
+                    finalConfig,
                     `/reservations/${input.reservation_code}/lock-code`,
                     {
                         method: 'PATCH',
@@ -312,13 +440,13 @@ export const HostexServiceLive = Layer.effect(
                 ).toString()
 
                 return makeRequest<AvailabilitiesResponse>(
-                    config,
+                    finalConfig,
                     `/availabilities?${query}`
                 )
             },
             updateAvailabilities: (input) =>
                 makeRequest<UpdateAvailabilitiesResponse>(
-                    config,
+                    finalConfig,
                     '/availabilities',
                     {
                         method: 'POST',
@@ -327,7 +455,7 @@ export const HostexServiceLive = Layer.effect(
                 ),
             getListingCalendar: (input) =>
                 makeRequest<ListingCalendarResponse>(
-                    config,
+                    finalConfig,
                     '/listings/calendar',
                     {
                         method: 'POST',
@@ -336,7 +464,7 @@ export const HostexServiceLive = Layer.effect(
                 ),
             updateListingInventories: (inputs) =>
                 makeRequest<ListingUpdateResponse>(
-                    config,
+                    finalConfig,
                     '/listings/inventories',
                     {
                         method: 'POST',
@@ -344,13 +472,17 @@ export const HostexServiceLive = Layer.effect(
                     }
                 ),
             updateListingPrices: (inputs) =>
-                makeRequest<ListingUpdateResponse>(config, '/listings/prices', {
-                    method: 'POST',
-                    body: JSON.stringify({ updates: inputs }),
-                }),
+                makeRequest<ListingUpdateResponse>(
+                    finalConfig,
+                    '/listings/prices',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify({ updates: inputs }),
+                    }
+                ),
             updateListingRestrictions: (inputs) =>
                 makeRequest<ListingUpdateResponse>(
-                    config,
+                    finalConfig,
                     '/listings/restrictions',
                     {
                         method: 'POST',
@@ -384,7 +516,7 @@ export const HostexServiceLive = Layer.effect(
                         }>
                         total?: number
                     }
-                }>(config, `/conversations?${query}`).pipe(
+                }>(finalConfig, `/conversations?${query}`).pipe(
                     Effect.map((response) => ({
                         data: response.data.conversations.map((conv) => ({
                             id: conv.id,
@@ -430,7 +562,7 @@ export const HostexServiceLive = Layer.effect(
                             created_at: string
                         }>
                     }
-                }>(config, `/conversations/${conversationId}`).pipe(
+                }>(finalConfig, `/conversations/${conversationId}`).pipe(
                     Effect.flatMap((response) => {
                         if (!response.data || !response.data.messages) {
                             return Effect.fail(
@@ -475,7 +607,7 @@ export const HostexServiceLive = Layer.effect(
                 ),
             sendMessage: (input) =>
                 makeRequest<SendMessageResponse>(
-                    config,
+                    finalConfig,
                     `/conversations/${input.conversationId}`,
                     {
                         method: 'POST',
@@ -501,11 +633,14 @@ export const HostexServiceLive = Layer.effect(
                       ).toString()}`
                     : ''
 
-                return makeRequest<ReviewsResponse>(config, `/reviews${query}`)
+                return makeRequest<ReviewsResponse>(
+                    finalConfig,
+                    `/reviews${query}`
+                )
             },
             createReview: (input) =>
                 makeRequest<CreateReviewResponse>(
-                    config,
+                    finalConfig,
                     `/reviews/${input.reservationCode}`,
                     {
                         method: 'POST',
@@ -513,17 +648,153 @@ export const HostexServiceLive = Layer.effect(
                     }
                 ),
             getWebhooks: () =>
-                makeRequest<WebhooksResponse>(config, '/webhooks'),
+                makeRequest<{
+                    data: { webhooks: Webhook[] }
+                    request_id: string
+                }>(finalConfig, '/webhooks').pipe(
+                    Effect.map((response) => ({
+                        data: response.data.webhooks,
+                        requestId: response.request_id,
+                    }))
+                ),
             createWebhook: (input) =>
-                makeRequest<CreateWebhookResponse>(config, '/webhooks', {
+                makeRequest<CreateWebhookResponse>(finalConfig, '/webhooks', {
                     method: 'POST',
                     body: JSON.stringify(input),
                 }),
             deleteWebhook: (webhookId) =>
                 makeRequest<{ success: boolean; requestId: string }>(
-                    config,
+                    finalConfig,
                     `/webhooks/${webhookId}`,
                     { method: 'DELETE' }
+                ),
+            registerWebhook: (webhookUrl, events) =>
+                Effect.gen(function* () {
+                    // Helper to get webhooks list
+                    const getWebhooksList = () =>
+                        makeRequest<{
+                            data: { webhooks: Webhook[] }
+                            request_id: string
+                        }>(finalConfig, '/webhooks').pipe(
+                            Effect.map((res) => res.data.webhooks)
+                        )
+
+                    // Check if webhook already exists
+                    const webhooks = yield* getWebhooksList()
+                    const existing = webhooks.find(
+                        (wh) => wh.url === webhookUrl && wh.active
+                    )
+
+                    if (existing) {
+                        yield* Effect.logDebug('Found existing webhook').pipe(
+                            Effect.annotateLogs(
+                                'webhook',
+                                JSON.stringify(existing)
+                            )
+                        )
+                        return existing
+                    }
+
+                    // Try to create new webhook, handling "already exists" gracefully
+                    return yield* makeRequest<CreateWebhookResponse>(
+                        finalConfig,
+                        '/webhooks',
+                        {
+                            method: 'POST',
+                            body: JSON.stringify({ url: webhookUrl, events }),
+                        }
+                    ).pipe(
+                        Effect.flatMap((response) => {
+                            if (response.data?.webhook) {
+                                return Effect.succeed(response.data.webhook)
+                            }
+                            // Handle error response from API
+                            const errorResponse = response as unknown as {
+                                error_msg?: string
+                                error_code?: number
+                                request_id?: string
+                            }
+                            return Effect.fail(
+                                new HostexError({
+                                    message:
+                                        errorResponse.error_msg ??
+                                        'Failed to create webhook',
+                                    requestId:
+                                        errorResponse.request_id ?? 'unknown',
+                                    errorCode: String(
+                                        errorResponse.error_code ??
+                                            'WEBHOOK_CREATE_FAILED'
+                                    ),
+                                })
+                            )
+                        }),
+                        Effect.catchAll((error) =>
+                            // If already exists, refetch and return
+                            error instanceof HostexError &&
+                            error.message.includes('already exists')
+                                ? getWebhooksList().pipe(
+                                      Effect.flatMap((webhooks) => {
+                                          const existing = webhooks.find(
+                                              (wh) => wh.url === webhookUrl
+                                          )
+                                          return existing
+                                              ? Effect.logDebug(
+                                                    'Found webhook after "already exists" error'
+                                                ).pipe(
+                                                    Effect.annotateLogs(
+                                                        'webhook',
+                                                        JSON.stringify(existing)
+                                                    ),
+                                                    Effect.flatMap(() =>
+                                                        Effect.succeed(existing)
+                                                    )
+                                                )
+                                              : Effect.fail(error)
+                                      })
+                                  )
+                                : Effect.fail(error)
+                        )
+                    )
+                }),
+            getVouchers: (input) => {
+                const query = new URLSearchParams(
+                    Object.entries({
+                        thirdparty_account_id: input.thirdparty_account_id,
+                        page: String(input.page ?? 1),
+                        page_size: String(input.page_size ?? 1000),
+                        opid: '117892',
+                        opclient: 'Web-Mac-Chrome',
+                    })
+                ).toString()
+
+                return makePrivateRequest<GetVouchersResponse>(
+                    finalConfig,
+                    `/promotion_code/list?${query}`
+                )
+            },
+            createVoucher: (input) =>
+                makePrivateRequest<CreateVoucherResponse>(
+                    finalConfig,
+                    '/promotion_code/create?opid=117892&opclient=Web-Mac-Chrome',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            ...input,
+                            // Odoo will define as "false", but Hostex only allows null or ISO string
+                            expired_at: input.expired_at
+                                ? new Date(input.expired_at).toISOString()
+                                : null,
+                        }),
+                    }
+                ),
+            deleteVoucher: (input) =>
+                makePrivateRequest<DeleteVoucherResponse>(
+                    finalConfig,
+                    '/promotion_code/delete?opid=117892&opclient=Web-Mac-Chrome',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(input),
+                    }
                 ),
         }
     })
@@ -787,7 +1058,16 @@ export const makeHostexServiceLayer = (
                     body: JSON.stringify(input),
                 }
             ),
-        getWebhooks: () => makeRequest<WebhooksResponse>(config, '/webhooks'),
+        getWebhooks: () =>
+            makeRequest<{ data: { webhooks: Webhook[] }; request_id: string }>(
+                config,
+                '/webhooks'
+            ).pipe(
+                Effect.map((response) => ({
+                    data: response.data.webhooks,
+                    requestId: response.request_id,
+                }))
+            ),
         createWebhook: (input) =>
             makeRequest<CreateWebhookResponse>(config, '/webhooks', {
                 method: 'POST',
@@ -798,6 +1078,125 @@ export const makeHostexServiceLayer = (
                 config,
                 `/webhooks/${webhookId}`,
                 { method: 'DELETE' }
+            ),
+        registerWebhook: (webhookUrl, events) =>
+            Effect.gen(function* () {
+                // Helper to get webhooks list
+                const getWebhooksList = () =>
+                    makeRequest<{
+                        data: { webhooks: Webhook[] }
+                        request_id: string
+                    }>(config, '/webhooks').pipe(
+                        Effect.map((res) => res.data.webhooks)
+                    )
+
+                // Check if webhook already exists
+                const webhooks = yield* getWebhooksList()
+                const existing = webhooks.find(
+                    (wh) => wh.url === webhookUrl && wh.active
+                )
+
+                if (existing) {
+                    yield* Effect.logDebug('Found existing webhook').pipe(
+                        Effect.annotateLogs('webhook', JSON.stringify(existing))
+                    )
+                    return existing
+                }
+
+                // Try to create new webhook, handling "already exists" gracefully
+                return yield* makeRequest<CreateWebhookResponse>(
+                    config,
+                    '/webhooks',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify({ url: webhookUrl, events }),
+                    }
+                ).pipe(
+                    Effect.flatMap((response) => {
+                        if (response.data?.webhook) {
+                            return Effect.succeed(response.data.webhook)
+                        }
+                        // Handle error response from API
+                        const errorResponse = response as unknown as {
+                            error_msg?: string
+                            error_code?: number
+                            request_id?: string
+                        }
+                        return Effect.fail(
+                            new HostexError({
+                                message:
+                                    errorResponse.error_msg ??
+                                    'Failed to create webhook',
+                                requestId:
+                                    errorResponse.request_id ?? 'unknown',
+                                errorCode: String(
+                                    errorResponse.error_code ??
+                                        'WEBHOOK_CREATE_FAILED'
+                                ),
+                            })
+                        )
+                    }),
+                    Effect.catchAll((error) =>
+                        // If already exists, refetch and return
+                        error instanceof HostexError &&
+                        error.message.includes('already exists')
+                            ? getWebhooksList().pipe(
+                                  Effect.flatMap((webhooks) => {
+                                      const existing = webhooks.find(
+                                          (wh) => wh.url === webhookUrl
+                                      )
+                                      return existing
+                                          ? Effect.logDebug(
+                                                'Found webhook after "already exists" error'
+                                            ).pipe(
+                                                Effect.annotateLogs(
+                                                    'webhook',
+                                                    JSON.stringify(existing)
+                                                ),
+                                                Effect.flatMap(() =>
+                                                    Effect.succeed(existing)
+                                                )
+                                            )
+                                          : Effect.fail(error)
+                                  })
+                              )
+                            : Effect.fail(error)
+                    )
+                )
+            }),
+        getVouchers: (input) => {
+            const query = new URLSearchParams(
+                Object.entries({
+                    thirdparty_account_id: input.thirdparty_account_id,
+                    page: String(input.page ?? 1),
+                    page_size: String(input.page_size ?? 1000),
+                    opid: '117892',
+                    opclient: 'Web-Mac-Chrome',
+                })
+            ).toString()
+
+            return makePrivateRequest<GetVouchersResponse>(
+                config,
+                `/promotion_code/list?${query}`
+            )
+        },
+        createVoucher: (input) =>
+            makePrivateRequest<CreateVoucherResponse>(
+                config,
+                '/promotion_code/create?opid=117892&opclient=Web-Mac-Chrome',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(input),
+                }
+            ),
+        deleteVoucher: (input) =>
+            makePrivateRequest<DeleteVoucherResponse>(
+                config,
+                '/promotion_code/delete?opid=117892&opclient=Web-Mac-Chrome',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(input),
+                }
             ),
     })
 

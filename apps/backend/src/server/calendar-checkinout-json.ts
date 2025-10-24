@@ -5,7 +5,7 @@ import {
 } from '@monorepo/helpers/hostex'
 import { Effect } from 'effect'
 
-import { getPropertyTimes } from '../config/property-times'
+import { getPropertyTimes } from '../config/property'
 
 export const calendarCheckInOutJsonRoute = HttpRouter.empty.pipe(
     HttpRouter.get(
