@@ -2,6 +2,7 @@ resources:
     - namespace.yml
     - backend.yml
     - frontend.yml
+    - theviewlodge.yml
     - config.yml
 
 images:

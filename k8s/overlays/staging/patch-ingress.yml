@@ -32,3 +32,12 @@ spec:
           secretName: monorepo-theviewlodge-tls
     rules:
         - host: theviewlodge.staging.monorepo.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-theviewlodge
+                            port:
+                                number: 80
