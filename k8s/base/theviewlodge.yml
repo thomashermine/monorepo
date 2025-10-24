@@ -48,10 +48,10 @@ spec:
     ingressClassName: nginx
     tls:
         - hosts:
-              - theviewlodge.monorepo.thomashermine.be
+              - theviewlodge.be
           secretName: monorepo-theviewlodge-tls
     rules:
-        - host: theviewlodge.monorepo.thomashermine.be
+        - host: theviewlodge.be
           http:
               paths:
                   - path: /

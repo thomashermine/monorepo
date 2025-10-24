@@ -28,10 +28,10 @@ metadata:
 spec:
     tls:
         - hosts:
-              - theviewlodge.staging.monorepo.thomashermine.be
+              - staging.theviewlodge.be
           secretName: monorepo-theviewlodge-tls
     rules:
-        - host: theviewlodge.staging.monorepo.thomashermine.be
+        - host: staging.theviewlodge.be
           http:
               paths:
                   - path: /
