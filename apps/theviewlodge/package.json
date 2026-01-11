@@ -7,6 +7,7 @@
         "dev": "react-router dev",
         "d": "pnpm run dev",
         "start": "react-router-serve ./build/server/index.js",
+        "serve": "pnpm run start",
         "type-check": "react-router typegen && tsc",
         "storybook": "storybook dev -p 6006",
         "format": "prettier --write \"app/**/*.ts\"",

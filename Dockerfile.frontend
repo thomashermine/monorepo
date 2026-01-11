@@ -3,7 +3,9 @@
 # This Dockerfile is used to build the frontend app in apps/
 # It automatically builds all packages in packages/* that have a build script.
 # Pass the name of the app as follows:
-# docker build -t my-frontend -f Dockerfile.frontend --build-arg APP_NAME=frontend .
+#   docker build -t my-frontend -f Dockerfile.frontend --build-arg APP_NAME=frontend .
+# Then to run it :
+#   docker run -p 3000:3000 my-frontend
 #
 # ======================================================================================================================
 # Builder
@@ -81,6 +83,8 @@ RUN pnpm install --frozen-lockfile
 
 # Copy built files from builder stage
 COPY --from=builder /app/apps/${APP_NAME}/build ./apps/${APP_NAME}/build
+# Copy public directory (contains translation files and assets)
+COPY --from=builder /app/apps/${APP_NAME}/public ./apps/${APP_NAME}/public
 # Copy all packages (preserves directory structure)
 COPY --from=builder /app/packages ./packages
 
