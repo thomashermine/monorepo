@@ -255,13 +255,13 @@ jobs:
 
             - name: Create image pull secret
               run: |
-                  kubectl create secret docker-registry ghcr-secret-monorepo-template \
+                  kubectl create secret docker-registry ghcr-secret-monorepo \
                     --docker-server=${{ env.REGISTRY }} \
                     --docker-username=${{ github.actor }} \
                     --docker-password=${{ secrets.GHCR_TOKEN }} \
                     --namespace=staging \
                     --dry-run=client -o yaml | kubectl apply -f -
-                  kubectl create secret docker-registry ghcr-secret-monorepo-template \
+                  kubectl create secret docker-registry ghcr-secret-monorepo \
                     --docker-server=${{ env.REGISTRY }} \
                     --docker-username=${{ github.actor }} \
                     --docker-password=${{ secrets.GHCR_TOKEN }} \
