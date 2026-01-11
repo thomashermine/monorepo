@@ -1,5 +1,8 @@
 import './app.css'
 
+import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+
 import {
     data,
     isRouteErrorResponse,
@@ -11,13 +14,11 @@ import {
     useLoaderData,
 } from 'react-router'
 import { useChangeLanguage } from 'remix-i18next/react'
-import { resolve } from 'node:path'
-import { readFile } from 'node:fs/promises'
 
 import type { Route } from './+types/root'
 import { localeCookie } from './middleware/i18next'
 
-export async function loader({ request, context, params }: Route.LoaderArgs) {
+export async function loader({ request, params }: Route.LoaderArgs) {
     // Use the old RemixI18Next for now since middleware has compatibility issues
     const i18nextServer = await import('./i18next.server').then(
         (m) => m.default
@@ -49,7 +50,9 @@ export async function loader({ request, context, params }: Route.LoaderArgs) {
             resources,
         },
         {
-            headers: { 'Set-Cookie': await localeCookie.serialize(finalLocale) },
+            headers: {
+                'Set-Cookie': await localeCookie.serialize(finalLocale),
+            },
         }
     )
 }

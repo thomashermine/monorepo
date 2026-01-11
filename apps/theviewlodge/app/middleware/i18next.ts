@@ -1,9 +1,11 @@
+import 'i18next'
+
+import { resolve } from 'node:path'
+
+import Backend from 'i18next-fs-backend'
 import { initReactI18next } from 'react-i18next'
 import { createCookie } from 'react-router'
 import { createI18nextMiddleware } from 'remix-i18next/middleware'
-import Backend from 'i18next-fs-backend'
-import { resolve } from 'node:path'
-import 'i18next'
 
 import i18nConfig from '../i18n'
 
