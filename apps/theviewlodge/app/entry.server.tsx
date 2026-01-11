@@ -25,11 +25,13 @@ export default async function handleRequest(
         ? 'onAllReady'
         : 'onShellReady'
 
-    // Create a new i18next instance for this request
-    const instance = createInstance()
+    // Use RemixI18Next (old API) for language detection
+    // The new middleware API is used in loaders, but entry.server needs the old approach
     const lng = await i18nextServer.getLocale(request)
     const ns = i18nextServer.getRouteNamespaces(routerContext)
 
+    // Create i18next instance for SSR
+    const instance = createInstance()
     await instance
         .use(initReactI18next)
         .use(Backend)
@@ -67,9 +69,6 @@ export default async function handleRequest(
                 },
                 onError(error: unknown) {
                     responseStatusCode = 500
-                    // Log streaming rendering errors from inside the shell.  Don't log
-                    // errors encountered during initial shell rendering since they'll
-                    // reject and get logged in handleDocumentRequest.
                     if (shellRendered) {
                         console.error(error)
                     }

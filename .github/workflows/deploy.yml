@@ -130,18 +130,10 @@ jobs:
                   # Sanitize and truncate repo name (max 20 chars)
                   REPO_SHORT=$(echo "${REPO_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-20 | sed 's/-$//')
 
-                  # Sanitize branch name and truncate (max 25 chars)
-                  BRANCH_SHORT=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-25 | sed 's/-$//')
-
                   # Combine: repo(20) + app(10) + branch(25) + hash(8) + hyphens(3) = max 66 chars
-                  # Adjust to fit 64: repo(18) + app(10) + branch(24) + hash(8) + hyphens(3) = 63 chars
+                  # Adjust to fit 64: repo(18) + app(10) + branch(24) + hash(8) + hyphens(3) = 64 chars
                   REPO_SHORT=$(echo "${REPO_SHORT}" | cut -c1-18 | sed 's/-$//')
-                  BRANCH_SHORT=$(echo "${BRANCH_SHORT}" | cut -c1-24 | sed 's/-$//')
-
-                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_SHORT}-${BRANCH_HASH}"
-                  # Final cleanup
-                  APP_NAME=$(echo "${APP_NAME}" | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
-
+                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_HASH}"
                   echo "app_name=${APP_NAME}" >> $GITHUB_OUTPUT
                   echo "Deploying to app: ${APP_NAME} (${#APP_NAME} chars)"
 
@@ -444,10 +436,8 @@ jobs:
                   # Sanitize and truncate repo name (max 18 chars)
                   REPO_SHORT=$(echo "${REPO_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-18 | sed 's/-$//')
 
-                  # Sanitize branch name and truncate (max 24 chars)
-                  BRANCH_SHORT=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-24 | sed 's/-$//')
 
-                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_SHORT}-${BRANCH_HASH}"
+                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_HASH}"
                   # Final cleanup
                   APP_NAME=$(echo "${APP_NAME}" | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
 
@@ -653,10 +643,7 @@ jobs:
                   # Sanitize and truncate repo name (max 18 chars)
                   REPO_SHORT=$(echo "${REPO_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-18 | sed 's/-$//')
 
-                  # Sanitize branch name and truncate (max 24 chars)
-                  BRANCH_SHORT=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | cut -c1-24 | sed 's/-$//')
-
-                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_SHORT}-${BRANCH_HASH}"
+                  APP_NAME="${REPO_SHORT}-${APP_TYPE}-${BRANCH_HASH}"
                   # Final cleanup
                   APP_NAME=$(echo "${APP_NAME}" | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//')
 

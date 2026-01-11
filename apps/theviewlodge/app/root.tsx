@@ -1,6 +1,10 @@
 import './app.css'
 
+import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+
 import {
+    data,
     isRouteErrorResponse,
     Links,
     Meta,
@@ -12,12 +16,13 @@ import {
 import { useChangeLanguage } from 'remix-i18next/react'
 
 import type { Route } from './+types/root'
+import { localeCookie } from './middleware/i18next'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
+    // Use the old RemixI18Next for now since middleware has compatibility issues
     const i18nextServer = await import('./i18next.server').then(
         (m) => m.default
     )
-    // Pass params to getLocale so it can extract language from :lang parameter
     const locale = await i18nextServer.getLocale(request)
 
     // If there's a lang param in the URL, use that
@@ -28,7 +33,28 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             ? langFromParams
             : locale
 
-    return { locale: finalLocale }
+    // Read the translation file from the filesystem
+    const translationPath = resolve(
+        `./public/locales/${finalLocale}/common.json`
+    )
+    const translationContent = await readFile(translationPath, 'utf-8')
+    const commonTranslations = JSON.parse(translationContent)
+
+    const resources = {
+        common: commonTranslations,
+    }
+
+    return data(
+        {
+            locale: finalLocale,
+            resources,
+        },
+        {
+            headers: {
+                'Set-Cookie': await localeCookie.serialize(finalLocale),
+            },
+        }
+    )
 }
 
 export const links: Route.LinksFunction = () => [
@@ -61,6 +87,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 />
                 <Meta />
                 <Links />
+                {loaderData && (
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `window.__i18nData = ${JSON.stringify({
+                                locale: loaderData.locale,
+                                resources: loaderData.resources,
+                            })};`,
+                        }}
+                    />
+                )}
             </head>
             <body>
                 {children}
