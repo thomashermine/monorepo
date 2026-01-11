@@ -1,6 +1,6 @@
 # Internationalization (i18n) Setup
 
-This project uses [remix-i18next](https://v2.remix.run/resources/remix-i18next) for internationalization.
+This project uses [remix-i18next](https://v2.remix.run/resources/remix-i18next) for internationalization with **full server-side rendering**.
 
 ## Overview
 
@@ -10,7 +10,12 @@ The i18n setup includes:
 - **i18next**: Core internationalization framework
 - **react-i18next**: React bindings for i18next
 - **i18next-fs-backend**: Server-side file system backend
-- **i18next-browser-languagedetector**: Client-side language detection
+
+**Key Features:**
+- ✅ Full server-side translation handling (no client-side fetching)
+- ✅ No flash of untranslated content (FOUTC)
+- ✅ Proper meta tags for social media sharing
+- ✅ Perfect hydration (server and client use same translations)
 
 ## Configuration Files
 
@@ -18,7 +23,7 @@ The i18n setup includes:
 
 Main configuration file that defines:
 
-- Supported languages: `en`, `fr`, `es`
+- Supported languages: `en`, `fr`, `es`, `nl`, `de`
 - Fallback language: `en`
 - Default namespace: `common`
 
@@ -34,13 +39,33 @@ Server-side i18next configuration that:
 
 Client-side i18next configuration that:
 
-- Initializes i18next for the browser
-- Syncs with server-detected language via HTML `lang` attribute
-- Handles hydration
+- Receives translations from the server (no HTTP requests)
+- Uses server-detected language
+- Ensures perfect hydration without flickering
+
+### `app/entry.server.tsx`
+
+Server entry point that:
+
+- Creates an i18next instance per request
+- Loads all required translations
+- Wraps the app with `I18nextProvider`
 
 ### `app/entry.client.tsx`
 
-Client entry point that wraps the app with `I18nextProvider`
+Client entry point that:
+
+- Hydrates immediately with server-provided translations
+- No need to wait for translation loading
+- Uses `I18nextProvider` with pre-loaded data
+
+### `app/root.tsx`
+
+Root loader that:
+
+- Detects user language
+- Loads all translations for the detected language
+- Passes translations to client via `window.__i18nData`
 
 ## Translation Files
 
@@ -54,6 +79,10 @@ public/
     fr/
       common.json
     es/
+      common.json
+    nl/
+      common.json
+    de/
       common.json
 ```
 
