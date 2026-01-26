@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router'
 import { Button } from '@/components/primitives/Button'
 import { Heading } from '@/components/primitives/Heading'
 import { Text } from '@/components/primitives/Text'
+import { generateSocialMetaTags } from '@/utils/meta'
 
 import type { Route } from './+types/guide'
 
@@ -35,16 +36,11 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 }
 
 export function meta({ data }: Route.MetaArgs) {
-    return [
-        {
-            title: data?.meta.title || 'Guest Guide - The View',
-        },
-        {
-            content:
-                data?.meta.description || 'Complete guest guide for The View',
-            name: 'description',
-        },
-    ]
+    return generateSocialMetaTags({
+        title: data?.meta.title || 'Guest Guide - The View',
+        description:
+            data?.meta.description || 'Complete guest guide for The View',
+    })
 }
 
 interface NavItem {

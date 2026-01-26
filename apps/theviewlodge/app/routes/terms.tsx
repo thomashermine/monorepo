@@ -8,6 +8,7 @@ import { MobileMenu } from '@/components/components/MobileMenu'
 import { NavigationBar } from '@/components/components/NavigationBar'
 import { Heading } from '@/components/primitives/Heading'
 import { Text } from '@/components/primitives/Text'
+import { generateSocialMetaTags } from '@/utils/meta'
 
 import type { Route } from './+types/terms'
 
@@ -37,13 +38,10 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 }
 
 export function meta({ data }: Route.MetaArgs) {
-    return [
-        { title: data?.meta.title },
-        {
-            content: data?.meta.description,
-            name: 'description',
-        },
-    ]
+    return generateSocialMetaTags({
+        title: data?.meta.title,
+        description: data?.meta.description,
+    })
 }
 
 export default function Terms({ loaderData }: Route.ComponentProps) {

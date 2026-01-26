@@ -11,6 +11,7 @@ import { Button } from '@/components/primitives/Button'
 import { Heading } from '@/components/primitives/Heading'
 import { Text } from '@/components/primitives/Text'
 import { useHashNavigation } from '@/hooks/helpers'
+import { generateSocialMetaTags } from '@/utils/meta'
 
 import type { Route } from './+types/prices'
 
@@ -40,15 +41,10 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 }
 
 export function meta({ data }: Route.MetaArgs) {
-    return [
-        {
-            title: data?.meta.title,
-        },
-        {
-            content: data?.meta.description,
-            name: 'description',
-        },
-    ]
+    return generateSocialMetaTags({
+        title: data?.meta.title,
+        description: data?.meta.description,
+    })
 }
 
 export default function Prices({ loaderData }: Route.ComponentProps) {

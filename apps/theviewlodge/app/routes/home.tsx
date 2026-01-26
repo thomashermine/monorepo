@@ -19,6 +19,7 @@ import { Heading } from '@/components/primitives/Heading'
 import { Text } from '@/components/primitives/Text'
 import { useHashNavigation } from '@/hooks/helpers'
 import { useTestimonials } from '@/hooks/useTestimonials'
+import { generateSocialMetaTags } from '@/utils/meta'
 
 import type { Route } from './+types/home'
 
@@ -50,24 +51,11 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 }
 
 export function meta({ data }: Route.MetaArgs) {
-    return [
-        {
-            title: data?.meta.title,
-        },
-        {
-            content: data?.meta.description,
-            name: 'description',
-        },
-        {
-            content: data?.meta.ogTitle,
-            property: 'og:title',
-        },
-        {
-            content:
-                'https://s3.fr-par.scw.cloud/theviewlodge.be/theview-cabin-boulder.jpg',
-            property: 'og:image',
-        },
-    ]
+    return generateSocialMetaTags({
+        title: data?.meta.title,
+        description: data?.meta.description,
+        ogTitle: data?.meta.ogTitle,
+    })
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
