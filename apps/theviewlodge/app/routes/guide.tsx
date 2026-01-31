@@ -279,7 +279,7 @@ export default function GuestGuide() {
                             <div className="flex items-center gap-2">
                                 <span>📱</span>
                                 <span className="text-charcoal">
-                                    Thomas: +32 495 64 99 99
+                                    Thomas: +32 491 50 54 42
                                 </span>
                             </div>
                             <div className="flex items-center gap-2">
@@ -1406,7 +1406,7 @@ function EmergencySection() {
 
                         <div className="grid md:grid-cols-2 gap-4 mb-4">
                             {[
-                                { name: 'Thomas', phone: '+32 495 64 99 99' },
+                                { name: 'Thomas', phone: '+32 491 50 54 42' },
                                 { name: 'Caroline', phone: '+32 474 06 30 40' },
                             ].map((person) => (
                                 <div

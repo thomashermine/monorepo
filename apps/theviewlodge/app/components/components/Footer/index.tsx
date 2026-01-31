@@ -26,7 +26,7 @@ export interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({
     description = 'Premium accommodation in the heart of the Belgian Ardennes, offering stunning views and endless relaxation.',
     email = 'hello@theviewlodge.be',
-    phone = '+32 495 64 99 99',
+    phone = '+32 491 50 54 42',
     quickLinks = [],
     languages = [],
 }) => {

@@ -121,7 +121,7 @@ test.describe('Homepage', () => {
         ).toBeVisible()
 
         // Check for phone number
-        await expect(page.getByText(/\+32 495 64 99 99/i).first()).toBeVisible()
+        await expect(page.getByText(/\+32 491 50 54 42/i).first()).toBeVisible()
     })
 
     test('displays location section', async ({ page }) => {
