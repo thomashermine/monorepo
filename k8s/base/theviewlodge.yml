@@ -16,7 +16,7 @@ spec:
                 - name: ghcr-secret-monorepo
             containers:
                 - name: theviewlodge
-                  image: ghcr.io/thomashermine/monorepo/theviewlodge
+                  image: ghcr.io/thomashermine/monorepo/theviewlodge:latest
                   ports:
                       - containerPort: 3000
                   envFrom:
