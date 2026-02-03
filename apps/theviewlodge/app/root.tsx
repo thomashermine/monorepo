@@ -85,6 +85,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <meta name="theme-color" content="#ede4da" />
                 <Meta />
                 <Links />
                 {loaderData && (
