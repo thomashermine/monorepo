@@ -2,23 +2,27 @@ interface ImageSectionProps {
     src: string;
     alt: string;
     caption?: string;
+    fullBleed?: boolean;
 }
 
-export function ImageSection({ src, alt, caption }: ImageSectionProps) {
+export function ImageSection({ src, alt, caption, fullBleed = false }: ImageSectionProps) {
     return (
-        <section className="relative h-screen overflow-hidden">
-            <div
-                className="absolute inset-0 bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: `url(${src})` }}
-            />
-            <div className="absolute inset-0 bg-ink/20" />
-            {caption && (
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 bg-gradient-to-t from-ink/70 to-transparent">
-                    <p className="text-white/90 text-sm uppercase tracking-[0.2em]">
+        <section className={`${fullBleed ? "" : "py-4 md:py-8"} bg-ink`}>
+            <div className={fullBleed ? "" : "max-w-7xl mx-auto px-0 md:px-8"}>
+                <div className="relative overflow-hidden">
+                    <img
+                        src={src}
+                        alt={alt}
+                        className="w-full h-auto block"
+                        loading="lazy"
+                    />
+                </div>
+                {caption && (
+                    <p className="text-xs uppercase tracking-[0.15em] text-steel-light px-6 md:px-8 py-4">
                         {caption}
                     </p>
-                </div>
-            )}
+                )}
+            </div>
         </section>
     );
 }

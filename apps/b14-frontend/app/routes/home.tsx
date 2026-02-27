@@ -1,6 +1,7 @@
 import { Hero } from "~/components/Hero";
 import { TextSection } from "~/components/TextSection";
 import { ImageSection } from "~/components/ImageSection";
+import { About } from "~/components/About";
 import { Vision } from "~/components/Vision";
 import { Gallery } from "~/components/Gallery";
 import { Footer } from "~/components/Footer";
@@ -30,6 +31,7 @@ export default function Home() {
                 src="/images/b14-plan.png"
                 alt="Plan d'aménagement"
                 caption="Proposition d'aménagement"
+                fullBleed
             />
 
             <TextSection
@@ -41,7 +43,7 @@ export default function Home() {
             <ImageSection
                 src="/images/b14-cuisine-v4.png"
                 alt="Cuisine — Projection"
-                caption="Cuisine — Projection"
+                caption="Cuisine — Projection v1"
             />
 
             <ImageSection
@@ -67,6 +69,8 @@ export default function Home() {
                 alt="Salle de bain — Tasseaux chêne"
                 caption="Salle de bain — Tasseaux chêne"
             />
+
+            <About />
 
             <Vision />
 
