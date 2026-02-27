@@ -88,6 +88,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <meta name="theme-color" content="#ede4da" />
                 <Meta />
                 <Links />
+                {/* Google tag (gtag.js) */}
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=AW-16672536060"
+                />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'AW-16672536060');
+                        `,
+                    }}
+                />
                 {loaderData && (
                     <script
                         dangerouslySetInnerHTML={{
