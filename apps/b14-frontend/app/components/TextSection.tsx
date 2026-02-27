@@ -2,25 +2,27 @@ interface TextSectionProps {
     label?: string;
     title: string;
     body: string | React.ReactNode;
-    align?: "left" | "center";
     id?: string;
+    dark?: boolean;
 }
 
-export function TextSection({ label, title, body, align = "center", id }: TextSectionProps) {
-    const isCenter = align === "center";
+export function TextSection({ label, title, body, id, dark = false }: TextSectionProps) {
     return (
-        <section id={id} className="py-24 md:py-36 bg-white">
-            <div className={`max-w-3xl mx-auto px-6 ${isCenter ? "text-center" : ""}`}>
+        <section
+            id={id}
+            className={`relative z-10 py-32 md:py-44 ${dark ? "bg-ink" : "bg-white"}`}
+        >
+            <div className="max-w-3xl mx-auto px-6 text-center">
                 {label && (
-                    <p className="text-sm uppercase tracking-[0.2em] text-corten mb-6">
+                    <p className={`text-xs uppercase tracking-[0.3em] mb-8 ${dark ? "text-corten" : "text-corten"}`}>
                         {label}
                     </p>
                 )}
-                <h2 className="text-3xl md:text-5xl font-bold text-ink leading-tight mb-8">
+                <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-10 ${dark ? "text-white" : "text-ink"}`}>
                     {title}
                 </h2>
-                <div className="w-16 h-0.5 bg-corten mb-8 mx-auto" />
-                <div className="text-lg md:text-xl leading-relaxed text-steel">
+                <div className="w-16 h-0.5 bg-corten mb-10 mx-auto" />
+                <div className={`text-lg md:text-xl leading-relaxed max-w-2xl mx-auto ${dark ? "text-steel-light" : "text-steel"}`}>
                     {body}
                 </div>
             </div>

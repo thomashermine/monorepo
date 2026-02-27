@@ -24,12 +24,3 @@
         background-color: #ffffff;
     }
 }
-
-@layer base {
-    /* Parallax smoothing */
-    .bg-fixed {
-        will-change: transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-}
