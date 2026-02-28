@@ -36,6 +36,9 @@ jobs:
                     - name: theviewlodge-storybook
                       dockerfile: Dockerfile.storybook
                       app_name: theviewlodge
+                    - name: frelnon-frontend
+                      dockerfile: Dockerfile.frontend
+                      app_name: frelnon-frontend
 
         steps:
             - name: Checkout code
@@ -102,12 +105,17 @@ jobs:
                       dockerfile: Dockerfile.storybook
                       app_name: theviewlodge
                       port: 3000
+                    - name: frelnon-frontend
+                      dockerfile: Dockerfile.frontend
+                      app_name: frelnon-frontend
+                      port: 3000
         outputs:
             backend-url: ${{ steps.deployment-url.outputs.backend-url }}
             frontend-url: ${{ steps.deployment-url.outputs.frontend-url }}
             frontend-storybook-url: ${{ steps.deployment-url.outputs.frontend-storybook-url }}
             theviewlodge-url: ${{ steps.deployment-url.outputs.theviewlodge-url }}
             theviewlodge-storybook-url: ${{ steps.deployment-url.outputs.theviewlodge-storybook-url }}
+            frelnon-frontend-url: ${{ steps.deployment-url.outputs.frelnon-frontend-url }}
 
         steps:
             - name: Checkout code
@@ -275,6 +283,8 @@ jobs:
                     ghcr.io/${{ github.repository }}/backend=ghcr.io/${{ github.repository }}/backend:${{ github.ref_name }}
                   kustomize edit set image \
                     ghcr.io/${{ github.repository }}/frontend=ghcr.io/${{ github.repository }}/frontend:${{ github.ref_name }}
+                  kustomize edit set image \
+                    ghcr.io/${{ github.repository }}/frelnon-frontend=ghcr.io/${{ github.repository }}/frelnon-frontend:${{ github.ref_name }}
 
             - name: Deploy to Kubernetes
               run: |
@@ -577,8 +587,9 @@ jobs:
                       const frontendStorybookUrl = '${{ needs.deploy-to-flyio.outputs.frontend-storybook-url }}';
                       const theviewlodgeUrl = '${{ needs.deploy-to-flyio.outputs.theviewlodge-url }}';
                       const theviewlodgeStorybookUrl = '${{ needs.deploy-to-flyio.outputs.theviewlodge-storybook-url }}';
+                      const frelnonFrontendUrl = '${{ needs.deploy-to-flyio.outputs.frelnon-frontend-url }}';
 
-                      const deploymentSection = `## 🚀 Deployments Ready!\n\n- **Backend**: ${backendUrl}\n- **Frontend**: ${frontendUrl}\n- **Frontend Storybook**: ${frontendStorybookUrl}\n- **The View Lodge**: ${theviewlodgeUrl}\n- **The View Lodge Storybook**: ${theviewlodgeStorybookUrl}`;
+                      const deploymentSection = `## 🚀 Deployments Ready!\n\n- **Backend**: ${backendUrl}\n- **Frontend**: ${frontendUrl}\n- **Frontend Storybook**: ${frontendStorybookUrl}\n- **The View Lodge**: ${theviewlodgeUrl}\n- **The View Lodge Storybook**: ${theviewlodgeStorybookUrl}\n- **Frel'NON! Frontend**: ${frelnonFrontendUrl}`;
 
                       const testSummary = `${{ needs.backend-e2e-test.outputs.test-summary }}` || '';
                       const lighthouseSummary = `${{ needs.lighthouse-test.outputs.lighthouse-summary }}` || '';
@@ -624,6 +635,7 @@ jobs:
                         frontend-storybook,
                         theviewlodge,
                         theviewlodge-storybook,
+                        frelnon-frontend,
                     ]
 
         steps:

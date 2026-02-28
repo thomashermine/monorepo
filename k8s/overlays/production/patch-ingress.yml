@@ -41,3 +41,25 @@ spec:
                             name: monorepo-theviewlodge
                             port:
                                 number: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-frelnon-frontend-ingress
+spec:
+    tls:
+        - hosts:
+              - frelnon.thomashermine.be
+          secretName: monorepo-frelnon-frontend-tls
+    rules:
+        - host: frelnon.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-frelnon-frontend
+                            port:
+                                number: 80
