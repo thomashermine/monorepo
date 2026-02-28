@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-frelnon-frontend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: monorepo-frelnon-frontend
+    template:
+        metadata:
+            labels:
+                app: monorepo-frelnon-frontend
+        spec:
+            imagePullSecrets:
+                - name: ghcr-secret-monorepo
+            containers:
+                - name: frelnon-frontend
+                  image: ghcr.io/thomashermine/monorepo/frelnon-frontend:latest
+                  ports:
+                      - containerPort: 3000
+                  envFrom:
+                      - configMapRef:
+                            name: monorepo-config
+                      - secretRef:
+                            name: monorepo-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: monorepo-frelnon-frontend
+spec:
+    selector:
+        app: monorepo-frelnon-frontend
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-frelnon-frontend-ingress
+    annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+spec:
+    ingressClassName: nginx
+    tls:
+        - hosts:
+              - frelnon.thomashermine.be
+          secretName: monorepo-frelnon-frontend-tls
+    rules:
+        - host: frelnon.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-frelnon-frontend
+                            port:
+                                number: 80
