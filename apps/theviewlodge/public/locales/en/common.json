@@ -815,6 +815,12 @@
                 "description": "Pizza takeaway (order 2x per week)",
                 "type": "Delicious takeaway pizzas on order",
                 "url": "https://www.facebook.com/artegusto.be"
+            },
+            "woodpizza": {
+                "name": "Wood Pizza",
+                "description": "Wood-fired pizza in Coo",
+                "type": "Artisanal wood-fired pizzas",
+                "url": "https://www.google.com/maps/search/Wood+Pizza+Coo+Belgium"
             }
         },
         "checkout": {
