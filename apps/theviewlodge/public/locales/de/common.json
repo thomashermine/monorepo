@@ -815,6 +815,12 @@
                 "description": "Pizza zum Mitnehmen (2x pro Woche bestellen)",
                 "type": "Leckere Mitnahmepizzas auf Bestellung",
                 "url": "https://www.facebook.com/artegusto.be"
+            },
+            "woodpizza": {
+                "name": "Wood Pizza",
+                "description": "Holzofen-Pizza in Coo",
+                "type": "Handwerkliche Holzofenpizzas",
+                "url": "https://www.google.com/maps/search/Wood+Pizza+Coo+Belgium"
             }
         },
         "checkout": {

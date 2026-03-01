@@ -815,6 +815,12 @@
                 "description": "Pizza para llevar (pedido 2 veces por semana)",
                 "type": "Deliciosas pizzas para llevar por encargo",
                 "url": "https://www.facebook.com/artegusto.be"
+            },
+            "woodpizza": {
+                "name": "Wood Pizza",
+                "description": "Pizza al horno de leña en Coo",
+                "type": "Pizzas artesanales al horno de leña",
+                "url": "https://www.google.com/maps/search/Wood+Pizza+Coo+Belgium"
             }
         },
         "checkout": {

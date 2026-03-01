@@ -815,6 +815,12 @@
                 "description": "Pizza afhaal (bestel 2x per week)",
                 "type": "Heerlijke afhaalpizza's op bestelling",
                 "url": "https://www.facebook.com/artegusto.be"
+            },
+            "woodpizza": {
+                "name": "Wood Pizza",
+                "description": "Houtoven pizza in Coo",
+                "type": "Ambachtelijke houtovenpizza's",
+                "url": "https://www.google.com/maps/search/Wood+Pizza+Coo+Belgium"
             }
         },
         "checkout": {

@@ -815,6 +815,12 @@
                 "description": "Pizza à emporter (commande 2x par semaine)",
                 "type": "Pizzas à emporter délicieuses sur commande",
                 "url": "https://www.facebook.com/artegusto.be"
+            },
+            "woodpizza": {
+                "name": "Wood Pizza",
+                "description": "Pizza au feu de bois à Coo",
+                "type": "Pizzas artisanales au feu de bois",
+                "url": "https://www.google.com/maps/search/Wood+Pizza+Coo+Belgium"
             }
         },
         "checkout": {

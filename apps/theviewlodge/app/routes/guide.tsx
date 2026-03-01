@@ -1262,7 +1262,7 @@ function ActivitiesSection({ currentSeason }: { currentSeason: string }) {
                         </Heading>
 
                         <div className="grid md:grid-cols-2 gap-4">
-                            {['linea', 'douxragots', 'bpost', 'artegusto'].map(
+                            {['linea', 'douxragots', 'bpost', 'artegusto', 'woodpizza'].map(
                                 (restaurant) => (
                                     <div
                                         key={restaurant}
