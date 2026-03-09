@@ -26,6 +26,20 @@ spec:
                         value: staging
 
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-kerosen-frontend
+spec:
+    template:
+        spec:
+            containers:
+                - name: kerosen-frontend
+                  env:
+                      - name: NAMESPACE_ENV
+                        value: staging
+
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:

@@ -41,3 +41,25 @@ spec:
                             name: monorepo-theviewlodge
                             port:
                                 number: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-kerosen-frontend-ingress
+spec:
+    tls:
+        - hosts:
+              - kerosen.thomashermine.be
+          secretName: monorepo-kerosen-frontend-tls
+    rules:
+        - host: kerosen.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-kerosen-frontend
+                            port:
+                                number: 80

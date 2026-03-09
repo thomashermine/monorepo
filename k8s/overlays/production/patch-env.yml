@@ -26,6 +26,20 @@ spec:
                         value: production
 
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-kerosen-frontend
+spec:
+    template:
+        spec:
+            containers:
+                - name: kerosen-frontend
+                  env:
+                      - name: NAMESPACE_ENV
+                        value: production
+
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:

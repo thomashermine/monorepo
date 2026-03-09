@@ -3,10 +3,13 @@ resources:
     - backend.yml
     - frontend.yml
     - theviewlodge.yml
+    - kerosen-frontend.yml
     - config.yml
 
 images:
     - name: ghcr.io/thomashermine/monorepo/backend
       newTag: latest
     - name: ghcr.io/thomashermine/monorepo/frontend
+      newTag: latest
+    - name: ghcr.io/thomashermine/monorepo/kerosen-frontend
       newTag: latest

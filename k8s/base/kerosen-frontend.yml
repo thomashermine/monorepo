@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monorepo-kerosen-frontend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: monorepo-kerosen-frontend
+    template:
+        metadata:
+            labels:
+                app: monorepo-kerosen-frontend
+        spec:
+            imagePullSecrets:
+                - name: ghcr-secret-monorepo
+            containers:
+                - name: kerosen-frontend
+                  image: ghcr.io/thomashermine/monorepo/kerosen-frontend:latest
+                  ports:
+                      - containerPort: 3000
+                  envFrom:
+                      - configMapRef:
+                            name: monorepo-config
+                      - secretRef:
+                            name: monorepo-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: monorepo-kerosen-frontend
+spec:
+    selector:
+        app: monorepo-kerosen-frontend
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 3000
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: monorepo-kerosen-frontend-ingress
+    annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+spec:
+    ingressClassName: nginx
+    tls:
+        - hosts:
+              - kerosen.thomashermine.be
+          secretName: monorepo-kerosen-frontend-tls
+    rules:
+        - host: kerosen.thomashermine.be
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: monorepo-kerosen-frontend
+                            port:
+                                number: 80

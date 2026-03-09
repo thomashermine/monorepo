@@ -9,3 +9,5 @@ patches:
 images:
     - name: ghcr.io/thomashermine/monorepo/monorepo-frontend
       newTag: 0.0.1
+    - name: ghcr.io/thomashermine/monorepo/kerosen-frontend
+      newTag: latest
